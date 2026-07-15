@@ -1194,11 +1194,22 @@ a {
 }
 
 .site-nav-brand {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 10px;
   color: rgba(255, 235, 198, 0.96);
   font-size: 0.95rem;
   font-weight: 900;
   line-height: 1;
   letter-spacing: 0.02em;
+}
+
+.site-nav-brand img {
+  display: block;
+  width: 38px;
+  height: auto;
+  filter: drop-shadow(0 6px 12px rgba(148, 64, 232, 0.28));
 }
 
 .site-nav-links {
@@ -2329,6 +2340,14 @@ a {
     linear-gradient(180deg, rgba(54, 18, 43, 0.58), rgba(18, 6, 17, 0.78));
 }
 
+.cta-logo {
+  display: block;
+  width: clamp(74px, 8vw, 108px);
+  height: auto;
+  margin-bottom: clamp(22px, 3vw, 34px);
+  filter: drop-shadow(0 18px 40px rgba(157, 66, 241, 0.28));
+}
+
 .cta-section p {
   margin: 0 auto;
 }
@@ -3042,6 +3061,23 @@ a {
   .story-hero,
   .mission-section,
   .restaurant-section,
+
+  .site-nav-brand {
+    gap: 0;
+  }
+
+  .site-nav-brand span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .site-nav-brand img {
+    width: 34px;
+  }
   .custom-code-section,
   .section-heading-split {
     grid-template-columns: 1fr;
@@ -5549,6 +5585,51 @@ body {
   color: #120611;
   background: #fff8ee;
   box-shadow: 0 22px 58px rgba(244, 238, 230, 0.18), 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+/* Wendico brand logo placement. */
+.site-nav-brand {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-nav-brand img,
+.cta-logo {
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-nav-brand img {
+  width: 38px;
+  filter: drop-shadow(0 6px 12px rgba(148, 64, 232, 0.28));
+}
+
+.cta-logo {
+  width: clamp(74px, 8vw, 108px);
+  margin-bottom: clamp(22px, 3vw, 34px);
+  filter: drop-shadow(0 18px 40px rgba(157, 66, 241, 0.28));
+}
+
+@media (max-width: 700px) {
+  .site-nav-brand {
+    gap: 0;
+  }
+
+  .site-nav-brand span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .site-nav-brand img {
+    width: 34px;
+  }
 }
 
 .clarity-card:hover,

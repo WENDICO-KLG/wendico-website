@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import founderImage from "../../founder.png";
+import logoImage from "../../logo.png";
 import scrollZoomImage from "../../scroll-zoom.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -233,7 +234,8 @@ function SiteNav() {
       aria-label="Hauptnavigation"
     >
       <a className="site-nav-brand" href="#top" aria-label="Wendico Startseite">
-        Wendico
+        <Image src={logoImage} alt="" priority />
+        <span>Wendico</span>
       </a>
       <div className="site-nav-links">
         {navItems.map((item) => (
@@ -960,6 +962,7 @@ function AboutSection() {
         </section>
 
         <section className="cta-section home-reveal" aria-labelledby="cta-title">
+          <Image className="cta-logo" src={logoImage} alt="" />
           <div className="section-atmosphere signal-atmosphere" aria-hidden="true">
             <i className="atmosphere-line atmosphere-line-one" />
             <i className="atmosphere-line atmosphere-line-two" />
