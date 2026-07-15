@@ -1,0 +1,5607 @@
+:root {
+  color-scheme: dark;
+  background: #241020;
+}
+
+.story-hero,
+.clarity-section,
+.restaurant-section,
+.process-section,
+.mission-section,
+.custom-code-section,
+.projects-section,
+.cta-section {
+  width: min(1200px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.story-panel {
+  min-height: clamp(420px, 42vw, 620px);
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check {
+  border-color: rgba(255, 229, 187, 0.32);
+  background:
+    linear-gradient(180deg, rgba(255, 242, 218, 0.19), rgba(255, 213, 162, 0.08)),
+    rgba(47, 15, 38, 0.9);
+}
+
+.clarity-card,
+.process-step {
+  min-height: clamp(230px, 23vw, 310px);
+}
+
+.clarity-card h3,
+.process-step h3,
+.project-card h3 {
+  color: rgba(255, 241, 213, 0.98);
+}
+
+.clarity-card p,
+.process-step p,
+.project-card p,
+.restaurant-check p {
+  color: rgba(255, 241, 220, 0.88);
+}
+
+.project-preview {
+  min-height: clamp(205px, 19vw, 260px);
+}
+
+.project-card {
+  min-height: 500px;
+}
+
+@media (max-width: 980px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 6.4vw, 3.5rem);
+    line-height: 1.07;
+  }
+
+  .story-hero,
+  .clarity-section,
+  .restaurant-section,
+  .process-section,
+  .mission-section,
+  .custom-code-section,
+  .projects-section {
+    padding-top: clamp(72px, 9vh, 104px);
+  }
+
+  .story-panel,
+  .mission-alps,
+  .code-window {
+    min-height: clamp(320px, 48vw, 460px);
+  }
+}
+
+@media (max-width: 700px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    font-size: clamp(1.85rem, 7.4vw, 2.55rem);
+    line-height: 1.1;
+  }
+}
+
+/* No transparency pass: solid surfaces, readable logos. */
+.site-nav {
+  border-color: #5c3346;
+  background: #140712;
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.34);
+  backdrop-filter: none;
+}
+
+.about-section {
+  background: #120611;
+}
+
+.about-logo-band {
+  position: relative;
+  z-index: 4;
+  margin-top: clamp(28px, 5vh, 60px);
+  padding-top: clamp(44px, 7vh, 78px);
+  padding-bottom: clamp(52px, 8vh, 92px);
+  background: linear-gradient(180deg, #2a1024 0%, #1a0918 100%);
+  border-top: 1px solid #543044;
+  border-bottom: 1px solid #3d2233;
+}
+
+.about-logo-band::before,
+.about-logo-band::after {
+  display: none;
+}
+
+.swiss-logo-loop {
+  height: clamp(92px, 9vw, 122px);
+  mask-image: none;
+}
+
+.swiss-logo-track {
+  gap: clamp(18px, 2.4vw, 34px);
+  padding-left: clamp(18px, 2.4vw, 34px);
+}
+
+.swiss-logo-item {
+  width: clamp(150px, 13vw, 205px);
+  height: clamp(72px, 7vw, 98px);
+  padding: 12px 16px;
+  border: 1px solid #735166;
+  border-radius: 8px;
+  background: #3a1a30;
+  box-shadow: inset 0 1px 0 #8c6477, 0 16px 36px rgba(0, 0, 0, 0.24);
+}
+
+.swiss-logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 1;
+  filter: none;
+}
+
+.home-sections {
+  background: #120611;
+}
+
+.home-sections::before,
+.home-sections::after,
+.page-spotlight {
+  display: none;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.story-browser,
+.project-preview > span {
+  background: #301429;
+  border-color: #68465a;
+  backdrop-filter: none;
+}
+
+.story-panel,
+.mission-alps,
+.code-window,
+.project-preview {
+  background: #120611;
+}
+
+@media (max-width: 700px) {
+  .site-nav {
+    background: #140712;
+  }
+
+  .swiss-logo-loop {
+    height: 92px;
+  }
+
+  .swiss-logo-track {
+    gap: 14px;
+    padding-left: 14px;
+  }
+
+  .swiss-logo-item {
+    width: 142px;
+    height: 72px;
+    padding: 10px 12px;
+  }
+}
+  .story-panel,
+  .mission-alps,
+  .code-window {
+    min-height: 310px;
+  }
+
+  .project-preview {
+    min-height: 190px;
+  }
+
+/* Final project horizontal stage: sticky viewport, horizontal-only project motion. */
+.about-section,
+.home-sections {
+  overflow: visible !important;
+}
+
+.projects-section.horizontal-projects-section {
+  min-height: calc(100svh + var(--project-scroll-distance, 3600px));
+  display: block !important;
+  align-content: normal !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.horizontal-projects-section .project-pin-stage {
+  position: sticky;
+  top: 0;
+  display: grid;
+  align-content: center;
+  width: 100%;
+  min-height: 100svh;
+}
+
+.horizontal-projects-section > .section-atmosphere {
+  position: absolute;
+}
+
+@media (max-width: 980px) {
+  .projects-section.horizontal-projects-section {
+    min-height: auto;
+    padding-top: clamp(72px, 9vh, 104px);
+    padding-bottom: 0;
+  }
+
+  .horizontal-projects-section .project-pin-stage {
+    position: relative;
+    top: auto;
+    min-height: auto;
+  }
+}
+
+/* Sticky project stage needs visible ancestors; body already clips horizontal overflow. */
+.about-section,
+.home-sections {
+  overflow: visible;
+}
+
+/* Final scroll storytelling overrides. */
+.text-reveal-target {
+  display: block;
+  will-change: transform, clip-path, opacity;
+}
+
+.zoom-scroll-visual {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.story-panel::after,
+.code-window::before,
+.project-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 0 38%, rgba(255, 220, 158, 0.16) 48%, transparent 58% 100%);
+  transform: translateX(-120%);
+  animation: scroll-sheen 6s ease-in-out infinite;
+}
+
+.story-browser,
+.code-lines,
+.project-preview img,
+.project-preview > span {
+  position: relative;
+  z-index: 3;
+}
+
+.sticky-story-section,
+.sticky-process-section {
+  min-height: clamp(720px, 100svh, 960px);
+}
+
+.horizontal-projects-section {
+  min-height: calc(100svh + var(--project-scroll-distance, 3600px));
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.projects-section.horizontal-projects-section {
+  padding-top: 0;
+}
+
+.project-pin-stage {
+  display: grid;
+  align-content: center;
+  width: 100%;
+  min-height: 100svh;
+  position: sticky;
+  top: 0;
+  will-change: transform;
+}
+
+.sticky-story-section {
+  overflow: visible;
+}
+
+.sticky-story-section .mission-copy,
+.sticky-story-section .mission-alps,
+.sticky-process-section .process-step {
+  will-change: transform, opacity;
+}
+
+.sticky-story-section .mission-alps {
+  isolation: isolate;
+}
+
+.sticky-story-section .mission-alps::after {
+  content: "";
+  position: absolute;
+  inset: 14% 12% auto auto;
+  width: clamp(86px, 10vw, 132px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 219, 154, 0.2);
+  border-radius: 999px;
+  background:
+    linear-gradient(#ffd790, #ffd790) 50% 50% / 44% 10% no-repeat,
+    linear-gradient(#ffd790, #ffd790) 50% 50% / 10% 44% no-repeat,
+    radial-gradient(circle, rgba(255, 214, 144, 0.18), transparent 68%);
+  box-shadow: 0 0 70px rgba(255, 187, 96, 0.16);
+  opacity: 0.88;
+}
+
+.sticky-process-section {
+  display: grid;
+  align-content: center;
+}
+
+.sticky-process-section .process-grid {
+  perspective: 1200px;
+}
+
+.sticky-process-section .process-step {
+  transform-origin: center bottom;
+}
+
+.sticky-process-section .process-step:nth-child(1) {
+  border-top-color: #ffd58f;
+}
+
+.sticky-process-section .process-step:nth-child(2) {
+  border-top-color: #e96f8d;
+}
+
+.sticky-process-section .process-step:nth-child(3) {
+  border-top-color: #8fd7ff;
+}
+
+.project-horizontal-shell {
+  width: 100%;
+  margin-top: clamp(40px, 6vw, 74px);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.horizontal-projects-section .project-grid {
+  display: flex;
+  grid-template-columns: none;
+  align-items: stretch;
+  gap: clamp(18px, 2vw, 28px);
+  width: max-content;
+  margin-top: 0;
+  will-change: transform;
+}
+
+.horizontal-projects-section {
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+}
+
+.horizontal-projects-section .section-heading,
+.horizontal-projects-section .section-atmosphere {
+  position: relative;
+  z-index: 2;
+}
+
+.horizontal-projects-section .project-horizontal-shell {
+  position: relative;
+  top: auto;
+  z-index: 3;
+}
+
+.horizontal-projects-section .project-card {
+  flex: 0 0 clamp(390px, 44vw, 540px);
+  min-height: clamp(480px, 55vh, 590px);
+}
+
+.horizontal-projects-section .project-preview {
+  min-height: clamp(230px, 28vh, 310px);
+}
+
+.horizontal-projects-section .project-card:nth-child(2) {
+  transform: translateY(clamp(18px, 3vh, 34px));
+}
+
+.horizontal-projects-section .project-card:nth-child(3) {
+  transform: translateY(clamp(36px, 5vh, 58px));
+}
+
+.horizontal-projects-section .project-card:nth-child(4),
+.horizontal-projects-section .project-card:nth-child(8) {
+  transform: translateY(clamp(12px, 2vh, 24px));
+}
+
+.horizontal-projects-section .project-card:nth-child(5),
+.horizontal-projects-section .project-card:nth-child(9) {
+  transform: translateY(clamp(42px, 6vh, 68px));
+}
+
+.horizontal-projects-section .project-card:nth-child(6),
+.horizontal-projects-section .project-card:nth-child(10) {
+  transform: translateY(clamp(22px, 3vh, 38px));
+}
+
+.horizontal-projects-section .project-card:hover {
+  transform: translateY(-6px);
+}
+
+.cta-section {
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  z-index: -1;
+  width: min(72vw, 760px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ffd28c, transparent);
+  transform: translateX(-50%);
+  box-shadow:
+    0 44px 0 rgba(255, 210, 140, 0.18),
+    0 88px 0 rgba(255, 210, 140, 0.1);
+}
+
+@keyframes scroll-sheen {
+  0%, 56% { transform: translateX(-120%); opacity: 0; }
+  66% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@media (max-width: 980px) {
+  .sticky-story-section,
+  .sticky-process-section,
+  .horizontal-projects-section {
+    min-height: auto;
+  }
+
+  .horizontal-projects-section {
+    padding-top: clamp(72px, 9vh, 104px);
+    padding-bottom: 0;
+  }
+
+  .project-pin-stage {
+    min-height: auto;
+    position: relative;
+    top: auto;
+  }
+
+  .project-horizontal-shell {
+    overflow: visible;
+  }
+
+  .horizontal-projects-section .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: auto;
+    transform: none !important;
+  }
+
+  .horizontal-projects-section .project-card,
+  .horizontal-projects-section .project-card:nth-child(2),
+  .horizontal-projects-section .project-card:nth-child(3),
+  .horizontal-projects-section .project-card:nth-child(4),
+  .horizontal-projects-section .project-card:nth-child(5),
+  .horizontal-projects-section .project-card:nth-child(6),
+  .horizontal-projects-section .project-card:nth-child(8),
+  .horizontal-projects-section .project-card:nth-child(9),
+  .horizontal-projects-section .project-card:nth-child(10),
+  .horizontal-projects-section .project-card:hover {
+    flex-basis: auto;
+    min-height: 0;
+    transform: none;
+  }
+
+  .horizontal-projects-section .project-horizontal-shell {
+    position: relative;
+    top: auto;
+  }
+}
+
+/* Scroll storytelling pass: livelier sections without touching the hero. */
+.text-reveal-target {
+  display: block;
+  will-change: transform, clip-path, opacity;
+}
+
+.zoom-scroll-visual {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.story-panel::after,
+.code-window::before,
+.project-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 0 38%, rgba(255, 220, 158, 0.16) 48%, transparent 58% 100%);
+  transform: translateX(-120%);
+  animation: scroll-sheen 6s ease-in-out infinite;
+}
+
+.story-browser,
+.code-lines,
+.project-preview img,
+.project-preview > span {
+  position: relative;
+  z-index: 3;
+}
+
+.sticky-story-section,
+.sticky-process-section {
+  min-height: clamp(720px, 100svh, 960px);
+}
+
+.horizontal-projects-section {
+  min-height: calc(100svh + var(--project-scroll-distance, 3600px));
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.projects-section.horizontal-projects-section {
+  padding-top: 0;
+}
+
+.project-pin-stage {
+  display: grid;
+  align-content: center;
+  width: 100%;
+  min-height: 100svh;
+  position: sticky;
+  top: 0;
+  will-change: transform;
+}
+
+.sticky-story-section {
+  overflow: visible;
+}
+
+.sticky-story-section .mission-copy,
+.sticky-story-section .mission-alps {
+  will-change: transform, opacity;
+}
+
+.sticky-story-section .mission-alps {
+  isolation: isolate;
+}
+
+.sticky-story-section .mission-alps::after {
+  content: "";
+  position: absolute;
+  inset: 14% 12% auto auto;
+  width: clamp(86px, 10vw, 132px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 219, 154, 0.2);
+  border-radius: 999px;
+  background:
+    linear-gradient(#ffd790, #ffd790) 50% 50% / 44% 10% no-repeat,
+    linear-gradient(#ffd790, #ffd790) 50% 50% / 10% 44% no-repeat,
+    radial-gradient(circle, rgba(255, 214, 144, 0.18), transparent 68%);
+  box-shadow: 0 0 70px rgba(255, 187, 96, 0.16);
+  opacity: 0.88;
+}
+
+.sticky-process-section {
+  display: grid;
+  align-content: center;
+}
+
+.sticky-process-section .process-grid {
+  perspective: 1200px;
+}
+
+.sticky-process-section .process-step {
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+}
+
+.sticky-process-section .process-step:nth-child(1) {
+  border-top-color: #ffd58f;
+}
+
+.sticky-process-section .process-step:nth-child(2) {
+  border-top-color: #e96f8d;
+}
+
+.sticky-process-section .process-step:nth-child(3) {
+  border-top-color: #8fd7ff;
+}
+
+.project-horizontal-shell {
+  width: 100%;
+  margin-top: clamp(40px, 6vw, 74px);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.horizontal-projects-section .project-grid {
+  display: flex;
+  grid-template-columns: none;
+  align-items: stretch;
+  gap: clamp(18px, 2vw, 28px);
+  width: max-content;
+  margin-top: 0;
+  will-change: transform;
+}
+
+.horizontal-projects-section .section-heading,
+.horizontal-projects-section .section-atmosphere {
+  position: relative;
+  z-index: 2;
+}
+
+.horizontal-projects-section .project-horizontal-shell {
+  position: relative;
+  top: auto;
+  z-index: 3;
+}
+
+.horizontal-projects-section .project-card {
+  flex: 0 0 clamp(390px, 44vw, 540px);
+  min-height: clamp(480px, 55vh, 590px);
+}
+
+.horizontal-projects-section .project-preview {
+  min-height: clamp(230px, 28vh, 310px);
+}
+
+.horizontal-projects-section .project-card:nth-child(2) {
+  transform: translateY(clamp(18px, 3vh, 34px));
+}
+
+.horizontal-projects-section .project-card:nth-child(3) {
+  transform: translateY(clamp(36px, 5vh, 58px));
+}
+
+.horizontal-projects-section .project-card:nth-child(4),
+.horizontal-projects-section .project-card:nth-child(8) {
+  transform: translateY(clamp(12px, 2vh, 24px));
+}
+
+.horizontal-projects-section .project-card:nth-child(5),
+.horizontal-projects-section .project-card:nth-child(9) {
+  transform: translateY(clamp(42px, 6vh, 68px));
+}
+
+.horizontal-projects-section .project-card:nth-child(6),
+.horizontal-projects-section .project-card:nth-child(10) {
+  transform: translateY(clamp(22px, 3vh, 38px));
+}
+
+.horizontal-projects-section .project-card:hover {
+  transform: translateY(-6px);
+}
+
+.cta-section {
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  z-index: -1;
+  width: min(72vw, 760px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ffd28c, transparent);
+  transform: translateX(-50%);
+  box-shadow:
+    0 44px 0 rgba(255, 210, 140, 0.18),
+    0 88px 0 rgba(255, 210, 140, 0.1);
+}
+
+@keyframes scroll-sheen {
+  0%, 56% { transform: translateX(-120%); opacity: 0; }
+  66% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@media (max-width: 980px) {
+  .sticky-story-section,
+  .sticky-process-section,
+  .horizontal-projects-section {
+    min-height: auto;
+  }
+
+  .horizontal-projects-section {
+    padding-top: clamp(72px, 9vh, 104px);
+    padding-bottom: 0;
+  }
+
+  .project-pin-stage {
+    min-height: auto;
+    position: relative;
+    top: auto;
+  }
+
+  .project-horizontal-shell {
+    overflow: visible;
+  }
+
+  .horizontal-projects-section .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: auto;
+    transform: none !important;
+  }
+
+  .horizontal-projects-section .project-card,
+  .horizontal-projects-section .project-card:nth-child(2),
+  .horizontal-projects-section .project-card:nth-child(3),
+  .horizontal-projects-section .project-card:nth-child(4),
+  .horizontal-projects-section .project-card:nth-child(5),
+  .horizontal-projects-section .project-card:nth-child(6),
+  .horizontal-projects-section .project-card:nth-child(8),
+  .horizontal-projects-section .project-card:nth-child(9),
+  .horizontal-projects-section .project-card:nth-child(10),
+  .horizontal-projects-section .project-card:hover {
+    flex-basis: auto;
+    min-height: 0;
+    transform: none;
+  }
+}
+
+/* Rest page background stays unified; hero keeps its cinematic colors. */
+.about-section,
+.home-sections {
+  background: #120611;
+}
+
+/* Final logo layout: static, complete, readable. */
+.about-logo-band {
+  padding-top: clamp(40px, 6vh, 70px);
+  padding-bottom: clamp(44px, 7vh, 82px);
+}
+
+.swiss-logo-loop {
+  width: min(1200px, calc(100% - 40px));
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+  mask-image: none;
+}
+
+.swiss-logo-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: 100%;
+  height: auto;
+  gap: clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  animation: none;
+  transform: none;
+  will-change: auto;
+}
+
+.swiss-logo-item {
+  width: 100%;
+  height: clamp(86px, 8vw, 108px);
+  padding: 14px 18px;
+}
+
+.swiss-logo-item img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 74px;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+}
+
+@media (max-width: 980px) {
+  .swiss-logo-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .swiss-logo-loop {
+    width: min(100% - 28px, 620px);
+    height: auto;
+  }
+
+  .swiss-logo-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+  }
+
+  .swiss-logo-item {
+    width: 100%;
+    height: 76px;
+    padding: 10px 12px;
+  }
+
+  .swiss-logo-item img {
+    max-height: 54px;
+  }
+}
+
+/* Final no-transparency override. */
+.site-nav {
+  border-color: #5c3346;
+  background: #140712;
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.34);
+  backdrop-filter: none;
+}
+
+.about-section {
+  background: #120611;
+}
+
+.about-logo-band {
+  position: relative;
+  z-index: 4;
+  margin-top: clamp(28px, 5vh, 60px);
+  padding-top: clamp(44px, 7vh, 78px);
+  padding-bottom: clamp(52px, 8vh, 92px);
+  background: linear-gradient(180deg, #2a1024 0%, #1a0918 100%);
+  border-top: 1px solid #543044;
+  border-bottom: 1px solid #3d2233;
+}
+
+.about-logo-band::before,
+.about-logo-band::after {
+  display: none;
+}
+
+.swiss-logo-loop {
+  height: clamp(92px, 9vw, 122px);
+  mask-image: none;
+}
+
+.swiss-logo-track {
+  gap: clamp(18px, 2.4vw, 34px);
+  padding-left: clamp(18px, 2.4vw, 34px);
+}
+
+.swiss-logo-item {
+  width: clamp(150px, 13vw, 205px);
+  height: clamp(72px, 7vw, 98px);
+  padding: 12px 16px;
+  border: 1px solid #735166;
+  border-radius: 8px;
+  background: #3a1a30;
+  box-shadow: inset 0 1px 0 #8c6477, 0 16px 36px rgba(0, 0, 0, 0.24);
+}
+
+.swiss-logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 1;
+  filter: none;
+}
+
+.home-sections {
+  background: #120611;
+}
+
+.home-sections::before,
+.home-sections::after,
+.page-spotlight {
+  display: none;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.story-browser,
+.project-preview > span {
+  background: #301429;
+  border-color: #68465a;
+  backdrop-filter: none;
+}
+
+.story-panel,
+.mission-alps,
+.code-window,
+.project-preview {
+  background: #120611;
+}
+
+@media (max-width: 700px) {
+  .site-nav {
+    background: #140712;
+  }
+
+  .swiss-logo-loop {
+    height: 92px;
+  }
+
+  .swiss-logo-track {
+    gap: 14px;
+    padding-left: 14px;
+  }
+
+  .swiss-logo-item {
+    width: 142px;
+    height: 72px;
+    padding: 10px 12px;
+  }
+}
+
+/* Final compact readability pass. */
+.story-copy,
+.restaurant-copy,
+.big-statement,
+.mission-copy,
+.custom-code-section > div:last-child {
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.story-hero {
+  grid-template-columns: minmax(0, 0.94fr) minmax(320px, 0.76fr);
+  gap: clamp(34px, 5vw, 72px);
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  max-width: 760px;
+  font-size: clamp(2.15rem, 3.45vw, 4.15rem);
+  line-height: 1.06;
+}
+
+.story-copy h2,
+.big-statement h2 {
+  max-width: 820px;
+}
+
+.story-copy > span,
+.restaurant-copy > span,
+.mission-copy > span,
+.custom-code-section > div > span,
+.section-heading-split > span {
+  max-width: 600px;
+  color: #ffeede;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.58;
+}
+
+.clarity-card,
+.process-step {
+  min-height: clamp(205px, 18vw, 260px);
+}
+
+.clarity-card p,
+.process-step p,
+.project-card p,
+.restaurant-check p {
+  font-size: clamp(0.96rem, 1.08vw, 1.04rem);
+  line-height: 1.55;
+}
+
+.story-panel {
+  min-height: clamp(360px, 34vw, 500px);
+}
+
+.project-card {
+  min-height: 440px;
+}
+
+@media (max-width: 980px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    font-size: clamp(2rem, 6.4vw, 3.5rem);
+    line-height: 1.07;
+  }
+}
+
+@media (max-width: 700px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    font-size: clamp(1.85rem, 7.4vw, 2.55rem);
+    line-height: 1.1;
+  }
+
+  .story-copy > span,
+  .restaurant-copy > span,
+  .mission-copy > span,
+  .custom-code-section > div > span,
+  .section-heading-split > span {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+}
+
+/* Compact copy pass: fewer words, calmer scale, clearer reading. */
+.story-copy,
+.restaurant-copy,
+.big-statement,
+.mission-copy,
+.custom-code-section > div:last-child {
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.story-hero {
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.78fr);
+  gap: clamp(34px, 5vw, 72px);
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  max-width: 780px;
+  font-size: clamp(2.2rem, 4vw, 4.7rem);
+  line-height: 1.04;
+}
+
+.story-copy h2,
+.big-statement h2 {
+  max-width: 820px;
+}
+
+.story-copy > span,
+.restaurant-copy > span,
+.mission-copy > span,
+.custom-code-section > div > span,
+.section-heading-split > span {
+  max-width: 620px;
+  color: #ffeede;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.58;
+}
+
+.clarity-card,
+.process-step {
+  min-height: clamp(210px, 20vw, 270px);
+}
+
+.clarity-card p,
+.process-step p,
+.project-card p,
+.restaurant-check p {
+  font-size: clamp(0.96rem, 1.08vw, 1.04rem);
+  line-height: 1.55;
+}
+
+.story-panel {
+  min-height: clamp(360px, 35vw, 520px);
+}
+
+.project-card {
+  min-height: 455px;
+}
+
+@media (max-width: 980px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    font-size: clamp(2rem, 6.8vw, 3.7rem);
+    line-height: 1.06;
+  }
+}
+
+@media (max-width: 700px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    font-size: clamp(1.9rem, 8vw, 2.75rem);
+    line-height: 1.08;
+  }
+
+  .story-copy > span,
+  .restaurant-copy > span,
+  .mission-copy > span,
+  .custom-code-section > div > span,
+  .section-heading-split > span {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #241020;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(255, 197, 109, 0.32);
+  color: white;
+}
+
+.site-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(14px, 2.6vw, 38px);
+  width: min(1120px, calc(100% - 32px));
+  min-height: 58px;
+  padding: 8px 10px 8px 18px;
+  border: 1px solid #5c3346;
+  border-radius: 999px;
+  background: #140712;
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.34);
+  transform: translateX(-50%);
+  backdrop-filter: none;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav-brand {
+  color: rgba(255, 235, 198, 0.96);
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.site-nav-links {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 28px);
+}
+
+.site-nav-links a,
+.site-nav-cta {
+  color: rgba(255, 229, 190, 0.74);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  transition: color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255, 239, 210, 0.98);
+  transform: translateY(-1px);
+}
+
+.site-nav-cta {
+  display: inline-grid;
+  place-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  color: #210813;
+  background: linear-gradient(180deg, #ffe7b8, #ffc46e);
+  box-shadow: 0 14px 34px rgba(255, 184, 95, 0.16);
+}
+
+.site-nav-cta:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, #fff0cc, #ffd080);
+}
+
+.swiss-keyart {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  isolation: isolate;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  color: white;
+  background: #120611;
+}
+
+.swiss-sky,
+.swiss-cloud,
+.swiss-valley-river,
+.swiss-alps,
+.swiss-fog,
+.swiss-foreground,
+.swiss-vignette,
+.swiss-copy {
+  position: absolute;
+}
+
+.swiss-sky {
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(255, 164, 92, 0.14), transparent 24%),
+    radial-gradient(circle at 18% 21%, rgba(255, 185, 84, 0.18), transparent 30%),
+    radial-gradient(circle at 79% 16%, rgba(232, 101, 76, 0.14), transparent 30%),
+    linear-gradient(180deg, #201237 0%, #552038 46%, #160711 100%);
+}
+
+.swiss-cloud {
+  z-index: 2;
+  display: block;
+  border-radius: 999px;
+  opacity: 0.55;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.swiss-cloud-left {
+  left: -4vw;
+  top: 18vh;
+  width: min(44vw, 650px);
+  height: 15vh;
+  background: radial-gradient(ellipse at center, rgba(255, 202, 115, 0.28), rgba(255, 159, 82, 0.09) 50%, transparent 72%);
+  filter: blur(20px);
+}
+
+.swiss-cloud-right {
+  right: -8vw;
+  top: 17vh;
+  width: min(48vw, 720px);
+  height: 18vh;
+  background: radial-gradient(ellipse at center, rgba(255, 190, 101, 0.24), rgba(255, 144, 81, 0.08) 52%, transparent 74%);
+  filter: blur(24px);
+}
+
+.swiss-valley-river {
+  left: 50%;
+  top: 63%;
+  z-index: 5;
+  display: block;
+  width: min(30vw, 460px);
+  height: 17vh;
+  transform: translateX(-50%);
+  background: linear-gradient(112deg, transparent 0%, rgba(255, 160, 88, 0.12) 24%, rgba(255, 197, 116, 0.28) 50%, rgba(255, 134, 86, 0.1) 76%, transparent 100%);
+  clip-path: polygon(0 69%, 16% 48%, 31% 59%, 47% 34%, 59% 55%, 74% 39%, 100% 64%, 100% 100%, 0 100%);
+  filter: blur(12px);
+  opacity: 0.42;
+}
+
+.swiss-alps {
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.swiss-layer-scroll {
+  position: absolute;
+  left: -20vw;
+  width: 140vw;
+  will-change: transform, opacity, filter;
+}
+
+.swiss-layer-scroll-1 {
+  bottom: 28vh;
+  height: 31vh;
+}
+
+.swiss-layer-scroll-2 {
+  bottom: 20vh;
+  height: 42vh;
+}
+
+.swiss-layer-scroll-3 {
+  bottom: 9vh;
+  height: 52vh;
+}
+
+.swiss-layer-scroll-4 {
+  bottom: -2vh;
+  height: 64vh;
+}
+
+.swiss-layer-scroll-5 {
+  bottom: -13vh;
+  height: 72vh;
+}
+
+.swiss-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.swiss-layer-1 {
+  opacity: 0.7;
+  background: linear-gradient(180deg, rgba(255, 168, 91, 0.5), rgba(128, 44, 59, 0.2));
+  filter: blur(0.8px);
+}
+
+.swiss-layer-2 {
+  opacity: 0.84;
+  background: linear-gradient(180deg, rgba(224, 105, 75, 0.72), rgba(113, 38, 61, 0.42));
+  filter: blur(0.45px);
+}
+
+.swiss-layer-3 {
+  opacity: 0.92;
+  background: linear-gradient(180deg, rgba(167, 67, 72, 0.9), rgba(83, 27, 52, 0.7));
+}
+
+.swiss-layer-4 {
+  opacity: 0.98;
+  background: linear-gradient(180deg, rgba(99, 37, 64, 0.98), rgba(44, 15, 35, 0.9));
+}
+
+.swiss-layer-5 {
+  background: linear-gradient(180deg, rgba(56, 20, 43, 0.99), #21080e 82%);
+  box-shadow: 0 -34px 90px rgba(255, 130, 74, 0.12);
+}
+
+.swiss-layer-light {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background:
+    linear-gradient(112deg, transparent 0%, rgba(255, 220, 151, 0.18) 31%, transparent 43%, rgba(0, 0, 0, 0.22) 78%),
+    radial-gradient(circle at 51% 38%, rgba(255, 235, 171, 0.12), transparent 18%);
+  mix-blend-mode: screen;
+  opacity: 0.54;
+}
+
+.swiss-fog {
+  left: -10vw;
+  right: -10vw;
+  z-index: 6;
+  display: block;
+  pointer-events: none;
+}
+
+.swiss-fog-back {
+  bottom: 33vh;
+  height: 16vh;
+  background: linear-gradient(90deg, transparent, rgba(255, 184, 104, 0.16) 22%, rgba(255, 222, 154, 0.2) 50%, rgba(255, 145, 87, 0.14) 76%, transparent);
+  filter: blur(28px);
+}
+
+.swiss-fog-front {
+  bottom: 19vh;
+  height: 20vh;
+  background: linear-gradient(90deg, transparent, rgba(90, 33, 59, 0.18) 14%, rgba(255, 177, 104, 0.18) 45%, rgba(74, 24, 48, 0.22) 78%, transparent);
+  filter: blur(38px);
+}
+
+.swiss-foreground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20vw;
+  right: auto;
+  width: 140vw;
+  z-index: 8;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+.swiss-left-cliff {
+  position: absolute;
+  left: -4vw;
+  bottom: -92vh;
+  width: 48vw;
+  height: 150vh;
+  background: linear-gradient(180deg, #2b0d20 0%, #120611 45%, #120611 100%);
+  clip-path: polygon(0 21%, 14% 18%, 28% 14%, 44% 9%, 63% 13%, 78% 21%, 69% 29%, 72% 100%, 0 100%);
+  filter: drop-shadow(0 -24px 46px rgba(0, 0, 0, 0.26));
+}
+
+.swiss-ground {
+  position: absolute;
+  left: 0;
+  right: auto;
+  width: 140vw;
+  bottom: -92vh;
+  height: 120vh;
+  background: linear-gradient(180deg, #2a0c1d 0%, #120611 24%, #120611 100%);
+  clip-path: polygon(0 16%, 7% 12%, 16% 14%, 24% 11%, 34% 15%, 43% 12%, 52% 16%, 61% 11%, 71% 15%, 82% 12%, 91% 15%, 100% 13%, 100% 100%, 0 100%);
+  filter: drop-shadow(0 -18px 34px rgba(18, 6, 17, 0.34));
+}
+
+.swiss-chalet {
+  position: absolute;
+  left: 73%;
+  bottom: 7.4vh;
+  width: clamp(86px, 8vw, 132px);
+  height: clamp(64px, 6vw, 98px);
+  transform: translateX(-50%);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.4));
+}
+
+.swiss-chalet::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -3%;
+  height: 9%;
+  border-radius: 999px;
+  background: rgba(18, 6, 17, 0.9);
+  filter: blur(4px);
+}
+
+.swiss-chalet-roof {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(180deg, #2a0a19, #120611);
+  clip-path: polygon(50% 0, 100% 68%, 90% 85%, 50% 38%, 10% 85%, 0 68%);
+}
+
+.swiss-chalet-body {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 0;
+  height: 62%;
+  background: linear-gradient(180deg, #240c1e, #120611);
+  border-top: 1px solid rgba(255, 188, 111, 0.16);
+}
+
+.swiss-chalet-body::after {
+  content: "";
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  bottom: -7%;
+  height: 14%;
+  background: #120611;
+  clip-path: polygon(0 28%, 100% 8%, 100% 100%, 0 100%);
+}
+
+.swiss-window {
+  position: absolute;
+  bottom: 25%;
+  width: 13%;
+  height: 18%;
+  border-radius: 2px;
+  background: rgba(255, 205, 118, 0.88);
+  box-shadow: 0 0 15px rgba(255, 190, 106, 0.46);
+}
+
+.swiss-window-left {
+  left: 31%;
+}
+
+.swiss-window-right {
+  right: 31%;
+}
+
+.swiss-pine {
+  position: absolute;
+  bottom: 8vh;
+  width: 34px;
+  height: 164px;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(#120611, #120611) 50% 100% / 8% 64% no-repeat,
+    linear-gradient(145deg, transparent 0 38%, #120611 39% 58%, transparent 59%) 50% 14% / 100% 34% no-repeat,
+    linear-gradient(145deg, transparent 0 34%, #120611 35% 64%, transparent 65%) 50% 42% / 135% 39% no-repeat,
+    linear-gradient(145deg, transparent 0 31%, #120611 32% 67%, transparent 68%) 50% 70% / 174% 43% no-repeat;
+}
+
+.swiss-pine-1 {
+  height: 116px;
+  bottom: 10vh;
+  opacity: 0.68;
+}
+
+.swiss-pine-2 {
+  height: 152px;
+  bottom: 8vh;
+  opacity: 0.78;
+}
+
+.swiss-pine-3 {
+  height: 214px;
+  bottom: 6vh;
+  opacity: 0.94;
+}
+
+.swiss-pine-4 {
+  height: 180px;
+  bottom: 9vh;
+  opacity: 0.88;
+}
+
+.swiss-pine-5 {
+  height: 132px;
+  bottom: 12vh;
+  opacity: 0.72;
+}
+
+.about-section {
+  position: relative;
+  z-index: 2;
+  margin-top: 100vh;
+  margin-top: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  color: white;
+  background: #120611;
+}
+
+.about-logo-band {
+  position: relative;
+  z-index: 4;
+  margin-top: 0;
+  padding-top: clamp(64px, 10vh, 118px);
+  padding-bottom: clamp(82px, 15vh, 150px);
+  background: linear-gradient(180deg, #2a1024 0%, #1a0918 100%);
+  border-top: 1px solid #543044;
+  border-bottom: 1px solid #3d2233;
+  pointer-events: none;
+}
+
+.swiss-logo-loop {
+  position: relative;
+  width: min(1200px, calc(100% - 40px));
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+  mask-image: none;
+}
+
+.swiss-logo-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  animation: none;
+  will-change: auto;
+}
+
+.swiss-logo-item {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: clamp(86px, 8vw, 108px);
+  padding: 14px 18px;
+  border: 1px solid #735166;
+  border-radius: 8px;
+  background: #3a1a30;
+  box-shadow: inset 0 1px 0 #8c6477, 0 16px 36px rgba(0, 0, 0, 0.24);
+}
+
+.swiss-logo-item img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 74px;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+  align-items: center;
+  gap: clamp(32px, 4.8vw, 72px);
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: clamp(56px, 8vh, 92px) 0 0;
+}
+
+.about-copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  min-width: 0;
+}
+
+.about-content h2 {
+  max-width: 100%;
+  margin: 0;
+  color: rgba(255, 235, 195, 0.94);
+  font-size: clamp(2.8rem, 6.4vw, 7rem);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.about-founder-image {
+  position: relative;
+  z-index: 1;
+  justify-self: end;
+  align-self: end;
+  width: 100%;
+  min-width: 0;
+  min-height: clamp(350px, 40vw, 560px);
+  overflow: visible;
+  border-radius: 0;
+}
+
+.about-founder-image img {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  bottom: 0;
+  display: block;
+  width: min(128%, 620px);
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  object-fit: contain;
+  filter: drop-shadow(0 32px 56px rgba(0, 0, 0, 0.28));
+}
+
+.home-sections {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  padding: clamp(34px, 6vh, 72px) 0 clamp(110px, 15vh, 180px);
+}
+
+.page-spotlight {
+  position: absolute;
+  z-index: 0;
+  width: min(42vw, 560px);
+  height: min(42vw, 560px);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 197, 112, 0.11), rgba(151, 62, 84, 0.07) 38%, transparent 68%);
+  filter: blur(18px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.75;
+}
+
+.home-sections::before,
+.home-sections::after {
+  content: "";
+  position: absolute;
+  left: -12vw;
+  right: -12vw;
+  pointer-events: none;
+}
+
+.home-sections::before {
+  top: 3%;
+  height: 30vh;
+  background: linear-gradient(90deg, transparent, rgba(255, 193, 110, 0.1), rgba(107, 36, 63, 0.13), transparent);
+  filter: blur(34px);
+  opacity: 0.7;
+}
+
+.home-sections::after {
+  bottom: 0;
+  height: 36vh;
+  background:
+    radial-gradient(circle at 18% 70%, rgba(255, 174, 91, 0.1), transparent 30%),
+    linear-gradient(180deg, transparent, rgba(18, 6, 17, 0.88));
+}
+
+.service-section,
+.mission-section,
+.custom-code-section,
+.projects-section,
+.cta-section {
+  position: relative;
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.story-hero,
+.clarity-section,
+.restaurant-section,
+.process-section,
+.mission-section,
+.custom-code-section,
+.projects-section,
+.cta-section {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section-atmosphere {
+  position: absolute;
+  inset: auto 0 0 auto;
+  z-index: -1;
+  width: min(44vw, 520px);
+  height: min(32vw, 360px);
+  pointer-events: none;
+  opacity: 0.72;
+  will-change: transform;
+}
+
+.section-atmosphere::before,
+.section-atmosphere::after,
+.section-atmosphere span,
+.atmosphere-line {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.section-atmosphere::before {
+  inset: 22% 2% 0;
+  border: 1px solid #3f2136;
+  border-radius: 8px;
+  background: #180817;
+}
+
+.section-atmosphere::after {
+  left: 7%;
+  right: 7%;
+  bottom: 0;
+  height: 58%;
+  background: #120611;
+  clip-path: polygon(0 66%, 10% 50%, 21% 61%, 33% 32%, 46% 63%, 57% 39%, 70% 66%, 84% 42%, 100% 58%, 100% 100%, 0 100%);
+}
+
+.atmosphere-line {
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffd28c, transparent);
+  opacity: 0.74;
+}
+
+.atmosphere-line-one {
+  top: 33%;
+}
+
+.atmosphere-line-two {
+  top: 48%;
+  opacity: 0.42;
+}
+
+.section-atmosphere span {
+  right: 14%;
+  top: 28%;
+  width: 56px;
+  height: 38px;
+  border: 2px solid #5e4055;
+  border-radius: 5px 5px 2px 2px;
+  background:
+    linear-gradient(#ffd08a, #ffd08a) 50% 100% / 34px 3px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 12px, #2d1528 12px 14px),
+    #1d0b1b;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+}
+
+.mountain-code-atmosphere {
+  right: -7%;
+  bottom: -12%;
+}
+
+.mountain-code-atmosphere::before {
+  background:
+    linear-gradient(#2f1830 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(90deg, #2f1830 1px, transparent 1px) 0 0 / 34px 34px,
+    #180817;
+}
+
+.mountain-code-atmosphere span::before,
+.mountain-code-atmosphere span::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #ffd08a;
+}
+
+.mountain-code-atmosphere span::before {
+  left: 9px;
+}
+
+.mountain-code-atmosphere span::after {
+  left: 21px;
+}
+
+.swiss-route-atmosphere {
+  left: -8%;
+  right: auto;
+  bottom: -22%;
+}
+
+.swiss-route-atmosphere::before {
+  background:
+    linear-gradient(#ffd08a, #ffd08a) 50% 42% / 54px 13px no-repeat,
+    linear-gradient(#ffd08a, #ffd08a) 50% 42% / 13px 54px no-repeat,
+    #180817;
+}
+
+.swiss-route-atmosphere span {
+  right: 18%;
+  top: 24%;
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  background: #ffd08a;
+}
+
+.process-summit-atmosphere {
+  right: -6%;
+  bottom: -18%;
+}
+
+.process-summit-atmosphere::before {
+  background:
+    repeating-linear-gradient(120deg, #2c1427 0 2px, transparent 2px 18px),
+    #180817;
+}
+
+.process-summit-atmosphere span {
+  width: 48px;
+  height: 70px;
+  border-radius: 999px 999px 6px 6px;
+  background: linear-gradient(180deg, #ffd08a 0 18px, #1d0b1b 18px 100%);
+}
+
+.laptop-grid-atmosphere {
+  right: -8%;
+  bottom: -10%;
+}
+
+.laptop-grid-atmosphere::before {
+  background:
+    linear-gradient(#ffd08a, #ffd08a) 50% 76% / 52% 4px no-repeat,
+    linear-gradient(#322033 1px, transparent 1px) 0 0 / 26px 26px,
+    linear-gradient(90deg, #322033 1px, transparent 1px) 0 0 / 26px 26px,
+    #180817;
+}
+
+.laptop-grid-atmosphere span {
+  left: 15%;
+  right: auto;
+  top: 30%;
+}
+
+.signal-atmosphere {
+  left: 50%;
+  right: auto;
+  bottom: -30%;
+  transform: translateX(-50%);
+}
+
+.signal-atmosphere::before {
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, transparent 0 22%, #2a1326 23% 24%, transparent 25% 43%, #2a1326 44% 45%, transparent 46%),
+    #180817;
+}
+
+.signal-atmosphere::after {
+  clip-path: polygon(0 72%, 12% 58%, 24% 68%, 39% 35%, 52% 70%, 67% 46%, 79% 72%, 91% 54%, 100% 66%, 100% 100%, 0 100%);
+}
+
+.story-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(340px, 0.86fr);
+  align-items: center;
+  gap: clamp(38px, 6vw, 88px);
+  min-height: clamp(720px, 96vh, 980px);
+  padding: clamp(60px, 8vh, 96px) 0 clamp(76px, 12vh, 138px);
+}
+
+.story-copy,
+.restaurant-copy,
+.big-statement,
+.mission-copy,
+.custom-code-section > div:last-child {
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+}
+
+.story-copy p,
+.big-statement p,
+.restaurant-copy p,
+.mission-copy p,
+.custom-code-section p,
+.cta-section p,
+.section-heading p {
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 218, 159, 0.13);
+  border-radius: 999px;
+  color: rgba(255, 218, 152, 0.78);
+  background: rgba(255, 221, 165, 0.035);
+  font-size: clamp(0.72rem, 0.95vw, 0.84rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  margin: 0;
+  color: rgba(255, 238, 204, 0.96);
+  font-size: clamp(2.8rem, 7.2vw, 7.8rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: 0;
+}
+
+.story-copy > span,
+.restaurant-copy > span,
+.mission-copy > span,
+.custom-code-section > div > span,
+.section-heading-split > span {
+  max-width: 720px;
+  color: #ffeede;
+  font-size: clamp(1.04rem, 1.55vw, 1.22rem);
+  line-height: 1.72;
+}
+
+.story-actions,
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.story-actions a,
+.cta-actions a {
+  display: inline-grid;
+  place-items: center;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 224, 173, 0.18);
+  border-radius: 999px;
+  color: #ffeede;
+  background: #241020;
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.story-actions a:first-child,
+.cta-actions a:first-child {
+  color: #220814;
+  background: linear-gradient(180deg, #ffe9bf, #ffc66e);
+  box-shadow: 0 22px 58px rgba(255, 183, 91, 0.18);
+}
+
+.story-actions a:hover,
+.cta-actions a:hover {
+  transform: translateY(-3px);
+}
+
+.home-reveal {
+  opacity: 1 !important;
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  color: #fff2db;
+}
+
+.story-copy > span,
+.restaurant-copy > span,
+.mission-copy > span,
+.custom-code-section > div > span,
+.section-heading-split > span {
+  color: #ffeede;
+}
+
+.story-copy p,
+.big-statement p,
+.restaurant-copy p,
+.mission-copy p,
+.custom-code-section p,
+.cta-section p,
+.section-heading p {
+  color: #ffd690;
+  background: #32162b;
+  border-color: #654559;
+}
+
+.story-actions a,
+.cta-actions a {
+  color: #ffeede;
+  background: #241020;
+  border-color: #654559;
+}
+
+.story-actions a:first-child,
+.cta-actions a:first-child {
+  color: #220814;
+  background: linear-gradient(180deg, #ffe9bf, #ffc66e);
+}
+
+.story-panel {
+  position: relative;
+  min-height: clamp(500px, 58vw, 700px);
+  overflow: hidden;
+  border: 1px solid #68465a;
+  border-radius: 8px;
+  background: #120611;
+  box-shadow: inset 0 1px 0 rgba(255, 235, 202, 0.08), 0 36px 110px rgba(0, 0, 0, 0.24);
+}
+
+.story-sun {
+  display: none;
+}
+
+.story-ridge {
+  position: absolute;
+  left: -16%;
+  width: 132%;
+  clip-path: polygon(0 64%, 9% 52%, 18% 61%, 28% 33%, 39% 60%, 49% 24%, 61% 62%, 72% 40%, 83% 66%, 93% 45%, 100% 56%, 100% 100%, 0 100%);
+}
+
+.story-ridge-one {
+  bottom: 38%;
+  height: 42%;
+  background: #120611;
+}
+
+.story-ridge-two {
+  bottom: 20%;
+  height: 52%;
+  background: #120611;
+}
+
+.story-ridge-three {
+  bottom: -1px;
+  height: 42%;
+  background: #120611;
+}
+
+.story-browser {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(50px, 8vw, 86px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 13px;
+  width: min(78%, 360px);
+  min-height: 74px;
+  padding: 16px;
+  border: 1px solid rgba(255, 234, 198, 0.18);
+  border-radius: 8px;
+  background: #301429;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  transform: translateX(-50%);
+  backdrop-filter: none;
+}
+
+.story-browser span,
+.restaurant-check span {
+  width: 13px;
+  height: 13px;
+  border-radius: 999px;
+  background: #ffd08a;
+  box-shadow: 0 0 24px rgba(255, 200, 122, 0.52);
+}
+
+.story-browser strong {
+  color: rgba(255, 240, 210, 0.94);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.story-browser i {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffe6b6, #ffc56d);
+}
+
+.clarity-section,
+.restaurant-section,
+.process-section {
+  padding: clamp(92px, 14vh, 160px) 0 0;
+}
+
+.big-statement {
+  max-width: 1080px;
+}
+
+.clarity-grid,
+.process-grid,
+.restaurant-checks {
+  display: grid;
+  gap: clamp(14px, 2vw, 22px);
+  margin-top: clamp(34px, 6vw, 70px);
+}
+
+.clarity-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.clarity-card,
+.process-step,
+.restaurant-check,
+.project-card {
+  border: 1px solid rgba(255, 223, 173, 0.13);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 232, 194, 0.07), rgba(255, 232, 194, 0.025)),
+    rgba(18, 6, 17, 0.42);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.2);
+}
+
+.clarity-card,
+.process-step {
+  min-height: 320px;
+  padding: clamp(24px, 3.2vw, 38px);
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.clarity-card:hover,
+.process-step:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 223, 173, 0.28);
+  background:
+    linear-gradient(180deg, rgba(255, 232, 194, 0.1), rgba(255, 232, 194, 0.035)),
+    rgba(18, 6, 17, 0.48);
+}
+
+.clarity-card span,
+.process-step strong,
+.project-meta > span,
+.project-preview > span {
+  color: rgba(255, 205, 126, 0.76);
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.clarity-card h3,
+.process-step h3,
+.project-card h3 {
+  margin: clamp(18px, 3vw, 28px) 0 0;
+  color: rgba(255, 238, 204, 0.94);
+  font-size: clamp(1.45rem, 2.25vw, 2.2rem);
+  font-weight: 900;
+  line-height: 1.04;
+}
+
+.clarity-card p,
+.process-step p,
+.project-card p,
+.restaurant-check p {
+  margin: 18px 0 0;
+  color: rgba(255, 229, 196, 0.68);
+  font-size: clamp(0.98rem, 1.18vw, 1.06rem);
+  line-height: 1.68;
+}
+
+.mission-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(340px, 0.9fr);
+  gap: clamp(42px, 7vw, 110px);
+  align-items: center;
+  padding-top: clamp(110px, 16vh, 190px);
+}
+
+.mission-alps {
+  min-height: clamp(430px, 48vw, 620px);
+}
+
+.restaurant-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+  gap: clamp(34px, 6vw, 86px);
+  align-items: end;
+}
+
+.restaurant-checks {
+  margin-top: 0;
+}
+
+.restaurant-check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 16px;
+  padding: clamp(18px, 2.3vw, 26px);
+}
+
+.restaurant-check p {
+  margin: 0;
+  color: rgba(255, 238, 206, 0.86);
+  font-weight: 800;
+}
+
+.custom-code-section {
+  grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1fr);
+  margin-top: clamp(100px, 15vh, 180px);
+}
+
+.process-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.projects-section {
+  padding-top: clamp(120px, 18vh, 210px);
+}
+
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.project-card {
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.project-preview {
+  min-height: 265px;
+}
+
+.project-preview > span {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 3;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 224, 173, 0.16);
+  border-radius: 999px;
+  background: rgba(18, 6, 17, 0.38);
+  backdrop-filter: blur(12px);
+}
+
+.cta-section {
+  display: grid;
+  place-items: center;
+  margin-top: clamp(120px, 18vh, 220px);
+  padding: clamp(82px, 13vw, 132px) clamp(20px, 6vw, 90px);
+  border: 1px solid rgba(255, 224, 173, 0.14);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 199, 112, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(54, 18, 43, 0.58), rgba(18, 6, 17, 0.78));
+}
+
+.cta-section p {
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  max-width: 1000px;
+}
+
+.cta-actions {
+  justify-content: center;
+}
+
+.service-section,
+.mission-section,
+.projects-section {
+  padding: clamp(76px, 12vh, 138px) 0 0;
+}
+
+.section-heading {
+  display: grid;
+  gap: clamp(18px, 3vw, 28px);
+  max-width: 980px;
+}
+
+.section-heading p,
+.mission-copy p,
+.custom-code-section p,
+.cta-section p {
+  margin: 0;
+  color: rgba(255, 210, 139, 0.7);
+  font-size: clamp(0.74rem, 1vw, 0.88rem);
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-heading h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  margin: 0;
+  color: rgba(255, 234, 194, 0.94);
+  font-size: clamp(2.1rem, 4.7vw, 5.15rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.section-heading-split {
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.38fr);
+  align-items: end;
+  max-width: none;
+}
+
+.section-heading-split > span,
+.mission-copy > span,
+.custom-code-section > div > span {
+  color: rgba(255, 226, 190, 0.68);
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+  line-height: 1.7;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  margin-top: clamp(38px, 6vw, 72px);
+}
+
+.service-card,
+.project-card,
+.mission-point {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 218, 159, 0.13);
+  background:
+    linear-gradient(180deg, rgba(255, 214, 155, 0.07), rgba(255, 214, 155, 0.025)),
+    rgba(18, 6, 17, 0.32);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
+}
+
+.service-card {
+  min-height: 310px;
+  padding: clamp(24px, 3vw, 34px);
+  border-radius: 8px;
+}
+
+.service-card::before,
+.project-preview::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(93, 35, 64, 0.3), #120611 84%);
+  clip-path: polygon(0 58%, 11% 45%, 22% 55%, 34% 32%, 47% 58%, 59% 38%, 73% 61%, 86% 42%, 100% 54%, 100% 100%, 0 100%);
+  opacity: 0.72;
+}
+
+.service-card span,
+.project-meta > span,
+.mission-point strong {
+  color: rgba(255, 203, 124, 0.68);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service-card h3,
+.project-card h3 {
+  position: relative;
+  margin: clamp(20px, 3vw, 30px) 0 0;
+  color: rgba(255, 235, 198, 0.95);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.service-card p,
+.project-card p {
+  position: relative;
+  margin: 18px 0 0;
+  color: rgba(255, 226, 190, 0.66);
+  font-size: 0.98rem;
+  line-height: 1.68;
+}
+
+.mission-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+  gap: clamp(34px, 7vw, 110px);
+  align-items: center;
+}
+
+.mission-copy {
+  display: grid;
+  gap: 24px;
+}
+
+.mission-alps {
+  position: relative;
+  min-height: clamp(330px, 42vw, 520px);
+  overflow: hidden;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 197, 114, 0.2), transparent 25%),
+    linear-gradient(180deg, rgba(67, 24, 55, 0.92), rgba(18, 6, 17, 0.96));
+  border: 1px solid rgba(255, 218, 159, 0.12);
+}
+
+.alpine-ridge-line,
+.mission-light {
+  position: absolute;
+  left: -12%;
+  width: 124%;
+}
+
+.alpine-ridge-back {
+  bottom: 34%;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 164, 91, 0.36), rgba(90, 31, 62, 0.54));
+  clip-path: polygon(0 68%, 9% 56%, 18% 63%, 27% 39%, 37% 58%, 46% 31%, 56% 60%, 65% 44%, 74% 67%, 84% 38%, 94% 59%, 100% 53%, 100% 100%, 0 100%);
+}
+
+.alpine-ridge-mid {
+  bottom: 16%;
+  height: 56%;
+  background: linear-gradient(180deg, rgba(130, 48, 69, 0.88), rgba(43, 15, 38, 0.8));
+  clip-path: polygon(0 78%, 8% 54%, 17% 69%, 27% 33%, 38% 66%, 49% 25%, 61% 65%, 70% 42%, 81% 72%, 91% 47%, 100% 62%, 100% 100%, 0 100%);
+}
+
+.alpine-ridge-front {
+  bottom: -2%;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(54, 18, 43, 0.98), #120611 86%);
+  clip-path: polygon(0 62%, 12% 46%, 24% 64%, 35% 38%, 49% 70%, 61% 43%, 75% 68%, 88% 48%, 100% 61%, 100% 100%, 0 100%);
+}
+
+.mission-light {
+  top: 16%;
+  height: 34%;
+  background: linear-gradient(90deg, transparent, rgba(255, 206, 124, 0.22), transparent);
+  filter: blur(24px);
+  animation: alpine-light 8s ease-in-out infinite alternate;
+}
+
+.mission-points {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border-top: 1px solid rgba(255, 218, 159, 0.13);
+  border-bottom: 1px solid rgba(255, 218, 159, 0.13);
+}
+
+.mission-point {
+  display: grid;
+  gap: 18px;
+  min-height: 142px;
+  padding: clamp(22px, 3vw, 32px);
+  border: 0;
+  border-radius: 0;
+}
+
+.mission-point span {
+  color: rgba(255, 235, 198, 0.88);
+  font-size: clamp(1.05rem, 1.55vw, 1.32rem);
+  font-weight: 850;
+  line-height: 1.28;
+}
+
+.custom-code-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(34px, 7vw, 100px);
+  align-items: center;
+  margin-top: clamp(84px, 13vh, 150px);
+  padding: clamp(28px, 5vw, 58px) 0;
+}
+
+.custom-code-section > div:last-child {
+  display: grid;
+  gap: 22px;
+}
+
+.code-window {
+  position: relative;
+  min-height: clamp(280px, 36vw, 430px);
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 218, 159, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 223, 165, 0.08), transparent 22%),
+    linear-gradient(135deg, rgba(54, 19, 45, 0.9), rgba(18, 6, 17, 0.95));
+  box-shadow: inset 0 1px 0 rgba(255, 236, 193, 0.08), 0 32px 80px rgba(0, 0, 0, 0.22);
+}
+
+.code-window::after {
+  content: "";
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  bottom: -1px;
+  height: 42%;
+  background: linear-gradient(180deg, rgba(89, 31, 58, 0.76), #120611 88%);
+  clip-path: polygon(0 63%, 11% 47%, 22% 58%, 35% 30%, 49% 64%, 63% 39%, 77% 65%, 90% 43%, 100% 58%, 100% 100%, 0 100%);
+}
+
+.code-pin {
+  position: absolute;
+  top: 22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 205, 124, 0.72);
+  box-shadow: 0 0 22px rgba(255, 187, 104, 0.4);
+}
+
+.code-pin-one { left: 22px; }
+.code-pin-two { left: 42px; opacity: 0.64; }
+.code-pin-three { left: 62px; opacity: 0.44; }
+
+.code-lines {
+  position: absolute;
+  left: clamp(26px, 4vw, 46px);
+  right: clamp(26px, 4vw, 46px);
+  top: 82px;
+  display: grid;
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.code-lines i {
+  display: block;
+  height: clamp(11px, 1.4vw, 15px);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 235, 198, 0.88), rgba(255, 178, 92, 0.28), transparent);
+  animation: code-pulse 3.8s ease-in-out infinite;
+}
+
+.code-lines i:nth-child(2) { width: 72%; animation-delay: 0.2s; }
+.code-lines i:nth-child(3) { width: 88%; animation-delay: 0.4s; }
+.code-lines i:nth-child(4) { width: 58%; animation-delay: 0.6s; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 26px);
+  margin-top: clamp(40px, 6vw, 74px);
+}
+
+.project-card {
+  display: grid;
+  min-height: 520px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.45s ease, border-color 0.45s ease, background 0.45s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 218, 159, 0.3);
+  background:
+    linear-gradient(180deg, rgba(255, 214, 155, 0.1), rgba(255, 214, 155, 0.035)),
+    rgba(18, 6, 17, 0.38);
+}
+
+.project-preview {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 230px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 218, 159, 0.12);
+}
+
+.project-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 196, 104, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(71, 27, 56, 0.84), rgba(18, 6, 17, 0.92));
+}
+
+.project-preview img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(62%, 210px);
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+  filter: none;
+}
+
+.project-meta {
+  padding: clamp(22px, 3vw, 32px);
+}
+
+.project-card strong {
+  display: inline-block;
+  margin-top: 22px;
+  color: rgba(255, 209, 137, 0.86);
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cta-section {
+  margin-top: clamp(86px, 14vh, 160px);
+  padding: clamp(58px, 9vw, 96px) 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  width: min(920px, 100%);
+  margin: 20px auto 0;
+}
+
+.cta-section a {
+  display: inline-grid;
+  place-items: center;
+  min-height: 52px;
+  margin-top: 34px;
+  padding: 0 28px;
+  border: 1px solid rgba(255, 218, 159, 0.3);
+  border-radius: 999px;
+  color: #241020;
+  background: linear-gradient(180deg, #ffe7b4, #ffc976);
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 18px 50px rgba(255, 181, 91, 0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cta-section a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 70px rgba(255, 181, 91, 0.28);
+}
+
+@keyframes alpine-light {
+  from { transform: translateX(-8%); opacity: 0.42; }
+  to { transform: translateX(8%); opacity: 0.78; }
+}
+
+@keyframes code-pulse {
+  0%, 100% { opacity: 0.38; transform: scaleX(0.9); transform-origin: left; }
+  50% { opacity: 0.92; transform: scaleX(1); transform-origin: left; }
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: minmax(0, 2fr) minmax(190px, 1fr);
+    gap: clamp(24px, 4vw, 34px);
+    width: min(100% - 32px, 820px);
+  }
+
+  .about-content h2 {
+    font-size: clamp(2.45rem, 5.8vw, 3.45rem);
+    line-height: 1;
+  }
+
+  .about-founder-image {
+    min-height: clamp(320px, 48vw, 420px);
+  }
+
+  .service-grid,
+  .project-grid,
+  .mission-points {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-section,
+  .custom-code-section,
+  .section-heading-split {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 260px;
+  }
+}
+
+@keyframes swiss-logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.swiss-vignette {
+  inset: 0;
+  z-index: 10;
+  background: radial-gradient(circle at 50% 45%, transparent 0%, transparent 51%, rgba(18, 6, 17, 0.52) 100%);
+  pointer-events: none;
+}
+
+.swiss-copy {
+  left: 50%;
+  top: 42%;
+  z-index: 7;
+  width: min(92vw, 860px);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.swiss-copy p {
+  margin: 0 0 clamp(18px, 3vw, 30px);
+  color: rgba(255, 217, 154, 0.78);
+  font-size: clamp(0.76rem, 1.45vw, 1.05rem);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.2em;
+}
+
+.swiss-copy h1 {
+  margin: 0;
+  color: rgba(255, 231, 180, 0.94);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(4.4rem, 13vw, 11.4rem);
+  font-weight: 900;
+  line-height: 0.82;
+  letter-spacing: 0.02em;
+  text-shadow:
+    0 12px 48px rgba(54, 12, 25, 0.36),
+    0 0 70px rgba(255, 175, 86, 0.18);
+}
+
+.swiss-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  margin-top: clamp(22px, 3.5vw, 34px);
+}
+
+.swiss-rating span {
+  color: #ffd27e;
+  font-size: clamp(1.15rem, 2.7vw, 1.85rem);
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 20px rgba(255, 196, 106, 0.28);
+}
+
+.swiss-rating strong {
+  color: rgba(255, 226, 178, 0.74);
+  font-size: clamp(0.75rem, 1.4vw, 0.98rem);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.18em;
+}
+
+@media (max-width: 700px) {
+  .swiss-copy {
+    top: 40%;
+  }
+
+  .swiss-copy h1 {
+    font-size: clamp(3.7rem, 19vw, 5.6rem);
+  }
+
+  .swiss-copy p,
+  .swiss-rating strong {
+    letter-spacing: 0.12em;
+  }
+
+  .swiss-chalet {
+    left: 68%;
+    bottom: 11vh;
+  }
+
+  .about-logo-band {
+    padding-top: 96px;
+    padding-bottom: 58px;
+  }
+
+  .swiss-logo-loop {
+    width: min(100% - 28px, 620px);
+    height: auto;
+  }
+
+  .swiss-logo-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+    animation: none;
+    transform: none;
+  }
+
+  .swiss-logo-item {
+    width: 100%;
+    height: 76px;
+    padding: 10px 12px;
+  }
+
+  .swiss-logo-item img {
+    max-height: 54px;
+  }
+
+  .about-content {
+    width: min(100% - 28px, 620px);
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2.45rem, 11vw, 3rem);
+    line-height: 0.98;
+  }
+
+  .about-founder-image {
+    min-height: clamp(330px, 88vw, 420px);
+  }
+
+  .about-founder-image img {
+    width: min(118%, 520px);
+    transform: translateX(-50%);
+  }
+
+  .swiss-left-cliff {
+    width: 54vw;
+  }
+
+}
+
+/* Final homepage direction: cinematic, clear, premium. */
+.home-sections {
+  padding-top: clamp(54px, 9vh, 108px);
+}
+
+.story-hero,
+.clarity-section,
+.restaurant-section,
+.process-section,
+.mission-section,
+.custom-code-section,
+.projects-section,
+.cta-section {
+  width: min(1200px, calc(100% - 40px));
+}
+
+.story-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.88fr);
+  align-items: center;
+  gap: clamp(38px, 6vw, 88px);
+  min-height: clamp(680px, 88vh, 900px);
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  font-size: clamp(2.55rem, 5.8vw, 6.5rem);
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.story-copy > span,
+.restaurant-copy > span,
+.mission-copy > span,
+.custom-code-section > div > span,
+.section-heading-split > span {
+  color: rgba(255, 234, 203, 0.82);
+}
+
+.clarity-grid,
+.process-grid,
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 223, 173, 0.19);
+  background:
+    linear-gradient(180deg, rgba(255, 232, 194, 0.12), rgba(255, 232, 194, 0.035)),
+    rgba(27, 9, 24, 0.66);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 240, 210, 0.06);
+}
+
+.clarity-card,
+.process-step {
+  min-height: 320px;
+}
+
+.mission-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(340px, 0.9fr);
+  gap: clamp(42px, 7vw, 110px);
+  align-items: center;
+  padding-top: clamp(90px, 14vh, 160px);
+}
+
+.restaurant-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+  gap: clamp(34px, 6vw, 86px);
+  align-items: end;
+}
+
+.custom-code-section {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1fr);
+  gap: clamp(34px, 7vw, 100px);
+  align-items: center;
+}
+
+.project-card {
+  min-height: 560px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.story-panel,
+.mission-alps,
+.code-window,
+.project-preview {
+  border-color: rgba(255, 223, 173, 0.18);
+  box-shadow: 0 32px 110px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 240, 210, 0.07);
+}
+
+.clarity-card h3,
+.process-step h3,
+.project-card h3 {
+  color: rgba(255, 241, 213, 0.98);
+}
+
+.clarity-card p,
+.process-step p,
+.project-card p,
+.restaurant-check p {
+  color: rgba(255, 234, 203, 0.78);
+}
+
+.project-preview img {
+  opacity: 1;
+  filter: none;
+}
+
+.cta-section {
+  text-align: center;
+}
+
+.cta-section a {
+  min-height: 52px;
+}
+
+@media (max-width: 980px) {
+  .story-hero,
+  .mission-section,
+  .restaurant-section,
+  .custom-code-section,
+  .section-heading-split {
+    grid-template-columns: 1fr;
+  }
+
+  .story-hero {
+    min-height: auto;
+  }
+
+  .story-panel,
+  .mission-alps,
+  .code-window {
+    min-height: clamp(360px, 58vw, 520px);
+  }
+
+  .clarity-grid,
+  .process-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-nav {
+    top: 12px;
+    grid-template-columns: auto auto;
+    width: min(100% - 24px, 520px);
+    min-height: 54px;
+    padding: 7px 8px 7px 14px;
+  }
+
+  .site-nav-links {
+    display: none;
+  }
+
+  .site-nav-cta {
+    min-height: 38px;
+    padding: 0 13px;
+    font-size: 0.72rem;
+  }
+
+  .home-sections {
+    padding-top: 38px;
+  }
+
+  .story-hero,
+  .clarity-section,
+  .restaurant-section,
+  .process-section,
+  .mission-section,
+  .custom-code-section,
+  .projects-section,
+  .cta-section {
+    width: min(100% - 28px, 620px);
+  }
+
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    font-size: clamp(2.28rem, 10.4vw, 3.6rem);
+    line-height: 0.94;
+  }
+
+  .story-copy > span,
+  .restaurant-copy > span,
+  .mission-copy > span,
+  .custom-code-section > div > span,
+  .section-heading-split > span {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .story-actions,
+  .cta-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .story-actions a,
+  .cta-actions a {
+    width: 100%;
+  }
+
+  .clarity-card,
+  .process-step {
+    min-height: 0;
+  }
+
+  .restaurant-check {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+/* Readability pass: impressive, but still clear for real clients. */
+.home-sections {
+  background: #120611;
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  max-width: 11.5ch;
+  color: rgba(255, 244, 221, 0.98);
+  text-shadow: 0 18px 70px rgba(0, 0, 0, 0.3);
+  text-wrap: balance;
+}
+
+.story-copy h2,
+.big-statement h2,
+.projects-section h2 {
+  max-width: 12.8ch;
+}
+
+.story-copy > span,
+.restaurant-copy > span,
+.mission-copy > span,
+.custom-code-section > div > span,
+.section-heading-split > span {
+  max-width: 650px;
+  color: rgba(255, 237, 211, 0.86);
+  font-weight: 650;
+}
+
+.story-copy p,
+.big-statement p,
+.restaurant-copy p,
+.mission-copy p,
+.custom-code-section p,
+.cta-section p,
+.section-heading p {
+  color: #ffd690;
+  background: #32162b;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check {
+  border-color: rgba(255, 226, 180, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 238, 211, 0.145), rgba(255, 216, 166, 0.055)),
+    rgba(40, 13, 34, 0.82);
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 244, 221, 0.1);
+}
+
+.clarity-card,
+.process-step {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(260px, 28vw, 360px);
+}
+
+.clarity-card span,
+.process-step strong,
+.project-meta > span,
+.project-preview > span {
+  color: rgba(255, 214, 143, 0.96);
+}
+
+.process-step strong {
+  font-size: clamp(2.1rem, 4vw, 4.6rem);
+  line-height: 0.8;
+  opacity: 0.72;
+}
+
+.clarity-card h3,
+.process-step h3,
+.project-card h3 {
+  color: #fff0d2;
+  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+}
+
+.clarity-card p,
+.process-step p,
+.project-card p,
+.restaurant-check p {
+  color: rgba(255, 238, 211, 0.84);
+}
+
+.story-panel,
+.mission-alps,
+.code-window,
+.project-preview {
+  background: #120611;
+}
+
+.project-preview {
+  min-height: clamp(220px, 23vw, 290px);
+}
+
+.project-meta {
+  background: linear-gradient(180deg, rgba(255, 235, 205, 0.035), rgba(255, 235, 205, 0));
+}
+
+.cta-section {
+  border-color: rgba(255, 226, 180, 0.24);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 207, 124, 0.26), transparent 34%),
+    linear-gradient(180deg, rgba(65, 21, 50, 0.86), rgba(18, 6, 17, 0.92));
+}
+
+/* UX clarity pass: premium without sacrificing readability. */
+.story-hero,
+.clarity-section,
+.restaurant-section,
+.process-section,
+.mission-section,
+.custom-code-section,
+.projects-section,
+.cta-section {
+  scroll-margin-top: 110px;
+}
+
+.story-hero {
+  min-height: auto;
+  padding-top: clamp(70px, 10vh, 120px);
+  padding-bottom: clamp(70px, 11vh, 130px);
+}
+
+.clarity-section,
+.restaurant-section,
+.process-section,
+.projects-section {
+  padding-top: clamp(86px, 12vh, 150px);
+}
+
+.mission-section,
+.custom-code-section {
+  padding-top: clamp(96px, 13vh, 160px);
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  max-width: 980px;
+  color: #fff0d7;
+  font-size: clamp(2.15rem, 3.45vw, 4.15rem);
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.story-copy h2,
+.big-statement h2 {
+  max-width: 1040px;
+}
+
+.story-copy > span,
+.restaurant-copy > span,
+.mission-copy > span,
+.custom-code-section > div > span,
+.section-heading-split > span {
+  max-width: 760px;
+  color: #ffeede;
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.7;
+}
+
+.story-panel {
+  min-height: clamp(420px, 42vw, 620px);
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check {
+  border-color: rgba(255, 229, 187, 0.32);
+  background:
+    linear-gradient(180deg, rgba(255, 242, 218, 0.19), rgba(255, 213, 162, 0.08)),
+    rgba(47, 15, 38, 0.9);
+}
+
+.clarity-card,
+.process-step {
+  min-height: clamp(230px, 23vw, 310px);
+}
+
+.clarity-card h3,
+.process-step h3,
+.project-card h3 {
+  font-size: clamp(1.35rem, 1.9vw, 2rem);
+  line-height: 1.12;
+}
+
+.clarity-card p,
+.process-step p,
+.project-card p,
+.restaurant-check p {
+  color: rgba(255, 241, 220, 0.88);
+}
+
+.process-step strong {
+  color: rgba(255, 211, 139, 0.82);
+  font-size: clamp(1.8rem, 3.2vw, 3.6rem);
+}
+
+.project-preview {
+  min-height: clamp(205px, 19vw, 260px);
+}
+
+.project-card {
+  min-height: 500px;
+}
+
+@media (max-width: 980px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 6.4vw, 3.5rem);
+    line-height: 1.07;
+  }
+
+  .story-hero,
+  .clarity-section,
+  .restaurant-section,
+  .process-section,
+  .mission-section,
+  .custom-code-section,
+  .projects-section {
+    padding-top: clamp(72px, 9vh, 104px);
+  }
+
+  .story-panel,
+  .mission-alps,
+  .code-window {
+    min-height: clamp(320px, 48vw, 460px);
+  }
+}
+
+@media (max-width: 700px) {
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    font-size: clamp(1.85rem, 7.4vw, 2.55rem);
+    line-height: 1.1;
+  }
+
+  .story-panel,
+  .mission-alps,
+  .code-window {
+    min-height: 310px;
+  }
+
+  .project-preview {
+    min-height: 190px;
+  }
+}
+
+section.about-section,
+section.about-section .home-sections {
+  overflow: visible !important;
+}
+
+.projects-section.horizontal-projects-section > .section-atmosphere {
+  position: absolute;
+}
+
+/* CTA color variant: quiet ivory instead of gold. */
+.site-nav-cta,
+.story-actions a:first-child,
+.cta-actions a:first-child,
+.cta-section a,
+.swiss-hero-actions a:first-child {
+  border-color: rgba(255, 246, 232, 0.38);
+  color: #1b0714;
+  background: #f4eee6;
+  box-shadow: 0 18px 48px rgba(244, 238, 230, 0.12), 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+.site-nav-cta:hover,
+.story-actions a:first-child:hover,
+.cta-actions a:first-child:hover,
+.cta-section a:hover,
+.swiss-hero-actions a:first-child:hover {
+  color: #120611;
+  background: #fff8ee;
+  box-shadow: 0 22px 58px rgba(244, 238, 230, 0.18), 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+/* EOF stability override: no sweeping effects, no hover movement, no blur over fixed backgrounds. */
+.story-panel::after,
+.code-window::before,
+.project-preview::after,
+.reservation-stage::after {
+  display: none !important;
+  animation: none !important;
+  background: none !important;
+  transform: none !important;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.plugin-strip span:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: none !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 244, 221, 0.1) !important;
+}
+
+.story-panel:hover .story-browser,
+.reservation-stage:hover .reservation-phone,
+.code-window:hover,
+.mission-alps:hover {
+  transform: none !important;
+  box-shadow: inherit !important;
+}
+
+.scroll-zoom-image {
+  filter: none !important;
+}
+
+/* True final hover polish: this block intentionally wins over duplicated stability rules above. */
+.section-atmosphere,
+.section-atmosphere *,
+.reservation-stage::before,
+.reservation-stage::after,
+.story-panel::after,
+.code-window::before,
+.project-preview::after {
+  pointer-events: none !important;
+}
+
+.reservation-feature-grid,
+.plugin-strip,
+.project-grid,
+.clarity-grid,
+.process-grid,
+.restaurant-checks,
+.story-actions,
+.cta-actions {
+  position: relative;
+  z-index: 4;
+}
+
+.site-nav a,
+.story-actions a,
+.cta-actions a,
+.cta-section a,
+.swiss-hero-actions a,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  pointer-events: auto;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+.site-nav-links a:hover,
+.site-nav-brand:hover {
+  color: rgba(255, 248, 236, 0.98) !important;
+}
+
+.site-nav-cta:hover,
+.story-actions a:hover,
+.cta-actions a:hover,
+.cta-section a:hover,
+.swiss-hero-actions a:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255, 246, 232, 0.42) !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(255, 246, 232, 0.4) !important;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 244, 221, 0.12) !important;
+}
+
+.plugin-strip span:hover {
+  transform: translateY(-3px) !important;
+  color: #120611 !important;
+  border-color: rgba(244, 238, 230, 0.56) !important;
+  background: var(--accent-ivory) !important;
+}
+
+.story-panel:hover .story-browser,
+.code-window:hover,
+.mission-alps:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.reservation-stage:hover .reservation-phone {
+  transform: translate(-50%, calc(-50% - 3px)) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.site-nav a:focus-visible,
+.story-actions a:focus-visible,
+.cta-actions a:focus-visible,
+.cta-section a:focus-visible,
+.project-card:focus-visible {
+  outline: 2px solid rgba(255, 248, 236, 0.82);
+  outline-offset: 4px;
+}
+
+/* True final hover polish: this block intentionally wins over duplicated stability rules above. */
+.section-atmosphere,
+.section-atmosphere *,
+.reservation-stage::before,
+.reservation-stage::after,
+.story-panel::after,
+.code-window::before,
+.project-preview::after {
+  pointer-events: none !important;
+}
+
+.reservation-feature-grid,
+.plugin-strip,
+.project-grid,
+.clarity-grid,
+.process-grid,
+.restaurant-checks,
+.story-actions,
+.cta-actions {
+  position: relative;
+  z-index: 4;
+}
+
+.site-nav a,
+.story-actions a,
+.cta-actions a,
+.cta-section a,
+.swiss-hero-actions a,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  pointer-events: auto;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+.site-nav-links a:hover,
+.site-nav-brand:hover {
+  color: rgba(255, 248, 236, 0.98) !important;
+}
+
+.site-nav-cta:hover,
+.story-actions a:hover,
+.cta-actions a:hover,
+.cta-section a:hover,
+.swiss-hero-actions a:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255, 246, 232, 0.42) !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(255, 246, 232, 0.4) !important;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 244, 221, 0.12) !important;
+}
+
+.plugin-strip span:hover {
+  transform: translateY(-3px) !important;
+  color: #120611 !important;
+  border-color: rgba(244, 238, 230, 0.56) !important;
+  background: var(--accent-ivory) !important;
+}
+
+.story-panel:hover .story-browser,
+.code-window:hover,
+.mission-alps:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.reservation-stage:hover .reservation-phone {
+  transform: translate(-50%, calc(-50% - 3px)) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.site-nav a:focus-visible,
+.story-actions a:focus-visible,
+.cta-actions a:focus-visible,
+.cta-section a:focus-visible,
+.project-card:focus-visible {
+  outline: 2px solid rgba(255, 248, 236, 0.82);
+  outline-offset: 4px;
+}
+
+/* True final hover polish: this block intentionally wins over duplicated stability rules above. */
+.section-atmosphere,
+.section-atmosphere *,
+.reservation-stage::before,
+.reservation-stage::after,
+.story-panel::after,
+.code-window::before,
+.project-preview::after {
+  pointer-events: none !important;
+}
+
+.reservation-feature-grid,
+.plugin-strip,
+.project-grid,
+.clarity-grid,
+.process-grid,
+.restaurant-checks,
+.story-actions,
+.cta-actions {
+  position: relative;
+  z-index: 4;
+}
+
+.site-nav a,
+.story-actions a,
+.cta-actions a,
+.cta-section a,
+.swiss-hero-actions a,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  pointer-events: auto;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+.site-nav-links a:hover,
+.site-nav-brand:hover {
+  color: rgba(255, 248, 236, 0.98) !important;
+}
+
+.site-nav-cta:hover,
+.story-actions a:hover,
+.cta-actions a:hover,
+.cta-section a:hover,
+.swiss-hero-actions a:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255, 246, 232, 0.42) !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(255, 246, 232, 0.4) !important;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 244, 221, 0.12) !important;
+}
+
+.plugin-strip span:hover {
+  transform: translateY(-3px) !important;
+  color: #120611 !important;
+  border-color: rgba(244, 238, 230, 0.56) !important;
+  background: var(--accent-ivory) !important;
+}
+
+.story-panel:hover .story-browser,
+.code-window:hover,
+.mission-alps:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.reservation-stage:hover .reservation-phone {
+  transform: translate(-50%, calc(-50% - 3px)) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.site-nav a:focus-visible,
+.story-actions a:focus-visible,
+.cta-actions a:focus-visible,
+.cta-section a:focus-visible,
+.project-card:focus-visible {
+  outline: 2px solid rgba(255, 248, 236, 0.82);
+  outline-offset: 4px;
+}
+
+/* Final hover polish: subtle, responsive states without blur or layout shift. */
+.site-nav a,
+.story-actions a,
+.cta-actions a,
+.cta-section a,
+.swiss-hero-actions a,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+.site-nav-links a:hover,
+.site-nav-brand:hover {
+  color: rgba(255, 248, 236, 0.98) !important;
+}
+
+.site-nav-cta:hover,
+.story-actions a:hover,
+.cta-actions a:hover,
+.cta-section a:hover,
+.swiss-hero-actions a:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255, 246, 232, 0.42) !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(255, 246, 232, 0.4) !important;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 244, 221, 0.12) !important;
+}
+
+.plugin-strip span:hover {
+  transform: translateY(-3px) !important;
+  color: #120611 !important;
+  border-color: rgba(244, 238, 230, 0.56) !important;
+  background: var(--accent-ivory) !important;
+}
+
+.story-panel:hover .story-browser,
+.code-window:hover,
+.mission-alps:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.reservation-stage:hover .reservation-phone {
+  transform: translate(-50%, calc(-50% - 3px)) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.site-nav a:focus-visible,
+.story-actions a:focus-visible,
+.cta-actions a:focus-visible,
+.cta-section a:focus-visible,
+.project-card:focus-visible {
+  outline: 2px solid rgba(255, 248, 236, 0.82);
+  outline-offset: 4px;
+}
+
+.section-atmosphere,
+.section-atmosphere *,
+.reservation-stage::before,
+.reservation-stage::after,
+.story-panel::after,
+.code-window::before,
+.project-preview::after {
+  pointer-events: none !important;
+}
+
+.reservation-feature-grid,
+.plugin-strip,
+.project-grid,
+.clarity-grid,
+.process-grid,
+.restaurant-checks,
+.story-actions,
+.cta-actions {
+  position: relative;
+  z-index: 4;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-actions a,
+.cta-actions a,
+.cta-section a,
+.site-nav a {
+  pointer-events: auto;
+}
+
+
+
+/* Absolute final anti-flicker guard. */
+.site-nav,
+.reservation-phone,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.story-browser,
+.code-window,
+.mission-alps {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+
+.scroll-zoom-backdrop {
+  width: 100vw !important;
+  height: 100vh !important;
+  will-change: transform, opacity !important;
+}
+
+.about-section.zoom-background-settled .scroll-zoom-backdrop {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  will-change: auto !important;
+}
+
+/* Absolute final anti-flicker guard. */
+.site-nav,
+.reservation-phone,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.story-browser,
+.code-window,
+.mission-alps {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+
+.scroll-zoom-backdrop {
+  width: 100vw !important;
+  height: 100vh !important;
+  will-change: transform, opacity !important;
+}
+
+.about-section.zoom-background-settled .scroll-zoom-backdrop {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  will-change: auto !important;
+}
+
+/* Absolute final anti-flicker guard. */
+.site-nav,
+.reservation-phone,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.story-browser,
+.code-window,
+.mission-alps {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+
+.scroll-zoom-backdrop {
+  width: 100vw !important;
+  height: 100vh !important;
+  will-change: transform, opacity !important;
+}
+
+.about-section.zoom-background-settled .scroll-zoom-backdrop {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  will-change: auto !important;
+}
+
+/* Final post-zoom stability: keep the content readable without repaint-heavy effects. */
+.site-nav {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(18, 6, 17, 0.84) !important;
+}
+
+.page-spotlight,
+.section-atmosphere {
+  display: none !important;
+}
+
+.home-sections,
+.home-sections > section,
+.home-sections > section::before,
+.section-atmosphere,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-stage,
+.reservation-phone,
+.code-window,
+.mission-alps,
+.project-preview,
+.alpine-ridge-line,
+.code-lines i,
+.atmosphere-line,
+.text-reveal-target {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  will-change: auto !important;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-actions a,
+.cta-actions a,
+.cta-section a,
+.site-nav a {
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.plugin-strip span:hover,
+.story-actions a:hover,
+.cta-actions a:hover,
+.cta-section a:hover,
+.site-nav a:hover,
+.story-panel:hover .story-browser,
+.reservation-stage:hover .reservation-phone,
+.code-window:hover,
+.mission-alps:hover {
+  transform: none !important;
+}
+
+/* Section readability fields: calm ordered panels over the dark laptop backdrop. */
+.home-sections > section {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+}
+
+.home-sections > section:not(.horizontal-projects-section) {
+  padding: clamp(34px, 4.6vw, 70px);
+}
+
+.home-sections > section::before {
+  content: "";
+  position: absolute;
+  inset: clamp(8px, 1.4vw, 18px);
+  z-index: -1;
+  pointer-events: none;
+  border: 1px solid rgba(255, 238, 218, 0.12);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 238, 218, 0.1), transparent 36%),
+    linear-gradient(135deg, rgba(31, 10, 26, 0.96), rgba(16, 5, 15, 0.92));
+  border-radius: 96px;
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  box-shadow: 0 34px 120px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 246, 232, 0.08);
+}
+
+.zoom-story-section::before {
+  display: none;
+}
+
+.home-sections > .clarity-section::before,
+.home-sections > .restaurant-section::before,
+.home-sections > .process-section::before {
+  border-radius: 104px 88px 104px 88px;
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
+
+.home-sections > .mission-section::before,
+.home-sections > .reservation-system-section::before,
+.home-sections > .custom-code-section::before {
+  border-radius: 88px 104px 88px 104px;
+  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
+}
+
+.home-sections > .horizontal-projects-section::before {
+  inset: clamp(16px, 2vw, 28px) clamp(18px, 3vw, 52px);
+  border-radius: 112px 88px 112px 88px;
+  clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%);
+}
+
+.home-sections > .cta-section::before {
+  border-radius: 112px 112px 88px 88px;
+  clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+}
+
+@media (max-width: 980px) {
+  .home-sections > section:not(.horizontal-projects-section) {
+    padding: clamp(26px, 6vw, 46px);
+  }
+
+  .home-sections > section::before {
+    inset: 4px;
+    border-radius: 46px;
+    clip-path: polygon(0 0, 100% 0, 100% 98.5%, 0 100%);
+  }
+}
+
+@media (max-width: 700px) {
+  .home-sections > section:not(.horizontal-projects-section),
+  .zoom-story-section {
+    padding: 24px !important;
+  }
+
+  .home-sections > section::before {
+    inset: 0;
+    border-radius: 34px;
+    clip-path: polygon(0 0, 100% 0, 100% 99%, 0 100%);
+  }
+
+  .home-sections > .clarity-section::before,
+  .home-sections > .reservation-system-section::before,
+  .home-sections > .process-section::before {
+    border-radius: 36px;
+    clip-path: polygon(0 0, 100% 0, 100% 99%, 0 100%);
+  }
+
+  .home-sections > .mission-section::before,
+  .home-sections > .custom-code-section::before,
+  .home-sections > .cta-section::before {
+    border-radius: 34px;
+    clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 99%);
+  }
+
+  .home-sections > .restaurant-section::before,
+  .home-sections > .horizontal-projects-section::before {
+    border-radius: 38px;
+    clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 99%);
+  }
+}
+
+.home-sections *,
+.home-sections *::before,
+.home-sections *::after {
+  animation: none !important;
+}
+
+/* Final zoom-story layout: right image, no laptop crop, no text/button overlap. */
+@media (min-width: 981px) {
+  .zoom-story-section {
+    grid-template-columns: minmax(500px, 0.88fr) minmax(590px, 1fr) !important;
+    gap: clamp(42px, 4.2vw, 64px) !important;
+  }
+
+  .zoom-story-section .story-copy {
+    max-width: 560px;
+  }
+
+  .zoom-story-section .story-actions {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .zoom-story-section .story-actions a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding-inline: 20px;
+    font-size: 0.78rem;
+  }
+
+  .zoom-to-background.story-panel {
+    width: min(48vw, 660px) !important;
+    justify-self: end !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .zoom-to-background.story-panel {
+    margin-right: clamp(-96px, -6.4vw, -48px) !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .zoom-story-section {
+    grid-template-columns: 1fr !important;
+    gap: clamp(30px, 7vw, 54px) !important;
+    min-height: 150svh;
+    align-items: start;
+    align-content: start;
+  }
+
+  .zoom-story-section .story-copy {
+    max-width: 680px;
+    text-align: left;
+  }
+
+  .zoom-story-section .story-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: min(100%, 560px);
+  }
+
+  .zoom-story-section .story-actions a {
+    min-width: 0;
+    min-height: 48px;
+    padding-inline: 12px;
+    font-size: 0.72rem;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .zoom-to-background.story-panel {
+    width: min(92vw, 620px) !important;
+    justify-self: center !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .zoom-story-section {
+    width: min(calc(100vw - 28px), 520px) !important;
+    min-height: 140svh;
+    gap: 24px !important;
+    margin-inline: auto;
+    align-content: start;
+  }
+
+  .zoom-story-section .story-copy {
+    position: relative;
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .zoom-story-section .story-copy h2 {
+    font-size: clamp(2.15rem, 11.2vw, 3.35rem);
+    line-height: 1.02;
+  }
+
+  .zoom-story-section .story-copy > span {
+    font-size: 0.98rem;
+    line-height: 1.58;
+  }
+
+  .zoom-story-section .story-actions {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .zoom-story-section .story-actions a {
+    min-height: 46px;
+  }
+
+  .zoom-to-background.story-panel {
+    width: 100% !important;
+    aspect-ratio: 3 / 2;
+    margin-top: 18px;
+  }
+}
+
+/* Last-resort stability overrides for fixed-image scrolling. Keep this at EOF. */
+.story-panel::after,
+.code-window::before,
+.project-preview::after,
+.reservation-stage::after {
+  display: none !important;
+  animation: none !important;
+  background: none !important;
+  transform: none !important;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.plugin-strip span:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: none !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 244, 221, 0.1) !important;
+}
+
+.story-panel:hover .story-browser,
+.reservation-stage:hover .reservation-phone,
+.code-window:hover,
+.mission-alps:hover {
+  transform: none !important;
+  box-shadow: inherit !important;
+}
+
+.scroll-zoom-image {
+  filter: none !important;
+}
+
+/* Stability pass: remove sweeping overlays and repaint-heavy card hover effects. */
+.story-panel::after,
+.code-window::before,
+.project-preview::after,
+.reservation-stage::after {
+  display: none !important;
+  animation: none !important;
+  background: none !important;
+  transform: none !important;
+}
+
+.scroll-zoom-image {
+  filter: none !important;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.plugin-strip span:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: none !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 244, 221, 0.1) !important;
+}
+
+.story-panel:hover .story-browser,
+.reservation-stage:hover .reservation-phone,
+.code-window:hover,
+.mission-alps:hover {
+  transform: none !important;
+  box-shadow: inherit !important;
+}
+
+.reservation-phone {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Fullscreen zoom handoff: the first story visual becomes the page backdrop. */
+.about-section {
+  isolation: isolate;
+}
+
+.about-section::before {
+  content: "";
+  position: fixed;
+  inset: -3.5vh -3.5vw;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--zoom-page-bg-opacity, 0);
+  visibility: visible;
+  background-image:
+    radial-gradient(circle at 50% 18%, rgba(18, 6, 17, 0.28), rgba(18, 6, 17, 0.72) 58%, rgba(18, 6, 17, 0.94) 100%),
+    linear-gradient(180deg, rgba(18, 6, 17, 0.48), rgba(18, 6, 17, 0.86));
+  background-position: center;
+  background-size: cover;
+  contain: paint;
+}
+
+.about-section.zoom-background-settled::before {
+  opacity: 1;
+}
+
+.about-section::after {
+  content: "";
+  position: fixed;
+  inset: -3.5vh -3.5vw;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--zoom-settled-image-opacity, 0);
+  visibility: visible;
+  background-image:
+    radial-gradient(circle at 50% 18%, rgba(18, 6, 17, 0.28), rgba(18, 6, 17, 0.72) 58%, rgba(18, 6, 17, 0.94) 100%),
+    linear-gradient(180deg, rgba(18, 6, 17, 0.48), rgba(18, 6, 17, 0.86)),
+    var(--zoom-settled-image);
+  background-position: center;
+  background-size: cover;
+  contain: paint;
+  transition: opacity 260ms linear;
+}
+
+.about-section.zoom-background-settled::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-zoom-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: min(48vw, 660px) !important;
+  height: auto !important;
+  aspect-ratio: 3 / 2;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  contain: paint;
+  backface-visibility: hidden;
+  transform-origin: top left;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  background-image:
+    radial-gradient(circle at 50% 18%, transparent 0 34%, rgba(18, 6, 17, 0.28) 72%, rgba(18, 6, 17, 0.56) 100%),
+    linear-gradient(180deg, rgba(18, 6, 17, 0.04), rgba(18, 6, 17, 0.38)) !important;
+  background-position: center;
+  background-size: cover;
+}
+
+.about-section.zoom-background-settled .scroll-zoom-backdrop {
+  opacity: 0 !important;
+  visibility: visible !important;
+  will-change: auto !important;
+}
+
+.scroll-zoom-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: 0.2;
+  background: linear-gradient(180deg, rgba(18, 6, 17, 0.02), rgba(18, 6, 17, 0.26));
+}
+
+.scroll-zoom-scene {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.scroll-zoom-image {
+  z-index: 1;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.01);
+  filter: none;
+}
+
+.zoom-to-background.story-panel {
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  width: min(48vw, 660px);
+  justify-self: end;
+  margin-inline: 0;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  will-change: opacity;
+}
+
+.zoom-story-section {
+  min-height: 185svh;
+  align-items: start;
+  grid-template-columns: minmax(0, 0.78fr) minmax(560px, 1.05fr);
+  gap: clamp(36px, 4vw, 58px);
+}
+
+.zoom-story-section .story-copy,
+.zoom-story-section .zoom-to-background {
+  position: sticky;
+  top: clamp(92px, 16vh, 132px);
+}
+
+.zoom-to-background .scroll-zoom-image {
+  object-fit: contain;
+  transform: none;
+}
+
+.scroll-zoom-backdrop .scroll-zoom-image {
+  object-fit: contain;
+  transform: none;
+  filter: none;
+}
+
+.zoom-to-background.story-panel,
+.scroll-zoom-scene {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(111, 183, 173, 0.24), transparent 30%),
+    radial-gradient(circle at 78% 18%, rgba(233, 130, 114, 0.19), transparent 31%),
+    linear-gradient(180deg, #2b1027 0%, #170717 58%, #120611 100%);
+}
+
+.zoom-to-background.story-panel {
+  background: transparent !important;
+}
+
+.zoom-to-background .story-ridge-one,
+.scroll-zoom-scene .story-ridge-one {
+  background: linear-gradient(180deg, rgba(111, 183, 173, 0.22), #241020 72%);
+}
+
+.zoom-to-background .story-ridge-two,
+.scroll-zoom-scene .story-ridge-two {
+  background: linear-gradient(180deg, rgba(199, 125, 138, 0.22), #1b091a 76%);
+}
+
+.zoom-to-background .story-ridge-three,
+.scroll-zoom-scene .story-ridge-three {
+  background: linear-gradient(180deg, rgba(233, 130, 114, 0.16), #120611 72%);
+}
+
+.zoom-to-background .story-browser,
+.scroll-zoom-scene .story-browser {
+  border-color: rgba(244, 238, 230, 0.2);
+  background: rgba(48, 20, 41, 0.82);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 246, 232, 0.08);
+}
+
+.zoom-to-background::after,
+.scroll-zoom-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 52%, transparent 0 34%, rgba(18, 6, 17, 0.2) 72%, rgba(18, 6, 17, 0.42) 100%),
+    linear-gradient(180deg, rgba(18, 6, 17, 0.08), rgba(18, 6, 17, 0.28));
+  opacity: var(--zoom-source-dim-opacity, 0.2);
+}
+
+.home-sections {
+  background: transparent !important;
+}
+
+.home-sections > section,
+.home-sections .project-pin-stage {
+  z-index: 3;
+}
+
+.home-sections > section {
+  position: relative;
+}
+
+.horizontal-projects-section .project-pin-stage {
+  position: sticky;
+  top: 0;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.reservation-stage,
+.code-window,
+.mission-alps {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media (max-width: 700px) {
+  .scroll-zoom-scene .story-browser {
+    width: min(78%, 300px);
+    min-height: 62px;
+  }
+
+  .zoom-to-background.story-panel {
+    aspect-ratio: 4 / 3;
+    width: min(92vw, 480px);
+  }
+
+  .zoom-story-section {
+    min-height: 175svh;
+  }
+
+  .zoom-story-section .story-copy {
+    position: relative;
+    top: auto;
+  }
+
+  .zoom-story-section .zoom-to-background {
+    top: 96px;
+  }
+}
+
+@media (max-width: 980px) {
+  .zoom-story-section {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 8vw, 48px);
+  }
+
+  .zoom-to-background.story-panel {
+    justify-self: center;
+    width: min(92vw, 660px);
+  }
+}
+
+@media (max-width: 700px) {
+  .zoom-to-background.story-panel {
+    width: min(92vw, 480px);
+  }
+}
+
+/* Full-width project stage: no left/right gutter for Aktuelle Websites. */
+.projects-section.horizontal-projects-section {
+  width: 100% !important;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.horizontal-projects-section .project-pin-stage,
+.horizontal-projects-section .project-horizontal-shell {
+  width: 100%;
+}
+
+.horizontal-projects-section .section-heading {
+  width: min(1200px, calc(100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.horizontal-projects-section .project-horizontal-shell {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+}
+
+.horizontal-projects-section .project-card {
+  grid-template-rows: clamp(220px, 28vh, 300px) 1fr;
+  height: clamp(500px, 62vh, 620px);
+  min-height: 0;
+}
+
+.horizontal-projects-section .project-preview {
+  min-height: 0;
+  height: 100%;
+}
+
+.horizontal-projects-section .project-meta {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.horizontal-projects-section .project-card strong {
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+@media (max-width: 980px) {
+  .horizontal-projects-section .project-card {
+    height: auto;
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 700px) {
+  .horizontal-projects-section .project-card {
+    min-height: 500px;
+  }
+}
+
+.horizontal-projects-section .project-card,
+.horizontal-projects-section .project-card:nth-child(2),
+.horizontal-projects-section .project-card:nth-child(3),
+.horizontal-projects-section .project-card:nth-child(4),
+.horizontal-projects-section .project-card:nth-child(5),
+.horizontal-projects-section .project-card:nth-child(6),
+.horizontal-projects-section .project-card:nth-child(7),
+.horizontal-projects-section .project-card:nth-child(8),
+.horizontal-projects-section .project-card:nth-child(9),
+.horizontal-projects-section .project-card:nth-child(10) {
+  transform: none;
+}
+
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: translateY(-8px);
+}
+
+/* Restaurant and reservation experience pass. */
+.reservation-system-section {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.78fr);
+  gap: clamp(34px, 6vw, 88px);
+  align-items: center;
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: clamp(92px, 13vh, 168px);
+  scroll-margin-top: 110px;
+}
+
+.reservation-copy {
+  display: grid;
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.reservation-copy p {
+  width: fit-content;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid #654559;
+  border-radius: 999px;
+  color: var(--accent-teal);
+  background: #32162b;
+  font-size: clamp(0.72rem, 0.95vw, 0.84rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.reservation-copy h2 {
+  max-width: 980px;
+  margin: 0;
+  color: #fff0d7;
+  font-size: clamp(2.15rem, 3.45vw, 4.15rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.reservation-copy > span {
+  max-width: 760px;
+  color: #ffeede;
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.reservation-stage {
+  position: relative;
+  min-height: clamp(390px, 38vw, 540px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 226, 180, 0.24);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 26% 18%, rgba(111, 183, 173, 0.24), transparent 28%),
+    radial-gradient(circle at 78% 20%, rgba(233, 130, 114, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(40, 13, 34, 0.88), rgba(18, 6, 17, 0.96));
+  box-shadow: 0 32px 110px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 240, 210, 0.07);
+}
+
+.reservation-stage::before,
+.reservation-stage::after {
+  content: "";
+  position: absolute;
+  inset: auto -12% 0;
+  height: 42%;
+  background: linear-gradient(180deg, rgba(111, 183, 173, 0.14), #120611 82%);
+  clip-path: polygon(0 64%, 12% 50%, 24% 62%, 38% 34%, 51% 68%, 64% 42%, 78% 66%, 90% 48%, 100% 58%, 100% 100%, 0 100%);
+}
+
+.reservation-stage::after {
+  inset: 0;
+  height: auto;
+  background: linear-gradient(110deg, transparent 0 38%, rgba(255, 246, 232, 0.14) 48%, transparent 58% 100%);
+  transform: translateX(-120%);
+  animation: reservation-sheen 6.5s ease-in-out infinite;
+  clip-path: none;
+}
+
+.reservation-phone {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  gap: 18px;
+  width: min(72%, 310px);
+  min-height: 72%;
+  padding: clamp(22px, 3vw, 30px);
+  border: 1px solid rgba(255, 246, 232, 0.24);
+  border-radius: 28px;
+  background: rgba(18, 6, 17, 0.72);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 246, 232, 0.1);
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(18px);
+}
+
+.reservation-phone-top {
+  width: 62px;
+  height: 5px;
+  margin: 0 auto 4px;
+  border-radius: 999px;
+  background: rgba(255, 246, 232, 0.28);
+}
+
+.reservation-phone strong {
+  color: #fff0d7;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.reservation-slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.reservation-slots span {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  border: 1px solid rgba(111, 183, 173, 0.34);
+  border-radius: 999px;
+  color: #e9fffb;
+  background: rgba(111, 183, 173, 0.13);
+  font-size: 0.78rem;
+  font-weight: 900;
+  animation: reservation-slot-pulse 3.6s ease-in-out infinite;
+}
+
+.reservation-slots span:nth-child(2) { animation-delay: 0.25s; }
+.reservation-slots span:nth-child(3) { animation-delay: 0.5s; }
+
+.reservation-guests {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.reservation-guests i {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--accent-coral);
+  box-shadow: 0 0 22px rgba(233, 130, 114, 0.34);
+  animation: reservation-guest-breathe 2.8s ease-in-out infinite;
+}
+
+.reservation-guests i:nth-child(2) { background: var(--accent-teal); animation-delay: 0.18s; }
+.reservation-guests i:nth-child(3) { background: var(--accent-blue); animation-delay: 0.36s; }
+.reservation-guests i:nth-child(4) { background: var(--accent-rose); animation-delay: 0.54s; }
+
+.reservation-phone b {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border-radius: 999px;
+  color: #1b0714;
+  background: var(--accent-ivory);
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reservation-feature-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  margin-top: clamp(30px, 5vw, 58px);
+}
+
+.reservation-card {
+  position: relative;
+  min-height: clamp(220px, 22vw, 290px);
+  padding: clamp(24px, 3.2vw, 38px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 226, 180, 0.24);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 238, 211, 0.13), rgba(255, 216, 166, 0.05)),
+    rgba(40, 13, 34, 0.82);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 244, 221, 0.1);
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.reservation-card::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 0;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: var(--accent-teal);
+}
+
+.reservation-card:nth-child(2)::before { background: var(--accent-coral); }
+.reservation-card:nth-child(3)::before { background: var(--accent-blue); }
+
+.reservation-card:hover,
+.restaurant-check:hover,
+.project-card:hover,
+.clarity-card:hover,
+.process-step:hover {
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(244, 238, 230, 0.38);
+  box-shadow: 0 38px 110px rgba(0, 0, 0, 0.34), 0 0 0 1px rgba(244, 238, 230, 0.05) inset;
+}
+
+.reservation-card span {
+  color: var(--accent-teal);
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.reservation-card:nth-child(2) span { color: var(--accent-coral); }
+.reservation-card:nth-child(3) span { color: var(--accent-blue); }
+
+.reservation-card h3 {
+  margin: clamp(18px, 3vw, 28px) 0 0;
+  color: #fff0d2;
+  font-size: clamp(1.35rem, 1.9vw, 2rem);
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.reservation-card p {
+  margin: 18px 0 0;
+  color: rgba(255, 241, 220, 0.88);
+  font-size: clamp(0.96rem, 1.08vw, 1.04rem);
+  line-height: 1.55;
+}
+
+.plugin-strip {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(24px, 4vw, 42px);
+}
+
+.plugin-strip span {
+  display: inline-grid;
+  place-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 246, 232, 0.16);
+  border-radius: 999px;
+  color: rgba(255, 246, 232, 0.78);
+  background: rgba(255, 246, 232, 0.045);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.plugin-strip span:hover {
+  transform: translateY(-4px);
+  color: #120611;
+  border-color: rgba(244, 238, 230, 0.48);
+  background: var(--accent-ivory);
+}
+
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.story-panel:hover .story-browser,
+.reservation-stage:hover .reservation-phone,
+.code-window:hover,
+.mission-alps:hover {
+  border-color: rgba(111, 183, 173, 0.34);
+  box-shadow: 0 36px 110px rgba(0, 0, 0, 0.34), 0 0 70px rgba(111, 183, 173, 0.08);
+}
+
+@keyframes reservation-sheen {
+  0%, 54% { transform: translateX(-120%); opacity: 0; }
+  64% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@keyframes reservation-slot-pulse {
+  0%, 100% { transform: translateY(0); border-color: rgba(111, 183, 173, 0.28); }
+  50% { transform: translateY(-3px); border-color: rgba(244, 238, 230, 0.42); }
+}
+
+@keyframes reservation-guest-breathe {
+  0%, 100% { transform: scale(0.9); opacity: 0.62; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+@media (max-width: 980px) {
+  .reservation-system-section {
+    grid-template-columns: 1fr;
+    padding-top: clamp(72px, 9vh, 104px);
+  }
+
+  .reservation-stage {
+    min-height: clamp(340px, 58vw, 500px);
+  }
+
+  .reservation-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .reservation-system-section {
+    width: min(100% - 28px, 620px);
+  }
+
+  .reservation-copy h2 {
+    font-size: clamp(1.85rem, 7.4vw, 2.55rem);
+    line-height: 1.15;
+  }
+
+  .reservation-phone {
+    width: min(82%, 300px);
+  }
+
+  .reservation-slots {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Navbar variant: restrained glass over the cinematic hero. */
+.site-nav {
+  border-color: rgba(255, 238, 218, 0.18);
+  background: rgba(18, 6, 17, 0.58);
+  box-shadow: 0 20px 64px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 244, 228, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.zoom-to-background.story-panel {
+  position: relative !important;
+}
+
+.site-nav-brand {
+  color: rgba(255, 244, 226, 0.98);
+}
+
+.site-nav-links a {
+  color: rgba(255, 238, 218, 0.72);
+}
+
+.site-nav-links a:hover {
+  color: rgba(255, 248, 236, 0.98);
+}
+
+/* Color pass: richer accents without losing the dark premium base. */
+:root {
+  --accent-teal: #6fb7ad;
+  --accent-coral: #e98272;
+  --accent-blue: #8ecae6;
+  --accent-rose: #c77d8a;
+  --accent-ivory: #f4eee6;
+}
+
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check {
+  position: relative;
+}
+
+.clarity-card::before,
+.process-step::before,
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 0;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: var(--accent-rose);
+  opacity: 0.9;
+}
+
+.clarity-card:nth-child(1)::before,
+.process-step:nth-child(1)::before,
+.project-card:nth-child(4n + 1)::before {
+  background: var(--accent-rose);
+}
+
+.clarity-card:nth-child(2)::before,
+.process-step:nth-child(2)::before,
+.project-card:nth-child(4n + 2)::before {
+  background: var(--accent-teal);
+}
+
+.clarity-card:nth-child(3)::before,
+.process-step:nth-child(3)::before,
+.project-card:nth-child(4n + 3)::before {
+  background: var(--accent-blue);
+}
+
+.project-card:nth-child(4n)::before {
+  background: var(--accent-coral);
+}
+
+.clarity-card:nth-child(1) span,
+.process-step:nth-child(1) strong,
+.project-card:nth-child(4n + 1) .project-meta > span {
+  color: var(--accent-rose);
+}
+
+.clarity-card:nth-child(2) span,
+.process-step:nth-child(2) strong,
+.project-card:nth-child(4n + 2) .project-meta > span {
+  color: var(--accent-teal);
+}
+
+.clarity-card:nth-child(3) span,
+.process-step:nth-child(3) strong,
+.project-card:nth-child(4n + 3) .project-meta > span {
+  color: var(--accent-blue);
+}
+
+.project-card:nth-child(4n) .project-meta > span {
+  color: var(--accent-coral);
+}
+
+.restaurant-check:nth-child(1) span { background: var(--accent-coral); }
+.restaurant-check:nth-child(2) span { background: var(--accent-teal); }
+.restaurant-check:nth-child(3) span { background: var(--accent-blue); }
+.restaurant-check:nth-child(4) span { background: var(--accent-rose); }
+
+.restaurant-check span {
+  box-shadow: 0 0 24px color-mix(in srgb, currentColor 42%, transparent);
+}
+
+.project-preview {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(111, 183, 173, 0.18), transparent 30%),
+    radial-gradient(circle at 82% 16%, rgba(199, 125, 138, 0.17), transparent 28%),
+    #120611;
+}
+
+.project-card:nth-child(4n + 2) .project-preview {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(142, 202, 230, 0.2), transparent 32%),
+    radial-gradient(circle at 78% 22%, rgba(111, 183, 173, 0.16), transparent 30%),
+    #120611;
+}
+
+.project-card:nth-child(4n + 3) .project-preview {
+  background:
+    radial-gradient(circle at 22% 18%, rgba(233, 130, 114, 0.17), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(142, 202, 230, 0.16), transparent 30%),
+    #120611;
+}
+
+.project-card:nth-child(4n) .project-preview {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(199, 125, 138, 0.2), transparent 30%),
+    radial-gradient(circle at 78% 20%, rgba(233, 130, 114, 0.14), transparent 30%),
+    #120611;
+}
+
+.mission-alps::after {
+  border-color: rgba(111, 183, 173, 0.28);
+  background:
+    linear-gradient(var(--accent-teal), var(--accent-teal)) 50% 50% / 44% 10% no-repeat,
+    linear-gradient(var(--accent-teal), var(--accent-teal)) 50% 50% / 10% 44% no-repeat,
+    radial-gradient(circle, rgba(111, 183, 173, 0.2), transparent 68%);
+}
+
+.cta-section::before {
+  background: linear-gradient(90deg, transparent, var(--accent-teal), var(--accent-rose), transparent);
+}
+
+/* Final navbar variant: restrained glass over the cinematic hero. */
+.site-nav {
+  border-color: rgba(255, 238, 218, 0.18);
+  background: rgba(18, 6, 17, 0.58);
+  box-shadow: 0 20px 64px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 244, 228, 0.1);
+}
+
+/* Hero composition: keep the brand in the visual middle-upper area. */
+.swiss-copy {
+  top: 42%;
+  transform: translate(-50%, calc(-50% + var(--hero-copy-scroll-y, 0px)));
+}
+
+.swiss-copy p {
+  margin-bottom: clamp(14px, 2vw, 22px);
+}
+
+.swiss-rating {
+  margin-top: clamp(12px, 1.8vw, 22px);
+}
+
+.swiss-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: clamp(12px, 1.6vw, 18px);
+  pointer-events: auto;
+}
+
+.swiss-hero-actions a {
+  display: inline-grid;
+  place-items: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 224, 173, 0.22);
+  border-radius: 999px;
+  color: #ffeede;
+  background: #241020;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.2);
+  font-size: clamp(0.72rem, 0.9vw, 0.84rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.swiss-hero-actions a:first-child {
+  color: #220814;
+  background: linear-gradient(180deg, #ffe9bf, #ffc66e);
+  box-shadow: 0 20px 54px rgba(255, 183, 91, 0.2);
+}
+
+.swiss-hero-actions a:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .swiss-copy {
+    top: 43%;
+  }
+
+  .swiss-hero-actions {
+    gap: 8px;
+  }
+
+  .swiss-hero-actions a {
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 0.66rem;
+  }
+}
+
+/* Viewport cleanup: keep the cinematic scale without accidental text or page overflow. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.site-nav-brand,
+.site-nav-links a,
+.site-nav-cta {
+  line-height: 1.18;
+}
+
+.swiss-copy {
+  width: min(88vw, 860px);
+  overflow: visible;
+}
+
+.swiss-copy h1,
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2,
+.clarity-card h3,
+.process-step h3,
+.project-card h3 {
+  overflow: visible;
+}
+
+.swiss-copy h1 {
+  font-size: clamp(3.9rem, 10vw, 10.2rem);
+  line-height: 1;
+  letter-spacing: 0;
+  padding: 0.08em 0.02em;
+}
+
+.story-copy h2,
+.big-statement h2,
+.restaurant-copy h2,
+.mission-copy h2,
+.custom-code-section h2,
+.projects-section h2,
+.cta-section h2 {
+  line-height: 1.12;
+  padding-block: 0.04em;
+}
+
+.clarity-card h3,
+.process-step h3,
+.project-card h3 {
+  line-height: 1.18;
+}
+
+@media (max-width: 980px) {
+  .swiss-copy {
+    width: min(86vw, 720px);
+  }
+
+  .swiss-copy h1 {
+    font-size: clamp(3.65rem, 9.8vw, 5.3rem);
+    line-height: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .swiss-copy {
+    width: min(84vw, 340px);
+  }
+
+  .swiss-copy h1 {
+    font-size: clamp(2.85rem, 15vw, 3.75rem);
+    line-height: 1;
+  }
+
+  .story-copy h2,
+  .big-statement h2,
+  .restaurant-copy h2,
+  .mission-copy h2,
+  .custom-code-section h2,
+  .projects-section h2,
+  .cta-section h2 {
+    line-height: 1.15;
+  }
+}
+
+/* Final CTA color choice and hover polish. */
+.site-nav-cta,
+.story-actions a:first-child,
+.cta-actions a:first-child,
+.cta-section a,
+.swiss-hero-actions a:first-child {
+  border-color: rgba(255, 246, 232, 0.38);
+  color: #1b0714;
+  background: #f4eee6;
+  box-shadow: 0 18px 48px rgba(244, 238, 230, 0.12), 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+.story-panel::after,
+.code-window::before,
+.project-preview::after,
+.reservation-stage::before,
+.reservation-stage::after,
+.section-atmosphere,
+.section-atmosphere * {
+  pointer-events: none !important;
+}
+
+.story-panel::after,
+.code-window::before,
+.project-preview::after,
+.reservation-stage::after {
+  display: none !important;
+  animation: none !important;
+  background: none !important;
+  transform: none !important;
+}
+
+.reservation-feature-grid,
+.plugin-strip,
+.project-grid,
+.clarity-grid,
+.process-grid,
+.restaurant-checks,
+.story-actions,
+.cta-actions {
+  position: relative;
+  z-index: 4;
+}
+
+.site-nav a,
+.story-actions a,
+.cta-actions a,
+.cta-section a,
+.swiss-hero-actions a,
+.clarity-card,
+.process-step,
+.project-card,
+.restaurant-check,
+.reservation-card,
+.plugin-strip span,
+.story-browser,
+.reservation-phone,
+.code-window,
+.mission-alps {
+  pointer-events: auto;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.site-nav-links a:hover,
+.site-nav-brand:hover {
+  color: rgba(255, 248, 236, 0.98) !important;
+}
+
+.site-nav-cta:hover,
+.story-actions a:hover,
+.cta-actions a:hover,
+.cta-section a:hover,
+.swiss-hero-actions a:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255, 246, 232, 0.42) !important;
+  color: #120611;
+  background: #fff8ee;
+  box-shadow: 0 22px 58px rgba(244, 238, 230, 0.18), 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+.clarity-card:hover,
+.process-step:hover,
+.project-card:hover,
+.restaurant-check:hover,
+.reservation-card:hover,
+.horizontal-projects-section .project-card:hover,
+.horizontal-projects-section .project-card:nth-child(2):hover,
+.horizontal-projects-section .project-card:nth-child(3):hover,
+.horizontal-projects-section .project-card:nth-child(4):hover,
+.horizontal-projects-section .project-card:nth-child(5):hover,
+.horizontal-projects-section .project-card:nth-child(6):hover,
+.horizontal-projects-section .project-card:nth-child(7):hover,
+.horizontal-projects-section .project-card:nth-child(8):hover,
+.horizontal-projects-section .project-card:nth-child(9):hover,
+.horizontal-projects-section .project-card:nth-child(10):hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(255, 246, 232, 0.4) !important;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 244, 221, 0.12) !important;
+}
+
+.plugin-strip span:hover {
+  transform: translateY(-3px) !important;
+  color: #120611 !important;
+  border-color: rgba(244, 238, 230, 0.56) !important;
+  background: var(--accent-ivory) !important;
+}
+
+.story-panel:hover .story-browser,
+.code-window:hover,
+.mission-alps:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.reservation-stage:hover .reservation-phone {
+  transform: translate(-50%, calc(-50% - 3px)) !important;
+  border-color: rgba(111, 183, 173, 0.38) !important;
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.32), 0 0 54px rgba(111, 183, 173, 0.07) !important;
+}
+
+.site-nav a:focus-visible,
+.story-actions a:focus-visible,
+.cta-actions a:focus-visible,
+.cta-section a:focus-visible,
+.project-card:focus-visible {
+  outline: 2px solid rgba(255, 248, 236, 0.82);
+  outline-offset: 4px;
+}
+
+.scroll-zoom-image {
+  filter: none !important;
+}
+
