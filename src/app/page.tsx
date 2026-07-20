@@ -1,7 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import AppNav from "@/components/AppNav";
+import afterImage from "../../after.png";
+import beforeImage from "../../before.png";
 import founderImage from "../../founder.png";
 import logoImage from "../../logo.png";
 import scrollZoomImage from "../../scroll-zoom.png";
@@ -74,36 +79,29 @@ const customerLogos = [
   { name: "Lostrios", src: "/customer-logos/lostrios.png" },
 ];
 
-const navItems = [
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Reservation", href: "#reservation" },
-  { label: "Mission", href: "#mission" },
-  { label: "Projekte", href: "#projekte" },
-];
-
 const clarityCards = [
   {
-    label: "Website",
-    title: "Gäste sollen den Ort spüren.",
-    text: "Bilder, Sprache und Ablauf machen aus Interesse echte Vorfreude.",
+    label: "Design",
+    title: "Statische Websites",
+    text: "Moderne, schnelle und sichere Websites ohne unnötigen Ballast, individuell gestaltet und effizient umgesetzt.",
   },
   {
-    label: "Reservation",
-    title: "Der Tisch ist nur einen Klick entfernt.",
-    text: "Unser eigenes System macht Anfragen, Zeiten und Gäste sauber führbar.",
+    label: "SEO",
+    title: "Redesign & Optimierung",
+    text: "Wir überarbeiten bestehende Websites, verbessern Design, Performance und Nutzererfahrung für einen starken Online-Auftritt.",
   },
   {
-    label: "Plugins",
-    title: "Alles, was dein Betrieb braucht.",
-    text: "Google, Newsletter, Gutscheine, Analytics oder spezielle Tools lassen sich einbauen.",
+    label: "Online",
+    title: "Hosting & Wartung",
+    text: "Zuverlässiges Hosting und regelmässige Wartung für maximale Sicherheit, Geschwindigkeit und sorgenfreien Betrieb.",
   },
 ];
 
 const restaurantSignals = [
-  "Emotionen vor Informationen",
-  "Reservation ohne Umwege",
-  "Eigenes Reservationssystem inklusive",
-  "Plugins nach Wunsch integrierbar",
+  "Professionell im Netz auftreten",
+  "Neukunden durch eine anziehende Website gewinnen",
+  "Informationen rund um die Uhr verfügbar machen",
+  "Skalierbar und jederzeit erweiterbar bleiben",
 ];
 
 const reservationFeatures = [
@@ -227,27 +225,33 @@ const latestProjects = [
   },
 ];
 
-function SiteNav() {
+function BeforeAfterComparison() {
+  const [position, setPosition] = useState(50);
+  const comparisonStyle = { "--compare-position": `${position}%` } as CSSProperties;
+
   return (
-    <nav
-      className="site-nav"
-      aria-label="Hauptnavigation"
-    >
-      <a className="site-nav-brand" href="#top" aria-label="Wendico Startseite">
-        <Image src={logoImage} alt="" priority />
-        <span>Wendico</span>
-      </a>
-      <div className="site-nav-links">
-        {navItems.map((item) => (
-          <a href={item.href} key={item.href}>
-            {item.label}
-          </a>
-        ))}
+    <div className="mission-alps before-after-comparison" style={comparisonStyle}>
+      <div className="compare-image compare-before" aria-hidden="true">
+        <Image src={beforeImage} alt="" fill sizes="(max-width: 980px) 92vw, 46vw" priority />
       </div>
-      <a className="site-nav-cta" href="mailto:info@wendico.ch">
-        Projekt starten
-      </a>
-    </nav>
+      <div className="compare-image compare-after" aria-hidden="true">
+        <Image src={afterImage} alt="" fill sizes="(max-width: 980px) 92vw, 46vw" priority />
+      </div>
+      <div className="compare-label compare-label-before">Vorher</div>
+      <div className="compare-label compare-label-after">Nachher</div>
+      <div className="compare-divider" aria-hidden="true">
+        <span />
+      </div>
+      <input
+        aria-label="Vorher-Nachher Vergleich verschieben"
+        className="compare-range"
+        type="range"
+        min="0"
+        max="100"
+        value={position}
+        onChange={(event) => setPosition(Number(event.target.value))}
+      />
+    </div>
   );
 }
 
@@ -460,7 +464,7 @@ function HeroSection() {
       <div className="swiss-vignette" />
 
       <div className="swiss-copy" ref={titleRef}>
-        <p>Schweizer Web & Software Agentur</p>
+        <p>Moderne Websites, Optimierung, sicheres Hosting und Wartung</p>
         <h1>Wendico</h1>
         <div className="swiss-rating">
           <span>★★★★★</span>
@@ -468,7 +472,7 @@ function HeroSection() {
         </div>
         <div className="swiss-hero-actions">
           <a href="mailto:info@wendico.ch">Kostenloses Gespräch</a>
-          <a href="#projekte">Vergangene Projekte</a>
+          <Link href="/projekte">Vergangene Projekte</Link>
         </div>
       </div>
     </section>
@@ -762,13 +766,13 @@ function AboutSection() {
         <section id="leistungen" className="story-hero zoom-story-section home-reveal" aria-labelledby="story-title">
           <div className="story-copy">
             <p>Was Wendico baut</p>
-            <h2 id="story-title" className="text-reveal-target">Websites, die Gäste fühlen.</h2>
+            <h2 id="story-title" className="text-reveal-target">Webdesign & Hosting.</h2>
             <span>
-              Nicht nur schön. Sondern so gestaltet, dass Besucher Appetit, Stimmung und den nächsten freien Tisch spüren.
+              Wir erstellen moderne Websites, optimieren bestehende Auftritte und kümmern uns um Hosting sowie Wartung für eine schnelle, sichere und starke Online-Präsenz.
             </span>
             <div className="story-actions">
               <a href="mailto:info@wendico.ch">Gratis Einschätzung holen</a>
-              <a href="#projekte">Projekte ansehen</a>
+              <Link href="/projekte">Projekte ansehen</Link>
             </div>
           </div>
           <div className="story-panel zoom-scroll-visual zoom-to-background" aria-hidden="true">
@@ -783,8 +787,8 @@ function AboutSection() {
             <span />
           </div>
           <div className="big-statement">
-            <p>Emotion für Gäste. Einfach für Betriebe.</p>
-            <h2 id="clarity-title" className="text-reveal-target">Schön reicht nicht.</h2>
+            <p>Was wir dir bieten</p>
+            <h2 id="clarity-title" className="text-reveal-target">Der Schlüssel zu einem Top Online Auftritt.</h2>
           </div>
           <div className="clarity-grid">
             {clarityCards.map((card) => (
@@ -805,12 +809,7 @@ function AboutSection() {
               Kein Fachchinesisch. Keine unnötige Komplexität. Nur ein Auftritt, der zu deinem Angebot passt.
             </span>
           </div>
-          <div className="mission-alps" aria-hidden="true">
-            <div className="alpine-ridge-line alpine-ridge-back" />
-            <div className="alpine-ridge-line alpine-ridge-mid" />
-            <div className="alpine-ridge-line alpine-ridge-front" />
-            <div className="mission-light" />
-          </div>
+          <BeforeAfterComparison />
         </section>
 
         <section className="restaurant-section home-reveal" aria-labelledby="restaurant-title">
@@ -983,7 +982,7 @@ function AboutSection() {
 export default function Home() {
   return (
     <>
-      <SiteNav />
+      <AppNav active="home" />
       <HeroSection />
       <AboutSection />
     </>

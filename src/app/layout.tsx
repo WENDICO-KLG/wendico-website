@@ -1,4 +1,5 @@
 import "./globals.css";
+import AppFooter from "@/components/AppFooter";
 
 export const metadata = {
   title: "Wendico | Schweizer Web & Software Agentur",
@@ -12,7 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de-CH">
-      <body>{children}</body>
+      <body>
+        {children}
+        <AppFooter />
+      </body>
     </html>
   );
 }
