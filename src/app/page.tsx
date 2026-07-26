@@ -124,6 +124,12 @@ const reservationFeatures = [
 
 const pluginItems = ["Google", "Newsletter", "Analytics", "Gutscheine", "CRM", "Social", "Zahlung", "Events"];
 
+const transformFrameCount = 151;
+const transformFrames = Array.from(
+  { length: transformFrameCount },
+  (_, index) => `/transform_frames/ezgif-frame-${String(index + 1).padStart(3, "0")}.jpg`,
+);
+
 const processSteps = [
   {
     step: "01",
@@ -252,6 +258,83 @@ function BeforeAfterComparison() {
         onChange={(event) => setPosition(Number(event.target.value))}
       />
     </div>
+  );
+}
+
+function RestaurantTransformScroll() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [frameIndex, setFrameIndex] = useState(0);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const section = sectionRef.current;
+    if (!section) return;
+
+    let activeFrame = -1;
+    const syncFrame = (progress: number) => {
+      const nextFrame = gsap.utils.clamp(0, transformFrameCount - 1, Math.round(progress * (transformFrameCount - 1)));
+      if (nextFrame === activeFrame) return;
+      activeFrame = nextFrame;
+      setFrameIndex(nextFrame);
+    };
+
+    const preloadTimer = window.setTimeout(() => {
+      transformFrames.forEach((src) => {
+        const image = new window.Image();
+        image.src = src;
+      });
+    }, 350);
+
+    const context = gsap.context(() => {
+      syncFrame(0);
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        invalidateOnRefresh: true,
+        onUpdate: (trigger) => syncFrame(trigger.progress),
+        onRefresh: (trigger) => syncFrame(trigger.progress),
+      });
+    }, section);
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      window.clearTimeout(preloadTimer);
+      context.revert();
+    };
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="transform-scroll-section" aria-labelledby="transform-scroll-title">
+      <div className="transform-pin-stage">
+        <div className="section-atmosphere transform-atmosphere" aria-hidden="true">
+          <i className="atmosphere-line atmosphere-line-one" />
+          <i className="atmosphere-line atmosphere-line-two" />
+          <span />
+        </div>
+        <div className="transform-copy">
+          <p>Vom Restaurant zur Website</p>
+          <h2 id="transform-scroll-title" className="text-reveal-target">Beim Scrollen entsteht dein Auftritt.</h2>
+          <span>
+            Aus Atmosphäre, Angebot und Reservation wird eine digitale Strecke, die Gäste direkt verstehen.
+          </span>
+        </div>
+        <div className="transform-frame-shell" aria-label="Restaurant verwandelt sich in eine Website">
+          <Image
+            className="transform-frame-image"
+            src={transformFrames[frameIndex]}
+            alt="Restaurant verwandelt sich in eine Website"
+            fill
+            sizes="100vw"
+            priority={frameIndex === 0}
+          />
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -834,6 +917,8 @@ function AboutSection() {
             ))}
           </div>
         </section>
+
+        <RestaurantTransformScroll />
 
         <section id="reservation" className="reservation-system-section home-reveal" aria-labelledby="reservation-title">
           <div className="section-atmosphere reservation-flow-atmosphere" aria-hidden="true">
