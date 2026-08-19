@@ -1,3 +1,4 @@
+import Script from "next/script";
 import AppNav from "@/components/AppNav";
 
 const contacts = [
@@ -44,6 +45,20 @@ export default function ContactPage() {
         </form>
       </section>
 
+      <section className="standard-section contact-booking-section" id="termin-buchen" aria-labelledby="booking-title">
+        <div className="section-heading">
+          <p>Termin buchen</p>
+          <h2 id="booking-title">Direkt einen Termin sichern.</h2>
+        </div>
+        <div className="calendly-panel">
+          <div
+            className="calendly-inline-widget"
+            data-url="https://calendly.com/info-wendico/30min?background_color=241020&text_color=ffeede&primary_color=ffc66e"
+            style={{ width: "100%", minWidth: "0", height: "700px" }}
+          />
+        </div>
+      </section>
+
       <section className="standard-section" aria-labelledby="contact-options-title">
         <div className="section-heading section-heading-split">
           <div>
@@ -73,6 +88,8 @@ export default function ContactPage() {
           })}
         </div>
       </section>
+
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" async />
     </main>
   );
 }

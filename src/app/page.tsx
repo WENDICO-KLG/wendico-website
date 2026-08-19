@@ -142,86 +142,31 @@ const processSteps = [
   },
 ];
 
+// Kept in sync with the 3 most recent entries of `projects` in src/app/projekte/page.tsx.
 const latestProjects = [
   {
     name: "Lostrios",
     date: "Mai 2026",
     href: "https://lostrios.ch/",
-    logo: "/customer-logos/lostrios.png",
-    focus: "Marke & Anfrage",
+    image: "/customer-websites/lostrios-website.png",
+    focus: "Schneller Start",
     text: "Ein schneller Auftritt mit klarem Fokus auf Marke und Kontakt.",
+  },
+  {
+    name: "Asiafoodfestival",
+    date: "Mai 2026",
+    href: "https://www.asiafoodfestival.ch/",
+    image: "/customer-websites/tresch-asia-events-website.png",
+    focus: "Anmeldung",
+    text: "Ein Event-Auftritt mit Programm, Ständen und schnellem Weg zur Anmeldung.",
   },
   {
     name: "Alija Gebäudereinigung",
     date: "April 2026",
     href: "https://alija-gebaeudereinigung.ch/",
-    logo: "/customer-logos/alija-gebaeudereinigung.png",
+    image: "/customer-websites/alija-gebäudereinigung-website.png",
     focus: "Lokales Vertrauen",
-    text: "Eine lokale Service-Website mit klarer Leistung und Vertrauen.",
-  },
-  {
-    name: "SC Beauty Luxe",
-    date: "März 2026",
-    href: "https://scbeautyluxe.com/",
-    logo: "/customer-logos/scbeautyluxe.png",
-    focus: "Premium Eindruck",
-    text: "Ein eleganter Beauty-Auftritt mit kurzer Strecke zum Kontakt.",
-  },
-  {
-    name: "Thai Lodge",
-    date: "Februar 2026",
-    href: "https://thai-lodge.ch/",
-    logo: "/customer-logos/thai-lodge.png",
-    focus: "Restaurant Flow",
-    text: "Menu, Standort und Reservation werden direkt sichtbar.",
-  },
-  {
-    name: "Rebthai",
-    date: "Januar 2026",
-    href: "https://rebthai.ch/",
-    logo: "/customer-logos/rebthai.png",
-    focus: "Gastro Website",
-    text: "Ein klarer Restaurant-Auftritt für schnelle Entscheidungen.",
-  },
-  {
-    name: "Weinland Esskultur",
-    date: "Dezember 2025",
-    href: "https://weinlandesskultur.ch/",
-    logo: "/customer-logos/weinlandesskultur.png",
-    focus: "Region & Genuss",
-    text: "Lokale Identität, warme Bildwelt und einfache Orientierung.",
-  },
-  {
-    name: "Thai Helping Point",
-    date: "November 2025",
-    href: "https://thaihelpingpoint.ch/",
-    logo: "/customer-logos/thaihelpingpoint.png",
-    focus: "Information",
-    text: "Strukturierte Inhalte für Vertrauen und schnelle Hilfe.",
-  },
-  {
-    name: "Elegant Society",
-    date: "Oktober 2025",
-    href: "https://elegantsociety.ch/",
-    logo: "/customer-logos/elegantsociety.png",
-    focus: "Brand Design",
-    text: "Ein ruhiger Premium-Auftritt mit starker Markenwirkung.",
-  },
-  {
-    name: "Ryu Vogler",
-    date: "September 2025",
-    href: "https://ryuvogler.ch/",
-    logo: "/customer-logos/ryuvogler.png",
-    focus: "Portfolio",
-    text: "Persönlichkeit, Arbeit und Kontakt auf einer klaren Strecke.",
-  },
-  {
-    name: "Anania",
-    date: "August 2025",
-    href: "https://anania.ch/",
-    logo: "/customer-logos/anania.png",
-    focus: "Klares Angebot",
-    text: "Ein kompakter Auftritt, der Angebot und Anfrage verbindet.",
+    text: "Eine lokale Service-Website mit Vertrauen, Leistung und Kontakt im Fokus.",
   },
 ];
 
@@ -311,19 +256,24 @@ function HeroSection() {
         });
       });
 
-      titleRef.current?.style.setProperty("--hero-copy-scroll-y", "0px");
+      const applyHeroCopyProgress = (progress: number) => {
+        const node = titleRef.current;
+        if (!node) return;
+        const fadeOpacity = gsap.utils.clamp(0, 1, 1 - progress / 0.6);
+        node.style.setProperty("--hero-copy-scroll-y", `${progress * 150}px`);
+        node.style.setProperty("--hero-copy-opacity", `${fadeOpacity}`);
+        node.style.setProperty("--hero-copy-pointer-events", fadeOpacity <= 0.05 ? "none" : "auto");
+      };
+
+      applyHeroCopyProgress(0);
       ScrollTrigger.create({
         trigger: root,
         start: "top top",
         end: () => window.innerHeight,
         scrub: 1,
         invalidateOnRefresh: true,
-        onUpdate: (trigger) => {
-          titleRef.current?.style.setProperty("--hero-copy-scroll-y", `${trigger.progress * 150}px`);
-        },
-        onRefresh: (trigger) => {
-          titleRef.current?.style.setProperty("--hero-copy-scroll-y", window.scrollY <= 1 ? "0px" : `${trigger.progress * 150}px`);
-        },
+        onUpdate: (trigger) => applyHeroCopyProgress(trigger.progress),
+        onRefresh: (trigger) => applyHeroCopyProgress(window.scrollY <= 1 ? 0 : trigger.progress),
       });
 
       cloudRefs.current.forEach((cloud, index) => {
@@ -490,7 +440,7 @@ function AboutSection() {
     if (!section) return;
 
     const context = gsap.context(() => {
-      const cleanupCallbacks: Array<() => void> = [];
+      const media = gsap.matchMedia();
 
       gsap.utils.toArray<HTMLElement>(".home-reveal").forEach((element) => {
         const reveal = () => {
@@ -551,7 +501,9 @@ function AboutSection() {
       const zoomSource = section.querySelector<HTMLElement>(".zoom-to-background");
       const zoomBackdrop = section.querySelector<HTMLElement>(".scroll-zoom-backdrop");
 
+      // Desktop only: the sticky "laptop" image zoom-to-fullscreen scroll story.
       if (zoomSource && zoomBackdrop) {
+       media.add("(min-width: 981px)", () => {
         const zoomImages = [zoomSource, zoomBackdrop]
           .map((element) => element.querySelector("img"))
           .filter((image): image is HTMLImageElement => Boolean(image));
@@ -665,14 +617,6 @@ function AboutSection() {
           onUpdate: (trigger) => applyZoomProgress(trigger.progress),
         });
         window.addEventListener("resize", handleZoomResize);
-        cleanupCallbacks.push(() => {
-          window.removeEventListener("resize", handleZoomResize);
-          section.classList.remove("zoom-background-settled");
-          section.style.removeProperty("--zoom-settled-image");
-          section.style.removeProperty("--zoom-page-bg-opacity");
-          section.style.removeProperty("--zoom-settled-image-opacity");
-          section.style.removeProperty("--zoom-source-dim-opacity");
-        });
 
         zoomImages.forEach((image) => {
           if (image.complete) return;
@@ -681,9 +625,18 @@ function AboutSection() {
             handleZoomResize();
           }, { once: true });
         });
+
+        return () => {
+          window.removeEventListener("resize", handleZoomResize);
+          section.classList.remove("zoom-background-settled");
+          section.style.removeProperty("--zoom-settled-image");
+          section.style.removeProperty("--zoom-page-bg-opacity");
+          section.style.removeProperty("--zoom-settled-image-opacity");
+          section.style.removeProperty("--zoom-source-dim-opacity");
+        };
+       });
       }
 
-      const media = gsap.matchMedia();
       media.add("(min-width: 981px)", () => {
         const projectSection = section.querySelector<HTMLElement>(".horizontal-projects-section");
         const projectShell = projectSection?.querySelector<HTMLElement>(".project-horizontal-shell");
@@ -723,7 +676,6 @@ function AboutSection() {
       });
 
       return () => {
-        cleanupCallbacks.forEach((cleanup) => cleanup());
         media.revert();
       };
     }, section);
@@ -943,8 +895,7 @@ function AboutSection() {
                 {latestProjects.map((project) => (
                   <a className="project-card home-reveal" href={project.href} key={project.name} target="_blank" rel="noreferrer">
                     <div className="project-preview zoom-scroll-visual">
-                      <div className="project-sky" />
-                      <Image src={project.logo} alt={project.name} width={220} height={130} />
+                      <Image src={project.image} alt={`Vorschau von ${project.name}`} fill sizes="(min-width: 981px) 540px, 100vw" />
                       <span>{project.focus}</span>
                     </div>
                     <div className="project-meta">
