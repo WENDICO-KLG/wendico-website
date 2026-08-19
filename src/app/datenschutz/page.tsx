@@ -1,10 +1,18 @@
+import type { Metadata } from "next";
 import AppNav from "@/components/AppNav";
+
+export const metadata: Metadata = {
+  title: "Datenschutz",
+  description: "Datenschutzerklärung der WENDICO KLG: welche Daten wir bearbeiten und wie wir sie schützen.",
+  alternates: { canonical: "/datenschutz" },
+  robots: { index: true, follow: true },
+};
 
 const privacySections = [
   { title: "1. Verantwortliche Stelle", text: "Verantwortlich für die Datenbearbeitung ist WENDICO KLG, Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz. E-Mail: info@wendico.ch, Telefon: +41 79 504 10 05." },
   { title: "2. Allgemeines", text: "Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir bearbeiten Personendaten im Einklang mit dem Schweizer Datenschutzgesetz sowie, sofern anwendbar, der DSGVO." },
   { title: "3. Erhebung und Bearbeitung", text: "Bearbeitet werden Daten, die für Websitebetrieb, Kommunikation oder Dienstleistungen erforderlich sind, zum Beispiel Name, E-Mail-Adresse, Telefonnummer, Unternehmen, Nachrichteninhalte und technische Zugriffsdaten." },
-  { title: "4. Hosting", text: "Die Website wird über Framer bereitgestellt. Beim Besuch werden technische Informationen wie IP-Adresse, Browserinformationen und Zugriffszeitpunkte verarbeitet." },
+  { title: "4. Hosting", text: "Die Website wird über einen professionellen Hosting-Anbieter bereitgestellt. Beim Besuch werden technische Informationen wie IP-Adresse, Browserinformationen und Zugriffszeitpunkte verarbeitet." },
   { title: "5. Kontaktformular", text: "Kontaktformular-Daten werden verarbeitet, um Anfragen zu bearbeiten, Angebote zu erstellen und mit Ihnen in Kontakt zu treten." },
   { title: "6. Cookies", text: "Cookies und vergleichbare Technologien dienen der technischen Funktionalität, Benutzerfreundlichkeit und statistischen Auswertung." },
   { title: "7. Google Analytics", text: "Google Analytics kann Informationen wie besuchte Seiten, Verweildauer, verwendetes Endgerät, Browserinformationen, ungefähre Standortdaten und IP-Adresse verarbeiten." },

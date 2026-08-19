@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import AppNav from "@/components/AppNav";
+
+export const metadata: Metadata = {
+  title: "Impressum",
+  description: "Impressum der WENDICO KLG, Im Hofacker 3, CH-8478 Thalheim an der Thur, Schweiz.",
+  alternates: { canonical: "/impressum" },
+  robots: { index: true, follow: true },
+};
 
 const sections = [
   {

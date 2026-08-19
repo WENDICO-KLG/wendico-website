@@ -1,7 +1,20 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import AppNav from "@/components/AppNav";
 import founderImage from "../../../founder.png";
+
+export const metadata: Metadata = {
+  title: "Über Uns",
+  description:
+    "Wendico ist ein junges Webstudio aus dem Zürcher Weinland. Unser Ziel: digitale Auftritte, die einfach wirken und professionell verkaufen.",
+  alternates: { canonical: "/ueber-uns" },
+  openGraph: {
+    title: "Über Uns | Wendico",
+    description: "Klar denken. Schnell bauen. Das junge Webstudio aus dem Zürcher Weinland.",
+    url: "/ueber-uns",
+  },
+};
 
 const values = [
   { title: "Innovation", label: "01", text: "Wir denken voraus und entwickeln kreative Lösungen, die Unternehmen online voranbringen." },

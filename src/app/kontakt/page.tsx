@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Script from "next/script";
 import AppNav from "@/components/AppNav";
+
+export const metadata: Metadata = {
+  title: "Kontakt",
+  description:
+    "Erzähl uns kurz, was du vorhast. Wendico meldet sich mit einer klaren Einschätzung: was sinnvoll ist, was es braucht und wie schnell es umgesetzt werden kann.",
+  alternates: { canonical: "/kontakt" },
+  openGraph: {
+    title: "Kontakt | Wendico",
+    description: "Erzähl uns kurz, was du vorhast, Wendico meldet sich zeitnah zurück.",
+    url: "/kontakt",
+  },
+};
 
 const contacts = [
   { label: "E-Mail", value: "info@wendico.ch", href: "mailto:info@wendico.ch" },
@@ -59,7 +72,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="standard-section" aria-labelledby="contact-options-title">
+      <section className="standard-section contact-methods-section" aria-labelledby="contact-options-title">
         <div className="section-heading section-heading-split">
           <div>
             <p>Direkt erreichbar</p>
@@ -89,7 +102,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" async />
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
     </main>
   );
 }

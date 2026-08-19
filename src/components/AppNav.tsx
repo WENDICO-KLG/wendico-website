@@ -36,10 +36,10 @@ export default function AppNav({ active = "home" }: AppNavProps) {
 
   return (
     <nav className="site-nav" aria-label="Hauptnavigation">
-      <a className="site-nav-brand" href="/#top" aria-label="Wendico Startseite">
+      <Link className="site-nav-brand" href="/#top" aria-label="Wendico Startseite">
         <Image src={logoImage} alt="" priority />
         <span>Wendico</span>
-      </a>
+      </Link>
       <button
         type="button"
         className="site-nav-toggle"
@@ -53,22 +53,16 @@ export default function AppNav({ active = "home" }: AppNavProps) {
         <span />
       </button>
       <div className={menuOpen ? "site-nav-links is-open" : "site-nav-links"} id="site-nav-links">
-        {navItems.map((item) =>
-          item.key === "home" ? (
-            <a aria-current={active === item.key ? "page" : undefined} href={item.href} key={item.key} onClick={closeMenu}>
-              {item.label}
-            </a>
-          ) : (
-            <Link
-              aria-current={active === item.key ? "page" : undefined}
-              href={item.href}
-              key={item.key}
-              onClick={closeMenu}
-            >
-              {item.label}
-            </Link>
-          ),
-        )}
+        {navItems.map((item) => (
+          <Link
+            aria-current={active === item.key ? "page" : undefined}
+            href={item.href}
+            key={item.key}
+            onClick={closeMenu}
+          >
+            {item.label}
+          </Link>
+        ))}
         <a className="site-nav-cta site-nav-cta-mobile" href="/kontakt#termin-buchen" onClick={closeMenu}>
           Projekt starten
         </a>
