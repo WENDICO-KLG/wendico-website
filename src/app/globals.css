@@ -650,6 +650,11 @@
     position: relative;
     top: auto;
   }
+
+  /* Mobile only shows the 3 most recent projects; desktop shows all of them. */
+  .horizontal-projects-section .project-card:nth-child(n + 4) {
+    display: none;
+  }
 }
 
 /* Scroll storytelling pass: livelier sections without touching the hero. */
@@ -8121,6 +8126,19 @@ body {
   .projects-section.horizontal-projects-section {
     width: min(100% - 28px, 620px);
     max-width: 620px;
+  }
+}
+
+/* On desktop the rail (with every project, not just the latest 3) spans the full viewport width, edge to edge. */
+@media (min-width: 981px) {
+  .projects-section.horizontal-projects-section {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .horizontal-projects-section .section-heading-split {
+    padding-inline: clamp(20px, 4vw, 64px);
   }
 }
 

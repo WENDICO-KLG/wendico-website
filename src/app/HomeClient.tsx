@@ -142,7 +142,8 @@ const processSteps = [
   },
 ];
 
-// Kept in sync with the 3 most recent entries of `projects` in src/app/projekte/page.tsx.
+// Kept in sync with all entries of `projects` in src/app/projekte/ProjekteClient.tsx (newest first).
+// Desktop shows every project; mobile shows only the first 3 (see the nth-child(n+4) rule in globals.css).
 const latestProjects = [
   {
     name: "Lostrios",
@@ -167,6 +168,62 @@ const latestProjects = [
     image: "/customer-websites/alija-gebäudereinigung-website.png",
     focus: "Lokales Vertrauen",
     text: "Eine lokale Service-Website mit Vertrauen, Leistung und Kontakt im Fokus.",
+  },
+  {
+    name: "Scbeautyluxe",
+    date: "März 2026",
+    href: "https://scbeautyluxe.com/",
+    image: "/customer-websites/scbeautyluxe-website.png",
+    focus: "Anfrage",
+    text: "Ein Beauty-Auftritt mit klarer Premium-Wirkung und direktem Weg zur Anfrage.",
+  },
+  {
+    name: "Ryuvogler",
+    date: "Februar 2026",
+    href: "https://ryuvogler.com/",
+    image: "/customer-websites/ryuvogler-website.png",
+    focus: "Person",
+    text: "Portfolio, Persönlichkeit und Kontakt kompakt auf einer professionellen Seite.",
+  },
+  {
+    name: "Elegantsociety",
+    date: "Dezember 2025",
+    href: "https://elegantsociety.ch/",
+    image: "/customer-websites/elegantsociety-website.png",
+    focus: "Premium Eindruck",
+    text: "Ein eleganter Webauftritt mit ruhiger Markenwirkung und hochwertigem Eindruck.",
+  },
+  {
+    name: "Rebthai",
+    date: "Oktober 2025",
+    href: "https://rebthai.ch/",
+    image: "/customer-websites/rebthai-website.png",
+    focus: "Schnelle Entscheidung",
+    text: "Ein klarer Restaurant-Auftritt, der Angebot und Kontakt ohne Umwege zeigt.",
+  },
+  {
+    name: "Weinlandesskultur",
+    date: "Oktober 2025",
+    href: "https://weinlandesskultur.ch/",
+    image: "/customer-websites/weinlandesskultur-website.png",
+    focus: "Region & Genuss",
+    text: "Regionale Identität, Genuss und ein klarer Weg zu den wichtigsten Inhalten.",
+  },
+  {
+    name: "Thai-lodge",
+    date: "Oktober 2025",
+    href: "https://thai-lodge.ch/",
+    image: "/customer-websites/thailodge-website.png",
+    focus: "Reservation",
+    text: "Ein Restaurant-Auftritt mit Menu, Ambiente und direktem Weg zur Tischreservation.",
+  },
+  {
+    name: "Thaihelpingpoint",
+    date: "September 2025",
+    href: "https://thaihelpingpoint.ch/",
+    image: "/customer-websites/thaihelpingpoint-website.png",
+    focus: "Orientierung",
+    text: "Ein digitaler Auftritt für schnelle Orientierung und klare Kontaktaufnahme.",
   },
 ];
 

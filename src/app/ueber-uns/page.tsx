@@ -28,7 +28,7 @@ const team = [
     name: "Panat Ruangsri",
     role: "CEO & Founder | Developer",
     href: "https://www.linkedin.com/in/panat-ruangsri-28a137288/",
-    image: "/wendico-live/about-founder.jpg",
+    image: "/wendico-live/panat.JPG",
   },
   {
     name: "Tim Biedermann",
