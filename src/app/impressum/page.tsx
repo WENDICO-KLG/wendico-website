@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "WENDICO KLG",
-    items: ["Im Hofacker 3", "CH-8478 Thalheim an der Thur", "Schweiz", "Rechtsform: Kollektivgesellschaft (KLG)"],
+    items: ["Im Hofacker 3", "CH-8478 Thalheim an der Thur", "Schweiz", "Rechtsform: Kollektivgesellschaft (KLG)", "UID: CHE-298.049.775"],
   },
   {
     title: "Vertretungsberechtigte Personen",

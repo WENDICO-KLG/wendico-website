@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import logoImage from "../../logo.png";
+
 
 type NavItem = {
   label: string;
@@ -12,7 +14,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "/#top", key: "home" },
+  { label: "Home", href: "/", key: "home" },
   { label: "Über Uns", href: "/ueber-uns", key: "ueber-uns" },
   { label: "Preise", href: "/preise", key: "preise" },
   { label: "Projekte", href: "/projekte", key: "projekte" },
@@ -26,6 +28,7 @@ type AppNavProps = {
 export default function AppNav({ active = "home" }: AppNavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -34,9 +37,19 @@ export default function AppNav({ active = "home" }: AppNavProps) {
     };
   }, [menuOpen]);
 
+  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
+    // The hero (#top) is `position: fixed`, so hash-anchor scrolling can't bring it
+    // into view when we're already on "/". Scroll manually instead.
+    if (pathname === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="site-nav" aria-label="Hauptnavigation">
-      <Link className="site-nav-brand" href="/#top" aria-label="Wendico Startseite">
+      <Link className="site-nav-brand" href="/" aria-label="Wendico Startseite" onClick={handleHomeClick}>
         <Image src={logoImage} alt="" priority />
         <span>Wendico</span>
       </Link>
@@ -58,18 +71,18 @@ export default function AppNav({ active = "home" }: AppNavProps) {
             aria-current={active === item.key ? "page" : undefined}
             href={item.href}
             key={item.key}
-            onClick={closeMenu}
+            onClick={item.key === "home" ? handleHomeClick : closeMenu}
           >
             {item.label}
           </Link>
         ))}
-        <a className="site-nav-cta site-nav-cta-mobile" href="/kontakt#termin-buchen" onClick={closeMenu}>
+        <Link className="site-nav-cta site-nav-cta-mobile" href="/kontakt#termin-buchen" onClick={closeMenu}>
           Projekt starten
-        </a>
+        </Link>
       </div>
-      <a className="site-nav-cta" href="/kontakt#termin-buchen">
+      <Link className="site-nav-cta" href="/kontakt#termin-buchen">
         Projekt starten
-      </a>
+      </Link>
     </nav>
   );
 }

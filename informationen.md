@@ -281,6 +281,7 @@ Discovery-Call, Angebot, Anzahlung, Design und Entwicklung, Feedback, Abnahme un
 - Telefon: +41 79 504 10 05
 - E-Mail: info@wendico.ch
 - Rechtsform: Kollektivgesellschaft (KLG)
+- UID: CHE-298.049.775
 
 Haftungshinweis:
 

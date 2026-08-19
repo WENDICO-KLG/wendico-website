@@ -31,7 +31,9 @@ export default function ProjectsPage() {
     <main className="standard-page projects-page">
       <AppNav active="projekte" />
       <section className="standard-hero projects-hero" aria-labelledby="projects-page-title">
-        <h1 id="projects-page-title">Projekte</h1>
+        <p>Projekte</p>
+        <h1 id="projects-page-title">Projekte mit klarer Wirkung.</h1>
+        <span>Auswahl von Websites und digitalen Auftritten, die schnell zeigen, worum es geht und wie man Kontakt aufnimmt.</span>
       </section>
 
       <section className="standard-section projects-filter-section">

@@ -751,7 +751,7 @@ function AboutSection() {
           <h2 id="about-title">Digital. Emotional. Unvergesslich.</h2>
         </div>
         <div className="about-founder-image">
-          <Image src={founderImage} alt="Mit und Tim, die Gründer von Wendico" priority />
+          <Image src={founderImage} alt="Panat und Tim, die Gründer von Wendico" priority />
         </div>
       </div>
 
