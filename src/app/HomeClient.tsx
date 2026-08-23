@@ -499,6 +499,7 @@ function AboutSection() {
     const context = gsap.context(() => {
       const media = gsap.matchMedia();
 
+      media.add("(min-width: 981px)", () => {
       gsap.utils.toArray<HTMLElement>(".home-reveal").forEach((element) => {
         const reveal = () => {
           if (element.dataset.revealed === "true") return;
@@ -553,6 +554,8 @@ function AboutSection() {
             },
           },
         );
+      });
+
       });
 
       const zoomSource = section.querySelector<HTMLElement>(".zoom-to-background");

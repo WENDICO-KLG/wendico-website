@@ -26,15 +26,17 @@ const values = [
 const team = [
   {
     name: "Panat Ruangsri",
-    role: "CEO & Founder | Developer",
+    role: "Co-Founder | Webentwicklung & Strategie",
     href: "https://www.linkedin.com/in/panat-ruangsri-28a137288/",
     image: "/wendico-live/panat.JPG",
+    imagePosition: "center 18%",
   },
   {
     name: "Tim Biedermann",
-    role: "CEO & Founder | Developer",
+    role: "Co-Founder | Webentwicklung & Strategie",
     href: "https://www.linkedin.com/in/tim-biedermann-ba5b35286/",
-    image: "/wendico-live/about-team.jpg",
+    image: "/wendico-live/tim.jpg",
+    imagePosition: "center 20%",
   },
 ];
 
@@ -92,8 +94,8 @@ export default function AboutPage() {
         <div className="standard-card-grid two-columns">
           {team.map((person, index) => (
             <a className="standard-card standard-link-card about-team-card" href={person.href} key={person.name} target="_blank" rel="noreferrer" style={{ "--team-index": index } as CSSProperties}>
-              <Image className="team-member-photo" src={person.image} alt={person.name} width={520} height={520} />
-              <span>{index === 0 ? "Development" : "Strategy"}</span>
+              <Image className="team-member-photo" src={person.image} alt={person.name} width={600} height={800} style={{ objectPosition: person.imagePosition }} />
+              <span>Webentwicklung & Strategie</span>
               <h3>{person.name}</h3>
               <p>{person.role}</p>
               <strong>LinkedIn ansehen</strong>

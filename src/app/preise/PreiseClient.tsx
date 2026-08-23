@@ -96,7 +96,7 @@ export default function PricesPage() {
             Website, Reservation, Google und laufender Betrieb als klares System. Einmal investieren, danach gehört der Auftritt euch.
           </span>
           <div className="standard-actions">
-            <a href="mailto:info@wendico.ch">Gratis Erstgespräch buchen</a>
+            <Link href="/kontakt#termin-buchen">Gratis Erstgespräch buchen</Link>
             <Link href="/projekte">Projekte ansehen</Link>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function PricesPage() {
           <strong>Website</strong>
           <b>{"CHF 3'500"}</b>
           <p>Reservations-optimierte Website, Google Firmenseite, Mobile-Optimierung und Basic SEO für den sauberen Start.</p>
-          <a href="mailto:info@wendico.ch">Offerte anfragen</a>
+          <Link href="/kontakt#termin-buchen">Offerte anfragen</Link>
         </div>
       </section>
 
@@ -181,7 +181,7 @@ export default function PricesPage() {
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                  <a href="mailto:info@wendico.ch">Paket besprechen</a>
+                  <Link href="/kontakt#termin-buchen">Paket besprechen</Link>
                 </article>
               ))}
             </div>
@@ -211,7 +211,7 @@ export default function PricesPage() {
                     ))}
                   </ul>
                   <small>Ideal für: {retainer.fit}</small>
-                  <a href="mailto:info@wendico.ch">Jetzt anfragen</a>
+                  <Link href="/kontakt#termin-buchen">Jetzt anfragen</Link>
                 </article>
               ))}
             </div>

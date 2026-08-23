@@ -6929,7 +6929,6 @@ section.about-section .home-sections {
 
 .about-team-card .team-member-photo {
   aspect-ratio: 3 / 4;
-  object-position: center 26%;
   transition: transform 0.35s ease;
 }
 

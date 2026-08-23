@@ -38,6 +38,24 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "WENDICO KLG",
+  url: "https://wendico.ch",
+  email: "info@wendico.ch",
+  telephone: "+41795041005",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Im Hofacker 3",
+    postalCode: "8478",
+    addressLocality: "Thalheim an der Thur",
+    addressCountry: "CH",
+  },
+  areaServed: "CH",
+  sameAs: ["https://www.instagram.com/wendico.ch/"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,10 +64,10 @@ export default function RootLayout({
   return (
     <html lang="de-CH">
       <head>
-        <link rel="preconnect" href="https://assets.calendly.com" />
-        <link rel="preconnect" href="https://calendly.com" />
-        <link rel="dns-prefetch" href="https://assets.calendly.com" />
-        <link rel="dns-prefetch" href="https://calendly.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body>
         <AppLoader />

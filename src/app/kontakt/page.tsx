@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import AppNav from "@/components/AppNav";
 
 export const metadata: Metadata = {
@@ -36,23 +35,27 @@ export default function ContactPage() {
         <form className="contact-form" action="mailto:info@wendico.ch" method="post" encType="text/plain">
           <label>
             <span>Vorname</span>
-            <input name="vorname" type="text" />
+            <input name="vorname" type="text" autoComplete="given-name" required />
           </label>
           <label>
             <span>Nachname</span>
-            <input name="nachname" type="text" />
+            <input name="nachname" type="text" autoComplete="family-name" required />
           </label>
           <label>
-            <span>Email</span>
-            <input name="email" type="email" />
+            <span>E-Mail</span>
+            <input name="email" type="email" autoComplete="email" required />
           </label>
           <label>
             <span>Telefon</span>
-            <input name="telefon" type="tel" />
+            <input name="telefon" type="tel" autoComplete="tel" />
           </label>
           <label className="full-field">
             <span>Nachricht</span>
-            <textarea name="nachricht" rows={5} />
+            <textarea name="nachricht" rows={5} required />
+          </label>
+          <label className="full-field contact-privacy-consent">
+            <input name="datenschutz" type="checkbox" required />
+            <span>Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen.</span>
           </label>
           <button type="submit">Anfrage senden</button>
         </form>
@@ -64,11 +67,15 @@ export default function ContactPage() {
           <h2 id="booking-title">Direkt einen Termin sichern.</h2>
         </div>
         <div className="calendly-panel">
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/info-wendico/30min?background_color=241020&text_color=ffeede&primary_color=ffc66e"
-            style={{ width: "100%", minWidth: "0", height: "700px" }}
-          />
+          <p>Mit dem Öffnen der Terminbuchung werden Daten an Calendly in den USA übermittelt.</p>
+          <a
+            className="button-primary"
+            href="https://calendly.com/info-wendico/30min"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Terminbuchung öffnen
+          </a>
         </div>
       </section>
 
@@ -101,8 +108,6 @@ export default function ContactPage() {
           })}
         </div>
       </section>
-
-      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
     </main>
   );
 }
