@@ -1655,6 +1655,117 @@
   grid-column: 1 / -1;
 }
 
+.contact-form .contact-privacy-consent {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.contact-form .contact-privacy-consent input {
+  flex: 0 0 15px;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #ffc978;
+}
+
+.contact-form .contact-privacy-text {
+  color: #fff0d4;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.contact-form .contact-privacy-text a {
+  color: #ffc978;
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.contact-form button:disabled:hover {
+  transform: none;
+}
+
+.contact-form-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(33, 8, 19, 0.3);
+  border-top-color: #210813;
+  border-radius: 50%;
+  animation: contact-form-spin 0.7s linear infinite;
+}
+
+@keyframes contact-form-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-form-message {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #9ed8c9;
+}
+
+.contact-form-message.is-error {
+  color: #ffc978;
+}
+
+.contact-confirmation-overlay {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(23, 8, 23, 0.48);
+  animation: contact-confirmation-fade-in 0.2s ease-out;
+}
+
+.contact-confirmation {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: min(100%, 360px);
+  padding: 28px 24px;
+  border: 1px solid #735166;
+  border-radius: 8px;
+  color: #fff0d4;
+  background: #301429;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  text-align: center;
+}
+
+.contact-confirmation strong {
+  color: #ffc978;
+}
+
+.contact-confirmation-check {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  color: #210813;
+  background: #9ed8c9;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+@keyframes contact-confirmation-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .calendly-panel {
   position: relative;
   margin-top: clamp(28px, 4vw, 44px);

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CalendlyInlineWidget from "@/components/CalendlyInlineWidget";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -30,33 +32,7 @@ export default function ContactPage() {
             Hast du Fragen oder möchtest eine Offerte zu einer Idee von dir? Schreib uns kurz, was du vorhast.
           </span>
         </div>
-        <form className="contact-form" action="mailto:info@wendico.ch" method="post" encType="text/plain">
-          <label>
-            <span>Vorname</span>
-            <input name="vorname" type="text" autoComplete="given-name" required />
-          </label>
-          <label>
-            <span>Nachname</span>
-            <input name="nachname" type="text" autoComplete="family-name" required />
-          </label>
-          <label>
-            <span>E-Mail</span>
-            <input name="email" type="email" autoComplete="email" required />
-          </label>
-          <label>
-            <span>Telefon</span>
-            <input name="telefon" type="tel" autoComplete="tel" />
-          </label>
-          <label className="full-field">
-            <span>Nachricht</span>
-            <textarea name="nachricht" rows={5} required />
-          </label>
-          <label className="full-field contact-privacy-consent">
-            <input name="datenschutz" type="checkbox" required />
-            <span>Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen.</span>
-          </label>
-          <button type="submit">Anfrage senden</button>
-        </form>
+        <ContactForm />
       </section>
 
       <section className="standard-section contact-booking-section" id="termin-buchen" aria-labelledby="booking-title">
@@ -65,15 +41,7 @@ export default function ContactPage() {
           <h2 id="booking-title">Direkt einen Termin sichern.</h2>
         </div>
         <div className="calendly-panel">
-          <p>Mit dem Öffnen der Terminbuchung werden Daten an Calendly in den USA übermittelt.</p>
-          <a
-            className="button-primary"
-            href="https://calendly.com/info-wendico/30min"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Terminbuchung öffnen
-          </a>
+          <CalendlyInlineWidget />
         </div>
       </section>
 
