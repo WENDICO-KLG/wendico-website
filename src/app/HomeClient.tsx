@@ -97,10 +97,10 @@ const clarityCards = [
 ];
 
 const restaurantSignals = [
-  "Professionell im Netz auftreten",
-  "Neukunden durch eine anziehende Website gewinnen",
-  "Informationen rund um die Uhr verfügbar machen",
-  "Skalierbar und jederzeit erweiterbar bleiben",
+  { icon: "globe", title: "Professionell", text: "im Netz auftreten" },
+  { icon: "users", title: "Neukunden", text: "durch eine anziehende Website gewinnen" },
+  { icon: "clock", title: "Informationen", text: "rund um die Uhr verfügbar machen" },
+  { icon: "trend", title: "Skalierbar", text: "und jederzeit erweiterbar bleiben" },
 ];
 
 const reservationFeatures = [
@@ -253,6 +253,21 @@ function BeforeAfterComparison() {
         onChange={(event) => setPosition(Number(event.target.value))}
       />
     </div>
+  );
+}
+
+function SignalIcon({ name }: { name: string }) {
+  const paths = {
+    globe: <><circle cx="12" cy="12" r="8.5" /><path d="M3.8 9h16.4M3.8 15h16.4M12 3.5c2.2 2.3 3.3 5.1 3.3 8.5s-1.1 6.2-3.3 8.5c-2.2-2.3-3.3-5.1-3.3-8.5S9.8 5.8 12 3.5Z" /></>,
+    users: <><path d="M16.5 19.5v-1.2a3.3 3.3 0 0 0-3.3-3.3H6.8a3.3 3.3 0 0 0-3.3 3.3v1.2" /><circle cx="10" cy="8.5" r="3.3" /><path d="M16 8.7a3.2 3.2 0 0 1 0 6.1M17.2 15h.8a3.3 3.3 0 0 1 3.3 3.3v1.2" /></>,
+    clock: <><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3.5 2" /></>,
+    trend: <><path d="m4 17 5-5 3 3 7-8" /><path d="M14 7h5v5" /></>,
+  };
+
+  return (
+    <svg className="restaurant-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {paths[name as keyof typeof paths]}
+    </svg>
   );
 }
 
@@ -838,9 +853,10 @@ function AboutSection() {
           </div>
           <div className="restaurant-checks">
             {restaurantSignals.map((signal) => (
-              <div className="restaurant-check home-reveal" key={signal}>
-                <span />
-                <p>{signal}</p>
+              <div className="restaurant-check home-reveal" key={signal.title}>
+                <span className="restaurant-check-icon-wrap"><SignalIcon name={signal.icon} /></span>
+                <p><strong>{signal.title}</strong><span>{signal.text}</span></p>
+                <svg className="restaurant-check-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
               </div>
             ))}
           </div>
