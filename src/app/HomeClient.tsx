@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import AppNav from "@/components/AppNav";
 import afterImage from "../../after.png";
 import beforeImage from "../../before.png";
 import founderImage from "../../founder.png";
@@ -993,7 +992,6 @@ function AboutSection() {
 export default function Home() {
   return (
     <>
-      <AppNav active="home" />
       <HeroSection />
       <AboutSection />
     </>

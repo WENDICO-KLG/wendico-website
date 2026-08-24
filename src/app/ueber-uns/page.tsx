@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import AppNav from "@/components/AppNav";
 import founderImage from "../../../founder.png";
 
 export const metadata: Metadata = {
@@ -43,7 +42,6 @@ const team = [
 export default function AboutPage() {
   return (
     <main className="standard-page about-page-redesign">
-      <AppNav active="ueber-uns" />
       <section className="standard-hero standard-hero-split about-hero-redesign" aria-labelledby="about-page-title">
         <div className="about-hero-copy">
           <p>Über Uns</p>

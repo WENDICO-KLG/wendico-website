@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -21,14 +21,23 @@ const navItems: NavItem[] = [
   { label: "Kontakt", href: "/kontakt", key: "kontakt" },
 ];
 
-type AppNavProps = {
-  active?: string;
-};
-
-export default function AppNav({ active = "home" }: AppNavProps) {
+export default function AppNav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pendingNavigationRef = useRef(false);
   const closeMenu = () => setMenuOpen(false);
   const pathname = usePathname();
+  const active = navItems.find((item) => item.href === pathname)?.key;
+
+  useLayoutEffect(() => {
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+
+    if (pendingNavigationRef.current) {
+      pendingNavigationRef.current = false;
+      closeMenu();
+    }
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -37,19 +46,28 @@ export default function AppNav({ active = "home" }: AppNavProps) {
     };
   }, [menuOpen]);
 
-  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    closeMenu();
-    // The hero (#top) is `position: fixed`, so hash-anchor scrolling can't bring it
-    // into view when we're already on "/". Scroll manually instead.
-    if (pathname === "/") {
+  const handleNavigation = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const targetPathname = href.split("#", 1)[0];
+
+    if (targetPathname === pathname) {
       event.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (href === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else if (href.includes("#")) {
+        document.querySelector(href.slice(href.indexOf("#")))?.scrollIntoView({ behavior: "smooth" });
+      }
+      closeMenu();
+      return;
+    }
+
+    if (menuOpen) {
+      pendingNavigationRef.current = true;
     }
   };
 
   return (
     <nav className="site-nav" aria-label="Hauptnavigation">
-      <Link className="site-nav-brand" href="/" aria-label="Wendico Startseite" onClick={handleHomeClick}>
+      <Link className="site-nav-brand" href="/" scroll={false} aria-label="Wendico Startseite" onClick={(event) => handleNavigation(event, "/")}>
         <Image src={logoImage} alt="" priority />
         <span>Wendico</span>
       </Link>
@@ -70,13 +88,14 @@ export default function AppNav({ active = "home" }: AppNavProps) {
           <Link
             aria-current={active === item.key ? "page" : undefined}
             href={item.href}
+            scroll={item.href === "/" ? false : undefined}
             key={item.key}
-            onClick={item.key === "home" ? handleHomeClick : closeMenu}
+            onClick={(event) => handleNavigation(event, item.href)}
           >
             {item.label}
           </Link>
         ))}
-        <Link className="site-nav-cta site-nav-cta-mobile" href="/kontakt#termin-buchen" onClick={closeMenu}>
+        <Link className="site-nav-cta site-nav-cta-mobile" href="/kontakt#termin-buchen" onClick={(event) => handleNavigation(event, "/kontakt#termin-buchen")}>
           Projekt starten
         </Link>
       </div>

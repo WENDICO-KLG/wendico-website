@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import AppFooter from "@/components/AppFooter";
 import AppLoader from "@/components/AppLoader";
+import AppNav from "@/components/AppNav";
 import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
@@ -71,6 +72,7 @@ export default function RootLayout({
       </head>
       <body>
         <AppLoader />
+        <AppNav />
         <PageTransition>{children}</PageTransition>
         <AppFooter />
       </body>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AppNav from "@/components/AppNav";
 
 export const metadata: Metadata = {
   title: "Datenschutz",
@@ -26,7 +25,6 @@ const privacySections = [
 export default function PrivacyPage() {
   return (
     <main className="standard-page legal-page">
-      <AppNav />
       <section className="standard-hero" aria-labelledby="privacy-title">
         <p>Datenschutz</p>
         <h1 id="privacy-title">Datenschutzerklärung.</h1>

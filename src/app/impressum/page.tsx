@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AppNav from "@/components/AppNav";
 
 export const metadata: Metadata = {
   title: "Impressum",
@@ -26,7 +25,6 @@ const sections = [
 export default function ImpressumPage() {
   return (
     <main className="standard-page legal-page">
-      <AppNav />
       <section className="standard-hero" aria-labelledby="impressum-title">
         <p>Rechtliches</p>
         <h1 id="impressum-title">Impressum.</h1>

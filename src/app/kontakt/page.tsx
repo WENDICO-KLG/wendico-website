@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AppNav from "@/components/AppNav";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -23,7 +22,6 @@ const contacts = [
 export default function ContactPage() {
   return (
     <main className="standard-page">
-      <AppNav active="kontakt" />
       <section className="standard-hero standard-hero-split" aria-labelledby="contact-title">
         <div>
           <p>Kontakt</p>

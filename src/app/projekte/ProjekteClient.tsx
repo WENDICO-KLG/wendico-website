@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import AppNav from "@/components/AppNav";
 
 const projects = [
   { name: "Lostrios.ch", date: "Mai 2026", href: "https://lostrios.ch/", image: "/customer-websites/lostrios-website.png", type: "Brand", focus: "Schneller Start", text: "Ein schneller Auftritt mit klarem Fokus auf Marke und Kontakt.", result: "Kompakter Webauftritt mit sauberer Markenfläche." },
@@ -29,7 +28,6 @@ export default function ProjectsPage() {
 
   return (
     <main className="standard-page projects-page">
-      <AppNav active="projekte" />
       <section className="standard-hero projects-hero" aria-labelledby="projects-page-title">
         <p>Projekte</p>
         <h1 id="projects-page-title">Projekte mit klarer Wirkung.</h1>

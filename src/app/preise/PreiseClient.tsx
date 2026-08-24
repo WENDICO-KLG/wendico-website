@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import AppNav from "@/components/AppNav";
 
 const systems = [
   { title: "Website", text: "Konversionsorientiert gebaut, jede Seite führt den Gast zur Tischreservation.", metric: "5-10 Seiten" },
@@ -87,7 +86,6 @@ export default function PricesPage() {
 
   return (
     <main className="standard-page prices-page">
-      <AppNav active="preise" />
       <section className="standard-hero prices-hero" aria-labelledby="prices-title">
         <div className="prices-hero-copy">
           <p>Für Restaurants ab 5 Mitarbeitenden</p>

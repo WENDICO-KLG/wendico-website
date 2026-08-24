@@ -92,7 +92,8 @@
 
 .app-loader-word span {
   display: inline-block;
-  opacity: 0;
+  color: #ffe7b8;
+  opacity: 1;
   transform: translateY(24px);
   animation: app-loader-letter-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
