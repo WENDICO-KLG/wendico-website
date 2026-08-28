@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import AppFooter from "@/components/AppFooter";
 import AppLoader from "@/components/AppLoader";
 import AppNav from "@/components/AppNav";
+import CalendlyPreloader from "@/components/CalendlyPreloader";
 import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
@@ -65,6 +66,8 @@ export default function RootLayout({
   return (
     <html lang="de-CH">
       <head>
+        <link rel="preconnect" href="https://calendly.com" />
+        <link rel="preconnect" href="https://assets.calendly.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -73,6 +76,7 @@ export default function RootLayout({
       <body>
         <AppLoader />
         <AppNav />
+        <CalendlyPreloader />
         <PageTransition>{children}</PageTransition>
         <AppFooter />
       </body>

@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 const calendlyScriptId = "calendly-widget-script";
 const calendlyScriptUrl = "https://assets.calendly.com/assets/external/widget.js";
 const calendlyUrl =
-  "https://calendly.com/info-wendico/30min?hide_event_type_details=1&hide_gdpr_banner=1";
+  "https://calendly.com/info-wendico/30min?hide_gdpr_banner=1";
 
 type CalendlyApi = {
   initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
@@ -17,7 +17,7 @@ declare global {
   }
 }
 
-function loadCalendlyScript() {
+export function loadCalendlyScript() {
   const existingScript = document.getElementById(calendlyScriptId) as HTMLScriptElement | null;
 
   return new Promise<void>((resolve, reject) => {
@@ -83,7 +83,6 @@ export default function CalendlyInlineWidget() {
       ref={widgetRef}
       className="calendly-inline-widget"
       data-url={calendlyUrl}
-      style={{ minWidth: "320px", height: "700px" }}
     />
   );
 }

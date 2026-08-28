@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CalendlyInlineWidget from "@/components/CalendlyInlineWidget";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -65,15 +66,11 @@ export default function ContactPage() {
           <h2 id="booking-title">Direkt einen Termin sichern.</h2>
         </div>
         <div className="calendly-panel">
-          <p>Mit dem Öffnen der Terminbuchung werden Daten an Calendly in den USA übermittelt.</p>
-          <a
-            className="button-primary"
-            href="https://calendly.com/info-wendico/30min"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Terminbuchung öffnen
-          </a>
+          <p>
+            Mit dem Laden dieses Bereichs werden Daten an Calendly (USA) übermittelt. Details dazu in unserer{" "}
+            <a href="/datenschutz">Datenschutzerklärung</a>.
+          </p>
+          <CalendlyInlineWidget />
         </div>
       </section>
 

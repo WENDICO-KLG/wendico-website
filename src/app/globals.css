@@ -1791,6 +1791,9 @@
 }
 
 .calendly-panel .calendly-inline-widget {
+  width: 100%;
+  min-width: 0;
+  height: 700px;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -1835,6 +1838,14 @@
   .project-page-grid,
   .contact-form {
     grid-template-columns: 1fr;
+  }
+
+  .calendly-panel {
+    padding: 6px;
+  }
+
+  .calendly-panel .calendly-inline-widget {
+    height: 1000px;
   }
 }
 
