@@ -1,104 +1,150 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import type { CSSProperties } from "react";
-import founderImage from "../../../founder.png";
+import AboutHero from "@/components/AboutHero";
+import AboutSectionParallax from "@/components/AboutSectionParallax";
 
 export const metadata: Metadata = {
-  title: "Über Uns",
-  description:
-    "Wendico ist ein junges Webstudio aus dem Zürcher Weinland. Unser Ziel: digitale Auftritte, die einfach wirken und professionell verkaufen.",
+  title: "Über uns",
+  description: "Lerne Wendico kennen: Digitalstudio aus Thalheim an der Thur für Strategie, Webdesign, Design und digitale Systeme.",
   alternates: { canonical: "/ueber-uns" },
+  keywords: ["Wendico Team", "Digitalstudio Zürcher Weinland", "Webdesign Thalheim an der Thur", "Panat Ruangsri", "Tim Biedermann"],
   openGraph: {
-    title: "Über Uns | Wendico",
-    description: "Klar denken. Schnell bauen. Das junge Webstudio aus dem Zürcher Weinland.",
+    type: "website",
+    locale: "de_CH",
+    siteName: "Wendico",
     url: "/ueber-uns",
+    title: "Über uns | Wendico",
+    description: "Lerne Wendico kennen: Digitalstudio aus Thalheim an der Thur für Strategie, Webdesign, Design und digitale Systeme.",
   },
 };
 
-const values = [
-  { title: "Innovation", label: "01", text: "Wir denken voraus und entwickeln kreative Lösungen, die Unternehmen online voranbringen." },
-  { title: "Orientierung", label: "02", text: "Wir arbeiten zielgerichtet und halten den Weg vom ersten Gespräch bis zum Launch klar." },
-  { title: "Qualität", label: "03", text: "Wir verbinden saubere Technik, Design und eine professionelle Onlinepräsenz." },
-  { title: "Zielstrebigkeit", label: "04", text: "Wir setzen Ideen fokussiert um und schaffen sichtbaren Fortschritt." },
+const principles = [
+  ["clarity", "Klarheit", "Wir reduzieren Komplexität, bis Strategie, Design und Technik verständlich zusammenarbeiten."],
+  ["impact", "Wirkung", "Jede Entscheidung soll deiner Marke helfen: mehr Vertrauen, bessere Anfragen, sauberere Abläufe."],
+  ["identity", "Eigenständigkeit", "Wir bauen keine Austauschware, sondern Auftritte mit eigener Sprache, eigenem Code und klarer Haltung."],
+];
+
+const workflow = [
+  ["Verstehen", "Wir hören zuerst zu, sortieren Ziele und erkennen, wo digital wirklich Hebel entstehen."],
+  ["Gestalten", "Aus Inhalt, Struktur und Look entsteht ein Auftritt, der sich nach deiner Marke anfühlt."],
+  ["Bauen", "Wir entwickeln performant, responsiv und so, dass dein System langfristig sauber weiterwachsen kann."],
+];
+
+const roleCards = [
+  ["Strategie", "Ziele ordnen, Nutzer verstehen, Richtung festlegen."],
+  ["Auftritt", "Design, Inhalt und Technik zu einer klaren Marke verbinden."],
+  ["System", "Anfragen, Abläufe und Wachstum messbar unterstützen."],
 ];
 
 const team = [
-  {
-    name: "Panat Ruangsri",
-    role: "Co-Founder | Webentwicklung & Strategie",
-    href: "https://www.linkedin.com/in/panat-ruangsri-28a137288/",
-    image: "/wendico-live/panat.JPG",
-    imagePosition: "center 18%",
-  },
-  {
-    name: "Tim Biedermann",
-    role: "Co-Founder | Webentwicklung & Strategie",
-    href: "https://www.linkedin.com/in/tim-biedermann-ba5b35286/",
-    image: "/wendico-live/tim.jpg",
-    imagePosition: "center 20%",
-  },
+  ["Panat Ruangsri", "/wendico-live/panat.JPG", "Sales · Strategie · Webdesign", "https://www.linkedin.com/in/panat-ruangsri-28a137288/"],
+  ["Tim Biedermann", "/wendico-live/tim.jpg", "Finance · Strategie · Design", "https://www.linkedin.com/in/tim-biedermann-ba5b35286/"],
 ];
 
 export default function AboutPage() {
   return (
-    <main className="standard-page about-page-redesign">
-      <section className="standard-hero standard-hero-split about-hero-redesign" aria-labelledby="about-page-title">
-        <div className="about-hero-copy">
-          <p>Über Uns</p>
-          <h1 id="about-page-title">Jung im Kopf. Klar im Web.</h1>
-          <span>
-            Jung, orientiert und zielstrebig: Seit Anfang 2025 gegründet von zwei Auszubildenden, um Onlinepräsenz und Qualität auf ein neues Level zu heben.
-          </span>
-          <div className="about-hero-badges" aria-label="Wendico Fakten">
-            <span>Seit 2025</span>
-            <span>Zürcher Weinland</span>
-            <span>Eigener Code</span>
-          </div>
-        </div>
-        <div className="standard-image-panel about-hero-panel">
-          <div className="about-orbit" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </div>
-          <Image src={founderImage} alt="Panat Ruangsri und Tim Biedermann von Wendico" priority />
-        </div>
-      </section>
+    <main className="about-page">
+      <AboutSectionParallax />
+      <AboutHero />
 
-      <section className="standard-section about-values-section" aria-labelledby="values-title">
-        <div className="section-heading section-heading-split">
+      <section className="about-page-intro">
+        <div className="about-page-section-bg" aria-hidden="true" />
+        <div className="shell about-page-intro-grid">
           <div>
-            <p>Ein junges Unternehmen mit Sitz im Zürcher Weinland</p>
-            <h2 id="values-title">Unsere Werte prägen, wie wir arbeiten.</h2>
+            <span className="eyebrow"><i /> Unsere Rolle</span>
+            <h2>Wir sind nicht einfach eine Agentur. Wir sind dein digitales Gegenüber.</h2>
           </div>
-          <span>Unsere Werte sind der Kern unseres Unternehmens. Sie prägen, wie wir arbeiten, denken und mit unseren Kunden umgehen.</span>
-        </div>
-        <div className="standard-card-grid four-columns">
-          {values.map((value, index) => (
-            <article className="standard-card about-value-card" key={value.title} style={{ "--value-index": index } as CSSProperties}>
-              <span>{value.label}</span>
-              <h3>{value.title}</h3>
-              <p>{value.text}</p>
-            </article>
-          ))}
+          <div className="about-page-role-panel">
+            <p>Wir denken mit, hinterfragen, strukturieren und bauen. Am Ende steht ein Auftritt, der verständlich führt und im Alltag hilft.</p>
+            <div className="about-page-role-cards">
+              {roleCards.map(([title, text]) => (
+                <article key={title}>
+                  <h3>{title}</h3>
+                  <span>{text}</span>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="standard-section about-team-section" aria-labelledby="team-title">
-        <div className="big-statement">
-          <p>Unsere Teammitglieder</p>
-          <h2 id="team-title">Panat und Tim entwickeln Wendico.</h2>
+      <section className="about-page-values">
+        <div className="about-page-values-bg" aria-hidden="true" />
+        <div className="shell">
+          <div className="about-page-section-heading">
+            <span className="eyebrow about-page-eyebrow"><i /> Haltung</span>
+            <h2>Drei Prinzipien,<br />die jedes Projekt tragen.</h2>
+          </div>
+          <div className="about-page-value-grid">
+            {principles.map(([icon, title, text]) => (
+              <article className="about-page-value-card" key={title}>
+                <span className={`about-page-value-icon about-page-value-icon-${icon}`} aria-hidden="true"><i /><i /><i /></span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="standard-card-grid two-columns">
-          {team.map((person, index) => (
-            <a className="standard-card standard-link-card about-team-card" href={person.href} key={person.name} target="_blank" rel="noreferrer" style={{ "--team-index": index } as CSSProperties}>
-              <Image className="team-member-photo" src={person.image} alt={person.name} width={600} height={800} style={{ objectPosition: person.imagePosition }} />
-              <span>Webentwicklung & Strategie</span>
-              <h3>{person.name}</h3>
-              <p>{person.role}</p>
-              <strong>LinkedIn ansehen</strong>
-            </a>
-          ))}
+      </section>
+
+      <section className="about-page-method">
+        <div className="about-page-section-bg" aria-hidden="true" />
+        <div className="shell about-page-method-grid">
+          <div className="about-page-method-visual">
+            <div className="about-page-process-graphic" aria-hidden="true">
+              <span className="workflow-board">
+                <i className="workflow-topbar" />
+                <b className="workflow-column workflow-column-one"><small>Strategie</small><em /></b>
+                <b className="workflow-column workflow-column-two"><small>Design</small><em /></b>
+                <b className="workflow-column workflow-column-three"><small>Code</small><em /></b>
+              </span>
+              <span className="workflow-output">
+                <small>Launch-ready System</small>
+                <i />
+                <i />
+                <i />
+              </span>
+              <span className="workflow-cursor" />
+              <span className="workflow-connector workflow-connector-one" />
+              <span className="workflow-connector workflow-connector-two" />
+              <span className="workflow-pulse workflow-pulse-one" />
+              <span className="workflow-pulse workflow-pulse-two" />
+            </div>
+          </div>
+          <div className="about-page-method-copy">
+            <span className="eyebrow"><i /> Arbeitsweise</span>
+            <h2>Vom Gedanken zum System.</h2>
+            <div className="about-page-steps">
+              {workflow.map(([title, text]) => (
+                <article key={title}>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-page-team">
+        <div className="shell">
+          <div className="about-page-section-heading is-centered">
+            <span className="eyebrow"><i /> Team</span>
+            <h2>Zwei Perspektiven.<br /><em>Ein Anspruch.</em></h2>
+          </div>
+          <div className="about-page-team-grid">
+            {team.map(([name, image, role, href]) => (
+              <a className="about-page-team-card" href={href} target="_blank" rel="noreferrer" key={name}>
+                <Image src={image} alt={name} fill sizes="(max-width: 760px) 92vw, 520px" />
+                <span className="about-page-team-shade" />
+                <div>
+                  <span>{role}</span>
+                  <h3>{name}</h3>
+                  <b>LinkedIn ↗</b>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>

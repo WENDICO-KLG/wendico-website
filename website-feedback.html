@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wendico Website Feedback</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07100c;
+      --panel: rgba(255,255,255,.08);
+      --panel-strong: rgba(255,255,255,.13);
+      --line: rgba(255,255,255,.16);
+      --text: #f4f8f5;
+      --muted: rgba(244,248,245,.68);
+      --lime: #d8ff71;
+      --green: #70d6a4;
+      --warn: #ffd479;
+      --risk: #ff9f8a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(216,255,113,.16), transparent 42%),
+        radial-gradient(ellipse at 85% 18%, rgba(112,214,164,.16), transparent 40%),
+        linear-gradient(145deg, #050806, var(--bg) 52%, #050806);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    main { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 72px 0 96px; }
+    header { margin-bottom: 38px; }
+    h1, h2, h3 { line-height: 1.08; letter-spacing: -.01em; }
+    h1 { max-width: 850px; margin: 0 0 18px; font-size: clamp(44px, 7vw, 86px); font-weight: 650; }
+    h1 span, h2 span { color: var(--lime); }
+    header p { max-width: 760px; margin: 0; color: var(--muted); font-size: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .meta span { padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.06); color: var(--muted); font-size: 13px; }
+    section { margin-top: 22px; padding: 28px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, var(--panel-strong), rgba(255,255,255,.04)); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 24px 70px rgba(0,0,0,.22); }
+    section > h2 { margin: 0 0 18px; font-size: clamp(28px, 4vw, 44px); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 20px 0; }
+    .card { padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.055); }
+    .card strong { display: block; margin-bottom: 6px; color: var(--lime); }
+    h3 { margin: 28px 0 10px; font-size: 22px; }
+    ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); }
+    li { margin: 8px 0; }
+    .priority { display: inline-flex; align-items: center; gap: 8px; margin: 8px 8px 0 0; padding: 8px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+    .high { color: #180f00; background: var(--warn); }
+    .medium { color: #07100c; background: var(--green); }
+    .low { color: var(--text); background: rgba(255,255,255,.1); border: 1px solid var(--line); }
+    .quote { margin: 18px 0; padding: 18px 20px; border-left: 3px solid var(--lime); border-radius: 14px; background: rgba(216,255,113,.08); color: rgba(244,248,245,.82); }
+    table { width: 100%; margin-top: 14px; border-collapse: collapse; overflow: hidden; border-radius: 16px; }
+    th, td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--lime); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    td { color: var(--muted); }
+    .ok { color: var(--green); }
+    .risk { color: var(--risk); }
+    footer { margin-top: 34px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 820px) { main { width: min(100% - 28px, 1120px); padding-top: 48px; } section { padding: 22px; border-radius: 22px; } .grid { grid-template-columns: 1fr; } table, tbody, tr, td, th { display: block; } th { display: none; } td { padding: 10px 0; } tr { padding: 12px 0; border-bottom: 1px solid var(--line); } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Wendico Website Feedback <span>aus 5 Perspektiven</span></h1>
+      <p>Audit auf Basis der aktuellen lokalen Website-Struktur, gerenderter Seiten, Metadata, Sitemap, Robots, sichtbarer Inhalte und UX-Flows. Die Feedbacks sind bewusst getrennt, damit technische, gestalterische und zielgruppenbezogene Entscheidungen sauber bewertet werden können.</p>
+      <div class="meta">
+        <span>Datum: 03.09.2026</span>
+        <span>Geprüfte Seiten: Home, Über uns, Projekte, Preise, Kontakt, Impressum, Datenschutz</span>
+        <span>Build/Lint zuletzt erfolgreich</span>
+        <span>Kein horizontaler Overflow in geprüften Desktop-Ansichten</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Kurzfazit</h2>
+      <div class="grid">
+        <div class="card"><strong>Stärken</strong>Die Website hat eine klare visuelle Identität, echte Projektbeispiele, starke Bilder, sichtbare Preise und direkte Kontaktwege.</div>
+        <div class="card"><strong>Risiken</strong>SEO-Metadata ist noch knapp, Conversion-Texte könnten zielgruppenspezifischer werden, und einige starke Effekte können für ältere oder hektische Besucher viel wirken.</div>
+        <div class="card"><strong>Beste nächste Schritte</strong>Social/OG-Metadata ergänzen, Local-SEO ausbauen, CTA-Hierarchie vereinheitlichen, Performance/LCP prüfen und Legal-Hinweise final juristisch abgleichen.</div>
+      </div>
+      <p><span class="priority high">Hoch</span><span class="priority medium">Mittel</span><span class="priority low">Optional</span></p>
+    </section>
+
+    <section>
+      <h2>1. SEO Experte</h2>
+      <div class="quote">Die Seite ist visuell stark und technisch solide gerendert. Für Suchmaschinen fehlt aber noch etwas semantische Tiefe: bessere Meta-Daten, strukturierte Daten, lokale Signale und klarere Keyword-Zuordnung pro Unterseite.</div>
+
+      <h3>Positive Befunde</h3>
+      <ul>
+        <li>Alle wichtigen Seiten haben einen eindeutigen Seitentitel und eine Meta Description.</li>
+        <li>Sitemap und Robots sind vorhanden und verweisen auf <code>https://wendico.ch</code>.</li>
+        <li>Jede geprüfte Hauptseite hat ein H1.</li>
+        <li>Projektseite enthält echte Projektbeispiele mit externen Links, Bildern und Kategorien.</li>
+        <li>Kontakt, Impressum und Datenschutz sind vorhanden. Das ist für Vertrauen und lokale Sichtbarkeit wichtig.</li>
+      </ul>
+
+      <h3>SEO Risiken</h3>
+      <ul>
+        <li><span class="priority high">Hoch</span> Es fehlen Open Graph und Twitter Card Metadaten. Social Shares wirken dadurch wahrscheinlich generisch.</li>
+        <li><span class="priority high">Hoch</span> Es fehlen strukturierte Daten, z. B. <code>LocalBusiness</code>, <code>Organization</code>, <code>WebSite</code>, <code>Service</code> und eventuell <code>FAQPage</code>.</li>
+        <li><span class="priority medium">Mittel</span> Meta Descriptions sind korrekt, aber noch etwas allgemein. Besonders Home, Projekte und Kontakt könnten konkreter auf Zielgruppen und Region eingehen.</li>
+        <li><span class="priority medium">Mittel</span> Preise-Seite fokussiert stark Restaurants, während die restliche Website breiter über Marken, Websites und Umsatzsysteme spricht. Das kann Keyword- und Erwartungs-Mismatch erzeugen.</li>
+        <li><span class="priority medium">Mittel</span> Viele dekorative Bilder haben leere Alt-Texte, was okay ist. Relevante Projekt-/Team-Bilder haben Alt-Texte, aber manche Hero-Bilder könnten für SEO und Accessibility genauer beschrieben werden, wenn sie inhaltlich relevant sind.</li>
+        <li><span class="priority low">Optional</span> Sitemap nutzt immer <code>new Date()</code>. Für echte Produktion wären stabile <code>lastModified</code>-Daten besser.</li>
+      </ul>
+
+      <h3>Empfehlungen</h3>
+      <ul>
+        <li>Pro Seite eine schärfere Keyword-Ausrichtung definieren: Home = Webdesign Zürich/Weinland, Projekte = Referenzen/Websites, Preise = Website Kosten/Pakete, Kontakt = Webdesign Erstgespräch.</li>
+        <li>JSON-LD für Organisation und lokale Firma ergänzen: Name, Adresse, Telefon, E-Mail, URL, Logo, Social Profile.</li>
+        <li>FAQ-Sections auf Home und Preise als strukturierte Daten auszeichnen, sofern Inhalte final stimmen.</li>
+        <li>OG-Bild erstellen, idealerweise ein branded Preview mit Wendico, Bergbild und Claim.</li>
+        <li>Interne Links gezielter beschriften: z. B. nicht nur „Arbeiten ansehen“, sondern „Website-Projekte ansehen“ an passenden Stellen.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. UI/UX Experte</h2>
+      <div class="quote">Die visuelle Sprache ist eigenständig und hochwertig: dunkle Glass-Flächen, Lime-Akzent, Bergbilder und echte Screenshots ergeben ein klares Premiumgefühl. Die wichtigsten UX-Themen sind Konsistenz, Scannability und Motion-Dosierung.</div>
+
+      <h3>Positive Befunde</h3>
+      <ul>
+        <li>Starke visuelle Wiedererkennbarkeit über Home, Über uns, Projekte und Kontakt.</li>
+        <li>Projektseite hat echte Screenshots und einen funktionalen Filter.</li>
+        <li>Kontaktseite bietet drei Kontaktwege, Formular, Calendly und persönliche Ansprechpartner.</li>
+        <li>Preise sind sichtbar. Das reduziert Reibung und stärkt Vertrauen.</li>
+        <li>Mobile Layouts wurden mehrfach auf Overflow geprüft.</li>
+      </ul>
+
+      <h3>UX Risiken</h3>
+      <ul>
+        <li><span class="priority high">Hoch</span> Sehr viele starke Sections konkurrieren auf Home: fixed Hero, Service-Mosaic, Sticky Services, Sticky Text, 3D-DNA, Preise, Slogan, Team, FAQ, CTA. Das wirkt eindrucksvoll, kann aber kognitiv schwer werden.</li>
+        <li><span class="priority medium">Mittel</span> CTA-Texte variieren: „Projekt besprechen“, „Paket wählen“, „Kostenloses Erstgespräch“, „Termin buchen“. Das ist okay, aber die Hauptconversion sollte klar dominieren.</li>
+        <li><span class="priority medium">Mittel</span> Scroll- und Sticky-Interaktionen sind visuell spannend, aber müssen auf schwächeren Geräten besonders sauber bleiben.</li>
+        <li><span class="priority medium">Mittel</span> Calendly Inline-Widget ist praktisch, aber visuell ein Fremdkörper und kann langsam laden. Ein Fallback-Link sollte sichtbar bleiben, falls das iframe blockiert.</li>
+      </ul>
+
+      <h3>Empfehlungen</h3>
+      <ul>
+        <li>Eine primäre CTA-Formulierung definieren, z. B. „Kostenloses Erstgespräch buchen“, und konsequent verwenden.</li>
+        <li>Auf Home prüfen, ob jede große Animation zur Conversion beiträgt. Wenn nicht: reduzieren oder schneller abschließen lassen.</li>
+        <li>Calendly-Block mit einem sichtbaren Fallback-Link ergänzen: „Falls der Kalender nicht lädt, direkt öffnen“.</li>
+        <li>Projektkarten könnten kurze Ergebnislabels bekommen, z. B. „Restaurant“, „Brand“, „Booking“, „Mehrsprachig“, damit Nutzer schneller scannen.</li>
+        <li>Footer könnte Kontakt und CTA noch stärker priorisieren, da er am Ende vieler Nutzerwege steht.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Junger Website-Besucher</h2>
+      <div class="quote">Die Website fühlt sich modern an. Die Effekte, dunklen Hintergründe und echten Projektbilder machen direkt mehr Eindruck als eine klassische Agenturseite.</div>
+
+      <h3>Was gut ankommt</h3>
+      <ul>
+        <li>Der Look wirkt frisch, digital und selbstbewusst.</li>
+        <li>Die Social-Media-Logos und animierten Service-Grafiken machen die Leistungen greifbarer.</li>
+        <li>Die Projektseite mit Screenshots zeigt schnell, was Wendico wirklich gemacht hat.</li>
+        <li>Die Gründer wirken sichtbar und persönlich, nicht anonym.</li>
+      </ul>
+
+      <h3>Was irritieren könnte</h3>
+      <ul>
+        <li><span class="priority medium">Mittel</span> Manche Sections sind sehr lang und effektlastig. Wer schnell Informationen sucht, könnte scrollen müssen.</li>
+        <li><span class="priority medium">Mittel</span> Auf Home ist viel los. Die wichtigsten Infos könnten für junge Nutzer noch schneller in „Was bekomme ich?“ übersetzt werden.</li>
+        <li><span class="priority low">Optional</span> Social Proof könnte stärker sein: echte Kundenstimmen, Resultate oder Mini-Case-Studies.</li>
+      </ul>
+
+      <h3>Wunsch aus dieser Perspektive</h3>
+      <ul>
+        <li>Mehr kurze, konkrete Beispiele: „Vorher/Nachher“, „Problem/Lösung“, „Was wurde gebaut?“</li>
+        <li>Mehr schnelle Orientierung auf Projekten: Kategorien sind gut, aber Ergebnisse wären noch interessanter.</li>
+        <li>Ein sehr klarer Einstieg für Budget und Ablauf: „So läuft ein Projekt ab“ in 3 bis 4 Schritten.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Älterer Website-Besucher</h2>
+      <div class="quote">Die Website wirkt professionell, aber manche Bewegungen und dunklen Glasflächen können für ältere Besucher anspruchsvoll sein. Vertrauen, Klarheit und Lesbarkeit sind hier entscheidend.</div>
+
+      <h3>Was Vertrauen schafft</h3>
+      <ul>
+        <li>Telefonnummer und E-Mail sind sichtbar.</li>
+        <li>Impressum und Datenschutz sind vorhanden und sauber gestaltet.</li>
+        <li>Persönliche Ansprechpartner mit Bild stärken Vertrauen.</li>
+        <li>Preise geben eine erste Orientierung.</li>
+      </ul>
+
+      <h3>Mögliche Hürden</h3>
+      <ul>
+        <li><span class="priority high">Hoch</span> Kleine Texte auf dunklem/glassigem Hintergrund müssen dauerhaft sehr kontraststark bleiben.</li>
+        <li><span class="priority medium">Mittel</span> Zu viel Bewegung kann irritieren. Reduced Motion ist teils berücksichtigt, sollte aber systematisch getestet werden.</li>
+        <li><span class="priority medium">Mittel</span> Calendly kann für ältere Nutzer ungewohnt sein. Telefon als Alternative sollte in der Buchungssection prominent sichtbar bleiben.</li>
+        <li><span class="priority low">Optional</span> Begriffe wie „Umsatzsystem“ oder „Launch-ready System“ könnten erklärt werden, weil sie nicht für alle sofort klar sind.</li>
+      </ul>
+
+      <h3>Empfehlungen</h3>
+      <ul>
+        <li>In der Kontakt-/Booking-Section zusätzlich eine einfache Zeile ergänzen: „Du kannst uns auch direkt anrufen.“</li>
+        <li>Für Preise und Ablauf eine besonders einfache Kurzfassung anbieten.</li>
+        <li>Kontrastwerte final prüfen, besonders auf Glass-Cards über Bildern.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Firmeninhaber, der eine neue Website braucht</h2>
+      <div class="quote">Die Seite vermittelt: Wendico kann moderne Websites bauen und denkt über Design hinaus. Für Kaufentscheidung und Anfrage braucht der Firmeninhaber aber besonders schnell Antworten auf Nutzen, Kosten, Ablauf und Risiko.</div>
+
+      <h3>Was überzeugt</h3>
+      <ul>
+        <li>Professioneller Look: wirkt hochwertig und aktuell.</li>
+        <li>Klare Preise: erleichtert die Entscheidung, ob Wendico in Frage kommt.</li>
+        <li>Projektbeispiele: zeigen echte Arbeit statt nur Versprechen.</li>
+        <li>Direkte Terminbuchung und Formular: niedrige Kontaktbarriere.</li>
+        <li>Persönliche Ansprechpartner: gute Vertrauensbasis.</li>
+      </ul>
+
+      <h3>Was noch fehlen könnte</h3>
+      <ul>
+        <li><span class="priority high">Hoch</span> Konkrete Geschäftsergebnisse pro Projekt: mehr Anfragen, bessere Buchungen, klarerer Auftritt, Zeitersparnis.</li>
+        <li><span class="priority high">Hoch</span> Ein klarer Ablauf mit Dauer und Verantwortlichkeiten: Was muss der Kunde liefern? Wie lange dauert es? Was passiert nach Launch?</li>
+        <li><span class="priority medium">Mittel</span> Garantie-/Sicherheitsgefühl: Support, Wartung, Änderungsrunden und Eigentum könnten noch stärker erklärt werden.</li>
+        <li><span class="priority medium">Mittel</span> Preise-Seite spricht teils sehr stark Restaurants an. Wenn Wendico breiter Kunden gewinnen will, sollte die Sprache breiter werden.</li>
+      </ul>
+
+      <h3>Empfehlungen</h3>
+      <ul>
+        <li>Auf der Projektseite kurze Case-Study-Abschnitte ergänzen: Ausgangslage, Lösung, Ergebnis.</li>
+        <li>Auf der Home- oder Preise-Seite einen Abschnitt „So läuft dein Projekt ab“ mit Timeline ergänzen.</li>
+        <li>Beim CTA konkreter formulieren: „15-Minuten-Erstgespräch buchen“ passt gut zur Kontaktseite.</li>
+        <li>Ein bis drei Kundenstimmen oder Zitate würden die Kaufentscheidung stark unterstützen.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Priorisierte Maßnahmenliste</h2>
+      <table>
+        <thead><tr><th>Priorität</th><th>Maßnahme</th><th>Warum</th></tr></thead>
+        <tbody>
+          <tr><td>Hoch</td><td>Open Graph / Twitter Metadata + OG-Bild ergänzen</td><td>Verbessert Social Sharing, Markenwirkung und SERP-/Messenger-Vorschau.</td></tr>
+          <tr><td>Hoch</td><td>LocalBusiness / Organization JSON-LD ergänzen</td><td>Stärkt lokale SEO und macht Unternehmensdaten maschinenlesbar.</td></tr>
+          <tr><td>Hoch</td><td>Projektseite um Ergebnisse/Case-Study-Kurzinfos erweitern</td><td>Hilft Firmeninhabern zu verstehen, was Wendico geschäftlich liefert.</td></tr>
+          <tr><td>Mittel</td><td>Preise-Seite sprachlich prüfen: Restaurants vs. breitere Zielgruppe</td><td>Verhindert, dass Nicht-Restaurant-Kunden sich ausgeschlossen fühlen.</td></tr>
+          <tr><td>Mittel</td><td>Calendly-Fallback-Link sichtbar ergänzen</td><td>Falls iframe blockiert oder langsam lädt, bleibt Conversion möglich.</td></tr>
+          <tr><td>Mittel</td><td>Kontrastprüfung der Glass-Cards über Bildern</td><td>Wichtig für ältere Besucher, Accessibility und professionelle Lesbarkeit.</td></tr>
+          <tr><td>Optional</td><td>Stabile Sitemap-lastModified Daten setzen</td><td>Technisch sauberer für Produktion.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      Erstellt als internes Feedback-Dokument. Rechtliche Inhalte sind nur aus Website-Perspektive geprüft und ersetzen keine juristische Prüfung.
+    </footer>
+  </main>
+</body>
+</html>

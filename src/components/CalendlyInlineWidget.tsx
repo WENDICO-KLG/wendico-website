@@ -2,86 +2,46 @@
 
 import { useEffect, useRef } from "react";
 
-const calendlyScriptId = "calendly-widget-script";
-const calendlyScriptUrl = "https://assets.calendly.com/assets/external/widget.js";
-const calendlyUrl =
-  "https://calendly.com/info-wendico/30min?hide_gdpr_banner=1";
+const calendlyScript = "https://assets.calendly.com/assets/external/widget.js";
+const calendlyUrl = "https://calendly.com/info-wendico/30min?hide_gdpr_banner=1";
 
-type CalendlyApi = {
-  initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
+type CalendlyWindow = Window & {
+  Calendly?: {
+    initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
+  };
 };
-
-declare global {
-  interface Window {
-    Calendly?: CalendlyApi;
-  }
-}
-
-export function loadCalendlyScript() {
-  const existingScript = document.getElementById(calendlyScriptId) as HTMLScriptElement | null;
-
-  return new Promise<void>((resolve, reject) => {
-    if (window.Calendly?.initInlineWidget) {
-      resolve();
-      return;
-    }
-
-    if (existingScript) {
-      const startedAt = Date.now();
-      const waitForApi = () => {
-        if (window.Calendly?.initInlineWidget) {
-          resolve();
-        } else if (Date.now() - startedAt >= 10000) {
-          reject(new Error("Calendly konnte nicht geladen werden."));
-        } else {
-          window.setTimeout(waitForApi, 50);
-        }
-      };
-
-      waitForApi();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.id = calendlyScriptId;
-    script.src = calendlyScriptUrl;
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("Calendly konnte nicht geladen werden."));
-    document.head.appendChild(script);
-  });
-}
 
 export default function CalendlyInlineWidget() {
   const widgetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let cancelled = false;
-    const widgetElement = widgetRef.current;
+    const initWidget = () => {
+      const parentElement = widgetRef.current;
+      const calendly = (window as CalendlyWindow).Calendly;
+      if (!parentElement || !calendly || parentElement.querySelector("iframe")) return;
 
-    loadCalendlyScript()
-      .then(() => {
-        if (!cancelled && widgetElement && window.Calendly?.initInlineWidget) {
-          window.Calendly.initInlineWidget({
-            url: calendlyUrl,
-            parentElement: widgetElement,
-          });
-        }
-      })
-      .catch(() => undefined);
-
-    return () => {
-      cancelled = true;
-      if (widgetElement) {
-        widgetElement.replaceChildren();
-      }
+      calendly.initInlineWidget({ url: calendlyUrl, parentElement });
     };
+
+    const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${calendlyScript}"]`);
+    if (existingScript) {
+      initWidget();
+      existingScript.addEventListener("load", initWidget, { once: true });
+      return () => existingScript.removeEventListener("load", initWidget);
+    }
+
+    const script = document.createElement("script");
+    script.src = calendlyScript;
+    script.async = true;
+    script.addEventListener("load", initWidget, { once: true });
+    document.body.appendChild(script);
+    return () => script.removeEventListener("load", initWidget);
   }, []);
 
   return (
     <div
       ref={widgetRef}
-      className="calendly-inline-widget"
+      className="calendly-inline-widget contact-calendly-widget"
       data-url={calendlyUrl}
     />
   );
