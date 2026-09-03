@@ -34,7 +34,7 @@ export default function AboutHero() {
           <h1>Jung. Direkt.<br /><em>Digital mit Haltung.</em></h1>
           <p>Wendico ist ein Digitalstudio aus dem Zürcher Weinland. Wir entwickeln Webauftritte und Systeme, die Marken klar zeigen und aus Aufmerksamkeit echte Anfragen machen.</p>
           <div className="about-page-actions">
-            <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗</span></Link>
+            <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
             <Link className="about-page-text-link" href="/projekte">Arbeiten ansehen</Link>
           </div>
         </div>

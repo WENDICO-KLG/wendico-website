@@ -41,7 +41,7 @@ function ServiceGraphic({ visual }: { visual: ServiceVisual }) {
         <span className="platform-logo platform-logo-instagram"><Image src={instagramLogo} alt="" width={52} height={52} loading="eager" /></span>
         <span className="platform-logo platform-logo-facebook"><Image src={facebookLogo} alt="" width={52} height={52} loading="eager" /></span>
         <span className="social-bubble social-bubble-one">+</span>
-        <span className="social-bubble social-bubble-two">↗</span>
+        <span className="social-bubble social-bubble-two">↗︎</span>
         <span className="social-signal social-signal-one" />
         <span className="social-signal social-signal-two" />
       </div>

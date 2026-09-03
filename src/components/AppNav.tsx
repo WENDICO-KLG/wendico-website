@@ -39,12 +39,16 @@ export default function AppNav() {
     <header className="nav-wrap" data-menu-open={open ? "true" : "false"}>
       <nav className="site-nav glass" aria-label="Hauptnavigation">
         <Link className="brand" href="/" aria-label="Wendico Startseite"><Image className="brand-logo" src={logo} alt="" priority /><strong>wendico</strong></Link>
-        <button className="menu-button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Menü schliessen" : "Menü öffnen"}><i /><i /></button>
-        <div id="mobile-navigation" className={open ? "nav-links open" : "nav-links"}>
-          {links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        <div className="nav-links">
+          {links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href}>{label}</Link>)}
         </div>
-        <Link className="nav-cta" href="/kontakt#termin-buchen">Projekt starten <span>↗</span></Link>
+        <Link className="nav-cta" href="/kontakt#termin-buchen">Projekt starten <span>↗︎</span></Link>
       </nav>
+      <button className="menu-button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Menü schliessen" : "Menü öffnen"}><i /><i /></button>
+      {/* kept outside .site-nav: its backdrop-filter would trap position:fixed children in Safari */}
+      <div id="mobile-navigation" className={open ? "mobile-menu open" : "mobile-menu"}>
+        {links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { if (pathname === href) setOpen(false); }}>{label}</Link>)}
+      </div>
     </header>
   );
 }

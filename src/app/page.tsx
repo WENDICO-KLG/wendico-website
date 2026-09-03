@@ -42,7 +42,7 @@ export default function Home() {
               <h1>Websites mit Aussicht auf <em>mehr.</em></h1>
               <p>Klare Strategie, ausgezeichnetes Design und eigener Code für digitale Auftritte, die Menschen gerne benutzen.</p>
               <div className="actions">
-                <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗</span></Link>
+                <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
                 <Link className="hero-text-link" href="/projekte">Arbeiten entdecken</Link>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function Home() {
                 <span>01 / Webdesign</span>
                 <h3>Websites, die eine Marke spürbar machen.</h3>
                 <p>Strategie, Gestaltung und Entwicklung greifen ineinander. Das Ergebnis ist klar, schnell und unverwechselbar.</p>
-                <Link href="/projekte" aria-label="Webdesign Projekte ansehen">↗</Link>
+                <Link href="/projekte" aria-label="Webdesign Projekte ansehen">↗︎</Link>
               </div>
             </article>
 
@@ -83,23 +83,23 @@ export default function Home() {
               <div className="hosting-flow" aria-hidden="true">
                 <span>MONITORING</span><span>BACKUPS</span><span>SECURITY</span>
                 <i className="flow-line flow-one" /><i className="flow-line flow-two" /><i className="flow-line flow-three" />
-                <b className="flow-status">✓</b>
+                <b className="flow-status">✓︎</b>
               </div>
               <div className="service-pane-copy">
                 <span>02 / Hosting & Wartung</span>
                 <h3>Technik, die einfach läuft.</h3>
                 <p>Hosting, SSL, Backups, Updates und Support. Sicher betreut, damit du dich auf dein Geschäft konzentrierst.</p>
-                <Link href="/preise" aria-label="Hosting Angebote ansehen">↗</Link>
+                <Link href="/preise" aria-label="Hosting Angebote ansehen">↗︎</Link>
               </div>
             </article>
 
             <article className="service-pane service-pane-revenue glass">
-              <div className="revenue-visual" aria-hidden="true"><span>Besucher</span><i>→</i><span>Anfrage</span><i>→</i><strong>Umsatz</strong></div>
+              <div className="revenue-visual" aria-hidden="true"><span>Besucher</span><i>→︎</i><span>Anfrage</span><i>→︎</i><strong>Umsatz</strong></div>
               <div className="service-pane-copy">
                 <span>03 / Umsatzsysteme</span>
                 <h3>Vom Besuch zur messbaren Anfrage.</h3>
                 <p>Reservationen, Kampagnen und klare Nutzerwege verwandeln Aufmerksamkeit in echte Ergebnisse.</p>
-                <Link href="/kontakt" aria-label="Umsatzsystem besprechen">↗</Link>
+                <Link href="/kontakt" aria-label="Umsatzsystem besprechen">↗︎</Link>
               </div>
             </article>
           </div>
@@ -128,12 +128,12 @@ export default function Home() {
                 <span className="home-pricing-name">{plan.name}</span>
                 <p>{plan.description}</p>
                 <div className="home-pricing-price"><small>CHF</small><strong>{plan.price}</strong></div>
-                <ul>{plan.items.map((item) => <li key={item}><b>✓</b>{item}</li>)}</ul>
-                <Link href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗</span></Link>
+                <ul>{plan.items.map((item) => <li key={item}><b>✓︎</b>{item}</li>)}</ul>
+                <Link href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
               </article>
             ))}
           </div>
-          <Link className="home-pricing-all" href="/preise">Alle Leistungen und Preise ansehen ↗</Link>
+          <Link className="home-pricing-all" href="/preise">Alle Leistungen und Preise ansehen ↗︎</Link>
         </div>
       </section>
 
@@ -174,7 +174,7 @@ export default function Home() {
             <span className="eyebrow">Dein nächster Schritt</span>
             <h2>Eine gute Website beginnt<br />mit einem guten Gespräch.</h2>
             <p>Erzähl uns, was du vorhast. Wir sagen dir klar, was sinnvoll ist.</p>
-            <Link className="button primary" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗</span></Link>
+            <Link className="button primary" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
           </div>
         </div>
       </section>

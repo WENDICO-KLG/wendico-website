@@ -49,7 +49,7 @@ export default function ProjectsGrid() {
                 <span>{project[1]} · {project[2]}</span>
                 <h3>{project[0]}</h3>
                 <p>{project[5]}</p>
-                <b>↗</b>
+                <b>↗︎</b>
               </div>
             </a>
           ))}

@@ -80,7 +80,7 @@ export default function HomeProjectSpiral() {
       <div className="shell home-projects-inner">
         <div className="section-heading split">
           <div><span className="eyebrow">Alle Projekte</span><h2>Eine Linie.<br /><em>Zehn Geschichten.</em></h2><p className="home-projects-mobile-note">Unsere aktuellsten Arbeiten.</p></div>
-          <Link className="text-link" href="/projekte">Projektübersicht öffnen ↗</Link>
+          <Link className="text-link" href="/projekte">Projektübersicht öffnen ↗︎</Link>
         </div>
         <div className="project-spiral-line"><DNAHelix /></div>
         <div className="home-projects-grid">

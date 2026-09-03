@@ -7,13 +7,21 @@ export default function SiteLoader() {
 
   useEffect(() => {
     const start = performance.now();
+    let hideTimer = 0;
     const finish = () => {
       const remaining = Math.max(0, 900 - (performance.now() - start));
-      window.setTimeout(() => setDone(true), remaining);
+      window.clearTimeout(hideTimer);
+      hideTimer = window.setTimeout(() => setDone(true), remaining);
     };
     if (document.readyState === "complete") finish();
     else window.addEventListener("load", finish, { once: true });
-    return () => window.removeEventListener("load", finish);
+    // safety net: never block the site if "load" is delayed by third-party embeds
+    const fallback = window.setTimeout(finish, 3500);
+    return () => {
+      window.removeEventListener("load", finish);
+      window.clearTimeout(fallback);
+      window.clearTimeout(hideTimer);
+    };
   }, []);
 
   useEffect(() => {

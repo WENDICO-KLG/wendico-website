@@ -140,7 +140,7 @@ export default function AboutPage() {
                 <div>
                   <span>{role}</span>
                   <h3>{name}</h3>
-                  <b>LinkedIn ↗</b>
+                  <b>LinkedIn ↗︎</b>
                 </div>
               </a>
             ))}

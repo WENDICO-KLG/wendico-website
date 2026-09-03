@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 const selectors = [
@@ -42,6 +43,7 @@ function revealType(element: Element) {
 }
 
 export default function ScrollReveals() {
+  const pathname = usePathname();
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -65,10 +67,10 @@ export default function ScrollReveals() {
       observer.disconnect();
       elements.forEach((element) => {
         element.classList.remove("scroll-reveal", "reveal-heading", "reveal-copy", "reveal-control", "reveal-card", "is-revealed");
-        element.removeAttribute("style");
+        element.style.removeProperty("--reveal-delay");
       });
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

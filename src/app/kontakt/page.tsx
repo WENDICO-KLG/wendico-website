@@ -36,8 +36,8 @@ export default function ContactPage() {
             <h1>Was möchtest du<br /><em>bewegen?</em></h1>
             <p>Erzähl uns kurz von deiner Idee. Wir melden uns mit einer ehrlichen Einschätzung und einem klaren nächsten Schritt.</p>
             <div className="contact-details">
-              <a href="mailto:info@wendico.ch"><span>E-Mail</span><strong>info@wendico.ch ↗</strong></a>
-              <a href="tel:+41795041005"><span>Telefon</span><strong>+41 79 504 10 05 ↗</strong></a>
+              <a href="mailto:info@wendico.ch"><span>E-Mail</span><strong>info@wendico.ch ↗︎</strong></a>
+              <a href="tel:+41795041005"><span>Telefon</span><strong>+41 79 504 10 05 ↗︎</strong></a>
               <div><span>Studio</span><strong>Thalheim an der Thur, CH</strong></div>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
           <div className="contact-calendly-panel">
             <CalendlyInlineWidget />
           </div>
-          <a className="contact-calendly-fallback" href="https://calendly.com/info-wendico/30min?hide_gdpr_banner=1" target="_blank" rel="noreferrer">Falls der Kalender nicht lädt, direkt in Calendly öffnen ↗</a>
+          <a className="contact-calendly-fallback" href="https://calendly.com/info-wendico/30min?hide_gdpr_banner=1" target="_blank" rel="noreferrer">Falls der Kalender nicht lädt, direkt in Calendly öffnen ↗︎</a>
         </div>
       </section>
 
@@ -70,9 +70,9 @@ export default function ContactPage() {
                 <span>{person.role}</span>
                 <h2>{person.name}</h2>
                 <div>
-                  <a href="mailto:info@wendico.ch">info@wendico.ch ↗</a>
-                  <a href={person.phoneHref}>{person.phone} ↗</a>
-                  <a href={person.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                  <a href="mailto:info@wendico.ch">info@wendico.ch ↗︎</a>
+                  <a href={person.phoneHref}>{person.phone} ↗︎</a>
+                  <a href={person.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗︎</a>
                 </div>
               </div>
             </article>
