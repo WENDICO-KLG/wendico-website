@@ -83,13 +83,13 @@ body::before { background: radial-gradient(circle at 10% 8%, rgba(116,184,195,.2
 .services-mosaic { min-height: 590px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr .66fr; gap: 18px; }
 .service-pane { position: relative; overflow: hidden; border-radius: 34px; color: white; background: linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035)); border-color: rgba(255,255,255,.32); box-shadow: inset 0 1px 0 rgba(255,255,255,.28),0 24px 80px rgba(0,0,0,.17); backdrop-filter: blur(13px) saturate(115%); -webkit-backdrop-filter: blur(13px) saturate(115%); }
 .service-pane-design { grid-row: 1 / 3; }.service-pane-hosting { grid-column: 2; grid-row: 1; }.service-pane-revenue { grid-column: 2; grid-row: 2; }
-.service-pane-copy { position: absolute; z-index: 2; left: 34px; right: 34px; bottom: 32px; padding-right: 64px; }.service-pane-copy > span { font: 600 11px "DM Sans"; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.75); }.service-pane-copy h3 { max-width: 510px; margin: 10px 0 9px; font: 500 clamp(23px,2.35vw,34px)/1.12 "Manrope"; }.service-pane-copy p { max-width: 520px; margin: 0; color: rgba(255,255,255,.68); font-size: 14px; line-height: 1.55; }.service-pane-copy > a { position: absolute; right: 0; bottom: 2px; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.38); border-radius: 50%; background: rgba(255,255,255,.1); transition: background .2s,transform .2s; }.service-pane-copy > a:hover { background: #d8ff71; color: #17251e; transform: rotate(7deg); }
+.service-pane-copy { position: absolute; z-index: 2; left: 34px; right: 34px; bottom: 32px; padding-right: 82px; }.service-pane-copy > span { font: 600 11px "DM Sans"; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.75); }.service-pane-copy h3 { max-width: 510px; margin: 10px 0 9px; font: 500 clamp(23px,2.35vw,34px)/1.12 "Manrope"; }.service-pane-copy p { max-width: 520px; margin: 0; color: rgba(255,255,255,.68); font-size: 14px; line-height: 1.55; }.service-pane-copy > a { position: absolute; right: 10px; bottom: 10px; width: 64px; height: 64px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: white; background: rgba(255,255,255,.13); font-size: 25px; transition: background .2s,transform .2s; }.service-pane-copy > a:hover { background: #d8ff71; color: #17251e; transform: rotate(7deg); }
 .service-interface { position: absolute; top: 42px; left: 38px; right: 38px; color: rgba(255,255,255,.58); font: 600 10px "DM Sans"; letter-spacing: .12em; }.service-interface > i { display: block; width: 112px; height: 8px; margin-top: 9px; background: rgba(255,255,255,.11); }.service-interface > i:nth-of-type(2) { width: 76px; }.service-interface > i:nth-of-type(3) { width: 95px; }.interface-window { height: 154px; margin-top: 28px; padding: 13px; border: 1px solid rgba(255,255,255,.25); border-radius: 15px; background: linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.03)); }.interface-window b { display: inline-block; width: 6px; height: 6px; margin-right: 4px; border-radius: 50%; background: rgba(255,255,255,.35); }.interface-window strong { display: block; width: 72%; height: 62px; margin: 25px auto 0; padding-top: 24px; border: 1px solid rgba(216,255,113,.32); border-radius: 8px; color: rgba(216,255,113,.72); text-align: center; font-size: 9px; }
 .hosting-flow { position: absolute; top: 38px; left: 42px; right: 42px; height: 130px; }.hosting-flow > span { position: absolute; top: 0; font-size: 9px; letter-spacing: .12em; color: rgba(255,255,255,.54); writing-mode: vertical-rl; }.hosting-flow > span:nth-child(1) { left: 18%; }.hosting-flow > span:nth-child(2) { left: 49%; }.hosting-flow > span:nth-child(3) { right: 18%; }.flow-line { position: absolute; top: 64px; height: 1px; background: rgba(255,255,255,.3); transform-origin: left; }.flow-one { left: 20%; width: 30%; transform: rotate(17deg); }.flow-two { left: 50%; width: 30%; transform: rotate(-18deg); }.flow-three { left: 50%; width: 62px; transform: rotate(90deg); }.flow-status { position: absolute; left: calc(50% - 17px); top: 92px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: #203126; background: rgba(255,255,255,.85); box-shadow: 0 0 0 8px rgba(255,255,255,.1); }
 .service-pane-hosting .service-pane-copy { bottom: 26px; }.service-pane-hosting .service-pane-copy h3 { font-size: 25px; }.service-pane-hosting .service-pane-copy p { font-size: 13px; }
 .revenue-visual { position: absolute; top: 34px; left: 34px; right: 34px; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.55); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }.revenue-visual span,.revenue-visual strong { padding: 8px 11px; border: 1px solid rgba(255,255,255,.2); border-radius: 20px; }.revenue-visual strong { color: #d8ff71; border-color: rgba(216,255,113,.35); }.revenue-visual i { font-style: normal; }.service-pane-revenue .service-pane-copy h3 { font-size: 24px; }.service-pane-revenue .service-pane-copy p { display: none; }
 @media (max-width:900px) { .services-mosaic { min-height: auto; grid-template-columns: 1fr; grid-template-rows: auto; }.service-pane-design,.service-pane-hosting,.service-pane-revenue { grid-column: 1; grid-row: auto; min-height: 500px; }.service-pane-hosting,.service-pane-revenue { min-height: 410px; }.service-pane-revenue .service-pane-copy p { display: block; } }
-@media (max-width:680px) { .services-experience { margin-top: -72px; padding: 82px 0; border-radius: 32px 32px 0 0; }.services-heading { margin-bottom: 32px; }.services-heading h2 { font-size: 43px; }.service-pane { border-radius: 24px; }.service-pane-design { min-height: 540px; }.service-pane-hosting { min-height: 440px; }.service-pane-revenue { min-height: 430px; }.service-pane-copy { left: 22px; right: 22px; bottom: 24px; padding-right: 58px; }.service-pane-copy h3,.service-pane-hosting .service-pane-copy h3,.service-pane-revenue .service-pane-copy h3 { margin-right: 0; font-size: 25px; }.service-pane-copy p { padding-right: 0; font-size: 13px; }.service-interface { left: 22px; right: 22px; }.hosting-flow { left: 22px; right: 22px; }.revenue-visual { left: 22px; right: 22px; flex-wrap: wrap; } }
+@media (max-width:680px) { .services-experience { margin-top: -72px; padding: 82px 0; border-radius: 32px 32px 0 0; }.services-heading { margin-bottom: 32px; }.services-heading h2 { font-size: 43px; }.service-pane { border-radius: 24px; }.service-pane-design { min-height: 540px; }.service-pane-hosting { min-height: 440px; }.service-pane-revenue { min-height: 430px; }.service-pane-copy { left: 22px; right: 22px; bottom: 24px; padding-right: 76px; }.service-pane-copy h3,.service-pane-hosting .service-pane-copy h3,.service-pane-revenue .service-pane-copy h3 { margin-right: 0; font-size: 25px; }.service-pane-copy p { padding-right: 0; font-size: 13px; }.service-interface { left: 22px; right: 22px; }.hosting-flow { left: 22px; right: 22px; }.revenue-visual { left: 22px; right: 22px; flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { .services-backdrop { transform: none; will-change: auto; } }
 
 /* Sticky service details */
@@ -353,6 +353,46 @@ body::before { background: radial-gradient(circle at 10% 8%, rgba(116,184,195,.2
 	.about-page-portrait span { left: 12px; right: 12px; bottom: 12px; padding: 9px 11px; font-size: 12px; text-align: center; }
 }
 
+/* Ensure page-specific mobile components use the larger readable sizes. */
+@media (max-width: 680px) {
+	.projects-page-hero p,
+	.contact-page .contact-copy > p,
+	.pricing-page-hero p,
+	.legal-page-hero p { font-size: 18px; }
+	.projects-page-hero-metrics span,
+	.pricing-page-metrics span,
+	.projects-page-card-copy span,
+	.contact-page .contact-details span,
+	.contact-person-copy > span { font-size: 15px; }
+	.projects-page-filter-panel button,
+	.projects-page-card-copy p,
+	.contact-page-booking-card p,
+	.contact-person-copy a,
+	.pricing-faq-list button,
+	.pricing-faq-list article > div > p,
+	.legal-page-card p,
+	.legal-page-copy p { font-size: 17px; }
+	.projects-page-card-copy p { line-height: 1.55; }
+	.pricing-page-card > p,
+	.pricing-page-card li,
+	.pricing-page-note,
+	.pricing-page-note a { font-size: 17px; }
+	.pricing-page-card small,
+	.pricing-page-card .badge { font-size: 14px; }
+	.home-project-type,
+	.home-project-tags span,
+	.hero-proof p,
+	.hero-stat span { font-size: 14px; }
+	.home-project-content p { font-size: 15px; line-height: 1.55; }
+	.workflow-column small,
+	.workflow-output small { font-size: 13px; }
+	.about-page-portrait span { font-size: 15px; }
+	.contact-page .contact-details strong { font-size: 21px; }
+	.pricing-faq-list button { font-size: 18px; }
+	.service-pane-design { min-height: 650px; }
+	.service-pane-design .service-pane-copy > a { right: 10px; bottom: 34px; width: 64px; height: 64px; font-size: 25px; }
+}
+
 /* Mobile polish: keep desktop untouched, simplify heavy touch interactions */
 @media (max-width: 680px) {
 	body { width: 100%; overflow-x: clip; }
@@ -459,3 +499,28 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .site-loader-fill span { position: absolute; inset: 0 auto 0 0; color: #d8ff71; text-shadow: 0 0 22px rgba(216,255,113,.6); }
 @keyframes loader-mark-in { from { opacity: 0; transform: translate3d(0,10px,0); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .page-transition { animation: none; }.site-loader-mark { animation: none; }.site-loader-fill { transition: none; } }
+
+/* Mobile readability */
+@media (max-width: 680px) {
+	body { font-size: 17px; }
+	.nav-links a,.nav-cta { font-size: 16px; }
+	.hero-copy > p,.page-hero > p,.about-hero > div > p,.contact-copy > p,
+	.about-page-hero-copy p,.about-page-intro p,.contact-page .contact-copy > p,
+	.legal p,.section-heading > p,.cta p,.booking p,.price-card p,
+	.home-pricing-heading p,.home-pricing-card > p,.home-about-card p,
+	.home-faq-intro p,.home-faq-list article > div > p { font-size: 18px; }
+	.button,.hero-text-link,.about-page-text-link { font-size: 16px; }
+	.service-card p,.value-card p,.feature-copy p,.feature-copy li,
+	.service-pane-copy p,.services-detail-copy p,.projects-page-card-copy p,
+	.about-page-role-panel > p,.about-page-role-cards span,
+	.about-page-steps p,.contact-page-booking-card p { font-size: 17px; }
+	.service-card a,.project-tile span,.project-tile b,.price-note a,
+	.contact-details strong,.contact-form label > span,.contact-form small,
+	.footer-grid p,.footer-grid a,.footer-bottom,.team-card > span,
+	.about-page-team-card div > span { font-size: 14px; }
+	.eyebrow,.service-card > span,.value-card > span,.price-card ul,
+	.home-pricing-card ul,.contact-details span { font-size: 15px; }
+	.segmented button { font-size: 15px; }
+	.home-faq-list button { font-size: 18px; }
+	.contact-form input,.contact-form textarea { font-size: 17px; }
+}
