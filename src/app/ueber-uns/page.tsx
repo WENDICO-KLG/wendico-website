@@ -37,8 +37,10 @@ const roleCards = [
 ];
 
 const team = [
-  ["Panat Ruangsri", "/wendico-live/panat.JPG", "Sales · Strategie · Webdesign", "https://www.linkedin.com/in/panat-ruangsri-28a137288/"],
-  ["Tim Biedermann", "/wendico-live/tim.jpg", "Finance · Strategie · Design", "https://www.linkedin.com/in/tim-biedermann-ba5b35286/"],
+  ["Panat Ruangsri", "/wendico-live/panat.JPG", "Founder · CEO", "https://www.linkedin.com/in/panat-ruangsri-28a137288/", "center 20%", "Strategie, Positionierung und digitale Richtung für Wachstum."],
+  ["Tim Biedermann", "/wendico-live/tim.jpg", "Founder · CEO", "https://www.linkedin.com/in/tim-biedermann-ba5b35286/", "center 30%", "Operative Klarheit, Finanzen und skalierbares Systemdenken."],
+  ["Ayleen Podgorny", "/wendico-live/ayleen.png", "Social Media Managerin", "https://www.linkedin.com/in/ayleen-podgorny-858a6b428/", "center 26%", "Content, Markenstimme und digitale Präsenz mit Fokus auf Wirkung."],
+  ["Hugh Henderson", "/wendico-live/hugh.png", "Official Sales Partner", "https://www.linkedin.com/in/hugh-henderson-4076b3428/", "center 24%", "Vertrieb, Marktöffnung und starke Beziehungen für nachhaltigen Erfolg."],
 ];
 
 export default function AboutPage() {
@@ -130,20 +132,60 @@ export default function AboutPage() {
         <div className="shell">
           <div className="about-page-section-heading is-centered">
             <span className="eyebrow"><i /> Team</span>
-            <h2>Zwei Perspektiven.<br /><em>Ein Anspruch.</em></h2>
+            <h2>Unser Team.<br /><em>Mit Haltung.</em></h2>
           </div>
-          <div className="about-page-team-grid">
-            {team.map(([name, image, role, href]) => (
-              <a className="about-page-team-card" href={href} target="_blank" rel="noreferrer" key={name}>
-                <Image src={image} alt={name} fill sizes="(max-width: 760px) 92vw, 520px" />
-                <span className="about-page-team-shade" />
-                <div>
-                  <span>{role}</span>
-                  <h3>{name}</h3>
-                  <b>LinkedIn ↗︎</b>
-                </div>
-              </a>
-            ))}
+
+          <div className="about-page-team-showcase">
+            {team.map(([name, image, role, href, imagePosition = "center 18%", bio], index) => {
+              const isTextAbove = index % 2 === 1;
+              const content = (
+                <>
+                  {isTextAbove ? (
+                    <div className="about-page-team-copy">
+                      <h3>{name}</h3>
+                      <span>{role}</span>
+                      <p>{bio}</p>
+                      {href ? <b>LinkedIn ↗</b> : null}
+                    </div>
+                  ) : null}
+
+                  <div className="about-page-team-visual">
+                    <Image
+                      src={image}
+                      alt={name}
+                      fill
+                      sizes="(max-width: 760px) 92vw, 520px"
+                      style={{ objectPosition: imagePosition }}
+                    />
+                  </div>
+
+                  {!isTextAbove ? (
+                    <div className="about-page-team-copy">
+                      <h3>{name}</h3>
+                      <span>{role}</span>
+                      <p>{bio}</p>
+                      {href ? <b>LinkedIn ↗</b> : null}
+                    </div>
+                  ) : null}
+                </>
+              );
+
+              const cardClassName = `about-page-team-member ${isTextAbove ? "is-text-above" : "is-text-below"}`;
+
+              if (href) {
+                return (
+                  <a className={cardClassName} href={href} target="_blank" rel="noreferrer" key={name}>
+                    {content}
+                  </a>
+                );
+              }
+
+              return (
+                <article className={cardClassName} key={name}>
+                  {content}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

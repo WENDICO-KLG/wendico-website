@@ -187,13 +187,13 @@ export default function Home() {
               <Image src="/wendico-live/panat.JPG" alt="Panat Ruangsri" fill sizes="(max-width: 760px) 92vw, 46vw" />
               <span className="home-about-card-overlay" />
               <blockquote>„Gute digitale Erlebnisse entstehen, wenn Strategie und Technik dieselbe Sprache sprechen.“</blockquote>
-              <div className="home-about-card-name"><h3>Panat Ruangsri</h3><span>Sales · Strategie · Webdesign</span></div>
+              <div className="home-about-card-name"><h3>Panat Ruangsri</h3><span>Founder · CEO</span></div>
             </article>
             <article className="home-about-card">
               <Image src="/wendico-live/tim.jpg" alt="Tim Biedermann" fill sizes="(max-width: 760px) 92vw, 46vw" />
               <span className="home-about-card-overlay" />
               <blockquote>„Eine Website soll nicht nur gut aussehen. Sie soll zeigen, wofür eine Marke wirklich steht.“</blockquote>
-              <div className="home-about-card-name"><h3>Tim Biedermann</h3><span>Finance · Strategie · Design</span></div>
+              <div className="home-about-card-name"><h3>Tim Biedermann</h3><span>Founder · CEO</span></div>
             </article>
           </div>
         </div>
