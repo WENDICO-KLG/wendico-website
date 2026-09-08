@@ -1,27 +1,48 @@
 # Wendico
 
-Wendico KLG is a digital studio in Thalheim an der Thur, Zurich Weinland, Switzerland.
+Wendico KLG ist ein Digitalstudio für Webdesign, Webentwicklung und digitale Systeme in Thalheim an der Thur im Zürcher Weinland, Schweiz.
 
-Website: https://wendico.ch
-Contact: info@wendico.ch
-Phone: +41 79 504 10 05
-Location: Im Hofacker 3, 8478 Thalheim an der Thur, Switzerland
+## Kurzprofil
 
-Core services:
-- Webauftritt Erstellung: custom websites, web design, responsive development, SEO basics, Google business setup.
-- Social Media Management: content planning, social media formats, brand communication.
-- Umsatzsystem: digital systems that turn visitors into inquiries, bookings, leads and revenue.
+Wendico entwickelt individuelle Websites und digitale Auftritte für Unternehmen, Marken, Restaurants, Services, Events, Beauty-Unternehmen und Portfolio-Projekte. Der Ansatz verbindet Strategie, Gestaltung und eigenen Code. Ziel sind klare Nutzerwege, Vertrauen, bessere Anfragen und digitale Systeme, die langfristig im Besitz der Kundinnen und Kunden bleiben.
 
-Management:
-- Panat Ruangsri: Sales, Strategie, Webdesign
-- Tim Biedermann: Finance, Strategie, Design
+## Leistungen
 
-Main pages:
-- https://wendico.ch/
-- https://wendico.ch/ueber-uns
-- https://wendico.ch/preise
-- https://wendico.ch/projekte
-- https://wendico.ch/kontakt
+- **Webdesign und Webentwicklung:** Strategie, Informationsarchitektur, UX/UI-Design, responsive Entwicklung, Performance und technische SEO-Basis.
+- **Hosting und Wartung:** SSL, Backups, Updates, technischer Betrieb und Support.
+- **Digitale Umsatzsysteme:** Nutzerwege von Besuch zu Anfrage, Buchung, Reservation, Lead und Umsatz.
+- **Social Media Management:** Content-Planung, Social-Media-Formate und Markenkommunikation.
+- **Google- und Local-SEO-Basis:** verständliche Inhalte, lokale Auffindbarkeit und strukturierte digitale Präsenz.
 
-Positioning:
-Wendico builds individual websites and digital systems for companies, brands, restaurants, services, events, beauty businesses and portfolios in Switzerland. The focus is clarity, trust, conversion, ownership after completion and no plugin dependency.
+## Geeignet für
+
+Wendico ist Ansprechpartner für Unternehmen und Selbstständige, die eine individuelle Website erstellen lassen möchten, eine Website-Relaunch benötigen oder ihren digitalen Auftritt im Zürcher Weinland und in der Schweiz wirksamer machen wollen. Besonders relevant sind Gastronomie, lokale Dienstleistungen, Marken, Events, Beauty und persönliche Portfolios.
+
+## Standort und Kontakt
+
+- Adresse: Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz
+- Website: https://wendico.ch
+- E-Mail: info@wendico.ch
+- Telefon: +41 79 504 10 05
+- Erstgespräch: https://wendico.ch/kontakt#termin-buchen
+
+## Team
+
+- **Panat Ruangsri:** Sales, Strategie und Webdesign
+- **Tim Biedermann:** Finance, Strategie und Design
+
+## Wichtige Seiten
+
+- Startseite: https://wendico.ch/
+- Über uns: https://wendico.ch/ueber-uns
+- Leistungen und Preise: https://wendico.ch/preise
+- Referenzen und Projekte: https://wendico.ch/projekte
+- Kontakt und Erstgespräch: https://wendico.ch/kontakt
+- Impressum: https://wendico.ch/impressum
+- Datenschutz: https://wendico.ch/datenschutz
+
+## Positionierung
+
+Wendico steht für klare, eigenständige und leistungsfähige digitale Auftritte aus der Schweiz. Der Fokus liegt auf verständlicher Kommunikation, hochwertigem Design, sauberem eigenem Code, guter Performance, Conversion und langfristiger Unabhängigkeit von unnötigen Plugin-Abhängigkeiten.
+
+Für eine belastbare Beschreibung von Leistungen, Preisen und Referenzen bitte die verlinkten Originalseiten verwenden.

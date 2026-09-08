@@ -26,9 +26,44 @@ const homePlans = [
   { name: "Full System", price: "8'500", description: "Für komplexe digitale Auftritte.", items: ["Unlimitierte Seiten", "Mehrsprachig", "Individuelle Systeme"] },
 ];
 
+const homeFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Was genau macht Wendico?",
+      acceptedAnswer: { "@type": "Answer", text: "Wir konzipieren, gestalten und entwickeln digitale Auftritte für Unternehmen. Dazu gehören individuelle Websites, Hosting, Wartung und digitale Umsatzsysteme." },
+    },
+    {
+      "@type": "Question",
+      name: "Für wen entwickelt Wendico Websites?",
+      acceptedAnswer: { "@type": "Answer", text: "Wir arbeiten mit Unternehmen, Restaurants und Marken, die ihren digitalen Auftritt klarer, hochwertiger und wirksamer machen möchten." },
+    },
+    {
+      "@type": "Question",
+      name: "Wie startet ein Projekt mit Wendico?",
+      acceptedAnswer: { "@type": "Answer", text: "Mit einem unverbindlichen Gespräch. Wir klären Ziele, Zielgruppe und Umfang, geben eine ehrliche Empfehlung und planen die nächsten Schritte gemeinsam." },
+    },
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Leistungen von Wendico",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, item: { "@type": "Service", name: "Webdesign und Webentwicklung", serviceType: "Individuelle Websites für Unternehmen, Marken und Gastronomie", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
+    { "@type": "ListItem", position: 2, item: { "@type": "Service", name: "Hosting und Wartung", serviceType: "Technischer Betrieb, SSL, Backups, Updates und Support", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
+    { "@type": "ListItem", position: 3, item: { "@type": "Service", name: "Digitale Umsatzsysteme", serviceType: "Digitale Nutzerwege für Anfragen, Buchungen und Leads", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
+  ],
+};
+
 export default function Home() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <HomeSmoothScroll />
       <HeroScroll>
         <div className="hero-sticky">

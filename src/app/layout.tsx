@@ -10,11 +10,13 @@ import "./globals.css";
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://wendico.ch/#organization",
   name: "Wendico KLG",
   url: "https://wendico.ch",
   logo: "https://wendico.ch/logo.png",
   image: "https://wendico.ch/opengraph-image.png",
   description: "Wendico entwickelt individuelle Websites, digitale Auftritte und Umsatzsysteme für Unternehmen im Zürcher Weinland und der Schweiz.",
+  keywords: ["Webdesign Schweiz", "Webdesign Zürcher Weinland", "Website erstellen lassen", "Website Agentur Thalheim an der Thur", "SEO Website Schweiz", "digitale Umsatzsysteme"],
   email: "info@wendico.ch",
   telephone: "+41795041005",
   address: {
@@ -25,9 +27,17 @@ const organizationJsonLd = {
     addressCountry: "CH",
   },
   sameAs: ["https://instagram.com/wendico.ch"],
+  contactPoint: { "@type": "ContactPoint", telephone: "+41795041005", contactType: "customer service", email: "info@wendico.ch", areaServed: "CH", availableLanguage: ["de", "fr", "en"] },
+  areaServed: [
+    { "@type": "City", name: "Zürich" },
+    { "@type": "Place", name: "Zürcher Weinland" },
+    { "@type": "Country", name: "Schweiz" },
+  ],
+  priceRange: "CHF 3'500–8'500",
+  knowsAbout: ["Webdesign", "Webentwicklung", "Suchmaschinenoptimierung", "Social Media Management", "Conversion-Optimierung"],
   founder: [
-    { "@type": "Person", name: "Panat Ruangsri", jobTitle: "Sales, Strategie, Webdesign" },
-    { "@type": "Person", name: "Tim Biedermann", jobTitle: "Finance, Strategie, Design" },
+    { "@type": "Person", name: "Panat Ruangsri", jobTitle: "Sales, Strategie, Webdesign", sameAs: "https://www.linkedin.com/in/panat-ruangsri-28a137288/" },
+    { "@type": "Person", name: "Tim Biedermann", jobTitle: "Finance, Strategie, Design", sameAs: "https://www.linkedin.com/in/tim-biedermann-ba5b35286/" },
   ],
   makesOffer: [
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webauftritt Erstellung" } },
@@ -39,25 +49,23 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://wendico.ch/#website",
   name: "Wendico",
   url: "https://wendico.ch",
   inLanguage: "de-CH",
+  publisher: { "@id": "https://wendico.ch/#organization" },
 };
 
-const faqJsonLd = {
+const serviceCatalogJsonLd = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Was genau macht Wendico?",
-      acceptedAnswer: { "@type": "Answer", text: "Wendico entwickelt individuelle Websites, digitale Auftritte, Social Media Inhalte und Umsatzsysteme für Unternehmen und Marken." },
-    },
-    {
-      "@type": "Question",
-      name: "Wie starten wir ein Projekt?",
-      acceptedAnswer: { "@type": "Answer", text: "Der Start erfolgt über ein kurzes Erstgespräch, in dem Ziele, Umfang und sinnvolle nächste Schritte geklärt werden." },
-    },
+  "@type": "OfferCatalog",
+  "@id": "https://wendico.ch/#services",
+  name: "Webdesign- und Digitalleistungen von Wendico",
+  itemListElement: [
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webdesign und Webentwicklung", description: "Individuelle, responsive Websites mit Strategie, Design, Entwicklung und technischer SEO-Basis.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hosting und Wartung", description: "Hosting, SSL, Backups, Updates, Monitoring und Support für Websites.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Umsatzsysteme", description: "Digitale Nutzerwege für qualifizierte Anfragen, Buchungen, Leads und Umsatz.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", description: "Content-Planung, Social-Media-Formate und konsistente Markenkommunikation.", provider: { "@id": "https://wendico.ch/#organization" } } },
   ],
 };
 
@@ -101,7 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceCatalogJsonLd) }} />
         <SiteLoader />
         <AppNav />
         <ScrollReveals />
