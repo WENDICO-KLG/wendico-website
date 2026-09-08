@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import logo from "../../logo.png";
 
 const links = [
   ["Home", "/"], ["Über uns", "/ueber-uns"], ["Preise", "/preise"], ["Projekte", "/projekte"], ["Kontakt", "/kontakt"],
@@ -42,7 +41,7 @@ export default function AppNav() {
   return (
     <header className="nav-wrap" data-menu-open={open ? "true" : "false"}>
       <nav className="site-nav glass" aria-label="Hauptnavigation">
-        <Link className="brand" href="/" aria-label="Wendico Startseite"><Image className="brand-logo" src={logo} alt="" priority /><strong>wendico</strong></Link>
+        <Link className="brand" href="/" aria-label="Wendico Startseite"><Image className="brand-logo" src="/wendico_logo.png" alt="" priority width={180} height={52} /><strong>wendico</strong></Link>
         <div className="nav-links">
           {links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => scrollToPageTop(href)}>{label}</Link>)}
         </div>

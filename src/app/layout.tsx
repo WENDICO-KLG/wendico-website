@@ -13,7 +13,7 @@ const organizationJsonLd = {
   "@id": "https://wendico.ch/#organization",
   name: "Wendico KLG",
   url: "https://wendico.ch",
-  logo: "https://wendico.ch/logo.png",
+  logo: "https://wendico.ch/wendico_logo.png",
   image: "https://wendico.ch/opengraph-image.png",
   description: "Wendico entwickelt individuelle Websites, digitale Auftritte und Umsatzsysteme für Unternehmen im Zürcher Weinland und der Schweiz.",
   keywords: ["Webdesign Schweiz", "Webdesign Zürcher Weinland", "Website erstellen lassen", "Website Agentur Thalheim an der Thur", "SEO Website Schweiz", "digitale Umsatzsysteme"],
@@ -97,9 +97,9 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.png"],
   },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
-    shortcut: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    icon: [{ url: "/wendico_logo-quadrat.png", type: "image/png", sizes: "512x512" }],
+    shortcut: [{ url: "/wendico_logo-quadrat.png", type: "image/png" }],
+    apple: [{ url: "/wendico_logo-quadrat.png", sizes: "180x180" }],
   },
 };
 
