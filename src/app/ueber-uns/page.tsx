@@ -40,7 +40,7 @@ const team = [
   ["Panat Ruangsri", "/wendico-live/panat.JPG", "Founder · CEO", "https://www.linkedin.com/in/panat-ruangsri-28a137288/", "center 20%", "Strategie, Positionierung und digitale Richtung für Wachstum."],
   ["Tim Biedermann", "/wendico-live/tim.jpg", "Founder · CEO", "https://www.linkedin.com/in/tim-biedermann-ba5b35286/", "center 30%", "Operative Klarheit, Finanzen und skalierbares Systemdenken."],
   ["Ayleen Podgorny", "/wendico-live/ayleen.png", "Social Media Managerin", "https://www.linkedin.com/in/ayleen-podgorny-858a6b428/", "center 26%", "Content, Markenstimme und digitale Präsenz mit Fokus auf Wirkung."],
-  ["Hugh Henderson", "/wendico-live/hugh.png", "Official Sales Partner", "https://www.linkedin.com/in/hugh-henderson-4076b3428/", "center 24%", "Vertrieb, Marktöffnung und starke Beziehungen für nachhaltigen Erfolg."],
+  ["Hugh Henderson", "/wendico-live/hugh.png", "Official Sales Partner", "https://www.linkedin.com/in/hugh-henderson-4076b3428/", "center 24%", "Vertrieb, Kundenfotografie und langfristige Partnerschaften für nachhaltiges Wachstum."],
 ];
 
 export default function AboutPage() {
