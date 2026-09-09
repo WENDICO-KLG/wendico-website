@@ -28,7 +28,7 @@ export default function AppFooter() {
           <a href="https://instagram.com/wendico.ch" target="_blank" rel="noreferrer">Instagram ↗︎</a>
         </div>
       </div>
-      <div className="shell footer-bottom"><span>© 2026 Wendico KLG</span><div><Link href="/impressum">Impressum</Link><Link href="/datenschutz">Datenschutz</Link></div></div>
+      <div className="shell footer-bottom"><span>© 2026 Wendico KLG</span><div><Link href="/impressum">Impressum</Link><Link href="/datenschutz">Datenschutz</Link><Link href="/agb">AGB</Link></div></div>
     </footer>
   );
 }

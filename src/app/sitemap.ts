@@ -9,6 +9,7 @@ const routes = [
   "/kontakt",
   "/impressum",
   "/datenschutz",
+  "/agb",
   "/webdesign-zuerich",
   "/webdesign-winterthur",
   "/webdesign-thalheim-an-der-thur",

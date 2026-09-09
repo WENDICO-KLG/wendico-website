@@ -55,7 +55,7 @@ export default function ContactPage() {
           <div className="contact-calendly-panel">
             <CalendlyInlineWidget />
           </div>
-          <a className="contact-calendly-fallback" href="https://calendly.com/info-wendico/30min?hide_gdpr_banner=1" target="_blank" rel="noreferrer">Falls der Kalender nicht lädt, direkt in Calendly öffnen ↗︎</a>
+          <a className="contact-calendly-fallback" href="https://calendly.com/info-wendico/30min" target="_blank" rel="noreferrer">Falls der Kalender nicht lädt, direkt in Calendly öffnen ↗︎</a>
         </div>
       </section>
 

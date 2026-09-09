@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import AppFooter from "@/components/AppFooter";
 import AppNav from "@/components/AppNav";
+import CookieBanner from "@/components/CookieBanner";
 import PageTransition from "@/components/PageTransition";
 import ScrollReveals from "@/components/ScrollReveals";
 import SiteLoader from "@/components/SiteLoader";
@@ -115,6 +116,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <ScrollReveals />
         <PageTransition>{children}</PageTransition>
         <AppFooter />
+        <CookieBanner />
       </body>
     </html>
   );
