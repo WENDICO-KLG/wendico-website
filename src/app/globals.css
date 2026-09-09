@@ -514,8 +514,9 @@ body::before { background: radial-gradient(circle at 10% 8%, rgba(116,184,195,.2
 	body { width: 100%; overflow-x: clip; }
 	main { overflow-x: clip; }
 	.hero-landscape { height: 140svh; }
-	.hero-sticky { position: absolute; height: 100svh; }
+	.hero-sticky { position: fixed; height: 100svh; }
 	.hero-frame { min-height: 100svh; }
+	.hero-wordmark { top: 86px; font-size: 17vw; color: rgba(11,48,35,.9); text-shadow: 0 3px 26px rgba(235,255,244,.2); }
 	.hero-content { bottom: 24px; }
 	.hero-copy .actions { flex-direction: column; align-items: stretch; }
 	.hero-button,.hero-text-link { width: 100%; }
@@ -558,7 +559,7 @@ body::before { background: radial-gradient(circle at 10% 8%, rgba(116,184,195,.2
 
 @media (hover: none), (pointer: coarse) {
 	body,main { overflow-x: clip; }
-	.hero-sticky { position: absolute; }
+	.hero-sticky { position: fixed; }
 	.home-projects-section { overflow-x: clip; }
 	.home-projects-grid { display: grid; gap: 18px; padding: 36px 0 10px; transform-style: flat; }
 	.project-spiral-row { min-height: auto; display: block; perspective: none; }
