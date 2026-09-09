@@ -26,6 +26,12 @@ const homePlans = [
   { name: "Full System", price: "8'500", description: "Für komplexe digitale Auftritte.", items: ["Unlimitierte Seiten", "Mehrsprachig", "Individuelle Systeme"] },
 ];
 
+const geoPages = [
+  { city: "Zürich", href: "/webdesign-zuerich", text: "Webdesign für Unternehmen, Dienstleister und Marken mit Fokus auf Vertrauen, Klarheit und Wachstum." },
+  { city: "Winterthur", href: "/webdesign-winterthur", text: "Moderne Websites für lokale Unternehmen, die in der Region stärker sichtbar und professioneller auftreten wollen." },
+  { city: "Thalheim an der Thur", href: "/webdesign-thalheim-an-der-thur", text: "Regionale Webauftritte mit klarer Positionierung für Firmen, Gastronomie und Dienstleister im Zürcher Weinland." },
+];
+
 const homeFaqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
