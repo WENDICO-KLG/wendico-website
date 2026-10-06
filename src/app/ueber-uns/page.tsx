@@ -4,23 +4,23 @@ import AboutHero from "@/components/AboutHero";
 import AboutSectionParallax from "@/components/AboutSectionParallax";
 
 export const metadata: Metadata = {
-  title: "Über uns",
-  description: "Lerne Wendico kennen: Digitalstudio aus Thalheim an der Thur für Strategie, Webdesign, Design und digitale Systeme.",
+  title: "Über Wendico: Webdesign für Salons",
+  description: "Lerne Wendico kennen: Das Digitalstudio aus Thalheim an der Thur für buchungsoptimierte Websites von Beauty- und Coiffeur-Salons.",
   alternates: { canonical: "/ueber-uns" },
-  keywords: ["Wendico Team", "Digitalstudio Zürcher Weinland", "Webdesign Thalheim an der Thur", "Panat Ruangsri", "Tim Biedermann"],
+  keywords: ["Wendico Team", "Webdesign Beauty Salon", "Coiffeur Website", "Digitalstudio Zürcher Weinland", "Webdesign Thalheim an der Thur"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/ueber-uns",
-    title: "Über uns | Wendico",
-    description: "Lerne Wendico kennen: Digitalstudio aus Thalheim an der Thur für Strategie, Webdesign, Design und digitale Systeme.",
+    title: "Über Wendico: Webdesign für Salons | Wendico",
+    description: "Lerne Wendico kennen: Das Digitalstudio aus Thalheim an der Thur für buchungsoptimierte Websites von Beauty- und Coiffeur-Salons.",
   },
 };
 
 const principles = [
   ["clarity", "Klarheit", "Wir reduzieren Komplexität, bis Strategie, Design und Technik verständlich zusammenarbeiten."],
-  ["impact", "Wirkung", "Jede Entscheidung soll deiner Marke helfen: mehr Vertrauen, bessere Anfragen, sauberere Abläufe."],
+  ["impact", "Wirkung", "Jede Entscheidung soll deinem Salon helfen: mehr Vertrauen, klare Leistungen und ein einfacher Weg zum Termin."],
   ["identity", "Eigenständigkeit", "Wir bauen keine Austauschware, sondern Auftritte mit eigener Sprache, eigenem Code und klarer Haltung."],
 ];
 
@@ -33,7 +33,7 @@ const workflow = [
 const roleCards = [
   ["Strategie", "Ziele ordnen, Nutzer verstehen, Richtung festlegen."],
   ["Auftritt", "Design, Inhalt und Technik zu einer klaren Marke verbinden."],
-  ["System", "Anfragen, Abläufe und Wachstum messbar unterstützen."],
+  ["Buchungsweg", "Salonleistungen klar präsentieren und die Online-Terminbuchung leicht erreichbar machen."],
 ];
 
 const team = [

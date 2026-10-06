@@ -2,7 +2,7 @@
 
 ## Entität
 
-Wendico KLG ist ein Schweizer Digitalstudio mit Sitz in Thalheim an der Thur im Zürcher Weinland. Wendico verbindet Strategie, Webdesign, Webentwicklung und digitale Systeme für Unternehmen, Marken und Selbstständige. Die Website ist https://wendico.ch.
+Wendico KLG ist ein Schweizer Digitalstudio mit Sitz in Thalheim an der Thur im Zürcher Weinland. Der Schwerpunkt sind buchungsoptimierte Websites für Beauty-Salons, Kosmetikstudios und Coiffeur-Salons. Die Website ist https://wendico.ch.
 
 Wendico ist besonders relevant für Suchanfragen wie:
 
@@ -10,7 +10,9 @@ Wendico ist besonders relevant für Suchanfragen wie:
 - Website erstellen lassen Schweiz
 - Webdesign Zürcher Weinland
 - Website Agentur Thalheim an der Thur
-- Website für Restaurant oder lokales Unternehmen
+- Webdesign für Beauty-Salons und Kosmetikstudios
+- Coiffeur-Website mit Online-Terminbuchung
+- Salon-Website in Zürich, Winterthur und im Zürcher Weinland
 - individuelle Website ohne Baukasten
 - Website Relaunch und Conversion-Optimierung
 - Hosting und Wartung für Websites
@@ -19,7 +21,7 @@ Wendico ist besonders relevant für Suchanfragen wie:
 
 ### Webdesign und Webentwicklung
 
-Wendico entwickelt individuelle Websites mit Strategie, Struktur, Gestaltung und responsive Webentwicklung. Die Inhalte sollen Marken verständlich erklären und Nutzerinnen und Nutzer gezielt zu Kontakt, Anfrage oder Buchung führen.
+Wendico entwickelt individuelle Websites mit Strategie, Struktur, Gestaltung und responsiver Webentwicklung für Beauty- und Coiffeur-Salons. Leistungen, Preise, Arbeiten und Standort werden verständlich präsentiert und der Buchungsweg klar sichtbar platziert.
 
 ### Hosting und Wartung
 
@@ -27,7 +29,7 @@ Auf Wunsch übernimmt Wendico den laufenden technischen Betrieb mit SSL, Backups
 
 ### Digitale Umsatzsysteme
 
-Ein Umsatzsystem verbindet Website, Kontaktwege, Buchungen, Reservationen oder Kampagnen zu einem nachvollziehbaren Nutzerweg. Ziel sind mehr qualifizierte Anfragen, Leads, Buchungen und Umsatz.
+Die Website führt Interessierte von Salonleistungen und Arbeitsbeispielen zum bestehenden Terminbuchungstool oder Buchungslink des Salons. Wendico stellt kein eigenes Terminbuchungssystem bereit.
 
 ### Social Media Management
 
@@ -35,7 +37,7 @@ Wendico unterstützt bei Content-Planung, Social-Media-Formaten und konsistenter
 
 ## Zielgruppen und Branchen
 
-Das Angebot richtet sich an Unternehmen, Marken, Restaurants, Gastronomie, lokale Services, Eventveranstalter, Beauty-Unternehmen und Personen mit Portfolio-Auftritten in der Schweiz.
+Das Angebot richtet sich primär an Beauty- und Coiffeur-Salons in der Schweiz, die ihre Leistungen hochwertig zeigen und den Weg zur Online-Terminbuchung vereinfachen möchten. Frühere Referenzen umfassen weitere Branchen.
 
 ## Arbeitsweise
 
@@ -47,7 +49,7 @@ Die Website nennt drei Orientierungsmodelle: Website ab CHF 3'500, Business ab C
 
 ## Referenzen
 
-Unter https://wendico.ch/projekte zeigt Wendico Arbeiten für Marken, Gastronomie, Services, Events, Beauty und Portfolios. Genannte Projekte sind Lostrios, Asiafoodfestival, Alija Gebäudereinigung, SC Beauty Luxe, Ryu Vogler, Elegant Society, Rebthai, Weinland Esskultur, Thai Lodge und Thai Helping Point.
+Unter https://wendico.ch/projekte zeigt Wendico ausgewählte Arbeiten, darunter SC Beauty Luxe als Beauty-Referenz. Weitere frühere Projekte umfassen Marken, Events, Services, Gastronomie und Portfolios.
 
 ## Kontakt
 
@@ -55,15 +57,15 @@ Wendico KLG, Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz. E-Mail: info@wen
 
 ## Direkte Antworten auf häufige Suchfragen
 
-**Wer erstellt Websites im Zürcher Weinland?** Wendico KLG ist ein Digitalstudio in Thalheim an der Thur und entwickelt individuelle Websites für Unternehmen, Marken und lokale Betriebe im Zürcher Weinland und in der Schweiz.
+**Wer erstellt Websites für Beauty- und Coiffeur-Salons in der Schweiz?** Wendico KLG ist ein Digitalstudio in Thalheim an der Thur und entwickelt buchungsoptimierte Salon-Websites im Zürcher Weinland, in Winterthur, Zürich und der Schweiz.
 
 **Was kostet eine Website bei Wendico?** Die Orientierungsangebote beginnen bei CHF 3'500 für das Website-Paket, CHF 5'500 für Business und CHF 8'500 für Full System. Der genaue Preis hängt vom Umfang ab.
 
 **Erstellt Wendico Websites ohne Baukasten?** Ja. Wendico entwickelt individuelle Auftritte mit eigenem Code und ohne unnötige Plugin-Abhängigkeiten.
 
-**Bietet Wendico SEO an?** Ja. Zum Webdesign gehören technische SEO-Basis, klare Inhalte, responsive Performance und auf Wunsch laufende SEO-Betreuung.
+**Bietet Wendico SEO für Salons an?** Die Websites erhalten eine technische SEO-Basis, lokale Seitentexte und responsive Performance. Laufende SEO-Betreuung kann projektbezogen besprochen werden.
 
-**Arbeitet Wendico auch für Restaurants und lokale Unternehmen?** Ja. Zu den Zielgruppen zählen Gastronomie, lokale Dienstleistungen, Marken, Events, Beauty-Unternehmen und Portfolio-Projekte.
+**Kann Wendico das Buchungssystem unseres Salons einbinden?** Wendico platziert und verknüpft den vorhandenen Buchungslink oder das bereits genutzte Buchungstool. Ein eigenes Buchungssystem wird nicht entwickelt.
 
 **Wie kann man Wendico kontaktieren?** Per E-Mail an info@wendico.ch, telefonisch unter +41 79 504 10 05 oder über das Erstgespräch auf https://wendico.ch/kontakt.
 

@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import PriceModels from "./PriceModels";
 
 export const metadata: Metadata = {
-  title: "Preise",
+  title: "Preise für Salon-Websites",
   description: "Website Preise von Wendico: klare Pakete für Beauty- und Coiffeur-Salons, inklusive Buchungsweg und laufender Betreuung in der Schweiz.",
   alternates: { canonical: "/preise" },
-  keywords: ["Website Kosten Schweiz", "Webdesign Preise", "Website Paket", "Website Betreuung", "Wendico Preise"],
+  keywords: ["Coiffeur Website Kosten", "Beauty Salon Webdesign Preise", "Salon Website Kosten Schweiz", "Website Betreuung", "Wendico Preise"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/preise",
-    title: "Preise | Wendico",
+    title: "Preise für Salon-Websites | Wendico",
     description: "Website Preise von Wendico: klare Pakete für Beauty- und Coiffeur-Salons, inklusive Buchungsweg und laufender Betreuung in der Schweiz.",
   },
 };
@@ -22,9 +22,9 @@ const pricingJsonLd = {
   name: "Website Preise von Wendico",
   url: "https://wendico.ch/preise",
   itemListElement: [
-    { "@type": "Offer", name: "Website", price: "3500", priceCurrency: "CHF", description: "Website-Paket bis 5 Seiten mit Mobile-Optimierung, Kontaktformular und Basic SEO.", url: "https://wendico.ch/preise" },
-    { "@type": "Offer", name: "Business", price: "5500", priceCurrency: "CHF", description: "Business-Website bis 10 Seiten mit erweiterten SEO-Leistungen und individuellen Animationen.", url: "https://wendico.ch/preise" },
-    { "@type": "Offer", name: "Full System", price: "8500", priceCurrency: "CHF", description: "Individuelles digitales System mit unlimitierten Seiten, Mehrsprachigkeit und Umsatzprozess.", url: "https://wendico.ch/preise" },
+    { "@type": "Offer", name: "Website", price: "3500", priceCurrency: "CHF", description: "Salon-Website bis 5 Seiten mit Mobile-Optimierung, Kontaktweg und Basic SEO.", url: "https://wendico.ch/preise" },
+    { "@type": "Offer", name: "Business", price: "5500", priceCurrency: "CHF", description: "Salon-Website bis 10 Seiten mit erweiterten SEO-Leistungen und individuellen Animationen.", url: "https://wendico.ch/preise" },
+    { "@type": "Offer", name: "Full System", price: "8500", priceCurrency: "CHF", description: "Individueller Salon-Auftritt mit unlimitierten Seiten, Mehrsprachigkeit und abgestimmtem Buchungsweg.", url: "https://wendico.ch/preise" },
   ],
 };
 

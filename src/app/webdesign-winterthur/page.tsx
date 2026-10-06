@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Webdesign Winterthur",
+  title: "Webdesign Winterthur für Beauty & Coiffeur",
   description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Winterthur. Zeige deine Arbeit hochwertig und führe neue Kundschaft direkt zur Online-Terminbuchung.",
   alternates: { canonical: "/webdesign-winterthur" },
   keywords: ["Webdesign Winterthur", "Coiffeur Website Winterthur", "Beauty Salon Website Winterthur", "Salon Website mit Online-Buchung"],
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     locale: "de_CH",
     siteName: "Wendico",
     url: "/webdesign-winterthur",
-    title: "Webdesign Winterthur | Wendico",
+    title: "Webdesign Winterthur für Beauty & Coiffeur | Wendico",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Winterthur.",
   },
 };

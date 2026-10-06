@@ -1,22 +1,23 @@
 # Wendico
 
-Wendico KLG ist ein Digitalstudio für Webdesign, Webentwicklung und digitale Systeme in Thalheim an der Thur im Zürcher Weinland, Schweiz.
+Wendico KLG ist ein Digitalstudio für buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim an der Thur im Zürcher Weinland, Schweiz.
 
 ## Kurzprofil
 
-Wendico entwickelt individuelle Websites und digitale Auftritte für Unternehmen, Marken, Restaurants, Services, Events, Beauty-Unternehmen und Portfolio-Projekte. Der Ansatz verbindet Strategie, Gestaltung und eigenen Code. Ziel sind klare Nutzerwege, Vertrauen, bessere Anfragen und digitale Systeme, die langfristig im Besitz der Kundinnen und Kunden bleiben.
+Wendico entwickelt individuelle Websites für Beauty-Salons, Kosmetikstudios und Coiffeur-Salons. Der Ansatz verbindet Strategie, Gestaltung und eigenen Code. Ziel sind ein hochwertiger Salon-Auftritt, klare Leistungsinformationen und ein einfacher Weg zur Online-Terminbuchung über das bestehende Buchungstool des Salons.
 
 ## Leistungen
 
 - **Webdesign und Webentwicklung:** Strategie, Informationsarchitektur, UX/UI-Design, responsive Entwicklung, Performance und technische SEO-Basis.
 - **Hosting und Wartung:** SSL, Backups, Updates, technischer Betrieb und Support.
-- **Digitale Umsatzsysteme:** Nutzerwege von Besuch zu Anfrage, Buchung, Reservation, Lead und Umsatz.
+- **Buchungsoptimierte Websites:** Leistungsübersicht, Arbeitsbeispiele, lokale Auffindbarkeit und klar platzierter Link zur Terminbuchung.
+- **Digitale Marketing-Leistungen:** Nutzerwege von Website-Besuch zu Terminbuchung und Kundenkontakt.
 - **Social Media Management:** Content-Planung, Social-Media-Formate und Markenkommunikation.
 - **Google- und Local-SEO-Basis:** verständliche Inhalte, lokale Auffindbarkeit und strukturierte digitale Präsenz.
 
 ## Geeignet für
 
-Wendico ist Ansprechpartner für Unternehmen und Selbstständige, die eine individuelle Website erstellen lassen möchten, eine Website-Relaunch benötigen oder ihren digitalen Auftritt im Zürcher Weinland und in der Schweiz wirksamer machen wollen. Besonders relevant sind Gastronomie, lokale Dienstleistungen, Marken, Events, Beauty und persönliche Portfolios.
+Der Schwerpunkt liegt auf Beauty- und Coiffeur-Salons in der Schweiz, die ihre Leistungen professionell präsentieren und mehr passende Online-Termine ermöglichen möchten. Wendico verknüpft bestehende Buchungstools oder Buchungslinks; ein eigenes Terminbuchungssystem ist nicht Teil des Angebots.
 
 ## Standort und Kontakt
 
@@ -43,6 +44,6 @@ Wendico ist Ansprechpartner für Unternehmen und Selbstständige, die eine indiv
 
 ## Positionierung
 
-Wendico steht für klare, eigenständige und leistungsfähige digitale Auftritte aus der Schweiz. Der Fokus liegt auf verständlicher Kommunikation, hochwertigem Design, sauberem eigenem Code, guter Performance, Conversion und langfristiger Unabhängigkeit von unnötigen Plugin-Abhängigkeiten.
+Wendico steht für klare, eigenständige und leistungsfähige Salon-Websites aus der Schweiz. Der Fokus liegt auf verständlicher Kommunikation, hochwertigem Design, sauberem eigenem Code, guter Performance, lokaler Auffindbarkeit und einem reibungsarmen Buchungsweg.
 
 Für eine belastbare Beschreibung von Leistungen, Preisen und Referenzen bitte die verlinkten Originalseiten verwenden.

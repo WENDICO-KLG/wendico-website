@@ -5,17 +5,17 @@ import ContactForm from "@/components/ContactForm";
 import mountainImage from "../../../footer.jpg";
 
 export const metadata: Metadata = {
-  title: "Kontakt",
-  description: "Kontaktiere Wendico in Thalheim an der Thur für Webdesign, Website-Projekte, Social Media Management und digitale Umsatzsysteme.",
+  title: "Kontakt für deine Salon-Website",
+  description: "Besprich mit Wendico deine buchungsoptimierte Website für Beauty- oder Coiffeur-Salon. Kostenloses Erstgespräch aus Thalheim an der Thur, online oder vor Ort.",
   alternates: { canonical: "/kontakt" },
-  keywords: ["Wendico Kontakt", "Webdesign Erstgespräch", "Website Beratung Schweiz", "Webdesign Zürcher Weinland", "Thalheim an der Thur Website"],
+  keywords: ["Coiffeur Website Beratung", "Beauty Salon Webdesign", "Salon Website Erstgespräch", "Wendico Kontakt", "Webdesign Zürcher Weinland"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/kontakt",
-    title: "Kontakt | Wendico",
-    description: "Kontaktiere Wendico in Thalheim an der Thur für Webdesign, Website-Projekte, Social Media Management und digitale Umsatzsysteme.",
+    title: "Kontakt für deine Salon-Website | Wendico",
+    description: "Besprich mit Wendico deine buchungsoptimierte Website für Beauty- oder Coiffeur-Salon. Kostenloses Erstgespräch aus Thalheim an der Thur, online oder vor Ort.",
   },
 };
 
@@ -33,8 +33,8 @@ export default function ContactPage() {
         <div className="shell contact-page-hero-grid">
           <div className="contact-copy">
             <span className="eyebrow contact-page-eyebrow"><i /> Kontakt</span>
-            <h1>Was möchtest du<br /><em>bewegen?</em></h1>
-            <p>Erzähl uns kurz von deiner Idee. Wir melden uns mit einer ehrlichen Einschätzung und einem klaren nächsten Schritt.</p>
+            <h1>Deine Salon-Website<br /><em>startet hier.</em></h1>
+            <p>Erzähl uns von deinem Salon, deinem Angebot und deinem Ziel für die Website. Wir melden uns mit einer ehrlichen Einschätzung und einem klaren nächsten Schritt.</p>
             <div className="contact-details">
               <a href="mailto:info@wendico.ch"><span>E-Mail</span><strong>info@wendico.ch ↗︎</strong></a>
               <a href="tel:+41795041005"><span>Telefon</span><strong>+41 79 504 10 05 ↗︎</strong></a>

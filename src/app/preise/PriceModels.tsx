@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const packages = [
-  { name: "Website", price: "3'500", intro: "Für den sauberen Start.", items: ["Bis 5 Seiten", "Kontakt- oder Anfrageformular", "Google Firmenseite", "Mobile-Optimierung", "Basic SEO", "1 Korrekturrunde"] },
-  { name: "Business", price: "5'500", intro: "Für Wachstum und Nachfrage.", badge: "Empfohlen", items: ["Alles aus Website", "Bis 10 Seiten", "Individuelle Animationen", "Erweiterte SEO", "Google Ads Setup", "2 Korrekturrunden"] },
-  { name: "Full System", price: "8'500", intro: "Für komplexe digitale Systeme.", items: ["Alles aus Business", "Unlimitierte Seiten", "Mehrsprachig DE/FR/EN", "Umsatz- oder Kundenprozess", "Mehrere Ads-Kampagnen", "Unlimitierte Korrekturen"] },
+  { name: "Website", price: "3'500", intro: "Für den klaren Salon-Auftritt.", items: ["Bis 5 Seiten", "Kontakt- oder Anfrageformular", "Buchungsweg klar platziert", "Mobile-Optimierung", "Basic SEO", "1 Korrekturrunde"] },
+  { name: "Business", price: "5'500", intro: "Für Salons mit Wachstumszielen.", badge: "Empfohlen", items: ["Alles aus Website", "Bis 10 Seiten", "Individuelle Animationen", "Erweiterte SEO", "Google Ads Setup", "2 Korrekturrunden"] },
+  { name: "Full System", price: "8'500", intro: "Für umfangreiche Salon-Angebote.", items: ["Alles aus Business", "Unlimitierte Seiten", "Mehrsprachig DE/FR/EN", "Umsatz- oder Kundenprozess", "Mehrere Ads-Kampagnen", "Unlimitierte Korrekturen"] },
 ];
 const retainers = [
   { name: "Maintenance", price: "150", intro: "Sicher und aktuell.", items: ["Domain & E-Mail", "Hosting & SSL", "Uptime-Monitoring", "Backups & Security", "E-Mail Support"] },
@@ -15,7 +15,7 @@ const retainers = [
 ];
 
 const faqs = [
-  ["Was ist im Website-Paket enthalten?", "Das Paket umfasst bis zu fünf Seiten, Mobile-Optimierung, Basic SEO, ein Kontakt- oder Anfrageformular und die Einrichtung eurer Google Firmenseite."],
+  ["Was ist im Website-Paket enthalten?", "Das Paket umfasst bis zu fünf Seiten, Mobile-Optimierung, Basic SEO, ein Kontakt- oder Anfrageformular und einen klar platzierten Link zu deinem bestehenden Terminbuchungstool."],
   ["Gehört die Website nach dem Projekt uns?", "Ja. Nach Projektabschluss gehört die Website inklusive Zugangsdaten und Struktur vollständig euch. Es gibt keinen Vendor Lock-in."],
   ["Brauchen wir eine monatliche Betreuung?", "Nein. Die Betreuung ist optional. Sie ist sinnvoll, wenn wir Hosting, Updates, Inhalte oder Google Ads laufend für euch übernehmen sollen."],
   ["Was kostet Google Ads zusätzlich?", "Das Werbebudget fliesst direkt an Google und wird separat vereinbart. Typisch sind CHF 300 bis 800 pro Monat, abhängig von Standort und Reichweite."],

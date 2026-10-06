@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Webdesign Zürich",
+  title: "Webdesign für Beauty- und Coiffeur-Salons in Zürich",
   description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Zürich. Präsentiere deine Arbeit hochwertig und mache die Online-Terminbuchung einfach.",
   alternates: { canonical: "/webdesign-zuerich" },
   keywords: ["Webdesign Zürich", "Coiffeur Website Zürich", "Beauty Salon Website Zürich", "Salon Website mit Online-Buchung"],
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     locale: "de_CH",
     siteName: "Wendico",
     url: "/webdesign-zuerich",
-    title: "Webdesign Zürich | Wendico",
+    title: "Webdesign für Beauty- und Coiffeur-Salons in Zürich | Wendico",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Zürich.",
   },
 };

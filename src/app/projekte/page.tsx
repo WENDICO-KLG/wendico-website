@@ -4,7 +4,7 @@ import ProjectsGrid from "./ProjectsGrid";
 import mountainImage from "../../../hero.jpg";
 
 export const metadata: Metadata = {
-  title: "Projekte",
+  title: "Salon-Websites: Projekte und Referenzen",
   description: "Salon-Websites von Wendico: Beauty- und Coiffeur-Auftritte mit klarem Design und direktem Weg zur Online-Terminbuchung. Dazu ausgewählte weitere Referenzen.",
   alternates: { canonical: "/projekte" },
   keywords: ["Beauty Salon Website Beispiele", "Coiffeur Website Referenzen", "Salon Website mit Buchung", "Wendico Projekte", "Webdesign Schweiz"],
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     locale: "de_CH",
     siteName: "Wendico",
     url: "/projekte",
-    title: "Projekte | Wendico",
+    title: "Salon-Websites: Projekte und Referenzen | Wendico",
     description: "Salon-Websites von Wendico: Beauty- und Coiffeur-Auftritte mit klarem Design und direktem Weg zur Online-Terminbuchung. Dazu ausgewählte weitere Referenzen.",
   },
 };
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
         <span className="projects-page-hero-overlay" aria-hidden="true" />
         <div className="shell projects-page-hero-shell">
           <span className="eyebrow projects-page-eyebrow"><i /> Projekte</span>
-          <h1>Digitale Auftritte<br /><em>mit sichtbarer Wirkung.</em></h1>
+          <h1>Websites<br />für Salons.<br /><em>Einfach buchen.</em></h1>
           <p>Websites für Beauty- und Coiffeur-Salons, die ihre Arbeit zeigen und neue Kundschaft einfach zum Wunschtermin führen.</p>
           <div className="projects-page-hero-metrics" aria-label="Projekt Kennzahlen">
             <span><strong>10+</strong> realisierte Auftritte</span>

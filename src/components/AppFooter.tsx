@@ -7,7 +7,7 @@ export default function AppFooter() {
       <div className="shell footer-grid">
         <div>
           <Link className="brand footer-brand" href="/"><Image className="brand-logo" src="/wendico_logo.png" alt="" width={180} height={52} /><strong>wendico</strong></Link>
-          <p>Digitale Auftritte mit Klarheit,<br />Charakter und Substanz.</p>
+          <p>Salon-Websites mit Charakter<br />und einem klaren Weg zum Termin.</p>
         </div>
         <div>
           <span>Navigation</span>
@@ -17,9 +17,9 @@ export default function AppFooter() {
         </div>
         <div>
           <span>Standorte</span>
-          <Link href="/webdesign-zuerich">Webdesign Zürich</Link>
-          <Link href="/webdesign-winterthur">Webdesign Winterthur</Link>
-          <Link href="/webdesign-thalheim-an-der-thur">Webdesign Thalheim</Link>
+          <Link href="/webdesign-zuerich">Salon-Webdesign Zürich</Link>
+          <Link href="/webdesign-winterthur">Salon-Webdesign Winterthur</Link>
+          <Link href="/webdesign-thalheim-an-der-thur">Salon-Webdesign Thalheim</Link>
         </div>
         <div>
           <span>Kontakt</span>

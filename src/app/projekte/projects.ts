@@ -14,6 +14,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "scbeautyluxe",
+    name: "SC Beauty Luxe",
+    category: "Beauty",
+    date: "März 2026",
+    url: "https://scbeautyluxe.com/",
+    image: "/customer-websites/scbeautyluxe-website.png",
+    description: "Beauty-Angebote und Premium-Auftritt klar präsentiert, mit einem direkten Weg zur Buchung.",
+    challenge: "Die Marke wollte hochwertiger und professioneller wirken, aber die digitale Präsentation war noch nicht auf das gewünschte Premium-Niveau abgestimmt.",
+    solution: "Wir haben die visuelle Sprache verfeinert, Premium-Momente im Aufbau stärker gesetzt und die Angebotsstruktur für höhere Klarheit optimiert.",
+    value: ["Höherer Premium-Eindruck", "Bessere Anfragemöglichkeiten", "Klarere Markenpositionierung"],
+    result: "Der Auftritt wirkt jetzt hochwertiger und liegt damit deutlich besser im Anspruch der Zielgruppe.",
+  },
+  {
     slug: "lostrios",
     name: "Lostrios.ch",
     category: "Brand",
@@ -51,19 +64,6 @@ export const projects: Project[] = [
     solution: "Wir haben die Leistungen verständlich neu strukturiert, die Kernbotschaften vereinfacht und die Kontaktwege so gestaltet, dass Anfragen leichter entstehen.",
     value: ["Mehr Klarheit bei Dienstleistungen", "Einfacherer Kontakt", "Stärkerer Eindruck bei Neukunden"],
     result: "Die Website hilft jetzt dabei, das Leistungsangebot professionell zu präsentieren und die Nachfrage insgesamt klarer zu fokussieren.",
-  },
-  {
-    slug: "scbeautyluxe",
-    name: "SC Beauty Luxe",
-    category: "Beauty",
-    date: "März 2026",
-    url: "https://scbeautyluxe.com/",
-    image: "/customer-websites/scbeautyluxe-website.png",
-    description: "Premium-Gefühl und Angebotsübersicht für bessere Anfragen verbunden.",
-    challenge: "Die Marke wollte hochwertiger und professioneller wirken, aber die digitale Präsentation war noch nicht auf das gewünschte Premium-Niveau abgestimmt.",
-    solution: "Wir haben die visuelle Sprache verfeinert, Premium-Momente im Aufbau stärker gesetzt und die Angebotsstruktur für höhere Klarheit optimiert.",
-    value: ["Höherer Premium-Eindruck", "Bessere Anfragemöglichkeiten", "Klarere Markenpositionierung"],
-    result: "Der Auftritt wirkt jetzt hochwertiger und liegt damit deutlich besser im Anspruch der Zielgruppe.",
   },
   {
     slug: "ryu-vogler",

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { projects } from "./projects";
 
-const filters = ["Alle", "Brand", "Gastronomie", "Service", "Event", "Beauty", "Portfolio", "Information"];
+const filters = ["Alle", "Beauty", "Brand", "Service", "Event", "Gastronomie", "Portfolio", "Information"];
 const categoryFilters = filters.filter((item) => item !== "Alle");
 
 export default function ProjectsGrid() {
@@ -19,7 +19,7 @@ export default function ProjectsGrid() {
         <div className="projects-page-toolbar">
           <div>
             <span className="eyebrow projects-page-eyebrow"><i /> Ausgewählte Arbeiten</span>
-            <h2>Ein Raster aus Marken, Systemen und Momenten.</h2>
+            <h2>Salon-Websites mit Buchungsfokus. Dazu ausgewählte Arbeiten aus weiteren Branchen.</h2>
           </div>
           <div className="projects-page-filter-panel" aria-label="Projekte filtern">
             <button className={filter === "Alle" ? "active" : ""} onClick={() => setFilter("Alle")}>Alle Projekte</button>

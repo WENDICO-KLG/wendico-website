@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Webdesign Thalheim an der Thur",
-  description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim an der Thur und im Zürcher Weinland. Leistungen präsentieren und Online-Termine vereinfachen.",
+  title: "Webdesign für Salons Thalheim an der Thur",
+  description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim und im Zürcher Weinland. Leistungen zeigen und Online-Termine vereinfachen.",
   alternates: { canonical: "/webdesign-thalheim-an-der-thur" },
   keywords: ["Webdesign Thalheim an der Thur", "Coiffeur Website Zürcher Weinland", "Beauty Salon Website Thalheim", "Salon Website mit Online-Buchung"],
   openGraph: {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     locale: "de_CH",
     siteName: "Wendico",
     url: "/webdesign-thalheim-an-der-thur",
-    title: "Webdesign Thalheim an der Thur | Wendico",
+    title: "Webdesign für Beauty- und Coiffeur-Salons in Thalheim | Wendico",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim an der Thur und im Zürcher Weinland.",
   },
 };

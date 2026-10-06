@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 };
 
 const homePlans = [
-  { name: "Website", price: "3'500", description: "Für einen klaren, professionellen Start.", items: ["Bis 5 Seiten", "Mobile Optimierung", "Basic SEO"] },
-  { name: "Business", price: "5'500", description: "Für Marken, die wachsen wollen.", badge: "Empfohlen", items: ["Bis 10 Seiten", "Erweiterte SEO", "Google Ads Setup"] },
-  { name: "Full System", price: "8'500", description: "Für komplexe digitale Auftritte.", items: ["Unlimitierte Seiten", "Mehrsprachig", "Individuelle Systeme"] },
+  { name: "Website", price: "3'500", description: "Für einen professionellen Salon-Auftritt.", items: ["Bis 5 Seiten", "Mobile Optimierung", "Basic SEO"] },
+  { name: "Business", price: "5'500", description: "Für Salons mit Wachstumszielen.", badge: "Empfohlen", items: ["Bis 10 Seiten", "Erweiterte SEO", "Google Ads Setup"] },
+  { name: "Full System", price: "8'500", description: "Für umfangreiche Salon-Angebote.", items: ["Unlimitierte Seiten", "Mehrsprachig", "Individuelle Systeme"] },
 ];
 
 const homeFaqJsonLd = {
@@ -33,7 +33,7 @@ const homeFaqJsonLd = {
     {
       "@type": "Question",
       name: "Was genau macht Wendico?",
-      acceptedAnswer: { "@type": "Answer", text: "Wir konzipieren, gestalten und entwickeln digitale Auftritte für Unternehmen. Dazu gehören individuelle Websites, Hosting, Wartung und digitale Umsatzsysteme." },
+      acceptedAnswer: { "@type": "Answer", text: "Wendico konzipiert, gestaltet und entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Dazu kommen auf Wunsch Hosting, Wartung und digitale Marketing-Leistungen." },
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const homeFaqJsonLd = {
     {
       "@type": "Question",
       name: "Wie startet ein Projekt mit Wendico?",
-      acceptedAnswer: { "@type": "Answer", text: "Mit einem unverbindlichen Gespräch. Wir klären Ziele, Zielgruppe und Umfang, geben eine ehrliche Empfehlung und planen die nächsten Schritte gemeinsam." },
+      acceptedAnswer: { "@type": "Answer", text: "Mit einem unverbindlichen Gespräch. Wir klären Salon-Angebot, Zielgruppe, Buchungsweg und Projektumfang und empfehlen passende nächste Schritte." },
     },
   ],
 };

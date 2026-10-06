@@ -16,8 +16,8 @@ const organizationJsonLd = {
   url: "https://wendico.ch",
   logo: "https://wendico.ch/wendico_logo.png",
   image: "https://wendico.ch/opengraph-image.png",
-  description: "Wendico entwickelt individuelle Websites, digitale Auftritte und Umsatzsysteme für Unternehmen im Zürcher Weinland und der Schweiz.",
-  keywords: ["Webdesign Schweiz", "Webdesign Zürcher Weinland", "Website erstellen lassen", "Website Agentur Thalheim an der Thur", "SEO Website Schweiz", "digitale Umsatzsysteme"],
+  description: "Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in der Schweiz, mit klaren Leistungen und direktem Weg zur Online-Terminbuchung.",
+  keywords: ["Webdesign Beauty Salon Schweiz", "Coiffeur Website", "Salon Website Online-Buchung", "Webdesign Zürcher Weinland", "Website Thalheim an der Thur"],
   email: "info@wendico.ch",
   telephone: "+41795041005",
   address: {
@@ -63,9 +63,9 @@ const serviceCatalogJsonLd = {
   "@id": "https://wendico.ch/#services",
   name: "Webdesign- und Digitalleistungen von Wendico",
   itemListElement: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webdesign und Webentwicklung", description: "Individuelle, responsive Websites mit Strategie, Design, Entwicklung und technischer SEO-Basis.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webdesign und Webentwicklung", description: "Buchungsoptimierte, responsive Websites für Beauty- und Coiffeur-Salons mit klarer Präsentation von Leistungen und Buchungsweg.", provider: { "@id": "https://wendico.ch/#organization" } } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hosting und Wartung", description: "Hosting, SSL, Backups, Updates, Monitoring und Support für Websites.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Umsatzsysteme", description: "Digitale Nutzerwege für qualifizierte Anfragen, Buchungen, Leads und Umsatz.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Umsatzsysteme", description: "Klare digitale Wege von Salonleistungen zur Online-Terminbuchung über das bestehende Buchungstool des Salons.", provider: { "@id": "https://wendico.ch/#organization" } } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", description: "Content-Planung, Social-Media-Formate und konsistente Markenkommunikation.", provider: { "@id": "https://wendico.ch/#organization" } } },
   ],
 };
@@ -73,7 +73,7 @@ const serviceCatalogJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://wendico.ch"),
   title: { default: "Wendico | Websites für Beauty & Coiffeur", template: "%s | Wendico" },
-  description: "Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in der Schweiz: hochwertig gestaltet, mobil gedacht und direkt mit der Terminbuchung verbunden.",
+  description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons: hochwertig gestaltet, mobil gedacht und direkt mit der Terminbuchung verbunden.",
   applicationName: "Wendico",
   authors: [{ name: "Wendico KLG", url: "https://wendico.ch" }],
   creator: "Wendico KLG",
@@ -87,14 +87,14 @@ export const metadata: Metadata = {
     locale: "de_CH",
     url: "https://wendico.ch",
     siteName: "Wendico",
-    title: "Wendico | Websites mit Wirkung",
-    description: "Individuelle Websites, Webdesign und digitale Systeme für Unternehmen im Zürcher Weinland.",
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Wendico Websites mit Wirkung" }],
+    title: "Wendico | Salon-Websites mit Online-Buchung",
+    description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Zeige deine Arbeit und mache den Weg zum Termin einfach.",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons von Wendico" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wendico | Websites mit Wirkung",
-    description: "Individuelle Websites, Webdesign und digitale Systeme für Unternehmen im Zürcher Weinland.",
+    title: "Wendico | Salon-Websites mit Online-Buchung",
+    description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Zeige deine Arbeit und mache den Weg zum Termin einfach.",
     images: ["/opengraph-image.png"],
   },
   icons: {
