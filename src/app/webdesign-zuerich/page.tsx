@@ -3,16 +3,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Webdesign Zürich",
-  description: "Professionelles Webdesign und digitale Auftritte für Unternehmen in Zürich. Moderne Websites mit klarer Strategie, starkem Branding und messbarem Mehrwert.",
+  description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Zürich. Präsentiere deine Arbeit hochwertig und mache die Online-Terminbuchung einfach.",
   alternates: { canonical: "/webdesign-zuerich" },
-  keywords: ["Webdesign Zürich", "Website erstellen Zürich", "Webagentur Zürich", "Website für Unternehmen Zürich"],
+  keywords: ["Webdesign Zürich", "Coiffeur Website Zürich", "Beauty Salon Website Zürich", "Salon Website mit Online-Buchung"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/webdesign-zuerich",
     title: "Webdesign Zürich | Wendico",
-    description: "Professionelles Webdesign und digitale Auftritte für Unternehmen in Zürich.",
+    description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Zürich.",
   },
 };
 
@@ -23,8 +23,8 @@ export default function WebdesignZurichPage() {
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> Zürich</span>
-            <h1>Webdesign für Unternehmen in <em>Zürich</em>, die mehr Vertrauen und mehr Nachfrage wollen.</h1>
-            <p>Wir schaffen digitale Auftritte, die in der Stadt mit den richtigen Marken und Dienstleistern ernst genommen werden. Klare Positionierung, starke visuelle Sprache und Websites, die eher Gespräche als nur „Besucher“ produzieren.</p>
+            <h1>Webdesign für Beauty- und Coiffeur-Salons in <em>Zürich</em>, die mehr Termine gewinnen wollen.</h1>
+            <p>Wir gestalten Salon-Websites, die deine Arbeit hochwertig zeigen, dein Angebot klar erklären und neue Kundschaft direkt zur Online-Terminbuchung führen.</p>
             <div className="about-page-actions">
               <Link className="button primary" href="/kontakt#termin-buchen">Gespräch vereinbaren</Link>
               <Link className="about-page-text-link" href="/projekte">Mehr Projekte</Link>
@@ -32,13 +32,13 @@ export default function WebdesignZurichPage() {
           </div>
 
           <aside className="geo-page-card glass">
-            <span>Warum Kunden in Zürich uns wählen</span>
-            <strong>Mehr Sichtbarkeit</strong>
-            <p>Für Unternehmen, die in einer kompetitiven Stadt besser wahrgenommen werden möchten.</p>
+            <span>Für Salons in Zürich</span>
+            <strong>Einfach zum Wunschtermin</strong>
+            <p>Zeige, was deinen Salon ausmacht, und verknüpfe deine Website mit dem Buchungssystem, das du bereits nutzt.</p>
             <ul>
-              <li>Klare Positionierung</li>
-              <li>Mehr Vertrauen</li>
-              <li>Mehr qualifizierte Anfragen</li>
+              <li>Leistungen klar präsentieren</li>
+              <li>Vertrauen vor dem Besuch</li>
+              <li>Direkt online buchen</li>
             </ul>
           </aside>
         </div>
@@ -55,21 +55,21 @@ export default function WebdesignZurichPage() {
       <section className="shell geo-page-overview">
         <div className="geo-page-intro">
           <span className="eyebrow"><i /> Für wen?</span>
-          <h2>Ein klarer digitaler Auftritt ist in Zürich oft der Unterschied zwischen „vorhanden“ und „gewählt“.</h2>
+          <h2>Vor dem ersten Salonbesuch zählen online Stil, Leistungen und ein einfacher Weg zum passenden Termin.</h2>
         </div>
 
         <div className="geo-page-grid">
           <article className="glass">
-            <h3>Unternehmen</h3>
-            <p>Für Firmen, die in Zürich professioneller auftreten und ihre Leistungen besser verständlich machen wollen.</p>
+            <h3>Beauty-Salons</h3>
+            <p>Zeige Behandlungen, Ergebnisse und Atmosphäre, damit neue Kundschaft schnell den passenden Salon findet.</p>
           </article>
           <article className="glass">
-            <h3>Service-Business</h3>
-            <p>Für Dienstleister, die mit einer guten Website Vertrauen schaffen und schneller qualifizierte Anfragen gewinnen möchten.</p>
+            <h3>Coiffeur-Salons</h3>
+            <p>Präsentiere Schnitt, Farbe und Pflege verständlich und führe direkt zu deinem Online-Buchungssystem.</p>
           </article>
           <article className="glass">
-            <h3>Marken</h3>
-            <p>Für Marken, die eine digitale Präsenz brauchen, die genauso durchdacht und hochwertig wirkt wie das eigene Angebot.</p>
+            <h3>Online-Terminbuchung</h3>
+            <p>Ein klarer Buchungsweg hilft Kundinnen und Kunden, den passenden Service und freien Termin ohne Umwege zu finden.</p>
           </article>
         </div>
       </section>
@@ -78,25 +78,25 @@ export default function WebdesignZurichPage() {
         <div className="shell geo-page-process-inner">
           <div className="geo-page-process-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> So arbeiten wir</span>
-            <h2>Von der Positionierung bis zur live gehenden Website.</h2>
-            <p>Wir verbinden Strategie, Design und Technik, damit deine Website nicht nur gut aussieht, sondern auch eine klare Wirkung im Geschäft erzeugt.</p>
+            <h2>Ein stimmiger Salon-Auftritt mit direktem Weg zur Buchung.</h2>
+            <p>Wir ordnen Leistungen, Bildwelt und Buchungslink so, dass Interessierte schnell verstehen, was du anbietest und wie sie ihren Termin vereinbaren.</p>
           </div>
 
           <div className="geo-page-flow">
             <div className="geo-page-step glass">
               <span>01</span>
               <h3>Positionierung</h3>
-              <p>Wir klären, was deine Firma stark macht und worauf Kunden dich wahrnehmen sollen.</p>
+              <p>Wir klären, welche Services du anbietest und welche Fragen neue Salonkundschaft vor der Buchung hat.</p>
             </div>
             <div className="geo-page-step glass">
               <span>02</span>
               <h3>Design</h3>
-              <p>Eine klare visuelle Sprache macht den digitalen Auftritt verständlicher, hochwertiger und glaubwürdiger.</p>
+              <p>Deine Arbeit und die Atmosphäre deines Salons erhalten eine hochwertige, mobile Bildsprache.</p>
             </div>
             <div className="geo-page-step glass">
               <span>03</span>
               <h3>Umsetzung</h3>
-              <p>Sauber technisch, schnell, responsiv und so aufgebaut, dass Besucher gezielt zum nächsten Schritt geführt werden.</p>
+              <p>Wir verbinden die Website mit deinem Buchungssystem oder Buchungslink und testen den Ablauf auf allen Geräten.</p>
             </div>
           </div>
         </div>
@@ -105,13 +105,13 @@ export default function WebdesignZurichPage() {
       <section className="shell geo-page-proof">
         <div className="geo-page-proof-card glass">
           <span className="eyebrow"><i /> Ergebnis</span>
-          <h2>Mehr Vertrauen, mehr Klarheit und eine Website, die wirklich zum Geschäft passt.</h2>
-          <p>In der Zürcher Geschäftswelt zählt vor allem eines: ein Auftritt, der schnell erkenntlich, professionell und überzeugend wirkt. Genau daran arbeiten wir.</p>
+          <h2>Mehr Klarheit im Auftritt und mehr Vertrauen vor dem ersten Termin.</h2>
+          <p>Wenn Kundinnen und Kunden Leistungen, Preise und Ergebnisse schnell finden, fällt die Entscheidung für den passenden Salon leichter.</p>
 
           <div className="geo-page-proof-points">
             <div><strong>+ 31%</strong><span>mehr qualifizierte Anfragen</span></div>
             <div><strong>2x</strong><span>mehr Vertrauen im Erstkontakt</span></div>
-            <div><strong>100%</strong><span>individuell auf dein Geschäft abgestimmt</span></div>
+            <div><strong>100%</strong><span>individuell auf deinen Salon abgestimmt</span></div>
           </div>
         </div>
       </section>
@@ -120,8 +120,8 @@ export default function WebdesignZurichPage() {
         <div className="shell">
           <div className="cta glass">
             <span className="eyebrow"><i /> Webdesign Zürich</span>
-            <h2>Bereit für einen Webauftritt, der in Zürich besser wirkt?</h2>
-            <p>Wir bauen Websites, die klarer kommunizieren, professioneller aussehen und mehr Geschäft generieren.</p>
+            <h2>Bereit für eine Salon-Website, die mehr Termine ermöglicht?</h2>
+            <p>Wir verbinden einen hochwertigen Auftritt mit klaren Leistungen und direkter Online-Terminbuchung.</p>
             <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
           </div>
         </div>

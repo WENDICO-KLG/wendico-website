@@ -4,7 +4,8 @@ import { useState } from "react";
 
 const questions = [
   ["Was genau macht Wendico?", "Wir konzipieren, gestalten und entwickeln digitale Auftritte für Unternehmen. Dazu gehören individuelle Websites, Hosting, Wartung und digitale Umsatzsysteme."],
-  ["Für wen entwickelt ihr Websites?", "Wir arbeiten mit Unternehmen, Restaurants und Marken, die ihren digitalen Auftritt klarer, hochwertiger und wirksamer machen möchten."],
+  ["Für wen entwickelt ihr Websites?", "Unser Fokus liegt auf Beauty- und Coiffeur-Salons. Wir gestalten Websites, die deine Arbeit hochwertig zeigen und neue Kundschaft einfach zum passenden Termin führen."],
+  ["Könnt ihr Online-Terminbuchungen integrieren?", "Wir richten den Buchungsweg klar sichtbar ein und verknüpfen deine Website mit deinem bestehenden Buchungstool oder Buchungslink."],
   ["Arbeitet ihr mit Vorlagen oder Baukästen?", "Nein. Wir entwickeln mit eigenem, sauberem Code. Das gibt uns mehr Freiheit im Design, bessere Performance und eine Website, die wirklich zu deiner Marke passt."],
   ["Übernehmt ihr Hosting und Wartung?", "Ja. Auf Wunsch kümmern wir uns um Domain, SSL, Backups, Updates und laufende Pflege. So bleibt dein Auftritt technisch sicher und aktuell."],
   ["Wie starten wir ein Projekt?", "Mit einem unverbindlichen Gespräch. Wir klären Ziele, Zielgruppe und Umfang, geben eine ehrliche Empfehlung und planen dann die nächsten Schritte gemeinsam."],

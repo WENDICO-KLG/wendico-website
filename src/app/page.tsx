@@ -17,7 +17,7 @@ import footerImage from "../../footer.jpg";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-  keywords: ["Webdesign Zürcher Weinland", "Webdesign Schweiz", "Website erstellen lassen", "Digitalstudio Thalheim an der Thur", "Umsatzsystem Website", "Social Media Management Schweiz"],
+  keywords: ["Webdesign Beauty Salon", "Coiffeur Website", "Website für Coiffeur", "Salon Website mit Online-Buchung", "Webdesign Schweiz", "Digitalstudio Zürcher Weinland"],
 };
 
 const homePlans = [
@@ -38,7 +38,7 @@ const homeFaqJsonLd = {
     {
       "@type": "Question",
       name: "Für wen entwickelt Wendico Websites?",
-      acceptedAnswer: { "@type": "Answer", text: "Wir arbeiten mit Unternehmen, Restaurants und Marken, die ihren digitalen Auftritt klarer, hochwertiger und wirksamer machen möchten." },
+      acceptedAnswer: { "@type": "Answer", text: "Wir entwickeln buchungsoptimierte Websites für Beauty- und Coiffeur-Salons, die ihre Arbeit hochwertig zeigen und mehr Online-Termine gewinnen möchten." },
     },
     {
       "@type": "Question",
@@ -53,9 +53,9 @@ const serviceJsonLd = {
   "@type": "ItemList",
   name: "Leistungen von Wendico",
   itemListElement: [
-    { "@type": "ListItem", position: 1, item: { "@type": "Service", name: "Webdesign und Webentwicklung", serviceType: "Individuelle Websites für Unternehmen, Marken und Gastronomie", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
+    { "@type": "ListItem", position: 1, item: { "@type": "Service", name: "Webdesign und Webentwicklung", serviceType: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
     { "@type": "ListItem", position: 2, item: { "@type": "Service", name: "Hosting und Wartung", serviceType: "Technischer Betrieb, SSL, Backups, Updates und Support", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
-    { "@type": "ListItem", position: 3, item: { "@type": "Service", name: "Digitale Umsatzsysteme", serviceType: "Digitale Nutzerwege für Anfragen, Buchungen und Leads", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
+    { "@type": "ListItem", position: 3, item: { "@type": "Service", name: "Digitale Umsatzsysteme", serviceType: "Digitale Buchungswege für Beauty- und Coiffeur-Salons", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
   ],
 };
 
@@ -73,9 +73,9 @@ export default function Home() {
           <div className="hero-wordmark hero-appear-wordmark" aria-hidden="true">WENDICO</div>
           <div className="hero-content">
             <div className="hero-copy hero-appear-copy">
-              <span className="eyebrow hero-eyebrow"><i /> Digitalstudio aus dem Zürcher Weinland</span>
-              <h1>Websites mit Aussicht auf <em>mehr.</em></h1>
-              <p>Klare Strategie, ausgezeichnetes Design und eigener Code für digitale Auftritte, die Menschen gerne benutzen.</p>
+              <span className="eyebrow hero-eyebrow"><i /> Websites für Beauty- & Coiffeur-Salons</span>
+              <h1>Mehr Buchungen.<br />Ein Auftritt, der <em>begeistert.</em></h1>
+              <p>Buchungsoptimierte Websites, die deine Arbeit hochwertig zeigen, neue Kundschaft überzeugen und den Weg zum Wunschtermin einfach machen.</p>
               <div className="actions">
                 <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
                 <Link className="hero-text-link" href="/projekte">Arbeiten entdecken</Link>
@@ -132,8 +132,8 @@ export default function Home() {
               <div className="revenue-visual" aria-hidden="true"><span>Besucher</span><i>→︎</i><span>Anfrage</span><i>→︎</i><strong>Umsatz</strong></div>
               <div className="service-pane-copy">
                 <span>03 / Umsatzsysteme</span>
-                <h3>Vom Besuch zur messbaren Anfrage.</h3>
-                <p>Reservationen, Kampagnen und klare Nutzerwege verwandeln Aufmerksamkeit in echte Ergebnisse.</p>
+                <h3>Vom Besuch zum gebuchten Termin.</h3>
+                <p>Online-Buchung, klare Leistungen und überzeugende Einblicke machen aus Website-Besuchen echte Salontermine.</p>
                 <Link href="/kontakt" aria-label="Umsatzsystem besprechen">↗︎</Link>
               </div>
             </article>

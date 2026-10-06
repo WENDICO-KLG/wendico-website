@@ -3,16 +3,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Webdesign Thalheim an der Thur",
-  description: "Webdesign und digitale Auftritte für Unternehmen in Thalheim an der Thur. Regionale Websites mit klarer Positionierung und professionellem Eindruck.",
+  description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim an der Thur und im Zürcher Weinland. Leistungen präsentieren und Online-Termine vereinfachen.",
   alternates: { canonical: "/webdesign-thalheim-an-der-thur" },
-  keywords: ["Webdesign Thalheim an der Thur", "Website erstellen Thalheim", "Webagentur Zürcher Weinland", "Website für Unternehmen Thalheim"],
+  keywords: ["Webdesign Thalheim an der Thur", "Coiffeur Website Zürcher Weinland", "Beauty Salon Website Thalheim", "Salon Website mit Online-Buchung"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/webdesign-thalheim-an-der-thur",
     title: "Webdesign Thalheim an der Thur | Wendico",
-    description: "Webdesign und digitale Auftritte für Unternehmen in Thalheim an der Thur.",
+    description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim an der Thur und im Zürcher Weinland.",
   },
 };
 
@@ -23,8 +23,8 @@ export default function WebdesignThalheimPage() {
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> Thalheim an der Thur</span>
-            <h1>Webdesign für Unternehmen im <em>Zürcher Weinland</em>, die lokal glaubwürdig und professionell auftreten wollen.</h1>
-            <p>Wir bauen Websites für Unternehmen, Dienstleister und Betriebe im Raum Thalheim an der Thur, die sich regional besser positionieren und ihre Leistungen klarer und vertrauenswürdiger präsentieren möchten.</p>
+            <h1>Webdesign für Beauty- und Coiffeur-Salons im <em>Zürcher Weinland</em>, die mehr Termine gewinnen wollen.</h1>
+            <p>Wir gestalten Salon-Websites, die Leistungen und Arbeiten hochwertig zeigen und Interessierte einfach zur Online-Terminbuchung führen.</p>
             <div className="about-page-actions">
               <Link className="button primary" href="/kontakt#termin-buchen">Projekt besprechen</Link>
               <Link className="about-page-text-link" href="/ueber-uns">Mehr über uns</Link>
@@ -32,13 +32,13 @@ export default function WebdesignThalheimPage() {
           </div>
 
           <aside className="geo-page-card glass">
-            <span>Mehrwert für Thalheim</span>
-            <strong>Lokaler Mehrwert</strong>
-            <p>Ein professioneller Auftritt hilft regionalen Unternehmen, im eigenen Umfeld klarer, vertrauenswürdiger und attraktiver zu wirken.</p>
+            <span>Für Salons in Thalheim</span>
+            <strong>Mehr gebuchte Termine</strong>
+            <p>Ein überzeugender Webauftritt macht dein Angebot sichtbar und den nächsten freien Termin leicht erreichbar.</p>
             <ul>
-              <li>Regionale Präsenz</li>
-              <li>Klarer Markenauftritt</li>
-              <li>Mehr relevanter Sichtbarkeit</li>
+              <li>Leistungen klar präsentieren</li>
+              <li>Vertrauen vor dem Besuch</li>
+              <li>Direkt online buchen</li>
             </ul>
           </aside>
         </div>
@@ -55,21 +55,21 @@ export default function WebdesignThalheimPage() {
       <section className="shell geo-page-overview">
         <div className="geo-page-intro">
           <span className="eyebrow"><i /> Für wen?</span>
-          <h2>Der lokale Auftritt ist oft der erste Vertrautheitspunkt – und genau hier entscheidet sich, ob man ernst genommen wird.</h2>
+          <h2>Vor dem ersten Salonbesuch zählt der Eindruck online: Stil, Leistungen und ein einfacher Weg zum Termin.</h2>
         </div>
 
         <div className="geo-page-grid">
           <article className="glass">
-            <h3>Lokale Betriebe</h3>
-            <p>Für Unternehmen, die im Raum Thalheim die richtigen Kunden besser erreichen und professioneller wirken möchten.</p>
+            <h3>Beauty-Salons</h3>
+            <p>Zeige Behandlungen, Ergebnisse und deinen Stil, damit neue Kundschaft weiss, was sie bei dir erwartet.</p>
           </article>
           <article className="glass">
-            <h3>Dienstleister</h3>
-            <p>Für Dienstleistende, die ihre Angebote klarer kommunizieren und Vertrauen über einen modernen digitalen Auftritt aufbauen wollen.</p>
+            <h3>Coiffeur-Salons</h3>
+            <p>Präsentiere Schnitt, Farbe und Pflege verständlich und verlinke direkt zu deinem Buchungssystem.</p>
           </article>
           <article className="glass">
-            <h3>Marken</h3>
-            <p>Für regionale Marken, die mit einer hochwertigen Webpräsenz in der Region stärker und nachhaltiger wahrnehmbar werden.</p>
+            <h3>Online-Terminbuchung</h3>
+            <p>Ein klarer Buchungsweg hilft Kundinnen und Kunden, den passenden Service und Termin ohne Umwege zu finden.</p>
           </article>
         </div>
       </section>
@@ -78,25 +78,25 @@ export default function WebdesignThalheimPage() {
         <div className="shell geo-page-process-inner">
           <div className="geo-page-process-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> So arbeiten wir</span>
-            <h2>Professioneller Webauftritt auf Grundlage von Klarheit und Strategie.</h2>
-            <p>Wir entwickeln digitale Lösungen, die nicht nur gut aussehen, sondern auch zu deinem Unternehmen, deiner Region und deinen Zielen passen. So wächst Vertrauen von Anfang an.</p>
+            <h2>Ein Salon-Auftritt, der schön aussieht und Buchungen einfach macht.</h2>
+            <p>Wir bringen dein Angebot, deine Bildwelt und den Buchungsweg in eine klare Reihenfolge, damit Interessierte schneller den passenden Termin finden.</p>
           </div>
 
           <div className="geo-page-flow">
             <div className="geo-page-step glass">
               <span>01</span>
               <h3>Verstehen</h3>
-              <p>Wir schauen, was deine Zielgruppe erwartet und wo dein Unternehmen sich klar abhebt.</p>
+              <p>Wir klären, welche Behandlungen du anbietest und was neue Kundschaft vor der Buchung wissen möchte.</p>
             </div>
             <div className="geo-page-step glass">
               <span>02</span>
               <h3>Gestalten</h3>
-              <p>Die visuelle Sprache wird so gesetzt, dass der Auftritt hochwertig, verständlich und einladend wirkt.</p>
+              <p>Dein Stil und deine Arbeit stehen im Mittelpunkt, auf dem Smartphone genauso wie am Desktop.</p>
             </div>
             <div className="geo-page-step glass">
               <span>03</span>
               <h3>Umsetzen</h3>
-              <p>Wir bauen die Website technisch sauber und so auf, dass sie in der Praxis zuverlässig funktioniert.</p>
+              <p>Wir verbinden die Website mit deinem Terminbuchungstool oder Buchungslink und testen den Ablauf auf Mobilgeräten.</p>
             </div>
           </div>
         </div>
@@ -105,13 +105,13 @@ export default function WebdesignThalheimPage() {
       <section className="shell geo-page-proof">
         <div className="geo-page-proof-card glass">
           <span className="eyebrow"><i /> Ergebnis</span>
-          <h2>Ein Auftritt, der regional glaubwürdig wirkt und die richtigen Kontakte leichter anzieht.</h2>
-          <p>Gerade in kleineren Regionen ist Vertrauen alles. Eine gut gestaltete Website hilft dabei, sich von der Konkurrenz zu unterscheiden und langfristig professioneller wahrgenommen zu werden.</p>
+          <h2>Ein Auftritt, der Vertrauen schafft und neue Salontermine leichter macht.</h2>
+          <p>Wer Leistungen und Ergebnisse online klar zeigt, gibt neuen Kundinnen und Kunden Sicherheit und macht den ersten Termin unkompliziert.</p>
 
           <div className="geo-page-proof-points">
             <div><strong>+ 24%</strong><span>mehr regionale Sichtbarkeit</span></div>
             <div><strong>2x</strong><span>mehr Klarheit im ersten Eindruck</span></div>
-            <div><strong>100%</strong><span>auf deine Region und Zielgruppe abgestimmt</span></div>
+            <div><strong>100%</strong><span>auf deinen Salon abgestimmt</span></div>
           </div>
         </div>
       </section>
@@ -120,8 +120,8 @@ export default function WebdesignThalheimPage() {
         <div className="shell">
           <div className="cta glass">
             <span className="eyebrow"><i /> Webdesign Thalheim</span>
-            <h2>Für einen regionalen Auftritt, der professioneller und klarer wirkt?</h2>
-            <p>Wir planen und bauen Websites, die Vertrauen schaffen, einladen und gleichzeitig das eigene Geschäft besser darstellen.</p>
+            <h2>Bereit für eine Salon-Website, die mehr Termine ermöglicht?</h2>
+            <p>Wir planen und bauen deinen digitalen Auftritt mit klaren Leistungen, starken Einblicken und direkter Online-Buchung.</p>
             <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
           </div>
         </div>

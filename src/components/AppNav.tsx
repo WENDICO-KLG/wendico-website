@@ -51,6 +51,7 @@ export default function AppNav() {
       {/* kept outside .site-nav: its backdrop-filter would trap position:fixed children in Safari */}
       <div id="mobile-navigation" className={open ? "mobile-menu open" : "mobile-menu"}>
         {links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        <Link className="mobile-menu-cta" href="/kontakt#termin-buchen" onClick={() => setOpen(false)}>15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
       </div>
     </header>
   );

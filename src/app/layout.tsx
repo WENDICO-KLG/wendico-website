@@ -72,8 +72,8 @@ const serviceCatalogJsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wendico.ch"),
-  title: { default: "Wendico | Websites mit Wirkung", template: "%s | Wendico" },
-  description: "Wendico entwickelt individuelle Websites, digitale Auftritte und Umsatzsysteme für Unternehmen im Zürcher Weinland und der Schweiz.",
+  title: { default: "Wendico | Websites für Beauty & Coiffeur", template: "%s | Wendico" },
+  description: "Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in der Schweiz: hochwertig gestaltet, mobil gedacht und direkt mit der Terminbuchung verbunden.",
   applicationName: "Wendico",
   authors: [{ name: "Wendico KLG", url: "https://wendico.ch" }],
   creator: "Wendico KLG",
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="de-CH">
+    <html lang="de-CH" data-scroll-behavior="smooth">
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />

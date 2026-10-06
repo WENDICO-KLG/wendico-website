@@ -17,12 +17,12 @@ const services = [
   {
     title: "Webauftritt Erstellung",
     visual: "web" as ServiceVisual,
-    description: "Von der ersten Struktur bis zum letzten Detail entsteht ein Webauftritt, der deine Marke verständlich zeigt und auf jedem Gerät überzeugt.",
+    description: "Von Leistungen und Preisen bis zu Vorher-Nachher-Einblicken zeigt deine Website, was deinen Salon ausmacht und führt direkt zur Terminbuchung.",
   },
   {
     title: "Umsatzsystem",
     visual: "revenue" as ServiceVisual,
-    description: "Wir verbinden Aufmerksamkeit mit klaren Wegen zur Anfrage: mit überzeugenden Angeboten, intelligenten Abläufen und messbaren Kontaktpunkten.",
+    description: "Wir verbinden attraktive Leistungen, überzeugende Einblicke und deinen Buchungslink zu einem klaren Weg vom ersten Besuch bis zum Salontermin.",
   },
 ];
 

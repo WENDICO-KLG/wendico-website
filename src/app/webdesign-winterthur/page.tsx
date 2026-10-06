@@ -3,16 +3,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Webdesign Winterthur",
-  description: "Moderne Webdesign- und Website-Services für Unternehmen in Winterthur. Klarer Auftritt, starke Markenwirkung und digitale Lösungen mit Fokus auf Wachstum.",
+  description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Winterthur. Zeige deine Arbeit hochwertig und führe neue Kundschaft direkt zur Online-Terminbuchung.",
   alternates: { canonical: "/webdesign-winterthur" },
-  keywords: ["Webdesign Winterthur", "Website erstellen Winterthur", "Webagentur Winterthur", "Website für Unternehmen Winterthur"],
+  keywords: ["Webdesign Winterthur", "Coiffeur Website Winterthur", "Beauty Salon Website Winterthur", "Salon Website mit Online-Buchung"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/webdesign-winterthur",
     title: "Webdesign Winterthur | Wendico",
-    description: "Moderne Websites und digitale Auftritte für Unternehmen in Winterthur.",
+    description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Winterthur.",
   },
 };
 
@@ -23,8 +23,8 @@ export default function WebdesignWinterthurPage() {
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> Winterthur</span>
-            <h1>Webdesign für Unternehmen in <em>Winterthur</em>, die stärker in der Region wahrgenommen werden wollen.</h1>
-            <p>Wir entwickeln Websites für lokale Unternehmen, Dienstleister und Marken, die in Winterthur professioneller, klarer und zugleich wirkungsvoller auftreten wollen. Ein guter Auftritt schafft Vertrauen und macht Angebote sofort verständlicher.</p>
+            <h1>Webdesign für Beauty- und Coiffeur-Salons in <em>Winterthur</em>, die mehr Termine gewinnen wollen.</h1>
+            <p>Wir gestalten Salon-Websites, die deine Arbeit hochwertig zeigen, Leistungen verständlich erklären und Interessierte direkt zur Online-Terminbuchung führen.</p>
             <div className="about-page-actions">
               <Link className="button primary" href="/kontakt#termin-buchen">Gespräch vereinbaren</Link>
               <Link className="about-page-text-link" href="/preise">Preise ansehen</Link>
@@ -32,13 +32,13 @@ export default function WebdesignWinterthurPage() {
           </div>
 
           <aside className="geo-page-card glass">
-            <span>Mehrwert für Winterthur</span>
-            <strong>Stärker sichtbar</strong>
-            <p>Ein sauberer Webauftritt hilft Unternehmen, lokal besser gefunden und professioneller wahrgenommen zu werden.</p>
+            <span>Für Salons in Winterthur</span>
+            <strong>Einfach zum Wunschtermin</strong>
+            <p>Zeige, was deinen Salon ausmacht, und verknüpfe deinen Auftritt mit dem Buchungssystem, das du bereits nutzt.</p>
             <ul>
-              <li>Regionale Positionierung</li>
-              <li>Mehr Vertrauen</li>
-              <li>Mehr qualifizierte Leads</li>
+              <li>Leistungen klar präsentieren</li>
+              <li>Vertrauen vor dem Besuch</li>
+              <li>Direkt online buchen</li>
             </ul>
           </aside>
         </div>
@@ -55,21 +55,21 @@ export default function WebdesignWinterthurPage() {
       <section className="shell geo-page-overview">
         <div className="geo-page-intro">
           <span className="eyebrow"><i /> Warum wir?</span>
-          <h2>In Winterthur entscheidet oft der erste Eindruck online: klarer Auftritt, hochwertiger Eindruck, eindeutige nächste Schritte.</h2>
+          <h2>Vor dem ersten Salonbesuch zählen online Stil, Leistungen und ein einfacher Weg zum passenden Termin.</h2>
         </div>
 
         <div className="geo-page-grid">
           <article className="glass">
-            <h3>Lokale Sichtbarkeit</h3>
-            <p>Eine Website, die die eigenen Leistungen verständlich und einladend kommuniziert, schafft mehr Aufmerksamkeit in der Region.</p>
+            <h3>Deine Arbeit im Fokus</h3>
+            <p>Zeige Behandlungen, Ergebnisse und Atmosphäre so, dass neue Kundschaft schnell den passenden Salon findet.</p>
           </article>
           <article className="glass">
-            <h3>Vertrauen</h3>
-            <p>Ein professioneller Auftritt macht Angebote sofort glaubwürdiger und hilft dabei, Kontakte mit mehr Sicherheit zu gewinnen.</p>
+            <h3>Einfacher Buchungsweg</h3>
+            <p>Ein klar sichtbarer Buchungslink führt Interessierte ohne Umwege zur passenden Behandlung und zum freien Termin.</p>
           </article>
           <article className="glass">
-            <h3>Mehr Anfragen</h3>
-            <p>Struktur, klare Call-to-Actions und gute Kommunikation führen Besucher gezielt zu Beratung, Kontakt oder Kauf.</p>
+            <h3>Mobil gut erreichbar</h3>
+            <p>Die Website ist für Smartphones optimiert, damit Kundinnen und Kunden auch unterwegs Services ansehen und Termine buchen können.</p>
           </article>
         </div>
       </section>
@@ -78,25 +78,25 @@ export default function WebdesignWinterthurPage() {
         <div className="shell geo-page-process-inner">
           <div className="geo-page-process-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> So arbeiten wir</span>
-            <h2>Modernes Webdesign mit Strategie und ohne unnötigen Ballast.</h2>
-            <p>Wir bauen jeweils einen digitalen Auftritt, der sauber, zeitgemäß und auf deine Zielgruppe abgestimmt ist. Gerade für regionale Unternehmen ist das oft der größte Hebel.</p>
+            <h2>Ein stimmiger Salon-Auftritt mit direktem Weg zur Buchung.</h2>
+            <p>Wir ordnen Leistungen, Bildwelt und Buchungslink so, dass Interessierte schnell verstehen, was du anbietest und wie sie ihren Termin vereinbaren.</p>
           </div>
 
           <div className="geo-page-flow">
             <div className="geo-page-step glass">
               <span>01</span>
               <h3>Analyse</h3>
-              <p>Wir verstehen, wer du bist, was du anbietest und was deine Kunden wirklich brauchen.</p>
+              <p>Wir klären, welche Services du anbietest und welche Fragen neue Salonkundschaft vor der Buchung hat.</p>
             </div>
             <div className="geo-page-step glass">
               <span>02</span>
               <h3>Design</h3>
-              <p>Ein klarer visueller Stil macht dein Angebot verständlicher und professioneller in der Wahrnehmung.</p>
+              <p>Deine Arbeit und die Atmosphäre deines Salons erhalten eine hochwertige, mobile Bildsprache.</p>
             </div>
             <div className="geo-page-step glass">
               <span>03</span>
               <h3>Umsetzung</h3>
-              <p>Wir bauen die Seite technisch sauber auf, damit sie schnell, zuverlässig und für alle Geräte funktioniert.</p>
+              <p>Wir verbinden die Website mit deinem Buchungssystem oder Buchungslink und testen den Ablauf auf allen Geräten.</p>
             </div>
           </div>
         </div>
@@ -105,13 +105,13 @@ export default function WebdesignWinterthurPage() {
       <section className="shell geo-page-proof">
         <div className="geo-page-proof-card glass">
           <span className="eyebrow"><i /> Ergebnis</span>
-          <h2>Mehr Klarheit im Auftritt, mehr Vertrauen bei Neukunden und mehr Gespräche mit dem richtigen Publikum.</h2>
-          <p>Wenn ein Unternehmen in Winterthur wahrnehmbar und professionell wirkt, wird die Website nicht nur zu einer Informationsseite, sondern zu einer echten Geschäftshilfe.</p>
+          <h2>Mehr Klarheit im Auftritt und mehr Vertrauen vor dem ersten Termin.</h2>
+          <p>Wenn Kundinnen und Kunden Leistungen, Preise und Ergebnisse schnell finden, fällt die Entscheidung für den passenden Salon leichter.</p>
 
           <div className="geo-page-proof-points">
             <div><strong>+ 26%</strong><span>mehr lokale Sichtbarkeit</span></div>
             <div><strong>2x</strong><span>mehr Vertrauen im ersten Eindruck</span></div>
-            <div><strong>100%</strong><span>auf dein Angebot zugeschnitten</span></div>
+            <div><strong>100%</strong><span>auf deinen Salon zugeschnitten</span></div>
           </div>
         </div>
       </section>
@@ -120,8 +120,8 @@ export default function WebdesignWinterthurPage() {
         <div className="shell">
           <div className="cta glass">
             <span className="eyebrow"><i /> Webdesign Winterthur</span>
-            <h2>Bereit für einen Auftritt, der in Winterthur mehr überzeugt?</h2>
-            <p>Wir helfen Unternehmen, klare Positionierung, professionellen Eindruck und bessere Conversion zu verbinden.</p>
+            <h2>Bereit für eine Salon-Website, die mehr Termine ermöglicht?</h2>
+            <p>Wir verbinden einen hochwertigen Auftritt mit klaren Leistungen und direkter Online-Terminbuchung.</p>
             <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
           </div>
         </div>

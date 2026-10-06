@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, type CSSProperties } from "react";
 import textImage from "../../text-img.jpg";
 
-const statement = "Wendico baut digitale Systeme, die Marken klar zeigen, Vertrauen schaffen und aus Besuchern echte Anfragen machen.";
+const statement = "Wendico baut Salon-Websites, die deine Arbeit zeigen, Vertrauen schaffen und aus Besucherinnen gebuchte Termine machen.";
 const words = statement.split(" ");
 
 export default function HomeTextParallax() {
