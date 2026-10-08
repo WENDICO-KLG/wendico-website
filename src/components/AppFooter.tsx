@@ -6,7 +6,7 @@ export default function AppFooter() {
     <footer className="footer">
       <div className="shell footer-grid">
         <div>
-          <Link className="brand footer-brand" href="/"><Image className="brand-logo" src="/wendico_logo.png" alt="" width={180} height={52} /><strong>wendico</strong></Link>
+          <Link className="brand footer-brand" href="/"><Image className="brand-logo" src="/wendico_logo.png" alt="" width={180} height={52} sizes="49px" /><strong>wendico</strong></Link>
           <p>Salon-Websites mit Charakter<br />und einem klaren Weg zum Termin.</p>
         </div>
         <div>

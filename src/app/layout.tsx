@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { DM_Sans, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import AppFooter from "@/components/AppFooter";
 import AppNav from "@/components/AppNav";
 import CookieBanner from "@/components/CookieBanner";
@@ -10,8 +10,8 @@ import SiteLoader from "@/components/SiteLoader";
 import { openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
-const dmSans = DM_Sans({ subsets: ["latin"], weight: "variable", variable: "--font-dm-sans", display: "swap" });
-const manrope = Manrope({ subsets: ["latin"], weight: "variable", variable: "--font-manrope", display: "swap" });
+const dmSans = localFont({ src: "./fonts/dm-sans-latin.woff2", weight: "100 1000", variable: "--font-dm-sans", display: "swap" });
+const manrope = localFont({ src: "./fonts/manrope-latin.woff2", weight: "200 800", variable: "--font-manrope", display: "swap" });
 
 const organizationJsonLd = {
   "@context": "https://schema.org",

@@ -69,7 +69,7 @@ export default function Home() {
       <HeroScroll>
         <div className="hero-sticky">
           <div className="hero-frame hero-appear">
-          <Image className="hero-image" src={heroImage} alt="Schweizer Berglandschaft über den Wolken" fill loading="eager" fetchPriority="high" sizes="100vw" />
+          <Image className="hero-image" src={heroImage} alt="Schweizer Berglandschaft über den Wolken" fill loading="eager" fetchPriority="high" quality={50} sizes="100vw" />
           <div className="hero-shade" />
           <div className="hero-wordmark hero-appear-wordmark" aria-hidden="true">WENDICO</div>
           <div className="hero-content">
@@ -93,7 +93,7 @@ export default function Home() {
       </HeroScroll>
 
       <ServicesParallax>
-        <Image className="services-backdrop" src={servicesImage} alt="Schweizer Berggipfel unter einem dramatischen Himmel" fill sizes="100vw" />
+        <Image className="services-backdrop" src={servicesImage} alt="Schweizer Berggipfel unter einem dramatischen Himmel" fill quality={50} sizes="100vw" />
         <div className="services-tint" />
         <div className="shell services-shell">
           <div className="services-heading">
