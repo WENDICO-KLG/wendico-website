@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import DNAHelix from "@/components/DNAHelix";
+import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
+
+const DNAHelix = dynamic(() => import("@/components/DNAHelix"), { ssr: false });
 
 const projects = [
   { name: "SC Beauty Luxe", type: "Beauty & Commerce", date: "März 2026", image: "/customer-websites/scbeautyluxe-website.png", href: "https://scbeautyluxe.com/", description: "Premium Beauty digital übersetzt: ruhig, hochwertig und direkt auf Buchungen ausgerichtet.", tags: ["Webdesign", "Conversion"], tone: "warm" },
@@ -20,6 +22,22 @@ const projects = [
 
 export default function HomeProjectSpiral() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [showHelix, setShowHelix] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const helixContainer = section?.querySelector(".project-spiral-line");
+    if (!helixContainer || window.innerWidth <= 900) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setShowHelix(true);
+      observer.disconnect();
+    }, { rootMargin: "1000px 0px" });
+    observer.observe(helixContainer);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -82,7 +100,7 @@ export default function HomeProjectSpiral() {
           <div><span className="eyebrow">Alle Projekte</span><h2>Eine Linie.<br /><em>Zehn Geschichten.</em></h2><p className="home-projects-mobile-note">Unsere aktuellsten Arbeiten.</p></div>
           <Link className="text-link" href="/projekte">Projektübersicht öffnen ↗︎</Link>
         </div>
-        <div className="project-spiral-line"><DNAHelix /></div>
+        <div className="project-spiral-line">{showHelix ? <DNAHelix /> : null}</div>
         <div className="home-projects-grid">
           {projects.map((project, index) => (
             <article className="project-spiral-row" key={project.name}>

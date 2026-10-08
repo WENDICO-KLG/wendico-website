@@ -42,12 +42,13 @@ export default function HomeTextParallax() {
     <section className="text-parallax-section" ref={sectionRef}>
       <div className="text-parallax-media" aria-hidden="true">
         <div className="text-parallax-frame">
-          <Image className="text-parallax-background" src={textImage} alt="" fill loading="eager" sizes="100vw" />
+          <Image className="text-parallax-background" src={textImage} alt="" fill sizes="100vw" />
         </div>
         <span className="text-parallax-overlay" />
       </div>
       <div className="shell text-parallax-shell">
-        <p className="text-parallax-copy" aria-label={statement}>
+        <p className="text-parallax-copy">
+          <span className="sr-only">{statement}</span>
           {words.map((word, index) => (
             <span aria-hidden="true" key={`${word}-${index}`} style={{ "--word-index": index } as CSSProperties}>{word}</span>
           ))}

@@ -23,7 +23,7 @@ export default function CookieBanner() {
   if (hasSavedPreference) return null;
 
   return (
-    <aside className="cookie-banner" aria-label="Cookie-Einstellungen" role="dialog" aria-modal="false">
+    <aside className="cookie-banner" aria-label="Cookie-Einstellungen">
       <div className="cookie-banner-mark">W</div>
       <div className="cookie-banner-copy">
         <span>Datenschutz</span>

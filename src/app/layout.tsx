@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { DM_Sans, Manrope } from "next/font/google";
 import AppFooter from "@/components/AppFooter";
 import AppNav from "@/components/AppNav";
 import CookieBanner from "@/components/CookieBanner";
@@ -8,6 +9,9 @@ import ScrollReveals from "@/components/ScrollReveals";
 import SiteLoader from "@/components/SiteLoader";
 import { openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import "./globals.css";
+
+const dmSans = DM_Sans({ subsets: ["latin"], weight: "variable", variable: "--font-dm-sans", display: "swap" });
+const manrope = Manrope({ subsets: ["latin"], weight: "variable", variable: "--font-manrope", display: "swap" });
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -107,7 +111,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="de-CH" data-scroll-behavior="smooth">
+    <html lang="de-CH" data-scroll-behavior="smooth" className={`${dmSans.variable} ${manrope.variable}`}>
+      <head>
+        <link rel="describedby" href="/llms.txt" />
+      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }} />

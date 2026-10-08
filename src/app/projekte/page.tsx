@@ -45,7 +45,7 @@ export default function ProjectsPage() {
           <span className="eyebrow projects-page-eyebrow"><i /> Projekte</span>
           <h1>Websites<br />für Salons.<br /><em>Einfach buchen.</em></h1>
           <p>Websites für Beauty- und Coiffeur-Salons, die ihre Arbeit zeigen und neue Kundschaft einfach zum Wunschtermin führen.</p>
-          <div className="projects-page-hero-metrics" aria-label="Projekt Kennzahlen">
+          <div className="projects-page-hero-metrics" role="group" aria-label="Projekt Kennzahlen">
             <span><strong>10+</strong> realisierte Auftritte</span>
             <span><strong>100%</strong> individueller Code</span>
             <span><strong>CH</strong> aus dem Zürcher Weinland</span>

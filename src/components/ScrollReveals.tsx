@@ -48,7 +48,7 @@ export default function ScrollReveals() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const elements = [...document.querySelectorAll<HTMLElement>(selectors.join(","))].filter(
-      (element) => !element.closest(".home-projects-section") && !element.closest(".text-parallax-section"),
+      (element) => !element.closest(".hero-landscape") && !element.closest(".home-projects-section") && !element.closest(".text-parallax-section"),
     );
     elements.forEach((element, index) => {
       element.classList.add("scroll-reveal", revealType(element));

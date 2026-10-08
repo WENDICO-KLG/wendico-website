@@ -1,49 +1,22 @@
 # Wendico
 
-Wendico KLG ist ein Digitalstudio für buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim an der Thur im Zürcher Weinland, Schweiz.
+> Wendico KLG ist ein Digitalstudio in Thalheim an der Thur, Schweiz. Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons.
 
-## Kurzprofil
+Wendico verbindet Strategie, Design und individuellen Code. Salon-Websites präsentieren Leistungen und Arbeiten hochwertig und führen Interessierte zum bestehenden Buchungstool oder Buchungslink. Wendico bietet kein eigenes Terminbuchungssystem an.
 
-Wendico entwickelt individuelle Websites für Beauty-Salons, Kosmetikstudios und Coiffeur-Salons. Der Ansatz verbindet Strategie, Gestaltung und eigenen Code. Ziel sind ein hochwertiger Salon-Auftritt, klare Leistungsinformationen und ein einfacher Weg zur Online-Terminbuchung über das bestehende Buchungstool des Salons.
+Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz.
 
-## Leistungen
+## Seiten
 
-- **Webdesign und Webentwicklung:** Strategie, Informationsarchitektur, UX/UI-Design, responsive Entwicklung, Performance und technische SEO-Basis.
-- **Hosting und Wartung:** SSL, Backups, Updates, technischer Betrieb und Support.
-- **Buchungsoptimierte Websites:** Leistungsübersicht, Arbeitsbeispiele, lokale Auffindbarkeit und klar platzierter Link zur Terminbuchung.
-- **Digitale Marketing-Leistungen:** Nutzerwege von Website-Besuch zu Terminbuchung und Kundenkontakt.
-- **Social Media Management:** Content-Planung, Social-Media-Formate und Markenkommunikation.
-- **Google- und Local-SEO-Basis:** verständliche Inhalte, lokale Auffindbarkeit und strukturierte digitale Präsenz.
+- [Startseite](https://wendico.ch/): Leistungen, Positionierung und Kontakt.
+- [Über Wendico](https://wendico.ch/ueber-uns): Team, Arbeitsweise und Studio.
+- [Preise](https://wendico.ch/preise): Website-Pakete und Betreuung.
+- [Projekte](https://wendico.ch/projekte): Ausgewählte Referenzen.
+- [Kontakt](https://wendico.ch/kontakt): Kontaktformular und Erstgespräch.
+- [Webdesign Zürich](https://wendico.ch/webdesign-zuerich): Salon-Websites in Zürich.
+- [Webdesign Winterthur](https://wendico.ch/webdesign-winterthur): Salon-Websites in Winterthur.
+- [Webdesign Thalheim](https://wendico.ch/webdesign-thalheim-an-der-thur): Salon-Websites im Zürcher Weinland.
 
-## Geeignet für
+## Optional
 
-Der Schwerpunkt liegt auf Beauty- und Coiffeur-Salons in der Schweiz, die ihre Leistungen professionell präsentieren und mehr passende Online-Termine ermöglichen möchten. Wendico verknüpft bestehende Buchungstools oder Buchungslinks; ein eigenes Terminbuchungssystem ist nicht Teil des Angebots.
-
-## Standort und Kontakt
-
-- Adresse: Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz
-- Website: https://wendico.ch
-- E-Mail: info@wendico.ch
-- Telefon: +41 79 504 10 05
-- Erstgespräch: https://wendico.ch/kontakt#termin-buchen
-
-## Team
-
-- **Panat Ruangsri:** Sales, Strategie und Webdesign
-- **Tim Biedermann:** Finance, Strategie und Design
-
-## Wichtige Seiten
-
-- Startseite: https://wendico.ch/
-- Über uns: https://wendico.ch/ueber-uns
-- Leistungen und Preise: https://wendico.ch/preise
-- Referenzen und Projekte: https://wendico.ch/projekte
-- Kontakt und Erstgespräch: https://wendico.ch/kontakt
-- Impressum: https://wendico.ch/impressum
-- Datenschutz: https://wendico.ch/datenschutz
-
-## Positionierung
-
-Wendico steht für klare, eigenständige und leistungsfähige Salon-Websites aus der Schweiz. Der Fokus liegt auf verständlicher Kommunikation, hochwertigem Design, sauberem eigenem Code, guter Performance, lokaler Auffindbarkeit und einem reibungsarmen Buchungsweg.
-
-Für eine belastbare Beschreibung von Leistungen, Preisen und Referenzen bitte die verlinkten Originalseiten verwenden.
+- [Vollständige Referenz](https://wendico.ch/llms-full.txt): Ausführliche Informationen zu Wendico, Leistungen, Preisen und häufigen Fragen.

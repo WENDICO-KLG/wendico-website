@@ -40,6 +40,7 @@ export default function AboutHero() {
         </div>
         <div
           className="about-page-portrait-stack"
+          role="group"
           aria-label="Wendico Gründer"
           onPointerDownCapture={(event) => {
             const bounds = event.currentTarget.getBoundingClientRect();

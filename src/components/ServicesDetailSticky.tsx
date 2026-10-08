@@ -37,9 +37,9 @@ function ServiceGraphic({ visual }: { visual: ServiceVisual }) {
           <i className="social-caption social-caption-one" />
           <i className="social-caption social-caption-two" />
         </span>
-        <span className="platform-logo platform-logo-tiktok"><Image src={tikTokLogo} alt="" width={52} height={52} loading="eager" /></span>
-        <span className="platform-logo platform-logo-instagram"><Image src={instagramLogo} alt="" width={52} height={52} loading="eager" /></span>
-        <span className="platform-logo platform-logo-facebook"><Image src={facebookLogo} alt="" width={52} height={52} loading="eager" /></span>
+        <span className="platform-logo platform-logo-tiktok"><Image src={tikTokLogo} alt="" width={52} height={52} /></span>
+        <span className="platform-logo platform-logo-instagram"><Image src={instagramLogo} alt="" width={52} height={52} /></span>
+        <span className="platform-logo platform-logo-facebook"><Image src={facebookLogo} alt="" width={52} height={52} /></span>
         <span className="social-bubble social-bubble-one">+</span>
         <span className="social-bubble social-bubble-two">↗︎</span>
         <span className="social-signal social-signal-one" />
