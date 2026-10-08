@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Datenschutz",
   description: "Datenschutzerklärung der WENDICO KLG.",
   alternates: { canonical: "/datenschutz" },
+  robots: { index: false, follow: true },
   openGraph: { type: "website", locale: "de_CH", siteName: "Wendico", url: "/datenschutz", title: "Datenschutz | Wendico", description: "Datenschutzerklärung der WENDICO KLG." },
 };
 const sections = [

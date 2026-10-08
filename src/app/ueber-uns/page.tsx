@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import AboutHero from "@/components/AboutHero";
 import AboutSectionParallax from "@/components/AboutSectionParallax";
+import { openGraphImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Über Wendico: Webdesign für Salons",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     url: "/ueber-uns",
     title: "Über Wendico: Webdesign für Salons | Wendico",
     description: "Lerne Wendico kennen: Das Digitalstudio aus Thalheim an der Thur für buchungsoptimierte Websites von Beauty- und Coiffeur-Salons.",
+    images: [openGraphImage],
   },
 };
 

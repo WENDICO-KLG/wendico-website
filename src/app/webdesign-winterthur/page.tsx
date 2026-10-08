@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd, localServiceJsonLd, openGraphImage, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Webdesign Winterthur für Beauty & Coiffeur",
@@ -13,12 +14,21 @@ export const metadata: Metadata = {
     url: "/webdesign-winterthur",
     title: "Webdesign Winterthur für Beauty & Coiffeur | Wendico",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Winterthur.",
+    images: [openGraphImage],
   },
 };
 
 export default function WebdesignWinterthurPage() {
+  const serviceJsonLd = localServiceJsonLd({ city: "Winterthur", path: "/webdesign-winterthur" });
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Startseite", path: "/" },
+    { name: "Webdesign Winterthur", path: "/webdesign-winterthur" },
+  ]);
+
   return (
     <main className="geo-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
       <section className="geo-page-hero" style={{ backgroundImage: "linear-gradient(108deg, rgba(4,13,9,.86), rgba(4,13,9,.44) 46%, rgba(4,13,9,.8)), url('https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Blick_auf_die_Winterthurer_Altstadt.jpg/1920px-Blick_auf_die_Winterthurer_Altstadt.jpg')" }}>
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">

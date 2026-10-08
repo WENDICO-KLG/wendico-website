@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd, localServiceJsonLd, openGraphImage, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Webdesign für Beauty- und Coiffeur-Salons in Zürich",
@@ -13,12 +14,21 @@ export const metadata: Metadata = {
     url: "/webdesign-zuerich",
     title: "Webdesign für Beauty- und Coiffeur-Salons in Zürich | Wendico",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Zürich.",
+    images: [openGraphImage],
   },
 };
 
 export default function WebdesignZurichPage() {
+  const serviceJsonLd = localServiceJsonLd({ city: "Zürich", path: "/webdesign-zuerich" });
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Startseite", path: "/" },
+    { name: "Webdesign Zürich", path: "/webdesign-zuerich" },
+  ]);
+
   return (
     <main className="geo-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
       <section className="geo-page-hero" style={{ backgroundImage: "linear-gradient(108deg, rgba(4,13,9,.88), rgba(4,13,9,.48) 44%, rgba(4,13,9,.82)), url('https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Altstadt_Z%C3%BCrich_2015.jpg/1920px-Altstadt_Z%C3%BCrich_2015.jpg')" }}>
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">

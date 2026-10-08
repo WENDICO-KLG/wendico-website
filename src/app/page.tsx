@@ -10,6 +10,7 @@ import HomeTextParallax from "@/components/HomeTextParallax";
 import ServicesParallax from "@/components/ServicesParallax";
 import ServicesDetailSticky from "@/components/ServicesDetailSticky";
 import SloganParallax from "@/components/SloganParallax";
+import { serializeJsonLd } from "@/lib/seo";
 import heroImage from "../../hero.jpg";
 import servicesImage from "../../section-2.jpg";
 import sloganImage from "../../slogan-img.jpg";
@@ -62,8 +63,8 @@ const serviceJsonLd = {
 export default function Home() {
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(homeFaqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
       <HomeSmoothScroll />
       <HeroScroll>
         <div className="hero-sticky">

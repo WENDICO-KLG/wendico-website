@@ -6,6 +6,7 @@ import CookieBanner from "@/components/CookieBanner";
 import PageTransition from "@/components/PageTransition";
 import ScrollReveals from "@/components/ScrollReveals";
 import SiteLoader from "@/components/SiteLoader";
+import { openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const organizationJsonLd = {
@@ -71,7 +72,7 @@ const serviceCatalogJsonLd = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://wendico.ch"),
+  metadataBase: new URL(siteUrl),
   title: { default: "Wendico | Websites für Beauty & Coiffeur", template: "%s | Wendico" },
   description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons: hochwertig gestaltet, mobil gedacht und direkt mit der Terminbuchung verbunden.",
   applicationName: "Wendico",
@@ -89,7 +90,7 @@ export const metadata: Metadata = {
     siteName: "Wendico",
     title: "Wendico | Salon-Websites mit Online-Buchung",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Zeige deine Arbeit und mache den Weg zum Termin einfach.",
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons von Wendico" }],
+    images: [openGraphImage],
   },
   twitter: {
     card: "summary_large_image",
@@ -108,9 +109,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="de-CH" data-scroll-behavior="smooth">
       <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceCatalogJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceCatalogJsonLd) }} />
         <SiteLoader />
         <AppNav />
         <ScrollReveals />

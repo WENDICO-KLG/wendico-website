@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CalendlyInlineWidget from "@/components/CalendlyInlineWidget";
 import ContactForm from "@/components/ContactForm";
+import { openGraphImage } from "@/lib/seo";
 import mountainImage from "../../../footer.jpg";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     url: "/kontakt",
     title: "Kontakt für deine Salon-Website | Wendico",
     description: "Besprich mit Wendico deine buchungsoptimierte Website für Beauty- oder Coiffeur-Salon. Kostenloses Erstgespräch aus Thalheim an der Thur, online oder vor Ort.",
+    images: [openGraphImage],
   },
 };
 

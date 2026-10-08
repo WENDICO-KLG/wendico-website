@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd, localServiceJsonLd, openGraphImage, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Webdesign für Salons Thalheim an der Thur",
@@ -13,12 +14,21 @@ export const metadata: Metadata = {
     url: "/webdesign-thalheim-an-der-thur",
     title: "Webdesign für Beauty- und Coiffeur-Salons in Thalheim | Wendico",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in Thalheim an der Thur und im Zürcher Weinland.",
+    images: [openGraphImage],
   },
 };
 
 export default function WebdesignThalheimPage() {
+  const serviceJsonLd = localServiceJsonLd({ city: "Thalheim an der Thur und im Zürcher Weinland", path: "/webdesign-thalheim-an-der-thur" });
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Startseite", path: "/" },
+    { name: "Webdesign Thalheim an der Thur", path: "/webdesign-thalheim-an-der-thur" },
+  ]);
+
   return (
     <main className="geo-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
       <section className="geo-page-hero" style={{ backgroundImage: "linear-gradient(108deg, rgba(4,13,9,.86), rgba(4,13,9,.42) 46%, rgba(4,13,9,.8)), url('https://upload.wikimedia.org/wikipedia/commons/e/e9/Thalheim_ZH_Switzerland_town.jpg')" }}>
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">

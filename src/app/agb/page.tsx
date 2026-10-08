@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "AGB",
   description: "Allgemeine Geschäftsbedingungen der WENDICO KLG.",
   alternates: { canonical: "/agb" },
+  robots: { index: false, follow: true },
   openGraph: { type: "website", locale: "de_CH", siteName: "Wendico", url: "/agb", title: "AGB | Wendico", description: "Allgemeine Geschäftsbedingungen der WENDICO KLG." },
 };
 

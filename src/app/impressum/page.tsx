@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Impressum",
   description: "Impressum der WENDICO KLG.",
   alternates: { canonical: "/impressum" },
+  robots: { index: false, follow: true },
   openGraph: { type: "website", locale: "de_CH", siteName: "Wendico", url: "/impressum", title: "Impressum | Wendico", description: "Impressum der WENDICO KLG." },
 };
 const blocks = [{ title: "WENDICO KLG", lines: ["Im Hofacker 3", "CH-8478 Thalheim an der Thur", "Schweiz", "Kollektivgesellschaft", "UID: CHE-298.049.775"] }, { title: "Vertretung", lines: ["Tim Biedermann", "Panat Ruangsri"] }, { title: "Kontakt", lines: ["+41 79 504 10 05", "info@wendico.ch"] }];

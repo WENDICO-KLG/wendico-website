@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import ProjectsGrid from "./ProjectsGrid";
+import { projects } from "./projects";
 import mountainImage from "../../../hero.jpg";
 
 export const metadata: Metadata = {
@@ -15,12 +17,27 @@ export const metadata: Metadata = {
     url: "/projekte",
     title: "Salon-Websites: Projekte und Referenzen | Wendico",
     description: "Salon-Websites von Wendico: Beauty- und Coiffeur-Auftritte mit klarem Design und direktem Weg zur Online-Terminbuchung. Dazu ausgewählte weitere Referenzen.",
+    images: [openGraphImage],
   },
+};
+
+const projectsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Webdesign-Projekte und Referenzen von Wendico",
+  numberOfItems: projects.length,
+  itemListElement: projects.map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    url: `${siteUrl}/projekte/${project.slug}`,
+    name: project.name,
+  })),
 };
 
 export default function ProjectsPage() {
   return (
     <main className="projects-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(projectsJsonLd) }} />
       <section className="projects-page-hero">
         <Image className="projects-page-hero-bg" src={mountainImage} alt="" fill priority sizes="100vw" />
         <span className="projects-page-hero-overlay" aria-hidden="true" />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { breadcrumbJsonLd, serializeJsonLd, siteUrl } from "@/lib/seo";
 import { projectMap, projectSlugs } from "../projects";
 
 export function generateStaticParams() {
@@ -29,6 +30,13 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
         url: `/projekte/${slug}`,
         title: `${project.name} | Wendico Projekt`,
         description: `${project.description} Mehr über den Mehrwert und die Umsetzung von ${project.name}.`,
+        images: [{ url: project.image, alt: `Website von ${project.name}` }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${project.name} | Wendico Projekt`,
+        description: project.description,
+        images: [project.image],
       },
     };
   });
@@ -42,8 +50,30 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
+  const projectUrl = `${siteUrl}/projekte/${slug}`;
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${projectUrl}#project`,
+    name: project.name,
+    description: project.description,
+    image: `${siteUrl}${project.image}`,
+    url: projectUrl,
+    dateCreated: project.date,
+    genre: project.category,
+    creator: { "@id": `${siteUrl}/#organization` },
+    mainEntityOfPage: projectUrl,
+  };
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Startseite", path: "/" },
+    { name: "Projekte", path: "/projekte" },
+    { name: project.name, path: `/projekte/${slug}` },
+  ]);
+
   return (
     <main className="project-detail-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(projectJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
       <section className="project-detail-hero">
         <div className="project-detail-hero-glow" />
         <div className="shell project-detail-hero-shell">
