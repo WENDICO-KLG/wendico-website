@@ -8,6 +8,8 @@ import { useEffect, useRef, useState } from "react";
 const DNAHelix = dynamic(() => import("@/components/DNAHelix"), { ssr: false });
 
 const projects = [
+  { name: "Panat Ruangsri", type: "Personal Branding", date: "Oktober 2026", image: "/customer-websites/panatruangsri-website.png", href: "https://www.ruangsri.ch/panat", description: "Persönlichkeit, Fähigkeiten und Erfahrungen als digitale Bewerbungsunterlage mit 3D-Formen und Scroll-Animationen.", tags: ["Personal Brand", "3D & Animation"], tone: "graphite" },
+  { name: "TTC Neuhausen", type: "Verein", date: "September 2026", image: "/customer-websites/ttc-neuhausen-website.png", href: "https://www.ttc-neuhausen.ch/", description: "Eine neue Vereinswebsite mit 3D-Animationen und klarer Übersicht über Trainingszeiten, Termine und Vereinsleben.", tags: ["Vereinswebsite", "3D & Animation"], tone: "warm" },
   { name: "SC Beauty Luxe", type: "Beauty & Commerce", date: "März 2026", image: "/customer-websites/scbeautyluxe-website.png", href: "https://scbeautyluxe.com/", description: "Premium Beauty digital übersetzt: ruhig, hochwertig und direkt auf Buchungen ausgerichtet.", tags: ["Webdesign", "Conversion"], tone: "warm" },
   { name: "Lostrios", type: "Brand Experience", date: "Mai 2026", image: "/customer-websites/lostrios-website.png", href: "https://lostrios.ch/", description: "Ein kompromissloser Markenauftritt für Musik, Community und gemeinsame Erlebnisse.", tags: ["Branding", "Custom Code"], tone: "graphite" },
   { name: "Asia Food Festival", type: "Event", date: "Mai 2026", image: "/customer-websites/tresch-asia-events-website.png", href: "https://www.asiafoodfestival.ch/", description: "Programm, Stände und Anmeldung in einem lebendigen digitalen Eventauftritt.", tags: ["Event", "Conversion"], tone: "warm" },
@@ -97,7 +99,7 @@ export default function HomeProjectSpiral() {
       <div className="home-projects-bg" aria-hidden="true" />
       <div className="shell home-projects-inner">
         <div className="section-heading split">
-          <div><span className="eyebrow">Alle Projekte</span><h2>Eine Linie.<br /><em>Zehn Geschichten.</em></h2><p className="home-projects-mobile-note">Unsere aktuellsten Arbeiten.</p></div>
+          <div><span className="eyebrow">Alle Projekte</span><h2>Eine Linie.<br /><em>Zwölf Geschichten.</em></h2><p className="home-projects-mobile-note">Unsere aktuellsten Arbeiten.</p></div>
           <Link className="text-link" href="/projekte">Projektübersicht öffnen ↗︎</Link>
         </div>
         <div className="project-spiral-line">{showHelix ? <DNAHelix /> : null}</div>

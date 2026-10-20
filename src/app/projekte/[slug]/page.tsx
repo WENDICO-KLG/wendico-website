@@ -20,21 +20,22 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     }
 
     return {
-      title: `${project.name} | Projekt`,
-      description: `${project.description} Mehr über den Mehrwert und die Umsetzung von ${project.name}.`,
+      title: project.seoTitle ?? `${project.name} | Projekt`,
+      description: project.description,
+      keywords: project.keywords,
       alternates: { canonical: `/projekte/${slug}` },
       openGraph: {
         type: "website",
         locale: "de_CH",
         siteName: "Wendico",
         url: `/projekte/${slug}`,
-        title: `${project.name} | Wendico Projekt`,
-        description: `${project.description} Mehr über den Mehrwert und die Umsetzung von ${project.name}.`,
+        title: `${project.seoTitle ?? `${project.name} | Projekt`} | Wendico`,
+        description: project.description,
         images: [{ url: project.image, alt: `Website von ${project.name}` }],
       },
       twitter: {
         card: "summary_large_image",
-        title: `${project.name} | Wendico Projekt`,
+        title: `${project.seoTitle ?? `${project.name} | Projekt`} | Wendico`,
         description: project.description,
         images: [project.image],
       },
@@ -59,8 +60,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     description: project.description,
     image: `${siteUrl}${project.image}`,
     url: projectUrl,
-    dateCreated: project.date,
+    dateCreated: project.dateCreated,
     genre: project.category,
+    keywords: project.keywords,
+    inLanguage: "de-CH",
+    isBasedOn: { "@type": "WebSite", name: project.name, url: project.url },
     creator: { "@id": `${siteUrl}/#organization` },
     mainEntityOfPage: projectUrl,
   };

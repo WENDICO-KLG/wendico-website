@@ -17,6 +17,11 @@ Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an de
 - [Webdesign Winterthur](https://wendico.ch/webdesign-winterthur): Salon-Websites in Winterthur.
 - [Webdesign Thalheim](https://wendico.ch/webdesign-thalheim-an-der-thur): Salon-Websites im Zürcher Weinland.
 
+## Neue Referenzen
+
+- [Panat Ruangsri](https://wendico.ch/projekte/panat-ruangsri): Personal-Branding-Website als digitale Bewerbungsunterlage, mit 3D-Formen und Scroll-Animationen. Oktober 2026.
+- [TTC Neuhausen](https://wendico.ch/projekte/ttc-neuhausen): Vereinswebsite mit 3D-Animationen und übersichtlichen Trainingszeiten, Terminen und Vereinsinformationen. September 2026.
+
 ## Optional
 
 - [Vollständige Referenz](https://wendico.ch/llms-full.txt): Ausführliche Informationen zu Wendico, Leistungen, Preisen und häufigen Fragen.

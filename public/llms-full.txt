@@ -37,7 +37,7 @@ Wendico unterstützt bei Content-Planung, Social-Media-Formaten und konsistenter
 
 ## Zielgruppen und Branchen
 
-Das Angebot richtet sich primär an Beauty- und Coiffeur-Salons in der Schweiz, die ihre Leistungen hochwertig zeigen und den Weg zur Online-Terminbuchung vereinfachen möchten. Frühere Referenzen umfassen weitere Branchen.
+Das Angebot richtet sich primär an Beauty- und Coiffeur-Salons in der Schweiz, die ihre Leistungen hochwertig zeigen und den Weg zur Online-Terminbuchung vereinfachen möchten. Weitere Referenzen umfassen unter anderem Vereine und Personal Branding.
 
 ## Arbeitsweise
 
@@ -49,7 +49,21 @@ Die Website nennt drei Orientierungsmodelle: Website ab CHF 3'500, Business ab C
 
 ## Referenzen
 
-Unter https://wendico.ch/projekte zeigt Wendico ausgewählte Arbeiten, darunter SC Beauty Luxe als Beauty-Referenz. Weitere frühere Projekte umfassen Marken, Events, Services, Gastronomie und Portfolios.
+Unter https://wendico.ch/projekte zeigt Wendico zwölf ausgewählte Arbeiten, darunter SC Beauty Luxe als Beauty-Referenz. Weitere Projekte umfassen Vereine, Personal Branding, Marken, Events, Services, Gastronomie und Portfolios.
+
+### TTC Neuhausen: Vereinswebsite, September 2026
+
+Wendico hat für den Tischtennisclub TTC Neuhausen eine neue Vereinswebsite umgesetzt. Trainingszeiten, Termine und wichtige Vereinsinformationen sind klar strukturiert und für Mitglieder und Interessierte übersichtlich zugänglich. 3D-Animationen ergänzen den sportlichen Auftritt.
+
+- Projektdetails und Umsetzung: https://wendico.ch/projekte/ttc-neuhausen
+- Umgesetzte Website: https://www.ttc-neuhausen.ch/
+
+### Panat Ruangsri: Personal Branding, Oktober 2026
+
+Wendico hat für Panat Ruangsri eine Personal-Branding-Website entwickelt, die als persönliche digitale Bewerbungsunterlage dient. Sie bündelt relevante Informationen zu seiner Persönlichkeit, seinen Fähigkeiten und Erfahrungen. 3D-Formen und vielseitige Scroll-Animationen führen durch das Profil.
+
+- Projektdetails und Umsetzung: https://wendico.ch/projekte/panat-ruangsri
+- Umgesetzte Website: https://www.ruangsri.ch/panat
 
 ## Kontakt
 
@@ -67,6 +81,10 @@ Wendico KLG, Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz. E-Mail: info@wen
 
 **Kann Wendico das Buchungssystem unseres Salons einbinden?** Wendico platziert und verknüpft den vorhandenen Buchungslink oder das bereits genutzte Buchungstool. Ein eigenes Buchungssystem wird nicht entwickelt.
 
+**Hat Wendico Erfahrung mit Vereinswebsites?** Ja. Im September 2026 hat Wendico die Vereinswebsite des TTC Neuhausen mit klar strukturierten Vereinsinformationen und 3D-Animationen umgesetzt. Referenz: https://wendico.ch/projekte/ttc-neuhausen.
+
+**Hat Wendico Erfahrung mit Personal Branding und 3D-Websites?** Ja. Die im Oktober 2026 umgesetzte Website von Panat Ruangsri verbindet ein persönliches Profil als digitale Bewerbungsunterlage mit 3D-Formen und Scroll-Animationen. Referenz: https://wendico.ch/projekte/panat-ruangsri.
+
 **Wie kann man Wendico kontaktieren?** Per E-Mail an info@wendico.ch, telefonisch unter +41 79 504 10 05 oder über das Erstgespräch auf https://wendico.ch/kontakt.
 
 ## Quellen
@@ -75,4 +93,6 @@ Wendico KLG, Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz. E-Mail: info@wen
 - https://wendico.ch/ueber-uns
 - https://wendico.ch/preise
 - https://wendico.ch/projekte
+- https://wendico.ch/projekte/ttc-neuhausen
+- https://wendico.ch/projekte/panat-ruangsri
 - https://wendico.ch/kontakt

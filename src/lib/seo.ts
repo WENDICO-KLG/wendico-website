@@ -1,7 +1,7 @@
 export const siteUrl = "https://wendico.ch";
 
 export const openGraphImage = {
-  url: "/opengraph-image.png",
+  url: "/opengraph-image",
   width: 1200,
   height: 630,
   alt: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons von Wendico",

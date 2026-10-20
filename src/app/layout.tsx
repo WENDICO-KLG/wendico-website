@@ -20,7 +20,7 @@ const organizationJsonLd = {
   name: "Wendico KLG",
   url: "https://wendico.ch",
   logo: "https://wendico.ch/wendico_logo.png",
-  image: "https://wendico.ch/opengraph-image.png",
+  image: "https://wendico.ch/opengraph-image",
   description: "Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in der Schweiz, mit klaren Leistungen und direktem Weg zur Online-Terminbuchung.",
   keywords: ["Webdesign Beauty Salon Schweiz", "Coiffeur Website", "Salon Website Online-Buchung", "Webdesign Zürcher Weinland", "Website Thalheim an der Thur"],
   email: "info@wendico.ch",
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wendico | Salon-Websites mit Online-Buchung",
     description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Zeige deine Arbeit und mache den Weg zum Termin einfach.",
-    images: ["/opengraph-image.png"],
+    images: [openGraphImage.url],
   },
   icons: {
     icon: [{ url: "/wendico_logo-quadrat.png", type: "image/png", sizes: "512x512" }],

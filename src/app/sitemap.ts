@@ -12,10 +12,11 @@ const routes = [
   { path: "/webdesign-thalheim-an-der-thur", changeFrequency: "monthly", priority: 0.9 },
 ] as const;
 const lastModified = new Date("2026-10-08");
+const projectsLastModified = new Date("2026-10-20");
 
 const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
   url: `https://wendico.ch/projekte/${project.slug}`,
-  lastModified,
+  lastModified: projectsLastModified,
   changeFrequency: "monthly",
   priority: 0.7,
   images: [`https://wendico.ch${project.image}`],
@@ -25,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...routes.map((route) => ({
       url: `https://wendico.ch${route.path}`,
-      lastModified,
+      lastModified: route.path === "" || route.path === "/projekte" ? projectsLastModified : lastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     })),

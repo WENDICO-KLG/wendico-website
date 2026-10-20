@@ -3,6 +3,9 @@ export type Project = {
   name: string;
   category: string;
   date: string;
+  dateCreated: string;
+  seoTitle?: string;
+  keywords?: string[];
   url: string;
   image: string;
   description: string;
@@ -14,10 +17,43 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "panat-ruangsri",
+    name: "Panat Ruangsri",
+    category: "Portfolio",
+    date: "Oktober 2026",
+    dateCreated: "2026-10",
+    seoTitle: "Panat Ruangsri: Personal Branding mit 3D",
+    keywords: ["Personal Branding Website", "Digitale Bewerbungsunterlage", "3D-Formen", "Scroll-Animationen"],
+    url: "https://www.ruangsri.ch/panat",
+    image: "/customer-websites/panatruangsri-website.png",
+    description: "Personal Branding mit 3D-Formen und Scroll-Animationen als persönliche digitale Bewerbungsunterlage.",
+    challenge: "Panats Persönlichkeit, Fähigkeiten und Erfahrungen sollten in einem eigenständigen Auftritt zusammenkommen, der potenziellen Arbeitgebern einen relevanten und klaren Einblick gibt.",
+    solution: "Wir haben eine Personal-Branding-Website entwickelt, die relevante Informationen über Panat übersichtlich bündelt. 3D-Formen und vielseitige Scroll-Animationen führen durch sein Profil und geben dem Auftritt einen unverwechselbaren Charakter.",
+    value: ["Klares persönliches Profil", "Digitale Ergänzung zur Bewerbung", "Eigenständiger Auftritt mit 3D und Bewegung"],
+    result: "Panat kann seine Website als persönliche Bewerbungsunterlage einsetzen und Persönlichkeit, Fähigkeiten und Erfahrungen in einem zusammenhängenden digitalen Auftritt präsentieren.",
+  },
+  {
+    slug: "ttc-neuhausen",
+    name: "TTC Neuhausen",
+    category: "Verein",
+    date: "September 2026",
+    dateCreated: "2026-09",
+    seoTitle: "TTC Neuhausen: Vereinswebsite mit 3D-Animationen",
+    keywords: ["Vereinswebsite", "Tischtennisclub Neuhausen", "3D-Animationen", "Trainingszeiten", "Vereinsinformationen"],
+    url: "https://www.ttc-neuhausen.ch/",
+    image: "/customer-websites/ttc-neuhausen-website.png",
+    description: "Neue Vereinswebsite mit 3D-Animationen und klarer Übersicht über Trainingszeiten, Termine und Vereinsinformationen.",
+    challenge: "Der Tischtennisclub benötigte eine neue Website, die die vielen Informationen aus dem Vereinsleben für Mitglieder und Interessierte übersichtlich und schnell zugänglich macht.",
+    solution: "Wir haben die Vereinswebsite neu aufgebaut und Trainingszeiten, Termine und wichtige Vereinsinformationen klar strukturiert. 3D-Animationen bringen die Dynamik des Tischtennissports in den digitalen Auftritt, ohne die Orientierung aus dem Blick zu verlieren.",
+    value: ["Wichtige Vereinsdaten auf einen Blick", "Klare Orientierung für Mitglieder und Interessierte", "Lebendiger Vereinsauftritt mit 3D-Animationen"],
+    result: "Die neue Website verbindet einen eigenständigen, sportlichen Auftritt mit einer übersichtlichen Anlaufstelle für alle wichtigen Informationen rund um den TTC Neuhausen.",
+  },
+  {
     slug: "scbeautyluxe",
     name: "SC Beauty Luxe",
     category: "Beauty",
     date: "März 2026",
+    dateCreated: "2026-03",
     url: "https://scbeautyluxe.com/",
     image: "/customer-websites/scbeautyluxe-website.png",
     description: "Beauty-Angebote und Premium-Auftritt klar präsentiert, mit einem direkten Weg zur Buchung.",
@@ -31,6 +67,7 @@ export const projects: Project[] = [
     name: "Lostrios.ch",
     category: "Brand",
     date: "Mai 2026",
+    dateCreated: "2026-05",
     url: "https://lostrios.ch/",
     image: "/customer-websites/lostrios-website.png",
     description: "Markenauftritt mit klarer Story und hochwertiger Präsentation.",
@@ -44,6 +81,7 @@ export const projects: Project[] = [
     name: "Asiafoodfestival.ch",
     category: "Event",
     date: "Mai 2026",
+    dateCreated: "2026-05",
     url: "https://www.asiafoodfestival.ch/",
     image: "/customer-websites/tresch-asia-events-website.png",
     description: "Event-Informationen, Programm und Besucherführung schnell erfassbar gemacht.",
@@ -57,6 +95,7 @@ export const projects: Project[] = [
     name: "Alija Gebäudereinigung",
     category: "Service",
     date: "April 2026",
+    dateCreated: "2026-04",
     url: "https://alija-gebaeudereinigung.ch/",
     image: "/customer-websites/alija-gebäudereinigung-website.png",
     description: "Dienstleistungen strukturiert und Kontaktaufnahme einfacher gemacht.",
@@ -70,6 +109,7 @@ export const projects: Project[] = [
     name: "Ryu Vogler",
     category: "Portfolio",
     date: "Februar 2026",
+    dateCreated: "2026-02",
     url: "https://ryuvogler.com/",
     image: "/customer-websites/ryuvogler-website.png",
     description: "Portfolio-Auftritt mit Fokus auf Persönlichkeit und Arbeiten.",
@@ -83,6 +123,7 @@ export const projects: Project[] = [
     name: "Elegant Society",
     category: "Brand",
     date: "Dezember 2025",
+    dateCreated: "2025-12",
     url: "https://elegantsociety.ch/",
     image: "/customer-websites/elegantsociety-website.png",
     description: "Brand-Welt digital verdichtet und eleganter erlebbar gemacht.",
@@ -96,6 +137,7 @@ export const projects: Project[] = [
     name: "Rebthai",
     category: "Gastronomie",
     date: "Oktober 2025",
+    dateCreated: "2025-10",
     url: "https://weinlandesskultur.ch/pages/rebthai.html",
     image: "/customer-websites/rebthai-website.png",
     description: "Angebot, Atmosphäre und Kontakt für schnelle Entscheidungen gebündelt.",
@@ -109,6 +151,7 @@ export const projects: Project[] = [
     name: "Weinland Esskultur",
     category: "Gastronomie",
     date: "Oktober 2025",
+    dateCreated: "2025-10",
     url: "https://weinlandesskultur.ch/",
     image: "/customer-websites/weinlandesskultur-website.png",
     description: "Regionale Identität und Genuss klarer sichtbar gemacht.",
@@ -122,6 +165,7 @@ export const projects: Project[] = [
     name: "Thai Lodge",
     category: "Gastronomie",
     date: "Oktober 2025",
+    dateCreated: "2025-10",
     url: "https://weinlandesskultur.ch/pages/thaiLodge.html",
     image: "/customer-websites/thailodge-website.png",
     description: "Menü, Ambiente und Tischreservation als digitale Gästereise geführt.",
@@ -135,6 +179,7 @@ export const projects: Project[] = [
     name: "Thai Helping Point",
     category: "Information",
     date: "September 2025",
+    dateCreated: "2025-09",
     url: "https://thaihelpingpoint.ch/",
     image: "/customer-websites/thaihelpingpoint-website.png",
     description: "Informationen übersichtlich strukturiert und zugänglicher gemacht.",
