@@ -129,6 +129,7 @@ export default function ServicesDetailSticky() {
         <div className="services-detail-sticky">
           <span className="eyebrow"><i /> Dienstleistungen</span>
           <h2>{services[activeService].title}</h2>
+          <p className="services-detail-mobile-title">Alles, was dein Salon <em>online braucht.</em></p>
         </div>
         <div className="services-detail-list">
           {services.map((service, index) => (

@@ -9,6 +9,7 @@ import ScrollReveals from "@/components/ScrollReveals";
 import SiteLoader from "@/components/SiteLoader";
 import { openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import "./globals.css";
+import "./mobile.css";
 
 const dmSans = localFont({ src: "./fonts/dm-sans-latin.woff2", weight: "100 1000", variable: "--font-dm-sans", display: "swap" });
 const manrope = localFont({ src: "./fonts/manrope-latin.woff2", weight: "200 800", variable: "--font-manrope", display: "swap" });

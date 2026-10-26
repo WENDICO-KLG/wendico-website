@@ -1,6 +1,7 @@
 "use client";
 
 import Image, { type StaticImageData } from "next/image";
+import { prefersCalmMotion } from "@/lib/motion";
 import { useEffect, useRef } from "react";
 
 export default function SloganParallax({ image }: { image: StaticImageData }) {
@@ -8,7 +9,7 @@ export default function SloganParallax({ image }: { image: StaticImageData }) {
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!section || prefersCalmMotion()) return;
 
     let frame = 0;
     const render = () => {

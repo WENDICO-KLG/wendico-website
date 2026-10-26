@@ -32,6 +32,27 @@ export default function AppNav() {
       window.removeEventListener("keydown", closeOnEscape);
     };
   }, [open]);
+  const [hidden, setHidden] = useState(false);
+  useEffect(() => {
+    // hide while scrolling down, show again on the first scroll up
+    let lastY = window.scrollY;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+      if (Math.abs(y - lastY) < 8) return;
+      setHidden(y > lastY && y > 160);
+      lastY = y;
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
   useEffect(() => {
     // close only after the new route has rendered, so the closing animation reveals it
     const id = window.setTimeout(() => setOpen(false), 140);
@@ -39,7 +60,7 @@ export default function AppNav() {
   }, [pathname]);
 
   return (
-    <header className="nav-wrap" data-menu-open={open ? "true" : "false"}>
+    <header className="nav-wrap" data-menu-open={open ? "true" : "false"} data-nav-hidden={hidden && !open ? "true" : "false"}>
       <nav className="site-nav glass" aria-label="Hauptnavigation">
         <Link className="brand" href="/" aria-label="Wendico Startseite"><Image className="brand-logo" src="/wendico_logo.png" alt="" width={180} height={52} sizes="49px" /><strong>wendico</strong></Link>
         <div className="nav-links">

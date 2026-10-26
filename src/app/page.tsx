@@ -79,8 +79,13 @@ export default function Home() {
               <p>Buchungsoptimierte Websites, die deine Arbeit hochwertig zeigen, neue Kundschaft überzeugen und den Weg zum Wunschtermin einfach machen.</p>
               <div className="actions">
                 <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
-                <Link className="hero-text-link" href="/projekte">Arbeiten entdecken</Link>
+                <Link className="hero-text-link" href="/projekte">Arbeiten entdecken <span aria-hidden="true">→︎</span></Link>
               </div>
+              <ul className="hero-trust">
+                <li><strong>10+</strong> Websites</li>
+                <li><strong>100%</strong> eigener Code</li>
+                <li><strong>Swiss</strong> made</li>
+              </ul>
             </div>
             <div className="hero-metrics hero-appear-metrics">
               <article className="hero-stat glass"><strong>10+</strong><span>realisierte Websites</span></article>

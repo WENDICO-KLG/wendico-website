@@ -47,8 +47,14 @@ export default function ScrollReveals() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    // on small screens only headings and cards animate in; revealing every paragraph and button makes scrolling feel restless
+    const compact = window.matchMedia("(max-width: 760px)").matches;
     const elements = [...document.querySelectorAll<HTMLElement>(selectors.join(","))].filter(
-      (element) => !element.closest(".hero-landscape") && !element.closest(".home-projects-section") && !element.closest(".text-parallax-section"),
+      (element) =>
+        !element.closest(".hero-landscape") &&
+        !element.closest(".home-projects-section") &&
+        !element.closest(".text-parallax-section") &&
+        (!compact || revealType(element) === "reveal-heading" || revealType(element) === "reveal-card"),
     );
     elements.forEach((element, index) => {
       element.classList.add("scroll-reveal", revealType(element));
@@ -57,7 +63,12 @@ export default function ScrollReveals() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => entry.target.classList.toggle("is-revealed", entry.isIntersecting));
+        // reveal once: elements that fade out again when scrolling back up feel jumpy
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        });
       },
       { threshold: 0.12, rootMargin: "0px 0px -7% 0px" },
     );

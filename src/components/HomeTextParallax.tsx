@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, type CSSProperties } from "react";
+import { prefersCalmMotion } from "@/lib/motion";
 import textImage from "../../text-img.jpg";
 
 const statement = "Wendico baut Salon-Websites, die deine Arbeit zeigen, Vertrauen schaffen und aus Besucherinnen gebuchte Termine machen.";
@@ -14,13 +15,14 @@ export default function HomeTextParallax() {
     const section = sectionRef.current;
     if (!section || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    const calm = prefersCalmMotion();
     let frame = 0;
     const render = () => {
       frame = 0;
       const bounds = section.getBoundingClientRect();
       const progress = Math.min(1, Math.max(0, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
       const readingProgress = Math.min(1, Math.max(0, (progress - 0.16) / 0.44));
-      section.style.setProperty("--text-img-parallax", `${(progress - 0.5) * 74}px`);
+      section.style.setProperty("--text-img-parallax", calm ? "0px" : `${(progress - 0.5) * 74}px`);
       section.style.setProperty("--text-read-progress", `${readingProgress * (words.length + 3)}`);
       section.setAttribute("data-text-parallax-ready", "true");
     };

@@ -1,5 +1,6 @@
 "use client";
 
+import { prefersCalmMotion } from "@/lib/motion";
 import { useEffect, useRef, type ReactNode } from "react";
 
 export default function ServicesParallax({ children }: { children: ReactNode }) {
@@ -7,7 +8,7 @@ export default function ServicesParallax({ children }: { children: ReactNode }) 
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!section || prefersCalmMotion()) return;
 
     let frame = 0;
     const render = () => {
