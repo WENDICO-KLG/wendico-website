@@ -43,6 +43,8 @@ const team = [
   ["Tim Biedermann", "/wendico-live/tim.jpg", "Founder · CEO", "https://www.linkedin.com/in/tim-biedermann-ba5b35286/", "center 30%", "Operative Klarheit, Finanzen und skalierbares Systemdenken."],
   ["Ayleen Podgorny", "/wendico-live/ayleen.png", "Social Media Managerin", "https://www.linkedin.com/in/ayleen-podgorny-858a6b428/", "center 26%", "Content, Markenstimme und digitale Präsenz mit Fokus auf Wirkung."],
   ["Hugh Henderson", "/wendico-live/hugh.png", "Official Sales Partner", "https://www.linkedin.com/in/hugh-henderson-4076b3428/", "center 24%", "Vertrieb, Kundenfotografie und langfristige Partnerschaften für nachhaltiges Wachstum."],
+  ["Ryan Surapit Nef", "/wendico-live/ryan.jpeg", "Sales Agent", "", "center 22%", "Telefonischer Customer Outreach und erste Gespräche mit potenziellen Kunden."],
+  ["Emir Aliji", "/wendico-live/emir.jpeg", "Sales Agent", "", "center 22%", "Telefonischer Customer Outreach und persönliche Erstkontakte im Wendico-Vertrieb."],
 ];
 
 export default function AboutPage() {

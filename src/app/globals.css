@@ -222,6 +222,11 @@ body::before { background: radial-gradient(circle at 10% 8%, rgba(116,184,195,.2
 /* About workflow board graphic */
 .about-page-process-graphic { overflow: hidden; }
 .process-orbit,.process-core,.process-node,.process-flow,.process-dashboard { display: none; }
+
+.about-page-team-showcase { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 42px 28px; }
+.about-page-team-visual { height: auto; aspect-ratio: 4 / 5; }
+@media (max-width: 1100px) { .about-page-team-showcase { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 680px) { .about-page-team-showcase { grid-template-columns: 1fr; }.about-page-team-visual { height: 440px; aspect-ratio: auto; } }
 .workflow-board { left: 50%; top: 50%; width: min(84%,430px); height: 292px; padding: 54px 18px 18px; display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; border: 1px solid rgba(255,255,255,.26); border-radius: 30px; background: linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.045)); box-shadow: inset 0 1px 0 rgba(255,255,255,.22),0 30px 90px rgba(0,0,0,.22); transform: translate(-50%,-52%); animation: workflow-board-float 7s ease-in-out infinite; }
 .workflow-topbar { position: absolute; left: 22px; right: 22px; top: 22px; height: 12px; border-radius: 999px; background: linear-gradient(90deg,#d8ff71,rgba(255,255,255,.28) 36%,rgba(255,255,255,.08)); }
 .workflow-column { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: 20px; background: rgba(7,18,13,.44); box-shadow: inset 0 1px 0 rgba(255,255,255,.12); }
