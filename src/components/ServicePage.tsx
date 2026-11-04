@@ -1,7 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd, openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import { services } from "@/lib/services";
+import websitesImg from "../../section-2.jpg";
+import softwareImg from "../../slogan-img.jpg";
+import socialImg from "../../text-img.jpg";
+import aiImg from "../../footer.jpg";
+import umsatzImg from "../../hero.jpg";
+
+const heroImages: Record<string, { src: typeof websitesImg; alt: string; position: string }> = {
+  websites: { src: websitesImg, alt: "Das Matterhorn ragt hinter einem Berghang in den Himmel", position: "60% 40%" },
+  software: { src: softwareImg, alt: "Felswand mit Gletscher und Wolken in den Schweizer Alpen", position: "40% 35%" },
+  "social-media": { src: socialImg, alt: "Grüner Berggrat mit Wanderweg bis zum Gipfelkreuz", position: "60% 45%" },
+  "ai-solutions": { src: aiImg, alt: "Matterhorn spiegelt sich im Morgenlicht in einem Bergsee", position: "50% 40%" },
+  umsatzsystem: { src: umsatzImg, alt: "Alpental mit Wanderweg und Blick auf schneebedeckte Gipfel", position: "50% 50%" },
+};
+const processImages: Record<string, keyof typeof heroImages> = {
+  websites: "umsatzsystem", software: "ai-solutions", "social-media": "software", "ai-solutions": "websites", umsatzsystem: "social-media",
+};
 
 export function serviceMetadata(slug: string): Metadata {
   const s = services[slug];
@@ -18,6 +35,8 @@ export function serviceMetadata(slug: string): Metadata {
 export default function ServicePage({ slug }: { slug: string }) {
   const s = services[slug];
   const path = `/dienstleistungen/${slug}`;
+  const hero = heroImages[slug];
+  const bg = heroImages[processImages[slug]];
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -38,6 +57,7 @@ export default function ServicePage({ slug }: { slug: string }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
       <section className="geo-page-hero service-page-hero">
+        <Image className="service-page-hero-img" src={hero.src} alt={hero.alt} fill priority sizes="100vw" quality={70} style={{ objectPosition: hero.position }} />
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> {s.eyebrow}</span>
@@ -86,7 +106,8 @@ export default function ServicePage({ slug }: { slug: string }) {
         </section>
       )}
 
-      <section className="geo-page-process">
+      <section className="geo-page-process service-page-process">
+        <Image className="service-page-bg-img" src={bg.src} alt="" aria-hidden="true" fill sizes="100vw" quality={55} style={{ objectPosition: bg.position }} />
         <div className="shell geo-page-process-inner">
           <div className="geo-page-process-copy">
             <span className="eyebrow geo-page-eyebrow"><i /> So arbeiten wir</span>
