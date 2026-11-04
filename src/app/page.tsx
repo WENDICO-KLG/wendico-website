@@ -116,7 +116,7 @@ export default function Home() {
                 <span>01 / Webdesign</span>
                 <h3>Websites, die eine Marke spürbar machen.</h3>
                 <p>Strategie, Gestaltung und Entwicklung greifen ineinander. Das Ergebnis ist klar, schnell und unverwechselbar.</p>
-                <Link href="/projekte" aria-label="Webdesign Projekte ansehen">↗︎</Link>
+                <Link href="/dienstleistungen" aria-label="Alle Dienstleistungen ansehen">↗︎</Link>
               </div>
             </article>
 
@@ -140,7 +140,7 @@ export default function Home() {
                 <span>03 / Umsatzsysteme</span>
                 <h3>Vom Besuch zum gebuchten Termin.</h3>
                 <p>Online-Buchung, klare Leistungen und überzeugende Einblicke machen aus Website-Besuchen echte Salontermine.</p>
-                <Link href="/kontakt" aria-label="Umsatzsystem besprechen">↗︎</Link>
+                <Link href="/dienstleistungen/umsatzsystem" aria-label="Umsatzsystem ansehen">↗︎</Link>
               </div>
             </article>
           </div>

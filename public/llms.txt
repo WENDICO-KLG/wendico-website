@@ -2,7 +2,7 @@
 
 > Wendico KLG ist ein Digitalstudio in Thalheim an der Thur, Schweiz. Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons.
 
-Wendico verbindet Strategie, Design und individuellen Code. Salon-Websites präsentieren Leistungen und Arbeiten hochwertig und führen Interessierte zum bestehenden Buchungstool oder Buchungslink. Wendico bietet kein eigenes Terminbuchungssystem an.
+Wendico verbindet Strategie, Design und individuellen Code. Salon-Websites präsentieren Leistungen und Arbeiten hochwertig und führen Interessierte zum bestehenden Buchungstool oder Buchungslink. Wendico bietet kein eigenes Terminbuchungssystem an. Weitere Dienstleistungen: individuelle Software, Social Media Management, KI-Lösungen und das Umsatzsystem.
 
 Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz.
 
@@ -19,10 +19,11 @@ Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an de
 
 ## Dienstleistungen
 
+- [Übersicht Dienstleistungen](https://wendico.ch/dienstleistungen): Alle fünf Dienstleistungen von Wendico auf einen Blick.
 - [Websites](https://wendico.ch/dienstleistungen/websites): Individuelle, mobile Websites mit Weg zur Online-Terminbuchung.
 - [Software](https://wendico.ch/dienstleistungen/software): Web-Apps, Schnittstellen und Dashboards.
 - [Social Media](https://wendico.ch/dienstleistungen/social-media): Content-Planung und Betreuung der Kanäle.
-- [AI Solutions](https://wendico.ch/dienstleistungen/ai-solutions): AI-Workflows, AI-Automationen, AI-Kurse (live auf Anfrage) und AI-Workshops vor Ort, für Unternehmen und Privatpersonen.
+- [KI-Lösungen (AI Solutions)](https://wendico.ch/dienstleistungen/ai-solutions): KI-Workflows, KI-Automationen, KI-Kurse (live auf Anfrage) und KI-Workshops vor Ort, für Unternehmen und Privatpersonen.
 - [Umsatzsystem](https://wendico.ch/dienstleistungen/umsatzsystem): Vom Besuch zum Termin über den bestehenden Buchungslink.
 
 ## Neue Referenzen

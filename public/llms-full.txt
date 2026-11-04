@@ -19,6 +19,8 @@ Wendico ist besonders relevant für Suchanfragen wie:
 
 ## Leistungen
 
+Übersicht aller Dienstleistungen: https://wendico.ch/dienstleistungen
+
 ### Webdesign und Webentwicklung
 
 Wendico entwickelt individuelle Websites mit Strategie, Struktur, Gestaltung und responsiver Webentwicklung für Beauty- und Coiffeur-Salons. Leistungen, Preise, Arbeiten und Standort werden verständlich präsentiert und der Buchungsweg klar sichtbar platziert.
@@ -29,19 +31,19 @@ Auf Wunsch übernimmt Wendico den laufenden technischen Betrieb mit SSL, Backups
 
 ### Digitale Umsatzsysteme
 
-Die Website führt Interessierte von Salonleistungen und Arbeitsbeispielen zum bestehenden Terminbuchungstool oder Buchungslink des Salons. Wendico stellt kein eigenes Terminbuchungssystem bereit.
+Die Website führt Interessierte von Salonleistungen und Arbeitsbeispielen zum bestehenden Terminbuchungstool oder Buchungslink des Salons. Wendico stellt kein eigenes Terminbuchungssystem bereit. Details: https://wendico.ch/dienstleistungen/umsatzsystem
 
 ### Social Media Management
 
-Wendico unterstützt bei Content-Planung, Social-Media-Formaten und konsistenter Markenkommunikation.
+Wendico unterstützt bei Content-Planung, Social-Media-Formaten und konsistenter Markenkommunikation. Details: https://wendico.ch/dienstleistungen/social-media
 
 ### Software
 
 Wendico entwickelt individuelle Web-Apps, Schnittstellen und Dashboards für kleine Unternehmen. Details: https://wendico.ch/dienstleistungen/software
 
-### AI Solutions
+### KI-Lösungen (AI Solutions)
 
-Wendico bietet AI-Lösungen für Unternehmen und Privatpersonen: AI-Workflows, AI-Automationen, AI-Kurse (live auf Anfrage) und AI-Workshops vor Ort im Unternehmen. Details: https://wendico.ch/dienstleistungen/ai-solutions
+Wendico bietet KI-Lösungen (AI) für Unternehmen und Privatpersonen: KI-Workflows, KI-Automationen, KI-Kurse (live auf Anfrage) und KI-Workshops vor Ort im Unternehmen. Details: https://wendico.ch/dienstleistungen/ai-solutions
 
 ## Zielgruppen und Branchen
 

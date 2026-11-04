@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { serviceLastModified } from "@/lib/services";
 import { projects } from "./projekte/projects";
 
 const routes = [
@@ -10,6 +11,7 @@ const routes = [
   { path: "/webdesign-zuerich", changeFrequency: "monthly", priority: 0.9 },
   { path: "/webdesign-winterthur", changeFrequency: "monthly", priority: 0.9 },
   { path: "/webdesign-thalheim-an-der-thur", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/dienstleistungen", changeFrequency: "monthly", priority: 0.9 },
   { path: "/dienstleistungen/websites", changeFrequency: "monthly", priority: 0.8 },
   { path: "/dienstleistungen/software", changeFrequency: "monthly", priority: 0.8 },
   { path: "/dienstleistungen/social-media", changeFrequency: "monthly", priority: 0.8 },
@@ -17,6 +19,7 @@ const routes = [
   { path: "/dienstleistungen/umsatzsystem", changeFrequency: "monthly", priority: 0.8 },
 ] as const;
 const lastModified = new Date("2026-10-08");
+const servicesLastModified = new Date(serviceLastModified);
 const projectsLastModified = new Date("2026-10-20");
 
 const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
@@ -31,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...routes.map((route) => ({
       url: `https://wendico.ch${route.path}`,
-      lastModified: route.path === "" || route.path === "/projekte" ? projectsLastModified : lastModified,
+      lastModified: route.path.startsWith("/dienstleistungen") ? servicesLastModified : route.path === "" || route.path === "/projekte" ? projectsLastModified : lastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     })),
