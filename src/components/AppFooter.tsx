@@ -7,12 +7,13 @@ export default function AppFooter() {
       <div className="shell footer-grid">
         <div>
           <Link className="brand footer-brand" href="/"><Image className="brand-logo" src="/wendico_logo.png" alt="" width={180} height={52} sizes="49px" /><strong>wendico</strong></Link>
-          <p>Salon-Websites mit Charakter<br />und einem klaren Weg zum Termin.</p>
+          <p>Websites, Software, Social Media und AI<br />für Unternehmen und Privatpersonen.</p>
         </div>
         <div>
           <span>Navigation</span>
           <Link href="/ueber-uns">Über uns</Link>
-          <Link href="/preise">Preise</Link>
+          <Link href="/kontakt">Kontakt</Link>
+          <Link href="/preise">Preise (Websites)</Link>
           <Link href="/projekte">Projekte</Link>
         </div>
         <div>

@@ -5,7 +5,7 @@ import { useEffect, useRef, type CSSProperties } from "react";
 import { prefersCalmMotion } from "@/lib/motion";
 import textImage from "../../text-img.jpg";
 
-const statement = "Wendico baut Salon-Websites, die deine Arbeit zeigen, Vertrauen schaffen und aus Besucherinnen gebuchte Termine machen.";
+const statement = "Wendico baut Websites, Software und AI-Lösungen, die deine Arbeit zeigen, Vertrauen schaffen und aus Besucherinnen Kundschaft machen.";
 const words = statement.split(" ");
 
 export default function HomeTextParallax() {

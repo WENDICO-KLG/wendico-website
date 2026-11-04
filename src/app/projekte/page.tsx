@@ -49,8 +49,8 @@ export default function ProjectsPage() {
         <span className="projects-page-hero-overlay" aria-hidden="true" />
         <div className="shell projects-page-hero-shell">
           <span className="eyebrow projects-page-eyebrow"><i /> Projekte</span>
-          <h1>Websites<br />für Salons.<br /><em>Einfach buchen.</em></h1>
-          <p>Websites für Beauty- und Coiffeur-Salons, die ihre Arbeit zeigen und neue Kundschaft einfach zum Wunschtermin führen.</p>
+          <h1>Unsere Arbeiten.<br /><em>Websites mit Wirkung.</em></h1>
+          <p>Ausgewählte Websites von Wendico: von Beauty- und Coiffeur-Salons mit Buchungsfokus bis zu Vereinen und Personal Branding.</p>
           <div className="projects-page-hero-metrics" role="group" aria-label="Projekt Kennzahlen">
             <span><strong>{projects.length}</strong> realisierte Auftritte</span>
             <span><strong>100%</strong> individueller Code</span>

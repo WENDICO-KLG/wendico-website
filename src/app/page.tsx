@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 };
 
 const homePlans = [
-  { name: "Website", price: "3'500", description: "Für einen professionellen Salon-Auftritt.", items: ["Bis 5 Seiten", "Mobile Optimierung", "Basic SEO"] },
-  { name: "Business", price: "5'500", description: "Für Salons mit Wachstumszielen.", badge: "Empfohlen", items: ["Bis 10 Seiten", "Erweiterte SEO", "Google Ads Setup"] },
-  { name: "Full System", price: "8'500", description: "Für umfangreiche Salon-Angebote.", items: ["Unlimitierte Seiten", "Mehrsprachig", "Individuelle Systeme"] },
+  { name: "Website", price: "3'500", description: "Für einen professionellen Auftritt.", items: ["Bis 5 Seiten", "Mobile Optimierung", "Basic SEO"] },
+  { name: "Business", price: "5'500", description: "Für Unternehmen mit Wachstumszielen.", badge: "Empfohlen", items: ["Bis 10 Seiten", "Erweiterte SEO", "Google Ads Setup"] },
+  { name: "Full System", price: "8'500", description: "Für umfangreiche Angebote.", items: ["Unlimitierte Seiten", "Mehrsprachig", "Individuelle Systeme"] },
 ];
 
 const homeFaqJsonLd = {
@@ -74,12 +74,12 @@ export default function Home() {
           <div className="hero-wordmark hero-appear-wordmark" aria-hidden="true">WENDICO</div>
           <div className="hero-content">
             <div className="hero-copy hero-appear-copy">
-              <span className="eyebrow hero-eyebrow"><i /> Websites für Beauty- & Coiffeur-Salons</span>
-              <h1>Mehr Buchungen.<br />Ein Auftritt, der <em>begeistert.</em></h1>
-              <p>Buchungsoptimierte Websites, die deine Arbeit hochwertig zeigen, neue Kundschaft überzeugen und den Weg zum Wunschtermin einfach machen.</p>
+              <span className="eyebrow hero-eyebrow"><i /> Websites · Software · Social Media · AI</span>
+              <h1>Digital stark aufgestellt.<br />Ein Partner, der <em>liefert.</em></h1>
+              <p>Wendico baut Websites, Software und Umsatzsysteme, betreut Social Media und bringt AI-Lösungen, Kurse und Workshops zu Unternehmen und Privatpersonen. Mit besonderem Fokus auf Beauty- und Coiffeur-Salons.</p>
               <div className="actions">
                 <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
-                <Link className="hero-text-link" href="/projekte">Arbeiten entdecken <span aria-hidden="true">→︎</span></Link>
+                <Link className="hero-text-link" href="/dienstleistungen/websites">Leistungen entdecken <span aria-hidden="true">→︎</span></Link>
               </div>
               <ul className="hero-trust">
                 <li><strong>10+</strong> Websites</li>
@@ -103,7 +103,7 @@ export default function Home() {
         <div className="shell services-shell">
           <div className="services-heading">
             <span className="eyebrow services-eyebrow"><i /> Was wir tun</span>
-            <h2>Drei Systeme.<br />Ein Ziel: <em>mehr Wirkung.</em></h2>
+            <h2>Fünf Leistungen.<br />Ein Ziel: <em>mehr Wirkung.</em></h2>
           </div>
           <div className="services-mosaic">
             <article className="service-pane service-pane-design glass">
@@ -116,7 +116,7 @@ export default function Home() {
                 <span>01 / Webdesign</span>
                 <h3>Websites, die eine Marke spürbar machen.</h3>
                 <p>Strategie, Gestaltung und Entwicklung greifen ineinander. Das Ergebnis ist klar, schnell und unverwechselbar.</p>
-                <Link href="/projekte" aria-label="Webdesign Projekte ansehen">↗︎</Link>
+                <Link href="/dienstleistungen/websites" aria-label="Websites ansehen">↗︎</Link>
               </div>
             </article>
 
@@ -130,7 +130,7 @@ export default function Home() {
                 <span>02 / Hosting & Wartung</span>
                 <h3>Technik, die einfach läuft.</h3>
                 <p>Hosting, SSL, Backups, Updates und Support. Sicher betreut, damit du dich auf dein Geschäft konzentrierst.</p>
-                <Link href="/preise" aria-label="Hosting Angebote ansehen">↗︎</Link>
+                <Link href="/preise" aria-label="Hosting und Betreuung ansehen">↗︎</Link>
               </div>
             </article>
 
@@ -139,8 +139,8 @@ export default function Home() {
               <div className="service-pane-copy">
                 <span>03 / Umsatzsysteme</span>
                 <h3>Vom Besuch zum gebuchten Termin.</h3>
-                <p>Online-Buchung, klare Leistungen und überzeugende Einblicke machen aus Website-Besuchen echte Salontermine.</p>
-                <Link href="/kontakt" aria-label="Umsatzsystem besprechen">↗︎</Link>
+                <p>Online-Buchung, klare Leistungen und überzeugende Einblicke machen aus Website-Besuchen echte Termine und Anfragen.</p>
+                <Link href="/dienstleistungen/umsatzsystem" aria-label="Umsatzsystem ansehen">↗︎</Link>
               </div>
             </article>
           </div>
@@ -158,9 +158,9 @@ export default function Home() {
         <span className="home-pricing-wordmark" aria-hidden="true">Preise</span>
         <div className="shell">
           <div className="home-pricing-heading">
-            <span className="eyebrow home-pricing-eyebrow">Preise</span>
+            <span className="eyebrow home-pricing-eyebrow">Preise für Websites</span>
             <h2>Ein klarer Start.<br /><em>Ein starker Auftritt.</em></h2>
-            <p>Jedes Projekt ist individuell. Unsere Pakete geben dir trotzdem von Anfang an eine klare Orientierung.</p>
+            <p>Diese Pakete gelten für Websites. Software, Social Media, AI Solutions und das Umsatzsystem kalkulieren wir individuell: Preis auf Anfrage.</p>
           </div>
           <div className="home-pricing-grid">
             {homePlans.map((plan) => (
@@ -174,7 +174,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <Link className="home-pricing-all" href="/preise">Alle Leistungen und Preise ansehen ↗︎</Link>
+          <Link className="home-pricing-all" href="/preise">Alle Website-Preise ansehen ↗︎</Link>
         </div>
       </section>
 
@@ -213,8 +213,8 @@ export default function Home() {
         <div className="shell cta-shell">
           <div className="cta glass">
             <span className="eyebrow">Dein nächster Schritt</span>
-            <h2>Eine gute Website beginnt<br />mit einem guten Gespräch.</h2>
-            <p>Erzähl uns, was du vorhast. Wir sagen dir klar, was sinnvoll ist.</p>
+            <h2>Ein gutes Projekt beginnt<br />mit einem guten Gespräch.</h2>
+            <p>Website, Software, Social Media oder AI: Erzähl uns, was du vorhast. Wir sagen dir klar, was sinnvoll ist.</p>
             <Link className="button primary" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
           </div>
         </div>

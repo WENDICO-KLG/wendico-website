@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 const principles = [
   ["clarity", "Klarheit", "Wir reduzieren Komplexität, bis Strategie, Design und Technik verständlich zusammenarbeiten."],
-  ["impact", "Wirkung", "Jede Entscheidung soll deinem Salon helfen: mehr Vertrauen, klare Leistungen und ein einfacher Weg zum Termin."],
+  ["impact", "Wirkung", "Jede Entscheidung soll dir helfen: mehr Vertrauen, klare Leistungen und ein einfacher Weg zur Anfrage oder zum Termin."],
   ["identity", "Eigenständigkeit", "Wir bauen keine Austauschware, sondern Auftritte mit eigener Sprache, eigenem Code und klarer Haltung."],
 ];
 
@@ -35,7 +35,7 @@ const workflow = [
 const roleCards = [
   ["Strategie", "Ziele ordnen, Nutzer verstehen, Richtung festlegen."],
   ["Auftritt", "Design, Inhalt und Technik zu einer klaren Marke verbinden."],
-  ["Buchungsweg", "Salonleistungen klar präsentieren und die Online-Terminbuchung leicht erreichbar machen."],
+  ["Leistungen", "Websites, Software, Social Media, AI und Umsatzsysteme aus einer Hand, klar und passend zu deinem Ziel."],
 ];
 
 const team = [

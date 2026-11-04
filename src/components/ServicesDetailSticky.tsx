@@ -17,12 +17,12 @@ const services = [
   {
     title: "Webauftritt Erstellung",
     visual: "web" as ServiceVisual,
-    description: "Von Leistungen und Preisen bis zu Vorher-Nachher-Einblicken zeigt deine Website, was deinen Salon ausmacht und führt direkt zur Terminbuchung.",
+    description: "Von Leistungen und Preisen bis zu Vorher-Nachher-Einblicken zeigt deine Website, was dein Angebot ausmacht, und führt direkt zur Anfrage oder Terminbuchung.",
   },
   {
     title: "Umsatzsystem",
     visual: "revenue" as ServiceVisual,
-    description: "Wir verbinden attraktive Leistungen, überzeugende Einblicke und deinen Buchungslink zu einem klaren Weg vom ersten Besuch bis zum Salontermin.",
+    description: "Wir verbinden attraktive Leistungen, überzeugende Einblicke und deinen Buchungslink zu einem klaren Weg vom ersten Besuch bis zur Anfrage oder zum Termin.",
   },
 ];
 
@@ -129,7 +129,7 @@ export default function ServicesDetailSticky() {
         <div className="services-detail-sticky">
           <span className="eyebrow"><i /> Dienstleistungen</span>
           <h2>{services[activeService].title}</h2>
-          <p className="services-detail-mobile-title">Alles, was dein Salon <em>online braucht.</em></p>
+          <p className="services-detail-mobile-title">Alles, was dein Geschäft <em>online braucht.</em></p>
         </div>
         <div className="services-detail-list">
           {services.map((service, index) => (

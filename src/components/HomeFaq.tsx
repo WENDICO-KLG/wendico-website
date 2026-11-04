@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 const questions = [
-  ["Was genau macht Wendico?", "Wir konzipieren, gestalten und entwickeln buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Auf Wunsch übernehmen wir auch Hosting, Wartung und digitales Marketing."],
-  ["Für wen entwickelt ihr Websites?", "Unser Fokus liegt auf Beauty- und Coiffeur-Salons. Wir gestalten Websites, die deine Arbeit hochwertig zeigen und neue Kundschaft einfach zum passenden Termin führen."],
+  ["Was genau macht Wendico?", "Wendico ist ein Digitalstudio aus dem Zürcher Weinland. Wir entwickeln Websites und individuelle Software, betreuen Social Media, bauen Umsatzsysteme und bieten AI-Lösungen, Kurse und Workshops für Unternehmen und Privatpersonen an. Auf Wunsch übernehmen wir auch Hosting und Wartung."],
+  ["Für wen entwickelt ihr Websites?", "Für Unternehmen und Privatpersonen. Einen besonderen Schwerpunkt setzen wir auf Beauty- und Coiffeur-Salons: Dort gestalten wir Websites, die deine Arbeit hochwertig zeigen und neue Kundschaft einfach zum passenden Termin führen."],
   ["Könnt ihr Online-Terminbuchungen integrieren?", "Wir richten den Buchungsweg klar sichtbar ein und verknüpfen deine Website mit deinem bestehenden Buchungstool oder Buchungslink. Ein eigenes Buchungssystem ist nicht nötig."],
   ["Arbeitet ihr mit Vorlagen oder Baukästen?", "Nein. Wir entwickeln mit eigenem, sauberem Code. Das gibt uns mehr Freiheit im Design, bessere Performance und eine Website, die wirklich zu deiner Marke passt."],
-  ["Übernehmt ihr Hosting und Wartung?", "Ja. Auf Wunsch kümmern wir uns um Domain, SSL, Backups, Updates und laufende Pflege. So bleibt dein Auftritt technisch sicher und aktuell."],
-  ["Wie starten wir ein Projekt?", "Mit einem unverbindlichen Gespräch. Wir klären dein Salon-Angebot, deine Zielgruppe, den bestehenden Buchungsweg und den Umfang, bevor wir passende nächste Schritte empfehlen."],
+  ["Was kostet das?", "Für Websites findest du feste Pakete auf der Preisseite. Software, Social Media, AI Solutions und das Umsatzsystem kalkulieren wir nach deinem Bedarf: Preis auf Anfrage. Hosting und Wartung gibt es auf Wunsch als monatliche Betreuung."],
+  ["Wie starten wir ein Projekt?", "Mit einem unverbindlichen Gespräch. Wir klären dein Angebot, deine Ziele, die Ausgangslage und den Umfang, bevor wir passende nächste Schritte empfehlen."],
 ];
 
 export default function HomeFaq() {
