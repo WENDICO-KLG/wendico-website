@@ -35,8 +35,8 @@ export default function ContactPage() {
         <div className="shell contact-page-hero-grid">
           <div className="contact-copy">
             <span className="eyebrow contact-page-eyebrow"><i /> Kontakt</span>
-            <h1>Deine Salon-Website<br /><em>startet hier.</em></h1>
-            <p>Erzähl uns von deinem Salon, deinem Angebot und deinem Ziel für die Website. Wir melden uns mit einer ehrlichen Einschätzung und einem klaren nächsten Schritt.</p>
+            <h1>Dein Projekt<br /><em>startet hier.</em></h1>
+            <p>Erzähl uns von deinem Angebot und deinem Ziel, ob Website, Software, Social Media, AI-Lösung oder Umsatzsystem. Wir melden uns mit einer ehrlichen Einschätzung und einem klaren nächsten Schritt.</p>
             <div className="contact-details">
               <a href="mailto:info@wendico.ch"><span>E-Mail</span><strong>info@wendico.ch ↗︎</strong></a>
               <a href="tel:+41795041005"><span>Telefon</span><strong>+41 79 504 10 05 ↗︎</strong></a>

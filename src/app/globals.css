@@ -712,3 +712,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .service-page-process .geo-page-process-inner { z-index: 2; }
 .geo-page-grid article { min-height: 0; }
 @media (max-width: 680px) { .service-page-hero::before { background: linear-gradient(180deg,rgba(4,13,9,.7),rgba(4,13,9,.6) 50%,#070d0a 100%); } }
+.pricing-on-request { margin: 14px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; }
+.pricing-on-request a { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; color: rgba(255,255,255,.85); background: rgba(255,255,255,.05); font-size: 13px; font-weight: 600; transition: border-color .2s,color .2s; }
+.pricing-on-request a:hover { border-color: rgba(216,255,113,.62); color: #d8ff71; }

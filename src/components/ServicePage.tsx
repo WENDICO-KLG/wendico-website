@@ -78,7 +78,7 @@ export default function ServicePage({ slug }: { slug: string }) {
             <p>{s.lead}</p>
             <div className="about-page-actions">
               <Link className="button primary" href="/kontakt#termin-buchen">{s.ctaButton}</Link>
-              <Link className="about-page-text-link" href="/preise">Preise ansehen</Link>
+              {s.slug === "websites" ? <Link className="about-page-text-link" href="/preise">Website-Preise ansehen</Link> : <Link className="about-page-text-link" href="/kontakt#termin-buchen">Preis auf Anfrage</Link>}
             </div>
           </div>
           <aside className="geo-page-card glass">

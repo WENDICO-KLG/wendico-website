@@ -19,7 +19,7 @@ export default function ProjectsGrid() {
         <div className="projects-page-toolbar">
           <div>
             <span className="eyebrow projects-page-eyebrow"><i /> Ausgewählte Arbeiten</span>
-            <h2>Salon-Websites mit Buchungsfokus. Dazu ausgewählte Arbeiten aus weiteren Branchen.</h2>
+            <h2>Salon-Websites mit Buchungsfokus und ausgewählte Arbeiten aus weiteren Branchen.</h2>
           </div>
           <div className="projects-page-filter-panel" role="group" aria-label="Projekte filtern">
             <button className={filter === "Alle" ? "active" : ""} onClick={() => setFilter("Alle")}>Alle Projekte</button>
