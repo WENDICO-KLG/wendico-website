@@ -204,7 +204,7 @@ export const services: Record<string, ServiceContent> = {
     ],
     related: ["software", "websites", "social-media"],
     ctaTitle: "Wo könnte KI deine Arbeit beschleunigen?",
-    ctaText: "Schreib uns, was du vorhast. Wir melden uns mit einer ehrlichen Einschätzung und passenden nächsten Schritten, auch für einen Kurs oder Workshop auf Anfrage.",
+    ctaText: "Schreib uns, was du vorhast. Wir melden uns mit einer ehrlichen Einschätzung und passenden nächsten Schritten, auch für einen Kurs oder Workshop. Preis auf Anfrage.",
     ctaButton: "KI-Gespräch anfragen",
   },
   umsatzsystem: {
