@@ -61,8 +61,7 @@ export default function AppNav() {
   }, []);
   useEffect(() => {
     // close only after the new route has rendered, so the closing animation reveals it
-    setServicesOpen(false);
-    const id = window.setTimeout(() => setOpen(false), 140);
+    const id = window.setTimeout(() => { setOpen(false); setServicesOpen(false); }, 140);
     return () => window.clearTimeout(id);
   }, [pathname]);
 
