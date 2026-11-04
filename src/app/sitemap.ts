@@ -10,6 +10,11 @@ const routes = [
   { path: "/webdesign-zuerich", changeFrequency: "monthly", priority: 0.9 },
   { path: "/webdesign-winterthur", changeFrequency: "monthly", priority: 0.9 },
   { path: "/webdesign-thalheim-an-der-thur", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/dienstleistungen/websites", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/dienstleistungen/software", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/dienstleistungen/social-media", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/dienstleistungen/ai-solutions", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/dienstleistungen/umsatzsystem", changeFrequency: "monthly", priority: 0.8 },
 ] as const;
 const lastModified = new Date("2026-10-08");
 const projectsLastModified = new Date("2026-10-20");

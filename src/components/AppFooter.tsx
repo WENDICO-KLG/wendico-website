@@ -16,6 +16,14 @@ export default function AppFooter() {
           <Link href="/projekte">Projekte</Link>
         </div>
         <div>
+          <span>Dienstleistungen</span>
+          <Link href="/dienstleistungen/websites">Websites</Link>
+          <Link href="/dienstleistungen/software">Software</Link>
+          <Link href="/dienstleistungen/social-media">Social Media</Link>
+          <Link href="/dienstleistungen/ai-solutions">AI Solutions</Link>
+          <Link href="/dienstleistungen/umsatzsystem">Umsatzsystem</Link>
+        </div>
+        <div>
           <span>Standorte</span>
           <Link href="/webdesign-zuerich">Salon-Webdesign Zürich</Link>
           <Link href="/webdesign-winterthur">Salon-Webdesign Winterthur</Link>

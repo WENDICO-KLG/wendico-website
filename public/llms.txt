@@ -17,6 +17,14 @@ Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an de
 - [Webdesign Winterthur](https://wendico.ch/webdesign-winterthur): Salon-Websites in Winterthur.
 - [Webdesign Thalheim](https://wendico.ch/webdesign-thalheim-an-der-thur): Salon-Websites im Zürcher Weinland.
 
+## Dienstleistungen
+
+- [Websites](https://wendico.ch/dienstleistungen/websites): Individuelle, mobile Websites mit Weg zur Online-Terminbuchung.
+- [Software](https://wendico.ch/dienstleistungen/software): Web-Apps, Schnittstellen und Dashboards.
+- [Social Media](https://wendico.ch/dienstleistungen/social-media): Content-Planung und Betreuung der Kanäle.
+- [AI Solutions](https://wendico.ch/dienstleistungen/ai-solutions): AI-Workflows, AI-Automationen, AI-Kurse (live auf Anfrage) und AI-Workshops vor Ort, für Unternehmen und Privatpersonen.
+- [Umsatzsystem](https://wendico.ch/dienstleistungen/umsatzsystem): Vom Besuch zum Termin über den bestehenden Buchungslink.
+
 ## Neue Referenzen
 
 - [Panat Ruangsri](https://wendico.ch/projekte/panat-ruangsri): Personal-Branding-Website als digitale Bewerbungsunterlage, mit 3D-Formen und Scroll-Animationen. Oktober 2026.

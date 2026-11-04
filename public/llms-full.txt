@@ -35,6 +35,14 @@ Die Website führt Interessierte von Salonleistungen und Arbeitsbeispielen zum b
 
 Wendico unterstützt bei Content-Planung, Social-Media-Formaten und konsistenter Markenkommunikation.
 
+### Software
+
+Wendico entwickelt individuelle Web-Apps, Schnittstellen und Dashboards für kleine Unternehmen. Details: https://wendico.ch/dienstleistungen/software
+
+### AI Solutions
+
+Wendico bietet AI-Lösungen für Unternehmen und Privatpersonen: AI-Workflows, AI-Automationen, AI-Kurse (live auf Anfrage) und AI-Workshops vor Ort im Unternehmen. Details: https://wendico.ch/dienstleistungen/ai-solutions
+
 ## Zielgruppen und Branchen
 
 Das Angebot richtet sich primär an Beauty- und Coiffeur-Salons in der Schweiz, die ihre Leistungen hochwertig zeigen und den Weg zur Online-Terminbuchung vereinfachen möchten. Weitere Referenzen umfassen unter anderem Vereine und Personal Branding.

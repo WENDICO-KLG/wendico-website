@@ -50,6 +50,8 @@ const organizationJsonLd = {
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webauftritt Erstellung" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Umsatzsystem" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Solutions" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software" } },
   ],
 };
 
@@ -73,6 +75,8 @@ const serviceCatalogJsonLd = {
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hosting und Wartung", description: "Hosting, SSL, Backups, Updates, Monitoring und Support für Websites.", provider: { "@id": "https://wendico.ch/#organization" } } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Umsatzsysteme", description: "Klare digitale Wege von Salonleistungen zur Online-Terminbuchung über das bestehende Buchungstool des Salons.", provider: { "@id": "https://wendico.ch/#organization" } } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", description: "Content-Planung, Social-Media-Formate und konsistente Markenkommunikation.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Solutions", description: "AI-Workflows, AI-Automationen, AI-Kurse und AI-Workshops für Unternehmen und Privatpersonen.", url: "https://wendico.ch/dienstleistungen/ai-solutions", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software", description: "Individuelle Web-Apps, Schnittstellen und Dashboards.", url: "https://wendico.ch/dienstleistungen/software", provider: { "@id": "https://wendico.ch/#organization" } } },
   ],
 };
 

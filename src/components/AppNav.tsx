@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { serviceOrder, services } from "@/lib/services";
 
-const links = [
-  ["Home", "/"], ["Über uns", "/ueber-uns"], ["Preise", "/preise"], ["Projekte", "/projekte"], ["Kontakt", "/kontakt"],
-];
+const linksBefore = [["Home", "/"], ["Über uns", "/ueber-uns"]];
+const linksAfter = [["Preise", "/preise"], ["Projekte", "/projekte"], ["Kontakt", "/kontakt"]];
+const serviceLinks = serviceOrder.map((slug) => [services[slug].navLabel, `/dienstleistungen/${slug}`] as const);
 
 function scrollToPageTop(href: string) {
   if (!href.includes("#")) window.scrollTo(0, 0);
@@ -16,6 +17,11 @@ function scrollToPageTop(href: string) {
 export default function AppNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false); // desktop dropdown
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const servicesActive = pathname.startsWith("/dienstleistungen");
+  const navLink = (label: string, href: string) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => scrollToPageTop(href)}>{label}</Link>;
   useEffect(() => {
     const closeOnDesktop = () => {
       if (window.innerWidth > 680) setOpen(false);
@@ -55,23 +61,73 @@ export default function AppNav() {
   }, []);
   useEffect(() => {
     // close only after the new route has rendered, so the closing animation reveals it
+    setServicesOpen(false);
     const id = window.setTimeout(() => setOpen(false), 140);
     return () => window.clearTimeout(id);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!servicesOpen) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) setServicesOpen(false);
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    return () => document.removeEventListener("pointerdown", closeOutside);
+  }, [servicesOpen]);
+  const onDropdownKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const items = Array.from(dropdownRef.current?.querySelectorAll<HTMLElement>(".nav-dropdown-menu a") ?? []);
+    const toggle = dropdownRef.current?.querySelector<HTMLElement>(".nav-dropdown-toggle");
+    const index = items.indexOf(document.activeElement as HTMLElement);
+    if (event.key === "Escape" && servicesOpen) {
+      setServicesOpen(false);
+      toggle?.focus();
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setServicesOpen(true);
+      window.setTimeout(() => (items[Math.min(index + 1, items.length - 1)] ?? items[0])?.focus(), 60);
+    } else if (event.key === "ArrowUp" && index >= 0) {
+      event.preventDefault();
+      (index === 0 ? toggle : items[index - 1])?.focus();
+    }
+  };
 
   return (
     <header className="nav-wrap" data-menu-open={open ? "true" : "false"} data-nav-hidden={hidden && !open ? "true" : "false"}>
       <nav className="site-nav glass" aria-label="Hauptnavigation">
         <Link className="brand" href="/" aria-label="Wendico Startseite"><Image className="brand-logo" src="/wendico_logo.png" alt="" width={180} height={52} sizes="49px" /><strong>wendico</strong></Link>
         <div className="nav-links">
-          {links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => scrollToPageTop(href)}>{label}</Link>)}
+          {linksBefore.map(([label, href]) => navLink(label, href))}
+          <div
+            className="nav-dropdown"
+            ref={dropdownRef}
+            data-open={servicesOpen ? "true" : "false"}
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+            onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setServicesOpen(false); }}
+            onKeyDown={onDropdownKeyDown}
+          >
+            <button type="button" className={servicesActive ? "nav-dropdown-toggle active" : "nav-dropdown-toggle"} aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen((current) => !current)}>
+              Dienstleistungen <i aria-hidden="true" />
+            </button>
+            <div className="nav-dropdown-panel">
+              <ul id="services-menu" className="nav-dropdown-menu" aria-label="Dienstleistungen">
+                {serviceLinks.map(([label, href]) => <li key={href}><Link className={pathname === href ? "active" : ""} href={href} onClick={() => { scrollToPageTop(href); setServicesOpen(false); }}>{label}</Link></li>)}
+              </ul>
+            </div>
+          </div>
+          {linksAfter.map(([label, href]) => navLink(label, href))}
         </div>
         <Link className="nav-cta" href="/kontakt#termin-buchen">Projekt starten <span>↗︎</span></Link>
       </nav>
       <button className="menu-button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Menü schliessen" : "Menü öffnen"}><i /><i /></button>
       {/* kept outside .site-nav: its backdrop-filter would trap position:fixed children in Safari */}
       <div id="mobile-navigation" className={open ? "mobile-menu open" : "mobile-menu"}>
-        {links.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        {linksBefore.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        <button type="button" className={servicesActive ? "mobile-menu-toggle active" : "mobile-menu-toggle"} aria-expanded={mobileServicesOpen} aria-controls="mobile-services" onClick={() => setMobileServicesOpen((current) => !current)}>Dienstleistungen <i aria-hidden="true" /></button>
+        <div id="mobile-services" className="mobile-submenu" hidden={!mobileServicesOpen}>
+          {serviceLinks.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} tabIndex={open ? 0 : -1} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        </div>
+        {linksAfter.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
         <Link className="mobile-menu-cta" href="/kontakt#termin-buchen" onClick={() => setOpen(false)}>15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
       </div>
     </header>
