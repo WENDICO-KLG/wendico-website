@@ -54,6 +54,8 @@ export default function ScrollReveals() {
         !element.closest(".hero-landscape") &&
         !element.closest(".home-projects-section") &&
         !element.closest(".text-parallax-section") &&
+        // above-the-fold content stays visible: hiding it until hydration delays LCP
+        element.getBoundingClientRect().top >= window.innerHeight * 0.9 &&
         (!compact || revealType(element) === "reveal-heading" || revealType(element) === "reveal-card"),
     );
     elements.forEach((element, index) => {
