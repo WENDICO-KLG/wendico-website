@@ -41,17 +41,17 @@ const organizationJsonLd = {
     { "@type": "Country", name: "Schweiz" },
   ],
   priceRange: "CHF 3'500–8'500",
-  knowsAbout: ["Webdesign", "Webentwicklung", "Suchmaschinenoptimierung", "Social Media Management", "Conversion-Optimierung"],
+  knowsAbout: ["Webdesign", "Webentwicklung", "Suchmaschinenoptimierung", "Social Media Management", "Conversion-Optimierung", "KI-Lösungen", "Individuelle Software"],
   founder: [
     { "@type": "Person", name: "Panat Ruangsri", jobTitle: "Sales, Strategie, Webdesign", sameAs: "https://www.linkedin.com/in/panat-ruangsri-28a137288/" },
     { "@type": "Person", name: "Tim Biedermann", jobTitle: "Finance, Strategie, Design", sameAs: "https://www.linkedin.com/in/tim-biedermann-ba5b35286/" },
   ],
   makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webauftritt Erstellung" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Umsatzsystem" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Solutions" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Websites", url: "https://wendico.ch/dienstleistungen/websites" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", url: "https://wendico.ch/dienstleistungen/social-media" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Umsatzsystem", url: "https://wendico.ch/dienstleistungen/umsatzsystem" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "KI-Lösungen (AI Solutions)", url: "https://wendico.ch/dienstleistungen/ai-solutions" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software", url: "https://wendico.ch/dienstleistungen/software" } },
   ],
 };
 
@@ -71,11 +71,11 @@ const serviceCatalogJsonLd = {
   "@id": "https://wendico.ch/#services",
   name: "Webdesign- und Digitalleistungen von Wendico",
   itemListElement: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webdesign und Webentwicklung", description: "Buchungsoptimierte, responsive Websites für Beauty- und Coiffeur-Salons mit klarer Präsentation von Leistungen und Buchungsweg.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webdesign und Webentwicklung", url: "https://wendico.ch/dienstleistungen/websites", description: "Buchungsoptimierte, responsive Websites für Beauty- und Coiffeur-Salons mit klarer Präsentation von Leistungen und Buchungsweg.", provider: { "@id": "https://wendico.ch/#organization" } } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hosting und Wartung", description: "Hosting, SSL, Backups, Updates, Monitoring und Support für Websites.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Umsatzsysteme", description: "Klare digitale Wege von Salonleistungen zur Online-Terminbuchung über das bestehende Buchungstool des Salons.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", description: "Content-Planung, Social-Media-Formate und konsistente Markenkommunikation.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Solutions", description: "AI-Workflows, AI-Automationen, AI-Kurse und AI-Workshops für Unternehmen und Privatpersonen.", url: "https://wendico.ch/dienstleistungen/ai-solutions", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Umsatzsysteme", url: "https://wendico.ch/dienstleistungen/umsatzsystem", description: "Klare digitale Wege von Salonleistungen zur Online-Terminbuchung über das bestehende Buchungstool des Salons.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", url: "https://wendico.ch/dienstleistungen/social-media", description: "Content-Planung, Social-Media-Formate und konsistente Markenkommunikation.", provider: { "@id": "https://wendico.ch/#organization" } } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "KI-Lösungen (AI Solutions)", description: "KI-Workflows, KI-Automationen, KI-Kurse und KI-Workshops für Unternehmen und Privatpersonen.", url: "https://wendico.ch/dienstleistungen/ai-solutions", provider: { "@id": "https://wendico.ch/#organization" } } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software", description: "Individuelle Web-Apps, Schnittstellen und Dashboards.", url: "https://wendico.ch/dienstleistungen/software", provider: { "@id": "https://wendico.ch/#organization" } } },
   ],
 };

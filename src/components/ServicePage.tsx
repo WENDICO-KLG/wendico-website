@@ -12,6 +12,7 @@ export function serviceMetadata(slug: string): Metadata {
     alternates: { canonical: path },
     keywords: s.keywords,
     openGraph: { type: "website", locale: "de_CH", siteName: "Wendico", url: path, title: `${s.metaTitle} | Wendico`, description: s.metaDescription, images: [openGraphImage] },
+    twitter: { card: "summary_large_image", title: `${s.metaTitle} | Wendico`, description: s.metaDescription, images: [openGraphImage.url] },
   };
 }
 
@@ -25,11 +26,22 @@ export default function ServicePage({ slug }: { slug: string }) {
     name: s.metaTitle,
     description: s.metaDescription,
     url: `${siteUrl}${path}`,
+    serviceType: s.navLabel,
+    inLanguage: "de-CH",
     provider: { "@id": `${siteUrl}/#organization` },
     areaServed: { "@type": "Country", name: "Schweiz" },
+    availableChannel: { "@type": "ServiceChannel", serviceUrl: `${siteUrl}/kontakt`, availableLanguage: ["de", "en", "fr"] },
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteUrl}${path}#faq`,
+    inLanguage: "de-CH",
+    mainEntity: s.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
   const breadcrumbs = breadcrumbJsonLd([
     { name: "Startseite", path: "/" },
+    { name: "Dienstleistungen", path: "/dienstleistungen" },
     { name: s.navLabel, path },
   ]);
 
@@ -37,6 +49,7 @@ export default function ServicePage({ slug }: { slug: string }) {
     <main className="geo-page service-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }} />
       <section className="geo-page-hero service-page-hero">
         <div className="shell geo-page-hero-shell">
           <div className="geo-page-copy">
@@ -101,10 +114,21 @@ export default function ServicePage({ slug }: { slug: string }) {
         </div>
       </section>
 
+      <section className="shell geo-page-overview">
+        <div className="geo-page-intro">
+          <span className="eyebrow"><i /> Häufige Fragen</span>
+          <h2>Das fragen uns Kundinnen und Kunden oft.</h2>
+        </div>
+        <div className="geo-page-grid">
+          {s.faq.map((f) => <article className="glass" key={f.q}><h3>{f.q}</h3><p>{f.a}</p></article>)}
+        </div>
+      </section>
+
       <section className="shell service-page-related">
         <span className="eyebrow"><i /> Weitere Dienstleistungen</span>
         <div>
           {s.related.map((r) => <Link className="glass" href={`/dienstleistungen/${r}`} key={r}>{services[r].navLabel} <span>↗︎</span></Link>)}
+          <Link className="glass" href="/dienstleistungen">Alle Dienstleistungen <span>↗︎</span></Link>
         </div>
       </section>
 

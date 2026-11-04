@@ -17,10 +17,11 @@ export default function AppFooter() {
         </div>
         <div>
           <span>Dienstleistungen</span>
+          <Link href="/dienstleistungen">Alle Dienstleistungen</Link>
           <Link href="/dienstleistungen/websites">Websites</Link>
           <Link href="/dienstleistungen/software">Software</Link>
           <Link href="/dienstleistungen/social-media">Social Media</Link>
-          <Link href="/dienstleistungen/ai-solutions">AI Solutions</Link>
+          <Link href="/dienstleistungen/ai-solutions">KI-Lösungen</Link>
           <Link href="/dienstleistungen/umsatzsystem">Umsatzsystem</Link>
         </div>
         <div>
