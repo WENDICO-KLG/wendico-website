@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import Image, { type StaticImageData } from "next/image";
 import { breadcrumbJsonLd, openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import { services } from "@/lib/services";
-import websitesImg from "../../section-2.jpg";
-import softwareImg from "../../slogan-img.jpg";
-import socialImg from "../../text-img.jpg";
-import aiImg from "../../footer.jpg";
-import umsatzImg from "../../hero.jpg";
+import aiImage from "@/assets/services/ai-solutions.webp";
+import socialImage from "@/assets/services/social-media.webp";
+import softwareImage from "@/assets/services/software.webp";
+import umsatzImage from "@/assets/services/umsatzsystem.webp";
+import websitesImage from "@/assets/services/websites.webp";
+import "./ServicePage.css";
 
-const heroImages: Record<string, { src: typeof websitesImg; alt: string; position: string }> = {
-  websites: { src: websitesImg, alt: "Das Matterhorn ragt hinter einem Berghang in den Himmel", position: "60% 40%" },
-  software: { src: softwareImg, alt: "Felswand mit Gletscher und Wolken in den Schweizer Alpen", position: "40% 35%" },
-  "social-media": { src: socialImg, alt: "Grüner Berggrat mit Wanderweg bis zum Gipfelkreuz", position: "60% 45%" },
-  "ai-solutions": { src: aiImg, alt: "Matterhorn spiegelt sich im Morgenlicht in einem Bergsee", position: "50% 40%" },
-  umsatzsystem: { src: umsatzImg, alt: "Alpental mit Wanderweg und Blick auf schneebedeckte Gipfel", position: "50% 50%" },
-};
-const processImages: Record<string, keyof typeof heroImages> = {
-  websites: "umsatzsystem", software: "ai-solutions", "social-media": "software", "ai-solutions": "websites", umsatzsystem: "social-media",
+const heroImages: Record<string, StaticImageData> = {
+  websites: websitesImage,
+  software: softwareImage,
+  "social-media": socialImage,
+  "ai-solutions": aiImage,
+  umsatzsystem: umsatzImage,
 };
 
 export function serviceMetadata(slug: string): Metadata {
@@ -36,8 +34,6 @@ export function serviceMetadata(slug: string): Metadata {
 export default function ServicePage({ slug }: { slug: string }) {
   const s = services[slug];
   const path = `/dienstleistungen/${slug}`;
-  const hero = heroImages[slug];
-  const bg = heroImages[processImages[slug]];
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -64,102 +60,141 @@ export default function ServicePage({ slug }: { slug: string }) {
     { name: s.navLabel, path },
   ]);
 
+  const priceLink = s.slug === "websites"
+    ? { href: "/preise", label: "Website-Preise ansehen" }
+    : { href: "/kontakt#termin-buchen", label: "Preis auf Anfrage" };
+
   return (
-    <main className="geo-page service-page">
+    <main className={`svc svc-${slug}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }} />
-      <section className="geo-page-hero service-page-hero">
-        <Image className="service-page-hero-img" src={hero.src} alt={hero.alt} fill priority sizes="100vw" quality={70} style={{ objectPosition: hero.position }} />
-        <div className="shell geo-page-hero-shell">
-          <div className="geo-page-copy">
-            <span className="eyebrow geo-page-eyebrow"><i /> {s.eyebrow}</span>
+
+      <section className="svc-hero">
+        <div className="shell svc-hero-grid">
+          <div className="svc-hero-copy">
+            <nav className="svc-crumbs" aria-label="Brotkrumen">
+              <Link href="/dienstleistungen">Dienstleistungen</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">{s.navLabel}</span>
+            </nav>
             <h1>{s.h1[0]}<em>{s.h1[1]}</em>{s.h1[2]}</h1>
-            <p>{s.lead}</p>
-            <div className="about-page-actions">
-              <Link className="button primary" href="/kontakt#termin-buchen">{s.ctaButton}</Link>
-              {s.slug === "websites" ? <Link className="about-page-text-link" href="/preise">Website-Preise ansehen</Link> : <Link className="about-page-text-link" href="/kontakt#termin-buchen">Preis auf Anfrage</Link>}
+            <p className="svc-lead">{s.lead}</p>
+            <div className="svc-actions">
+              <Link className="button primary" href="/kontakt#termin-buchen">{s.ctaButton} <span aria-hidden="true">↗︎</span></Link>
+              <Link className="svc-text-link" href={priceLink.href}>{priceLink.label}</Link>
             </div>
           </div>
-          <aside className="geo-page-card glass">
-            <span>{s.cardLabel}</span>
-            <strong>{s.cardTitle}</strong>
+          <figure className="svc-hero-media">
+            <Image src={heroImages[slug]} alt={s.heroAlt} fill priority sizes="(max-width: 900px) 92vw, 46vw" />
+            <figcaption className="svc-hero-badge">
+              <span>{s.cardLabel}</span>
+              <strong>{s.cardTitle}</strong>
+            </figcaption>
+          </figure>
+        </div>
+        <div className="shell">
+          <ul className="svc-points">
+            {s.cardPoints.map((point) => <li key={point}><b aria-hidden="true">✓︎</b>{point}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section className="svc-offer">
+        <div className="shell svc-offer-grid">
+          <header className="svc-offer-intro">
+            <span className="eyebrow"><i /> {s.overviewLabel}</span>
+            <h2>{s.overviewTitle}</h2>
             <p>{s.cardText}</p>
-            <ul>{s.cardPoints.map((p) => <li key={p}>{p}</li>)}</ul>
-          </aside>
-        </div>
-      </section>
-
-      <section className="geo-page-band">
-        <div className="shell geo-page-metrics">
-          {s.metrics.map(([a, b]) => <div key={a}><strong>{a}</strong><span>{b}</span></div>)}
-        </div>
-      </section>
-
-      <section className="shell geo-page-overview">
-        <div className="geo-page-intro">
-          <span className="eyebrow"><i /> {s.overviewLabel}</span>
-          <h2>{s.overviewTitle}</h2>
-        </div>
-        <div className={s.offerings.length === 4 ? "geo-page-grid service-page-grid-four" : "geo-page-grid"}>
-          {s.offerings.map((o) => <article className="glass" key={o.title}><h3>{o.title}</h3><p>{o.text}</p></article>)}
+          </header>
+          <ol className="svc-offer-list">
+            {s.offerings.map((offering, index) => (
+              <li key={offering.title}>
+                <span className="svc-index">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{offering.title}</h3>
+                  <p>{offering.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       {s.audiences && (
-        <section className="shell service-page-audiences">
-          {s.audiences.map((a) => (
-            <article className="glass" key={a.label}>
-              <span className="eyebrow"><i /> {a.label}</span>
-              <h2>{a.title}</h2>
-              <p>{a.text}</p>
-              <ul>{a.points.map((p) => <li key={p}>{p}</li>)}</ul>
-            </article>
-          ))}
+        <section className="svc-audiences">
+          <div className="shell svc-audience-grid">
+            {s.audiences.map((audience) => (
+              <article className="svc-audience" key={audience.label}>
+                <span className="svc-audience-label">{audience.label}</span>
+                <h2>{audience.title}</h2>
+                <p>{audience.text}</p>
+                <ul>{audience.points.map((point) => <li key={point}>{point}</li>)}</ul>
+              </article>
+            ))}
+          </div>
         </section>
       )}
 
-      <section className="geo-page-process service-page-process">
-        <Image className="service-page-bg-img" src={bg.src} alt="" aria-hidden="true" fill sizes="100vw" quality={55} style={{ objectPosition: bg.position }} />
-        <div className="shell geo-page-process-inner">
-          <div className="geo-page-process-copy">
-            <span className="eyebrow geo-page-eyebrow"><i /> So arbeiten wir</span>
-            <h2>{s.processTitle}</h2>
+      <section className="svc-process">
+        <div className="shell">
+          <header className="svc-process-head">
+            <div>
+              <span className="eyebrow"><i /> So arbeiten wir</span>
+              <h2>{s.processTitle}</h2>
+            </div>
             <p>{s.processText}</p>
-          </div>
-          <div className="geo-page-flow">
-            {s.steps.map((st, i) => (
-              <div className="geo-page-step glass" key={st.title}><span>0{i + 1}</span><h3>{st.title}</h3><p>{st.text}</p></div>
+          </header>
+          <ol className="svc-steps">
+            {s.steps.map((step, index) => (
+              <li key={step.title}>
+                <span className="svc-step-number">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="svc-faq">
+        <div className="shell svc-faq-grid">
+          <header>
+            <span className="eyebrow"><i /> Häufige Fragen</span>
+            <h2>Das fragen uns Kundinnen und Kunden oft.</h2>
+            <p>Deine Frage ist nicht dabei? <Link href="/kontakt">Schreib uns direkt.</Link></p>
+          </header>
+          <div className="svc-faq-list">
+            {s.faq.map((item, index) => (
+              <details key={item.q} open={index === 0}>
+                <summary>{item.q}<b aria-hidden="true" /></summary>
+                <p>{item.a}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="shell geo-page-overview">
-        <div className="geo-page-intro">
-          <span className="eyebrow"><i /> Häufige Fragen</span>
-          <h2>Das fragen uns Kundinnen und Kunden oft.</h2>
-        </div>
-        <div className="geo-page-grid">
-          {s.faq.map((f) => <article className="glass" key={f.q}><h3>{f.q}</h3><p>{f.a}</p></article>)}
-        </div>
-      </section>
-
-      <section className="shell service-page-related">
-        <span className="eyebrow"><i /> Weitere Dienstleistungen</span>
-        <div>
-          {s.related.map((r) => <Link className="glass" href={`/dienstleistungen/${r}`} key={r}>{services[r].navLabel} <span>↗︎</span></Link>)}
-          <Link className="glass" href="/dienstleistungen">Alle Dienstleistungen <span>↗︎</span></Link>
-        </div>
-      </section>
-
-      <section className="geo-page-cta">
+      <section className="svc-end">
         <div className="shell">
-          <div className="cta glass">
-            <span className="eyebrow"><i /> {s.eyebrow}</span>
-            <h2>{s.ctaTitle}</h2>
-            <p>{s.ctaText}</p>
-            <Link className="button primary" href="/kontakt#termin-buchen">{s.ctaButton}</Link>
+          <div className="svc-cta">
+            <div className="svc-cta-copy">
+              <span className="eyebrow"><i /> Nächster Schritt</span>
+              <h2>{s.ctaTitle}</h2>
+              <p>{s.ctaText}</p>
+              <Link className="button svc-cta-button" href="/kontakt#termin-buchen">{s.ctaButton} <span aria-hidden="true">↗︎</span></Link>
+            </div>
+            <nav className="svc-related" aria-label="Weitere Dienstleistungen">
+              <span>Weitere Dienstleistungen</span>
+              {s.related.map((slug) => (
+                <Link href={`/dienstleistungen/${slug}`} key={slug}>
+                  <strong>{services[slug].navLabel}</strong>
+                  <small>{services[slug].summary}</small>
+                  <b aria-hidden="true">↗︎</b>
+                </Link>
+              ))}
+              <Link href="/dienstleistungen" className="svc-related-all">Alle Dienstleistungen <b aria-hidden="true">→︎</b></Link>
+            </nav>
           </div>
         </div>
       </section>

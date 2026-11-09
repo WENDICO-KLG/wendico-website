@@ -15,7 +15,7 @@ export type ServiceContent = {
   cardTitle: string;
   cardText: string;
   cardPoints: string[];
-  metrics: [string, string][];
+  heroAlt: string;
   overviewLabel: string;
   overviewTitle: string;
   offerings: ServiceCard[];
@@ -54,7 +54,7 @@ export const services: Record<string, ServiceContent> = {
     cardTitle: "Dein Angebot, klar präsentiert",
     cardText: "Von Leistungen und Preisen bis zu Vorher-Nachher-Einblicken zeigt deine Website, was dein Angebot ausmacht.",
     cardPoints: ["Individuelles Design", "Mobil gedacht", "Verbunden mit deiner Buchung"],
-    metrics: [["01", "Strategischer Start"], ["02", "Design mit Wirkung"], ["03", "Performante Umsetzung"]],
+    heroAlt: "3D-Illustration: Laptop und Smartphone mit einer eleganten Salon-Website und einem Kalender-Häkchen",
     overviewLabel: "Was du bekommst",
     overviewTitle: "Ein Auftritt, der vor dem ersten Besuch Vertrauen schafft.",
     offerings: [
@@ -93,7 +93,7 @@ export const services: Record<string, ServiceContent> = {
     cardTitle: "Weniger Handarbeit, mehr Überblick",
     cardText: "Wir bauen genau das, was du brauchst, und nicht mehr.",
     cardPoints: ["Web-Apps und Portale", "Dashboards und Auswertungen", "Anbindung bestehender Tools"],
-    metrics: [["01", "Anforderungen klären"], ["02", "Schlank umsetzen"], ["03", "Laufend verbessern"]],
+    heroAlt: "3D-Illustration: verbundene App-Bausteine mit Diagramm, Kalender und Kundenprofil",
     overviewLabel: "Was wir bauen",
     overviewTitle: "Digitale Werkzeuge, die dein Team wirklich nutzt.",
     offerings: [
@@ -132,7 +132,7 @@ export const services: Record<string, ServiceContent> = {
     cardTitle: "Sichtbar bleiben, ohne Zeit zu verlieren",
     cardText: "Konstante Präsenz auf Instagram, TikTok und Facebook, abgestimmt auf deine Marke.",
     cardPoints: ["Content-Planung", "Formate für Reels und Stories", "Einheitliche Markenstimme"],
-    metrics: [["01", "Plan statt Zufall"], ["02", "Formate mit Wiedererkennung"], ["03", "Konsistent sichtbar"]],
+    heroAlt: "3D-Illustration: Smartphone mit Story- und Reel-Karten, umgeben von Herz und Kommentar",
     overviewLabel: "Was wir übernehmen",
     overviewTitle: "Deine Kanäle als verlängerter Arm deiner Marke.",
     offerings: [
@@ -172,7 +172,7 @@ export const services: Record<string, ServiceContent> = {
     cardTitle: "KI praktisch einsetzen",
     cardText: "Wir zeigen und bauen, wie KI im Alltag Zeit spart, ohne dass du dafür Technik-Profi sein musst.",
     cardPoints: ["KI-Workflows und Automationen", "Kurse live auf Anfrage", "Workshops vor Ort im Unternehmen"],
-    metrics: [["Workflows", "Abläufe mit KI beschleunigen"], ["Automationen", "Wiederkehrende Aufgaben abgeben"], ["Kurse & Workshops", "Live auf Anfrage oder vor Ort"]],
+    heroAlt: "3D-Illustration: leuchtender KI-Funke in einer Glaskugel, umkreist von Aufgaben-Kacheln",
     overviewLabel: "Unsere Angebote",
     overviewTitle: "Vier Wege, KI im Alltag und im Geschäft zu nutzen.",
     offerings: [
@@ -226,7 +226,7 @@ export const services: Record<string, ServiceContent> = {
     cardTitle: "Vom Besucher zur Buchung",
     cardText: "Dein bestehendes Buchungstool bleibt. Wir sorgen dafür, dass der Weg dorthin klar und reibungslos ist.",
     cardPoints: ["Klare Leistungsdarstellung", "Buchungslink an den richtigen Stellen", "Messbarer Weg zur Anfrage"],
-    metrics: [["Besucher", "kommen auf deine Website"], ["Interessenten", "finden schnell den richtigen Service"], ["Termin", "buchen direkt in deinem Tool"]],
+    heroAlt: "3D-Illustration: Stufenweg vom Besuch über die Leistung bis zum gebuchten Termin",
     overviewLabel: "So funktioniert es",
     overviewTitle: "Aus Aufmerksamkeit wird ein gebuchter Termin.",
     offerings: [
