@@ -3,12 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { serviceOrder, services } from "@/lib/services";
 
 const linksBefore = [["Home", "/"], ["Über uns", "/ueber-uns"]];
 const linksAfter = [["Preise", "/preise"], ["Projekte", "/projekte"], ["Kontakt", "/kontakt"]];
 const serviceLinks = serviceOrder.map((slug) => [services[slug].navLabel, `/dienstleistungen/${slug}`] as const);
+
+// position in the entrance cascade, read by the mobile menu CSS
+const stagger = (index: number) => ({ "--i": index }) as CSSProperties;
 
 function scrollToPageTop(href: string) {
   if (!href.includes("#")) window.scrollTo(0, 0);
@@ -118,16 +121,28 @@ export default function AppNav() {
         </div>
         <Link className="nav-cta" href="/kontakt#termin-buchen">Projekt starten <span>↗︎</span></Link>
       </nav>
-      <button className="menu-button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Menü schliessen" : "Menü öffnen"}><i /><i /></button>
+      <button className="menu-button" onClick={() => { if (!open) setMobileServicesOpen(servicesActive); setOpen(!open); }} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Menü schliessen" : "Menü öffnen"}><i /><i /></button>
       {/* kept outside .site-nav: its backdrop-filter would trap position:fixed children in Safari */}
       <div id="mobile-navigation" className={open ? "mobile-menu open" : "mobile-menu"}>
-        {linksBefore.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
-        <button type="button" className={servicesActive ? "mobile-menu-toggle active" : "mobile-menu-toggle"} aria-expanded={mobileServicesOpen} aria-controls="mobile-services" onClick={() => setMobileServicesOpen((current) => !current)}>Dienstleistungen <i aria-hidden="true" /></button>
-        <div id="mobile-services" className="mobile-submenu" hidden={!mobileServicesOpen}>
-          {serviceLinks.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} tabIndex={open ? 0 : -1} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        {linksBefore.map(([label, href], index) => <Link className={pathname === href ? "active" : ""} href={href} key={href} style={stagger(index)} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        <button type="button" className={servicesActive ? "mobile-menu-toggle active" : "mobile-menu-toggle"} style={stagger(2)} aria-expanded={mobileServicesOpen} aria-controls="mobile-services" onClick={() => setMobileServicesOpen((current) => !current)}>
+          Dienstleistungen <span className="mobile-menu-toggle-icon" aria-hidden="true"><i /></span>
+        </button>
+        {/* grid-rows 0fr -> 1fr animates the height; inert keeps the closed links out of tab order */}
+        <div id="mobile-services" className="mobile-submenu" data-open={mobileServicesOpen ? "true" : "false"} inert={!mobileServicesOpen}>
+          <div className="mobile-submenu-inner">
+            {serviceLinks.map(([label, href], index) => (
+              <Link className={pathname === href ? "active" : ""} href={href} key={href} style={stagger(index)} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>
+                <small>{String(index + 1).padStart(2, "0")}</small>{label}<b aria-hidden="true">↗︎</b>
+              </Link>
+            ))}
+            <Link className={pathname === "/dienstleistungen" ? "mobile-submenu-all active" : "mobile-submenu-all"} href="/dienstleistungen" style={stagger(serviceLinks.length)} onClick={() => { scrollToPageTop("/dienstleistungen"); if (pathname === "/dienstleistungen") setOpen(false); }}>
+              Alle Dienstleistungen <b aria-hidden="true">→︎</b>
+            </Link>
+          </div>
         </div>
-        {linksAfter.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
-        <Link className="mobile-menu-cta" href="/kontakt#termin-buchen" onClick={() => setOpen(false)}>15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
+        {linksAfter.map(([label, href], index) => <Link className={pathname === href ? "active" : ""} href={href} key={href} style={stagger(index + 3)} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
+        <Link className="mobile-menu-cta" href="/kontakt#termin-buchen" style={stagger(6)} onClick={() => setOpen(false)}>15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
       </div>
     </header>
   );

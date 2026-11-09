@@ -595,16 +595,9 @@ body::before { background: radial-gradient(circle at 10% 8%, rgba(116,184,195,.2
   .mobile-menu a { width: 100%; min-height: 62px; display: flex; align-items: center; color: #f7fff8; font: 500 clamp(34px,10vw,58px)/1 var(--font-manrope), sans-serif; opacity: 0; transform: translate3d(18px,18px,0); transition: opacity .28s ease,transform .36s cubic-bezier(.2,.8,.2,1),color .2s; }
   .mobile-menu a.active { color: #d8ff71; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 9px; }
   .mobile-menu.open a { opacity: 1; transform: none; }
-  .mobile-menu.open a:nth-child(1) { transition-delay: .14s; }
-  .mobile-menu.open a:nth-child(2) { transition-delay: .19s; }
-  .mobile-menu.open a:nth-child(3) { transition-delay: .24s; }
-  .mobile-menu.open a:nth-child(4) { transition-delay: .29s; }
-  .mobile-menu.open a:nth-child(5) { transition-delay: .34s; }
-	.mobile-menu.open .mobile-menu-cta { transition-delay: .39s; }
-  .mobile-menu:not(.open) a:nth-child(1) { transition-delay: .16s; }
-  .mobile-menu:not(.open) a:nth-child(2) { transition-delay: .12s; }
-  .mobile-menu:not(.open) a:nth-child(3) { transition-delay: .08s; }
-  .mobile-menu:not(.open) a:nth-child(4) { transition-delay: .04s; }
+  /* entrance cascade: each top-level item carries --i (set in AppNav) */
+  .mobile-menu > a,.mobile-menu > .mobile-menu-toggle { transition-delay: calc(.12s - var(--i,0) * .015s); }
+  .mobile-menu.open > a,.mobile-menu.open > .mobile-menu-toggle { transition-delay: calc(.14s + var(--i,0) * .05s); }
 	.mobile-menu .mobile-menu-cta { width: fit-content; min-height: 54px; margin-top: 18px; padding: 0 18px; border-radius: 7px; color: #17321f; background: #d8ff71; font: 600 15px/1.2 var(--font-manrope), sans-serif; }
 	.mobile-menu.open .mobile-menu-cta { color: #17321f; }
 	.mobile-menu-cta span { margin-left: 8px; }
@@ -670,15 +663,30 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 @media (max-width: 680px) {
   .mobile-menu { overflow-y: auto; justify-content: safe center; }
   .mobile-menu-toggle { width: 100%; min-height: 62px; padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 0; background: transparent; color: #f7fff8; text-align: left; cursor: pointer; font: 500 clamp(34px,10vw,58px)/1 var(--font-manrope), sans-serif; opacity: 0; transform: translate3d(18px,18px,0); transition: opacity .28s ease,transform .36s cubic-bezier(.2,.8,.2,1),color .2s; }
-  .mobile-menu.open .mobile-menu-toggle { opacity: 1; transform: none; transition-delay: .24s; }
+  .mobile-menu.open .mobile-menu-toggle { opacity: 1; transform: none; }
   .mobile-menu-toggle.active,.mobile-menu-toggle[aria-expanded="true"] { color: #d8ff71; }
-  .mobile-menu-toggle i { flex: none; width: 14px; height: 14px; margin-right: 6px; border: solid currentColor; border-width: 0 2px 2px 0; transform: translateY(-4px) rotate(45deg); transition: transform .2s; }
-  .mobile-menu-toggle[aria-expanded="true"] i { transform: translateY(3px) rotate(225deg); }
-  .mobile-submenu { display: grid; gap: 0; padding: 2px 0 8px 4px; border-left: 2px solid rgba(216,255,113,.4); margin-left: 4px; }
-  .mobile-submenu[hidden] { display: none; }
-  .mobile-menu .mobile-submenu a { min-height: 46px; padding-left: 16px; font-size: clamp(22px,6.4vw,30px); color: rgba(247,255,248,.84); }
-  .mobile-menu.open a:nth-child(6) { transition-delay: .39s; }
-  .mobile-menu.open a:nth-child(7) { transition-delay: .44s; }
+  .mobile-menu-toggle-icon { flex: none; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid rgba(247,255,248,.28); border-radius: 50%; transition: background .3s,border-color .3s,transform .45s cubic-bezier(.2,.8,.2,1); }
+  .mobile-menu-toggle-icon i { width: 9px; height: 9px; margin-top: -4px; border: solid #f7fff8; border-width: 0 2px 2px 0; transform: rotate(45deg); transition: border-color .3s; }
+  .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-toggle-icon { background: #d8ff71; border-color: #d8ff71; transform: rotate(180deg); }
+  .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-toggle-icon i { border-color: #10301f; }
+
+  /* slightly smaller top-level items so "Dienstleistungen" + its toggle fit a 375px screen */
+  .mobile-menu > a:not(.mobile-menu-cta),.mobile-menu-toggle { min-height: 56px; font-size: clamp(30px,8.8vw,58px); }
+  /* submenu: height via grid rows, then the items cascade in */
+  .mobile-submenu { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .5s cubic-bezier(.2,.8,.2,1),opacity .3s ease,margin .5s cubic-bezier(.2,.8,.2,1); }
+  .mobile-submenu[data-open="true"] { grid-template-rows: 1fr; opacity: 1; margin: 6px 0 10px; }
+  .mobile-submenu-inner { min-height: 0; overflow: hidden; display: grid; padding: 0 6px; border-radius: 22px; background: rgba(247,255,248,.06); box-shadow: inset 0 0 0 1px rgba(247,255,248,.1); }
+  .mobile-menu .mobile-submenu a { min-height: 54px; padding: 0 12px; gap: 14px; border-bottom: 1px solid rgba(247,255,248,.08); color: rgba(247,255,248,.9); font: 500 19px/1.2 var(--font-manrope), sans-serif; opacity: 0; transform: translate3d(0,-8px,0); transition: opacity .25s ease,transform .35s cubic-bezier(.2,.8,.2,1),color .2s,background .2s; transition-delay: 0s; }
+  .mobile-menu.open .mobile-submenu[data-open="true"] a { opacity: 1; transform: none; transition-delay: calc(.12s + var(--i,0) * .045s); }
+  .mobile-menu .mobile-submenu a:first-child { margin-top: 6px; }
+  .mobile-menu .mobile-submenu a small { width: 26px; color: rgba(216,255,113,.7); font: 600 12px var(--font-manrope), sans-serif; letter-spacing: .04em; }
+  .mobile-menu .mobile-submenu a b { margin-left: auto; color: rgba(247,255,248,.4); font-size: 15px; transition: color .2s,transform .2s; }
+  .mobile-menu .mobile-submenu a:active,.mobile-menu .mobile-submenu a:hover { color: #d8ff71; }
+  .mobile-menu .mobile-submenu a:active b,.mobile-menu .mobile-submenu a:hover b { color: #d8ff71; transform: translate(2px,-2px); }
+  .mobile-menu .mobile-submenu a.active { color: #d8ff71; text-decoration: none; }
+  .mobile-menu .mobile-submenu a.active small { color: #d8ff71; }
+  .mobile-menu .mobile-submenu .mobile-submenu-all { min-height: 52px; margin-bottom: 4px; border-bottom: 0; color: #d8ff71; font: 600 15px var(--font-manrope), sans-serif; }
+  .mobile-menu .mobile-submenu .mobile-submenu-all b { color: #d8ff71; }
 }
 
 /* Dienstleistungen: detail pages */
