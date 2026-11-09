@@ -132,13 +132,8 @@ export default function AppNav() {
         <div id="mobile-services" className="mobile-submenu" data-open={mobileServicesOpen ? "true" : "false"} inert={!mobileServicesOpen}>
           <div className="mobile-submenu-inner">
             {serviceLinks.map(([label, href], index) => (
-              <Link className={pathname === href ? "active" : ""} href={href} key={href} style={stagger(index)} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>
-                <small>{String(index + 1).padStart(2, "0")}</small>{label}<b aria-hidden="true">↗︎</b>
-              </Link>
+              <Link className={pathname === href ? "active" : ""} href={href} key={href} style={stagger(index)} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>
             ))}
-            <Link className={pathname === "/dienstleistungen" ? "mobile-submenu-all active" : "mobile-submenu-all"} href="/dienstleistungen" style={stagger(serviceLinks.length)} onClick={() => { scrollToPageTop("/dienstleistungen"); if (pathname === "/dienstleistungen") setOpen(false); }}>
-              Alle Dienstleistungen <b aria-hidden="true">→︎</b>
-            </Link>
           </div>
         </div>
         {linksAfter.map(([label, href], index) => <Link className={pathname === href ? "active" : ""} href={href} key={href} style={stagger(index + 3)} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}

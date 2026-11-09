@@ -676,17 +676,12 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .mobile-submenu { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .5s cubic-bezier(.2,.8,.2,1),opacity .3s ease,margin .5s cubic-bezier(.2,.8,.2,1); }
   .mobile-submenu[data-open="true"] { grid-template-rows: 1fr; opacity: 1; margin: 6px 0 10px; }
   .mobile-submenu-inner { min-height: 0; overflow: hidden; display: grid; padding: 0 6px; border-radius: 22px; background: rgba(247,255,248,.06); box-shadow: inset 0 0 0 1px rgba(247,255,248,.1); }
-  .mobile-menu .mobile-submenu a { min-height: 54px; padding: 0 12px; gap: 14px; border-bottom: 1px solid rgba(247,255,248,.08); color: rgba(247,255,248,.9); font: 500 19px/1.2 var(--font-manrope), sans-serif; opacity: 0; transform: translate3d(0,-8px,0); transition: opacity .25s ease,transform .35s cubic-bezier(.2,.8,.2,1),color .2s,background .2s; transition-delay: 0s; }
+  .mobile-menu .mobile-submenu a { min-height: 54px; padding: 0 12px; gap: 14px; border-bottom: 1px solid rgba(247,255,248,.08); color: rgba(247,255,248,.9); font: 500 20px/1.2 var(--font-manrope), sans-serif; opacity: 0; transform: translate3d(0,-8px,0); transition: opacity .25s ease,transform .35s cubic-bezier(.2,.8,.2,1),color .2s,background .2s; transition-delay: 0s; }
   .mobile-menu.open .mobile-submenu[data-open="true"] a { opacity: 1; transform: none; transition-delay: calc(.12s + var(--i,0) * .045s); }
-  .mobile-menu .mobile-submenu a:first-child { margin-top: 6px; }
-  .mobile-menu .mobile-submenu a small { width: 26px; color: rgba(216,255,113,.7); font: 600 12px var(--font-manrope), sans-serif; letter-spacing: .04em; }
-  .mobile-menu .mobile-submenu a b { margin-left: auto; color: rgba(247,255,248,.4); font-size: 15px; transition: color .2s,transform .2s; }
+  .mobile-menu .mobile-submenu a:first-child { margin-top: 4px; }
+  .mobile-menu .mobile-submenu a:last-child { margin-bottom: 4px; border-bottom: 0; }
   .mobile-menu .mobile-submenu a:active,.mobile-menu .mobile-submenu a:hover { color: #d8ff71; }
-  .mobile-menu .mobile-submenu a:active b,.mobile-menu .mobile-submenu a:hover b { color: #d8ff71; transform: translate(2px,-2px); }
   .mobile-menu .mobile-submenu a.active { color: #d8ff71; text-decoration: none; }
-  .mobile-menu .mobile-submenu a.active small { color: #d8ff71; }
-  .mobile-menu .mobile-submenu .mobile-submenu-all { min-height: 52px; margin-bottom: 4px; border-bottom: 0; color: #d8ff71; font: 600 15px var(--font-manrope), sans-serif; }
-  .mobile-menu .mobile-submenu .mobile-submenu-all b { color: #d8ff71; }
 }
 
 /* Dienstleistungen: detail pages */
