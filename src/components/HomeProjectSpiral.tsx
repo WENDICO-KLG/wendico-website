@@ -45,30 +45,41 @@ export default function HomeProjectSpiral() {
     const section = sectionRef.current;
     if (!section || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const rows = Array.from(section.querySelectorAll<HTMLElement>(".project-spiral-row"));
+    const rows = Array.from(section.querySelectorAll<HTMLElement>(".project-spiral-row"), (row) => ({
+      row,
+      card: row.querySelector<HTMLElement>(".home-project-card"),
+    }));
+    const coarsePointer = window.matchMedia("(pointer: coarse)");
     let frame = 0;
+    let visible = false;
+    let wasMobile = false;
     const render = () => {
-      const mobile = window.innerWidth <= 900 || window.matchMedia("(pointer: coarse)").matches;
-      const viewportCenter = window.innerHeight / 2;
-      const radius = mobile ? 70 : 430;
-      const states = rows.map((row) => {
-        const bounds = row.getBoundingClientRect();
-        const distanceFromCenter = bounds.top + bounds.height / 2 - viewportCenter;
-        const angle = (distanceFromCenter / radius) * (180 / Math.PI);
-        const depth = (Math.cos(angle * (Math.PI / 180)) + 1) / 2;
-        return { card: row.querySelector<HTMLElement>(".home-project-card"), angle, depth };
-      });
-
-      states.forEach(({ card, angle, depth }) => {
-        if (!card) return;
-        if (mobile) {
+      const mobile = window.innerWidth <= 900 || coarsePointer.matches;
+      if (mobile) {
+        if (!wasMobile) rows.forEach(({ card }) => {
+          if (!card) return;
           card.style.removeProperty("--helix-angle");
           card.style.removeProperty("--helix-radius");
           card.style.removeProperty("--helix-scale");
           card.style.removeProperty("--helix-opacity");
           card.style.zIndex = "auto";
-          return;
-        }
+        });
+        wasMobile = true;
+        return;
+      }
+      wasMobile = false;
+      const viewportCenter = window.innerHeight / 2;
+      const radius = 430;
+      const states = rows.map(({ row, card }) => {
+        const bounds = row.getBoundingClientRect();
+        const distanceFromCenter = bounds.top + bounds.height / 2 - viewportCenter;
+        const angle = (distanceFromCenter / radius) * (180 / Math.PI);
+        const depth = (Math.cos(angle * (Math.PI / 180)) + 1) / 2;
+        return { card, angle, depth };
+      });
+
+      states.forEach(({ card, angle, depth }) => {
+        if (!card) return;
         card.style.setProperty("--helix-angle", `${angle.toFixed(2)}deg`);
         card.style.setProperty("--helix-radius", `${radius}px`);
         card.style.setProperty("--helix-scale", (0.93 + depth * 0.07).toFixed(3));
@@ -85,12 +96,23 @@ export default function HomeProjectSpiral() {
     };
 
     render();
-    window.addEventListener("scroll", update, { passive: true });
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible) update();
+    }, { rootMargin: "200px 0px" });
+    observer.observe(section);
+    const onScroll = () => {
+      if (visible && window.innerWidth > 900 && !coarsePointer.matches) update();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", update);
+    coarsePointer.addEventListener("change", update);
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", update);
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", update);
+      coarsePointer.removeEventListener("change", update);
     };
   }, []);
 

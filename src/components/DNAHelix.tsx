@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 type BasePair = {
@@ -76,6 +76,34 @@ function MolecularBeads({
       ) : (
         <meshPhysicalMaterial metalness={0.3} roughness={0.24} clearcoat={1} clearcoatRoughness={0.08} emissive="#176b4b" emissiveIntensity={0.18} />
       )}
+    </instancedMesh>
+  );
+}
+
+function BasePairs({ pairs }: { pairs: BasePair[] }) {
+  const meshRef = useRef<THREE.InstancedMesh>(null);
+
+  useEffect(() => {
+    const mesh = meshRef.current;
+    if (!mesh) return;
+    const dummy = new THREE.Object3D();
+    const color = new THREE.Color();
+    pairs.forEach((pair, index) => {
+      dummy.position.copy(pair.position);
+      dummy.quaternion.copy(pair.quaternion);
+      dummy.scale.set(1, pair.length, 1);
+      dummy.updateMatrix();
+      mesh.setMatrixAt(index, dummy.matrix);
+      mesh.setColorAt(index, color.set(index % 2 === 0 ? "#d8ff71" : "#38a875"));
+    });
+    mesh.instanceMatrix.needsUpdate = true;
+    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+  }, [pairs]);
+
+  return (
+    <instancedMesh ref={meshRef} args={[undefined, undefined, pairs.length]}>
+      <cylinderGeometry args={[0.028, 0.028, 1, 8]} />
+      <meshStandardMaterial metalness={0.35} roughness={0.3} />
     </instancedMesh>
   );
 }
@@ -165,21 +193,7 @@ function DNAObject() {
         </mesh>
       ))}
 
-      {basePairs.map((pair, index) => (
-        <mesh
-          key={index}
-          position={pair.position}
-          quaternion={pair.quaternion}
-          scale={[1, pair.length, 1]}
-        >
-          <cylinderGeometry args={[0.028, 0.028, 1, 8]} />
-          <meshStandardMaterial
-            color={index % 2 === 0 ? "#d8ff71" : "#38a875"}
-            metalness={0.35}
-            roughness={0.3}
-          />
-        </mesh>
-      ))}
+      <BasePairs pairs={basePairs} />
 
       <MolecularBeads positions={rungEnds} radius={0.16} palette={["#d8ff71", "#38a875", "#f1ffd0", "#176b4b"]} />
       <MolecularBeads positions={backboneBeads} radius={0.135} palette={["#0b3023", "#176b4b", "#38a875", "#d8ff71"]} />
@@ -204,9 +218,23 @@ function DNAObject() {
 }
 
 export default function DNAHelix() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), {
+      rootMargin: "200px 0px",
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="dna-helix-canvas" aria-hidden="true">
+    <div ref={containerRef} className="dna-helix-canvas" aria-hidden="true">
       <Canvas
+        frameloop={visible ? "always" : "never"}
         dpr={1}
         camera={{ position: [0, 0, 105], fov: 38, near: 0.1, far: 2000 }}
         gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}

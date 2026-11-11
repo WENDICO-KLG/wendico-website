@@ -97,28 +97,41 @@ export default function ServicesDetailSticky() {
 
     const items = section.querySelectorAll<HTMLElement>("[data-service-index]");
     let frame = 0;
+    let visible = false;
     const updateActiveService = () => {
       frame = 0;
       const viewportCenter = window.innerHeight / 2;
-      const closestItem = Array.from(items).reduce((closest, item) => {
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      items.forEach((item) => {
         const itemBounds = item.getBoundingClientRect();
-        const itemCenter = itemBounds.top + itemBounds.height / 2;
-        const closestBounds = closest.getBoundingClientRect();
-        const closestCenter = closestBounds.top + closestBounds.height / 2;
-        return Math.abs(itemCenter - viewportCenter) < Math.abs(closestCenter - viewportCenter) ? item : closest;
+        const distance = Math.abs(itemBounds.top + itemBounds.height / 2 - viewportCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = Number(item.getAttribute("data-service-index"));
+        }
       });
-      setActiveService(Number(closestItem.getAttribute("data-service-index")));
+      setActiveService(closestIndex);
     };
     const requestUpdate = () => {
       if (!frame) frame = window.requestAnimationFrame(updateActiveService);
     };
 
     updateActiveService();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible) requestUpdate();
+    }, { rootMargin: "200px 0px" });
+    observer.observe(section);
+    const onScroll = () => {
+      if (visible) requestUpdate();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", requestUpdate);
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", requestUpdate);
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", requestUpdate);
     };
   }, []);

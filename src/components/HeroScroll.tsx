@@ -10,6 +10,7 @@ export default function HeroScroll({ children }: { children: ReactNode }) {
     if (!section) return;
 
     let frame = 0;
+    let visible = false;
     const render = () => {
       const sectionTop = section.offsetTop;
       const scrollDistance = Math.max(1, section.offsetHeight - window.innerHeight);
@@ -29,11 +30,20 @@ export default function HeroScroll({ children }: { children: ReactNode }) {
     };
 
     render();
-    window.addEventListener("scroll", update, { passive: true });
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible) update();
+    }, { rootMargin: "200px 0px" });
+    observer.observe(section);
+    const onScroll = () => {
+      if (visible) update();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", update);
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", update);
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", update);
     };
   }, []);

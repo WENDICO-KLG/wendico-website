@@ -17,6 +17,7 @@ export default function HomeTextParallax() {
 
     const calm = prefersCalmMotion();
     let frame = 0;
+    let visible = false;
     const render = () => {
       frame = 0;
       const bounds = section.getBoundingClientRect();
@@ -31,11 +32,20 @@ export default function HomeTextParallax() {
     };
 
     render();
-    window.addEventListener("scroll", update, { passive: true });
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible) update();
+    }, { rootMargin: "200px 0px" });
+    observer.observe(section);
+    const onScroll = () => {
+      if (visible) update();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", update);
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", update);
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", update);
     };
   }, []);
