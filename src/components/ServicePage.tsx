@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
-import { breadcrumbJsonLd, openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, openGraphImage, serializeJsonLd, serviceAreasJsonLd, siteUrl } from "@/lib/seo";
 import { services } from "@/lib/services";
 import aiImage from "@/assets/services/ai-solutions.webp";
 import socialImage from "@/assets/services/social-media.webp";
@@ -34,25 +34,71 @@ export function serviceMetadata(slug: string): Metadata {
 export default function ServicePage({ slug }: { slug: string }) {
   const s = services[slug];
   const path = `/dienstleistungen/${slug}`;
+  const serviceId = `${siteUrl}${path}#service`;
+  const pageId = `${siteUrl}${path}#webpage`;
+  const serviceFaq = [
+    ...s.faq,
+    {
+      q: "In welchen Regionen bietet Wendico diese Dienstleistung an?",
+      a: "Wendico betreut Unternehmen vor Ort in Thalheim an der Thur, im Zürcher Weinland, in Winterthur und Zürich. Für digitale Projekte und Beratung ist Wendico online in der ganzen Schweiz erreichbar.",
+    },
+    ...(slug === "ai-solutions" ? [{
+      q: "Bietet Wendico KI- und ChatGPT-Integration in der Region Winterthur an?",
+      a: "Ja. Wendico berät Unternehmen in Thalheim an der Thur, im Zürcher Weinland, in Winterthur und Zürich zu KI-Anwendungen, ChatGPT-Integration, Automatisierung und Team-Schulungen. Workshops sind vor Ort oder online möglich.",
+    }] : []),
+  ];
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${siteUrl}${path}#service`,
+    "@id": serviceId,
     name: s.metaTitle,
-    description: s.metaDescription,
+    description: s.lead,
     url: `${siteUrl}${path}`,
     serviceType: s.navLabel,
     inLanguage: "de-CH",
+    mainEntityOfPage: { "@id": pageId },
     provider: { "@id": `${siteUrl}/#organization` },
-    areaServed: { "@type": "Country", name: "Schweiz" },
+    areaServed: serviceAreasJsonLd,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: s.pricing.title,
+      itemListElement: [
+        ...s.pricing.packages.map((plan) => ({
+          "@type": "Offer",
+          name: plan.name,
+          description: `${plan.intro} ${plan.items.join(" ")} Preis: ${plan.pricePrefix ? `${plan.pricePrefix} ` : ""}CHF ${plan.price} ${plan.unit}.`,
+          url: `${siteUrl}${path}#service-preise`,
+          priceCurrency: "CHF",
+        })),
+        ...(s.pricing.training ? [{
+          "@type": "Offer",
+          name: s.pricing.training.title,
+          description: `${s.pricing.training.description} Preis: ${s.pricing.training.priceText}.`,
+          url: `${siteUrl}${path}#svc-ai-training-title`,
+          priceCurrency: "CHF",
+        }] : []),
+      ],
+    },
     availableChannel: { "@type": "ServiceChannel", serviceUrl: `${siteUrl}/kontakt`, availableLanguage: ["de", "en", "fr"] },
+  };
+  const pageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": pageId,
+    url: `${siteUrl}${path}`,
+    name: s.metaTitle,
+    description: s.metaDescription,
+    inLanguage: "de-CH",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    mainEntity: { "@id": serviceId },
+    about: { "@id": serviceId },
   };
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${siteUrl}${path}#faq`,
     inLanguage: "de-CH",
-    mainEntity: s.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    mainEntity: serviceFaq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
   const breadcrumbs = breadcrumbJsonLd([
     { name: "Startseite", path: "/" },
@@ -60,13 +106,10 @@ export default function ServicePage({ slug }: { slug: string }) {
     { name: s.navLabel, path },
   ]);
 
-  const priceLink = s.slug === "websites"
-    ? { href: "/preise", label: "Website-Preise ansehen" }
-    : { href: "/kontakt#termin-buchen", label: "Preis auf Anfrage" };
-
   return (
     <main className={`svc svc-${slug}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(pageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }} />
 
@@ -82,7 +125,7 @@ export default function ServicePage({ slug }: { slug: string }) {
             <p className="svc-lead">{s.lead}</p>
             <div className="svc-actions">
               <Link className="button primary" href="/kontakt#termin-buchen">{s.ctaButton} <span aria-hidden="true">↗︎</span></Link>
-              <Link className="svc-text-link" href={priceLink.href}>{priceLink.label}</Link>
+              <Link className="svc-text-link" href="#service-preise">Pakete und Preise ansehen</Link>
             </div>
           </div>
           <figure className="svc-hero-media">
@@ -136,6 +179,53 @@ export default function ServicePage({ slug }: { slug: string }) {
         </section>
       )}
 
+      <section className="svc-pricing" id="service-preise" aria-labelledby="svc-pricing-title">
+        <div className="shell">
+          <header className="svc-pricing-head">
+            <span className="eyebrow"><i /> Preise in CHF</span>
+            <h2 id="svc-pricing-title">{s.pricing.title}</h2>
+            <p>{s.pricing.description}</p>
+          </header>
+          <div className="svc-price-grid">
+            {s.pricing.packages.map((plan) => (
+              <article className={`svc-price-card${plan.badge ? " featured" : ""}`} key={plan.name}>
+                <div className="svc-price-name"><h3>{plan.name}</h3>{plan.badge && <span>{plan.badge}</span>}</div>
+                <p className="svc-price-intro">{plan.intro}</p>
+                <p className="svc-price-amount"><small>{plan.pricePrefix ? `${plan.pricePrefix} CHF` : "CHF"}</small><strong>{plan.price}</strong></p>
+                <span className="svc-price-unit">{plan.unit}</span>
+                <ul>{plan.items.map((item) => <li key={item}><b aria-hidden="true">✓︎</b>{item}</li>)}</ul>
+                <Link href="/kontakt#termin-buchen">Paket anfragen <span aria-hidden="true">↗︎</span></Link>
+              </article>
+            ))}
+          </div>
+          <p className="svc-price-note">{s.pricing.note}</p>
+        </div>
+      </section>
+      {s.pricing.training && (
+        <section className="svc-ai-training" aria-labelledby="svc-ai-training-title">
+          <div className="shell svc-ai-training-grid">
+            <header className="svc-ai-training-intro">
+              <span className="eyebrow"><i /> Für Teams und Einzelpersonen</span>
+              <h2 id="svc-ai-training-title">{s.pricing.training.title}</h2>
+              <p>{s.pricing.training.description}</p>
+              <strong className="svc-ai-training-price">{s.pricing.training.priceText}</strong>
+              <Link className="button svc-ai-training-button" href="/kontakt#termin-buchen">Schulung anfragen <span aria-hidden="true">↗︎</span></Link>
+            </header>
+            <div className="svc-ai-training-details">
+              <section>
+                <h3>Mögliche Schulungsinhalte</h3>
+                <ul>{s.pricing.training.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
+              </section>
+              <section>
+                <h3>Durchführung</h3>
+                <ul>{s.pricing.training.delivery.map((item) => <li key={item}>{item}</li>)}</ul>
+              </section>
+              <p className="svc-ai-training-note">Die Offerte richtet sich nach Dauer, Teilnehmerzahl, Inhalt, Vorbereitung und Durchführungsort.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="svc-process">
         <div className="shell">
           <header className="svc-process-head">
@@ -165,7 +255,7 @@ export default function ServicePage({ slug }: { slug: string }) {
             <p>Deine Frage ist nicht dabei? <Link href="/kontakt">Schreib uns direkt.</Link></p>
           </header>
           <div className="svc-faq-list">
-            {s.faq.map((item, index) => (
+            {serviceFaq.map((item, index) => (
               <details key={item.q} open={index === 0}>
                 <summary>{item.q}<b aria-hidden="true" /></summary>
                 <p>{item.a}</p>

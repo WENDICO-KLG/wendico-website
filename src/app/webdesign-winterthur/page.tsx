@@ -37,7 +37,7 @@ export default function WebdesignWinterthurPage() {
             <p>Wir gestalten Salon-Websites, die deine Arbeit hochwertig zeigen, Leistungen verständlich erklären und Interessierte direkt zur Online-Terminbuchung führen.</p>
             <div className="about-page-actions">
               <Link className="button primary" href="/kontakt#termin-buchen">Gespräch vereinbaren</Link>
-              <Link className="about-page-text-link" href="/preise">Preise ansehen</Link>
+              <Link className="about-page-text-link" href="/dienstleistungen/websites#service-preise">Website-Preise ansehen</Link>
             </div>
           </div>
 
@@ -119,9 +119,9 @@ export default function WebdesignWinterthurPage() {
           <p>Wenn Kundinnen und Kunden Leistungen, Preise und Ergebnisse schnell finden, fällt die Entscheidung für den passenden Salon leichter.</p>
 
           <div className="geo-page-proof-points">
-            <div><strong>+ 26%</strong><span>mehr lokale Sichtbarkeit</span></div>
-            <div><strong>2x</strong><span>mehr Vertrauen im ersten Eindruck</span></div>
-            <div><strong>100%</strong><span>auf deinen Salon zugeschnitten</span></div>
+            <div><strong>Klar</strong><span>Leistungen und Preise verständlich dargestellt</span></div>
+            <div><strong>Mobil</strong><span>für Smartphone und Desktop optimiert</span></div>
+            <div><strong>Direkt</strong><span>zum bestehenden Buchungssystem</span></div>
           </div>
         </div>
       </section>

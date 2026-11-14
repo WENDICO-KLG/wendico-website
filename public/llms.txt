@@ -1,8 +1,8 @@
 # Wendico
 
-> Wendico KLG ist ein Digitalstudio in Thalheim an der Thur, Schweiz. Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons.
+> Wendico KLG ist ein Digital- und Wachstumspartner in Thalheim an der Thur, Schweiz. Wendico unterstützt Unternehmen mit Websites, individueller Software, Social Media, KI-Integration und digitalen Umsatzsystemen.
 
-Wendico verbindet Strategie, Design und individuellen Code. Salon-Websites präsentieren Leistungen und Arbeiten hochwertig und führen Interessierte zum bestehenden Buchungstool oder Buchungslink. Wendico bietet kein eigenes Terminbuchungssystem an. Weitere Dienstleistungen: individuelle Software, Social Media Management, KI-Lösungen und das Umsatzsystem.
+Wendico verbindet Strategie, Design und Technologie. Vor-Ort-Projekte und Beratung sind in Thalheim an der Thur, im Zürcher Weinland, in Winterthur und Zürich möglich; digitale Projekte werden schweizweit betreut. Wendico entwickelt individuelle Websites und Software, plant und betreut Social-Media-Kanäle, integriert KI und ChatGPT in Unternehmensprozesse und verbindet Marketing- und Vertriebssysteme. KI-Workshops können vor Ort oder online stattfinden. Ein besonderer Schwerpunkt liegt auf Beauty- und Coiffeur-Salons. Bei Salon-Websites wird das bestehende Buchungstool eingebunden; Wendico bietet kein eigenes Terminbuchungssystem an.
 
 Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an der Thur, Schweiz.
 
@@ -10,21 +10,20 @@ Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an de
 
 - [Startseite](https://wendico.ch/): Leistungen, Positionierung und Kontakt.
 - [Über Wendico](https://wendico.ch/ueber-uns): Team, Arbeitsweise und Studio.
-- [Preise](https://wendico.ch/preise): Website-Pakete und Betreuung.
 - [Projekte](https://wendico.ch/projekte): Ausgewählte Referenzen.
 - [Kontakt](https://wendico.ch/kontakt): Kontaktformular und Erstgespräch.
-- [Webdesign Zürich](https://wendico.ch/webdesign-zuerich): Salon-Websites in Zürich.
-- [Webdesign Winterthur](https://wendico.ch/webdesign-winterthur): Salon-Websites in Winterthur.
-- [Webdesign Thalheim](https://wendico.ch/webdesign-thalheim-an-der-thur): Salon-Websites im Zürcher Weinland.
+- [Webdesign Zürich](https://wendico.ch/webdesign-zuerich): Webdesign für Beauty- und Coiffeur-Salons in Zürich.
+- [Webdesign Winterthur](https://wendico.ch/webdesign-winterthur): Webdesign für Beauty- und Coiffeur-Salons in Winterthur.
+- [Webdesign Thalheim](https://wendico.ch/webdesign-thalheim-an-der-thur): Webdesign im Zürcher Weinland.
 
 ## Dienstleistungen
 
 - [Übersicht Dienstleistungen](https://wendico.ch/dienstleistungen): Alle fünf Dienstleistungen von Wendico auf einen Blick.
-- [Websites](https://wendico.ch/dienstleistungen/websites): Individuelle, mobile Websites mit Weg zur Online-Terminbuchung.
-- [Software](https://wendico.ch/dienstleistungen/software): Web-Apps, Schnittstellen und Dashboards.
-- [Social Media](https://wendico.ch/dienstleistungen/social-media): Content-Planung und Betreuung der Kanäle.
-- [KI-Lösungen (AI Solutions)](https://wendico.ch/dienstleistungen/ai-solutions): KI-Workflows, KI-Automationen, KI-Kurse (live auf Anfrage) und KI-Workshops vor Ort, für Unternehmen und Privatpersonen.
-- [Umsatzsystem](https://wendico.ch/dienstleistungen/umsatzsystem): Vom Besuch zum Termin über den bestehenden Buchungslink.
+- [Websites](https://wendico.ch/dienstleistungen/websites): Strategie, individuelles Webdesign, responsive Entwicklung, SEO und Integrationen. Öffentliche Projektpreisranges: Starter CHF 1'500–3'500, Professional CHF 2'750–4'750, Premium CHF 4'500–8'500.
+- [Softwareentwicklung](https://wendico.ch/dienstleistungen/software): Web-Apps, Kundenportale, Verwaltungssysteme, APIs und skalierbare SaaS-Lösungen. Öffentliche Projektpreisranges: Starter CHF 3'500–5'500, Professional CHF 5'500–9'500, Enterprise CHF 14'000–25'000+.
+- [Social Media](https://wendico.ch/dienstleistungen/social-media): Content-Strategie, Beiträge, Reels, Stories, Veröffentlichung und Performance-Analyse. Monatliche Startpreise: Starter ab CHF 150, Professional ab CHF 450, Premium ab CHF 950.
+- [KI-Lösungen](https://wendico.ch/dienstleistungen/ai-solutions): KI-Beratung, ChatGPT-Integration, Chatbots, KI-Assistenten, Workflows, Automatisierungen und Systemintegrationen für Unternehmen in Thalheim, Winterthur, Zürich und schweizweit online. Öffentliche Projektpreisranges: AI Starter CHF 990–2'990, AI Professional CHF 2'990–5'990, AI Enterprise CHF 7'990–15'000+. Schulungen und Workshops vor Ort oder online werden individuell offeriert.
+- [Umsatzsysteme](https://wendico.ch/dienstleistungen/umsatzsystem): Landingpages, CRM, Lead-Verwaltung, Follow-ups, E-Mail-Marketing, Buchungen und Conversion-Optimierung. Öffentliche Projektpreisranges: Starter CHF 990–2'990, Professional CHF 2'990–5'990, Premium CHF 6'990–12'000+.
 
 ## Neue Referenzen
 
@@ -33,4 +32,4 @@ Kontakt: info@wendico.ch | +41 79 504 10 05 | Im Hofacker 3, 8478 Thalheim an de
 
 ## Optional
 
-- [Vollständige Referenz](https://wendico.ch/llms-full.txt): Ausführliche Informationen zu Wendico, Leistungen, Preisen und häufigen Fragen.
+- [Vollständige Referenz](https://wendico.ch/llms-full.txt): Ausführliche Informationen zu Wendico, Leistungen, öffentlichen Preisranges und häufigen Fragen.

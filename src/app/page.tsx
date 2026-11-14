@@ -11,6 +11,7 @@ import ServicesParallax from "@/components/ServicesParallax";
 import ServicesDetailSticky from "@/components/ServicesDetailSticky";
 import SloganParallax from "@/components/SloganParallax";
 import { serializeJsonLd } from "@/lib/seo";
+import { serviceOrder, services } from "@/lib/services";
 import heroImage from "../../hero.jpg";
 import servicesImage from "../../section-2.jpg";
 import sloganImage from "../../slogan-img.jpg";
@@ -18,13 +19,13 @@ import footerImage from "../../footer.jpg";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-  keywords: ["Webdesign Beauty Salon", "Coiffeur Website", "Website für Coiffeur", "Salon Website mit Online-Buchung", "Webdesign Schweiz", "Digitalstudio Zürcher Weinland"],
+  keywords: ["Digitalagentur Schweiz", "Websites für Unternehmen", "Softwareentwicklung Schweiz", "Social Media Management", "KI-Integration", "digitale Umsatzsysteme", "Webdesign Beauty Salon", "Coiffeur Website", "Digitalstudio Zürcher Weinland"],
 };
 
 const homePlans = [
-  { name: "Website", price: "3'500", description: "Für einen professionellen Auftritt.", items: ["Bis 5 Seiten", "Mobile Optimierung", "Basic SEO"] },
-  { name: "Business", price: "5'500", description: "Für Unternehmen mit Wachstumszielen.", badge: "Empfohlen", items: ["Bis 10 Seiten", "Erweiterte SEO", "Google Ads Setup"] },
-  { name: "Full System", price: "8'500", description: "Für umfangreiche Angebote.", items: ["Unlimitierte Seiten", "Mehrsprachig", "Individuelle Systeme"] },
+  { name: "Starter", price: "1'500–3'500", description: "Projektpreis · Bis zu 3 Seiten", items: ["Schlankes, professionelles Design", "Mobile-Optimierung", "Kontaktmöglichkeiten", "Basis-SEO"] },
+  { name: "Professional", price: "2'750–4'750", description: "Projektpreis · Bis zu 8 Seiten", badge: "Empfohlen", items: ["Individuelles Webdesign", "Erweiterte SEO-Grundlagen", "Animationen und visuelle Elemente", "Conversion-Optimierung"] },
+  { name: "Premium", price: "4'500–8'500", description: "Projektpreis · Umfangreiche Website", items: ["Premium-Design und Interaktionen", "Mehrsprachigkeit", "Individuelle Schnittstellen", "Erweiterte Conversion-Optimierung"] },
 ];
 
 const homeFaqJsonLd = {
@@ -34,7 +35,7 @@ const homeFaqJsonLd = {
     {
       "@type": "Question",
       name: "Was genau macht Wendico?",
-      acceptedAnswer: { "@type": "Answer", text: "Wendico konzipiert, gestaltet und entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Dazu kommen auf Wunsch Hosting, Wartung und digitale Marketing-Leistungen." },
+      acceptedAnswer: { "@type": "Answer", text: "Wendico unterstützt Unternehmen in Thalheim an der Thur, im Zürcher Weinland, in Winterthur, Zürich und online schweizweit mit Websites, Software, Social Media, KI-Integration und digitalen Umsatzsystemen." },
     },
     {
       "@type": "Question",
@@ -46,18 +47,30 @@ const homeFaqJsonLd = {
       name: "Wie startet ein Projekt mit Wendico?",
       acceptedAnswer: { "@type": "Answer", text: "Mit einem unverbindlichen Gespräch. Wir klären Salon-Angebot, Zielgruppe, Buchungsweg und Projektumfang und empfehlen passende nächste Schritte." },
     },
+    {
+      "@type": "Question",
+      name: "Bietet Wendico KI-Beratung in der Region an?",
+      acceptedAnswer: { "@type": "Answer", text: "Ja. Wendico berät Unternehmen in Thalheim an der Thur, im Zürcher Weinland, in Winterthur und Zürich zu KI-Integration, ChatGPT-gestützten Workflows, Chatbots und Automatisierung. Schulungen und Workshops sind vor Ort oder online möglich." },
+    },
   ],
 };
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Leistungen von Wendico",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, item: { "@type": "Service", name: "Webdesign und Webentwicklung", serviceType: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
-    { "@type": "ListItem", position: 2, item: { "@type": "Service", name: "Hosting und Wartung", serviceType: "Technischer Betrieb, SSL, Backups, Updates und Support", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
-    { "@type": "ListItem", position: 3, item: { "@type": "Service", name: "Digitale Umsatzsysteme", serviceType: "Digitale Buchungswege für Beauty- und Coiffeur-Salons", areaServed: "Schweiz", provider: { "@type": "Organization", name: "Wendico KLG" } } },
-  ],
+  name: "Digitale Dienstleistungen von Wendico",
+  itemListElement: serviceOrder.map((slug, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Service",
+      "@id": `https://wendico.ch/dienstleistungen/${slug}#service`,
+      name: services[slug].metaTitle,
+      description: services[slug].metaDescription,
+      url: `https://wendico.ch/dienstleistungen/${slug}`,
+      provider: { "@id": "https://wendico.ch/#organization" },
+    },
+  })),
 };
 
 export default function Home() {
@@ -130,7 +143,7 @@ export default function Home() {
                 <span>02 / Hosting & Wartung</span>
                 <h3>Technik, die einfach läuft.</h3>
                 <p>Hosting, SSL, Backups, Updates und Support. Sicher betreut, damit du dich auf dein Geschäft konzentrierst.</p>
-                <Link href="/preise" aria-label="Hosting und Betreuung ansehen">↗︎</Link>
+                <Link href="/dienstleistungen/websites#service-preise" aria-label="Website-Pakete und Betreuung ansehen">↗︎</Link>
               </div>
             </article>
 
@@ -160,7 +173,7 @@ export default function Home() {
           <div className="home-pricing-heading">
             <span className="eyebrow home-pricing-eyebrow">Preise für Websites</span>
             <h2>Ein klarer Start.<br /><em>Ein starker Auftritt.</em></h2>
-            <p>Diese Pakete gelten für Websites. Software, Social Media, AI Solutions und das Umsatzsystem kalkulieren wir individuell: Preis auf Anfrage.</p>
+            <p>Die Website-Pakete und alle Preise für Software, Social Media, KI-Lösungen und Umsatzsysteme findest du direkt auf den jeweiligen Leistungsseiten.</p>
           </div>
           <div className="home-pricing-grid">
             {homePlans.map((plan) => (
@@ -174,7 +187,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <Link className="home-pricing-all" href="/preise">Alle Website-Preise ansehen ↗︎</Link>
+          <Link className="home-pricing-all" href="/dienstleistungen/websites#service-preise">Website-Pakete und Betreuung ansehen ↗︎</Link>
         </div>
       </section>
 

@@ -3,14 +3,14 @@ import Link from "next/link";
 import { breadcrumbJsonLd, openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
 import { serviceOrder, services } from "@/lib/services";
 
-const title = "Dienstleistungen: Websites, Software, KI und mehr";
-const description = "Alle Dienstleistungen von Wendico im Überblick: Websites, Software, Social Media, KI-Lösungen und das Umsatzsystem für mehr gebuchte Termine.";
+const title = "Digitale Dienstleistungen für Unternehmen | Wendico";
+const description = "Wendico unterstützt Unternehmen in der Schweiz mit Websites, individueller Softwareentwicklung, Social Media, KI-Integration und digitalen Umsatzsystemen.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/dienstleistungen" },
-  keywords: ["Dienstleistungen Wendico", "Websites", "Individuelle Software", "Social Media Management", "KI-Lösungen", "Umsatzsystem"],
+  keywords: ["Digitalagentur Schweiz", "Websites für Unternehmen", "Softwareentwicklung Schweiz", "Social Media Management", "KI-Integration Unternehmen", "Umsatzsystem", "CRM und Marketing Automation"],
   openGraph: { type: "website", locale: "de_CH", siteName: "Wendico", url: "/dienstleistungen", title: `${title} | Wendico`, description, images: [openGraphImage] },
   twitter: { card: "summary_large_image", title: `${title} | Wendico`, description, images: [openGraphImage.url] },
 };
@@ -52,7 +52,7 @@ export default function ServicesOverviewPage() {
             <p>Von der Website über individuelle Software und Social Media bis zu KI-Lösungen und dem Umsatzsystem: Wähle, was zu dir passt, oder lass dich im Gespräch beraten.</p>
             <div className="about-page-actions">
               <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
-              <Link className="about-page-text-link" href="/preise">Preise ansehen</Link>
+              <Link className="about-page-text-link" href="/dienstleistungen/websites#service-preise">Website-Preise ansehen</Link>
             </div>
           </div>
         </div>

@@ -13,7 +13,6 @@ export default function AppFooter() {
           <span>Navigation</span>
           <Link href="/ueber-uns">Über uns</Link>
           <Link href="/kontakt">Kontakt</Link>
-          <Link href="/preise">Preise (Websites)</Link>
           <Link href="/projekte">Projekte</Link>
         </div>
         <div>

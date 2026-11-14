@@ -1,10 +1,18 @@
 export const siteUrl = "https://wendico.ch";
 
+export const serviceAreasJsonLd = [
+  { "@type": "Place", name: "Thalheim an der Thur" },
+  { "@type": "AdministrativeArea", name: "Zürcher Weinland" },
+  { "@type": "City", name: "Winterthur" },
+  { "@type": "City", name: "Zürich" },
+  { "@type": "Country", name: "Schweiz" },
+];
+
 export const openGraphImage = {
   url: "/opengraph-image",
   width: 1200,
   height: 630,
-  alt: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons von Wendico",
+  alt: "Wendico: Websites, Software, Social Media, KI-Integration und digitale Umsatzsysteme",
 };
 
 export function serializeJsonLd(data: unknown) {

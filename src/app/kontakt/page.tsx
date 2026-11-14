@@ -6,17 +6,17 @@ import { openGraphImage } from "@/lib/seo";
 import mountainImage from "../../../footer.jpg";
 
 export const metadata: Metadata = {
-  title: "Kontakt für deine Salon-Website",
-  description: "Besprich mit Wendico deine buchungsoptimierte Website für Beauty- oder Coiffeur-Salon. Kostenloses Erstgespräch aus Thalheim an der Thur, online oder vor Ort.",
+  title: "Kontakt: Digitalprojekte und KI-Beratung in der Schweiz",
+  description: "Besprich mit Wendico Websites, Software, Social Media, KI-Integration oder Umsatzsysteme. Erstgespräch aus Thalheim an der Thur, online oder vor Ort.",
   alternates: { canonical: "/kontakt" },
-  keywords: ["Coiffeur Website Beratung", "Beauty Salon Webdesign", "Salon Website Erstgespräch", "Wendico Kontakt", "Webdesign Zürcher Weinland"],
+  keywords: ["KI Beratung Winterthur", "ChatGPT Integration Zürich", "Softwareentwicklung Zürcher Weinland", "Digitalagentur Thalheim an der Thur", "Wendico Kontakt"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/kontakt",
-    title: "Kontakt für deine Salon-Website | Wendico",
-    description: "Besprich mit Wendico deine buchungsoptimierte Website für Beauty- oder Coiffeur-Salon. Kostenloses Erstgespräch aus Thalheim an der Thur, online oder vor Ort.",
+    title: "Kontakt: Digitalprojekte und KI-Beratung | Wendico",
+    description: "Besprich mit Wendico Websites, Software, Social Media, KI-Integration oder Umsatzsysteme. Erstgespräch aus Thalheim an der Thur, online oder vor Ort.",
     images: [openGraphImage],
   },
 };

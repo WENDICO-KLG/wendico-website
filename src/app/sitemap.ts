@@ -4,7 +4,6 @@ import { projects } from "./projekte/projects";
 
 const routes = [
   { path: "", changeFrequency: "weekly", priority: 1 },
-  { path: "/preise", changeFrequency: "monthly", priority: 0.9 },
   { path: "/projekte", changeFrequency: "monthly", priority: 0.9 },
   { path: "/kontakt", changeFrequency: "monthly", priority: 0.8 },
   { path: "/ueber-uns", changeFrequency: "monthly", priority: 0.7 },

@@ -119,9 +119,9 @@ export default function WebdesignThalheimPage() {
           <p>Wer Leistungen und Ergebnisse online klar zeigt, gibt neuen Kundinnen und Kunden Sicherheit und macht den ersten Termin unkompliziert.</p>
 
           <div className="geo-page-proof-points">
-            <div><strong>+ 24%</strong><span>mehr regionale Sichtbarkeit</span></div>
-            <div><strong>2x</strong><span>mehr Klarheit im ersten Eindruck</span></div>
-            <div><strong>100%</strong><span>auf deinen Salon abgestimmt</span></div>
+            <div><strong>Lokal</strong><span>für das Zürcher Weinland konzipiert</span></div>
+            <div><strong>Mobil</strong><span>für Smartphone und Desktop optimiert</span></div>
+            <div><strong>Direkt</strong><span>mit deinem Buchungssystem verbunden</span></div>
           </div>
         </div>
       </section>

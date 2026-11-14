@@ -5,17 +5,17 @@ import AboutSectionParallax from "@/components/AboutSectionParallax";
 import { openGraphImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Über Wendico: Webdesign für Salons",
-  description: "Lerne Wendico kennen: Das Digitalstudio aus Thalheim an der Thur für buchungsoptimierte Websites von Beauty- und Coiffeur-Salons.",
+  title: "Über Wendico: Digital- und Wachstumspartner",
+  description: "Lerne Wendico kennen: Digital- und Wachstumspartner aus Thalheim an der Thur für Websites, Software, Social Media, KI-Integration und Umsatzsysteme.",
   alternates: { canonical: "/ueber-uns" },
-  keywords: ["Wendico Team", "Webdesign Beauty Salon", "Coiffeur Website", "Digitalstudio Zürcher Weinland", "Webdesign Thalheim an der Thur"],
+  keywords: ["Wendico Team", "Digitalagentur Zürcher Weinland", "Softwareentwicklung Winterthur", "KI Beratung Thalheim", "Social Media Management Zürich"],
   openGraph: {
     type: "website",
     locale: "de_CH",
     siteName: "Wendico",
     url: "/ueber-uns",
-    title: "Über Wendico: Webdesign für Salons | Wendico",
-    description: "Lerne Wendico kennen: Das Digitalstudio aus Thalheim an der Thur für buchungsoptimierte Websites von Beauty- und Coiffeur-Salons.",
+    title: "Über Wendico: Digital- und Wachstumspartner | Wendico",
+    description: "Lerne Wendico kennen: Digital- und Wachstumspartner aus Thalheim an der Thur für Websites, Software, Social Media, KI-Integration und Umsatzsysteme.",
     images: [openGraphImage],
   },
 };

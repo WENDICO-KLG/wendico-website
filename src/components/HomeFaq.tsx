@@ -3,11 +3,12 @@
 import { useState } from "react";
 
 const questions = [
-  ["Was genau macht Wendico?", "Wendico ist ein Digitalstudio aus dem Zürcher Weinland. Wir entwickeln Websites und individuelle Software, betreuen Social Media, bauen Umsatzsysteme und bieten AI-Lösungen, Kurse und Workshops für Unternehmen und Privatpersonen an. Auf Wunsch übernehmen wir auch Hosting und Wartung."],
+  ["Was genau macht Wendico?", "Wendico unterstützt Unternehmen in Thalheim an der Thur, im Zürcher Weinland, in Winterthur, Zürich und online schweizweit mit Websites, individueller Software, Social Media, KI-Integration und digitalen Umsatzsystemen. KI-Schulungen und Workshops sind vor Ort oder online möglich."],
   ["Für wen entwickelt ihr Websites?", "Für Unternehmen und Privatpersonen. Einen besonderen Schwerpunkt setzen wir auf Beauty- und Coiffeur-Salons: Dort gestalten wir Websites, die deine Arbeit hochwertig zeigen und neue Kundschaft einfach zum passenden Termin führen."],
   ["Könnt ihr Online-Terminbuchungen integrieren?", "Wir richten den Buchungsweg klar sichtbar ein und verknüpfen deine Website mit deinem bestehenden Buchungstool oder Buchungslink. Ein eigenes Buchungssystem ist nicht nötig."],
   ["Arbeitet ihr mit Vorlagen oder Baukästen?", "Nein. Wir entwickeln mit eigenem, sauberem Code. Das gibt uns mehr Freiheit im Design, bessere Performance und eine Website, die wirklich zu deiner Marke passt."],
-  ["Was kostet das?", "Für Websites findest du feste Pakete auf der Preisseite. Software, Social Media, AI Solutions und das Umsatzsystem kalkulieren wir nach deinem Bedarf: Preis auf Anfrage. Hosting und Wartung gibt es auf Wunsch als monatliche Betreuung."],
+  ["Was kostet das?", "Auf den Leistungsseiten findest du öffentliche Preisranges für Websites, Software, KI-Lösungen und Umsatzsysteme. Social-Media-Pakete zeigen monatliche Startpreise. Hosting und Wartung sind optional."],
+  ["Bietet Wendico KI-Beratung in der Region an?", "Ja. Wendico berät Unternehmen in Thalheim an der Thur, im Zürcher Weinland, in Winterthur und Zürich zu KI-Integration, ChatGPT-gestützten Workflows, Chatbots und Automatisierung. Schulungen und Workshops sind vor Ort oder online möglich."],
   ["Wie starten wir ein Projekt?", "Mit einem unverbindlichen Gespräch. Wir klären dein Angebot, deine Ziele, die Ausgangslage und den Umfang, bevor wir passende nächste Schritte empfehlen."],
 ];
 

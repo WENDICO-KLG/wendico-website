@@ -119,9 +119,9 @@ export default function WebdesignZurichPage() {
           <p>Wenn Kundinnen und Kunden Leistungen, Preise und Ergebnisse schnell finden, fällt die Entscheidung für den passenden Salon leichter.</p>
 
           <div className="geo-page-proof-points">
-            <div><strong>+ 31%</strong><span>mehr qualifizierte Anfragen</span></div>
-            <div><strong>2x</strong><span>mehr Vertrauen im Erstkontakt</span></div>
-            <div><strong>100%</strong><span>individuell auf deinen Salon abgestimmt</span></div>
+            <div><strong>Klar</strong><span>Leistungen und Preise verständlich dargestellt</span></div>
+            <div><strong>Mobil</strong><span>für Smartphone und Desktop optimiert</span></div>
+            <div><strong>Direkt</strong><span>zum bestehenden Buchungssystem</span></div>
           </div>
         </div>
       </section>

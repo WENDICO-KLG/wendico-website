@@ -7,7 +7,7 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { serviceOrder, services } from "@/lib/services";
 
 const linksBefore = [["Home", "/"], ["Über uns", "/ueber-uns"]];
-const linksAfter = [["Preise", "/preise"], ["Projekte", "/projekte"], ["Kontakt", "/kontakt"]];
+const linksAfter = [["Projekte", "/projekte"], ["Kontakt", "/kontakt"]];
 const serviceLinks = serviceOrder.map((slug) => [services[slug].navLabel, `/dienstleistungen/${slug}`] as const);
 
 // position in the entrance cascade, read by the mobile menu CSS

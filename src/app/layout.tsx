@@ -7,7 +7,8 @@ import CookieBanner from "@/components/CookieBanner";
 import PageTransition from "@/components/PageTransition";
 import ScrollReveals from "@/components/ScrollReveals";
 import SiteLoader from "@/components/SiteLoader";
-import { openGraphImage, serializeJsonLd, siteUrl } from "@/lib/seo";
+import { openGraphImage, serializeJsonLd, serviceAreasJsonLd, siteUrl } from "@/lib/seo";
+import { serviceOrder, services } from "@/lib/services";
 import "./globals.css";
 import "./mobile.css";
 
@@ -22,8 +23,8 @@ const organizationJsonLd = {
   url: "https://wendico.ch",
   logo: "https://wendico.ch/wendico_logo.png",
   image: "https://wendico.ch/opengraph-image",
-  description: "Wendico entwickelt buchungsoptimierte Websites für Beauty- und Coiffeur-Salons in der Schweiz, mit klaren Leistungen und direktem Weg zur Online-Terminbuchung.",
-  keywords: ["Webdesign Beauty Salon Schweiz", "Coiffeur Website", "Salon Website Online-Buchung", "Webdesign Zürcher Weinland", "Website Thalheim an der Thur"],
+  description: "Wendico ist ein Digital- und Wachstumspartner in der Schweiz für Websites, Software, Social Media, KI-Integration und digitale Umsatzsysteme.",
+  keywords: ["Digitalagentur Schweiz", "Websites für Unternehmen", "Softwareentwicklung", "Social Media Management", "KI-Integration", "ChatGPT Integration Thalheim", "KI Beratung Winterthur", "digitale Umsatzsysteme", "Webdesign Zürcher Weinland"],
   email: "info@wendico.ch",
   telephone: "+41795041005",
   address: {
@@ -35,24 +36,24 @@ const organizationJsonLd = {
   },
   sameAs: ["https://instagram.com/wendico.ch"],
   contactPoint: { "@type": "ContactPoint", telephone: "+41795041005", contactType: "customer service", email: "info@wendico.ch", areaServed: "CH", availableLanguage: ["de", "fr", "en"] },
-  areaServed: [
-    { "@type": "City", name: "Zürich" },
-    { "@type": "Place", name: "Zürcher Weinland" },
-    { "@type": "Country", name: "Schweiz" },
-  ],
-  priceRange: "CHF 3'500–8'500",
-  knowsAbout: ["Webdesign", "Webentwicklung", "Suchmaschinenoptimierung", "Social Media Management", "Conversion-Optimierung", "KI-Lösungen", "Individuelle Software"],
+  areaServed: serviceAreasJsonLd,
+  priceRange: "CHF 150–25'000+",
+  knowsAbout: ["Webdesign", "Webentwicklung", "Suchmaschinenoptimierung", "Generative Engine Optimization", "Softwareentwicklung", "SaaS", "Social Media Management", "Content-Strategie", "Künstliche Intelligenz", "ChatGPT-Integration", "KI-Automatisierung", "Prozessautomatisierung", "CRM", "Sales Funnels", "Conversion-Optimierung"],
   founder: [
     { "@type": "Person", name: "Panat Ruangsri", jobTitle: "Sales, Strategie, Webdesign", sameAs: "https://www.linkedin.com/in/panat-ruangsri-28a137288/" },
     { "@type": "Person", name: "Tim Biedermann", jobTitle: "Finance, Strategie, Design", sameAs: "https://www.linkedin.com/in/tim-biedermann-ba5b35286/" },
   ],
-  makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Websites", url: "https://wendico.ch/dienstleistungen/websites" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", url: "https://wendico.ch/dienstleistungen/social-media" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Umsatzsystem", url: "https://wendico.ch/dienstleistungen/umsatzsystem" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "KI-Lösungen (AI Solutions)", url: "https://wendico.ch/dienstleistungen/ai-solutions" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software", url: "https://wendico.ch/dienstleistungen/software" } },
-  ],
+  makesOffer: serviceOrder.map((slug) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      "@id": `https://wendico.ch/dienstleistungen/${slug}#service`,
+      name: services[slug].metaTitle,
+      url: `https://wendico.ch/dienstleistungen/${slug}`,
+      description: services[slug].metaDescription,
+      provider: { "@id": "https://wendico.ch/#organization" },
+    },
+  })),
 };
 
 const websiteJsonLd = {
@@ -69,26 +70,31 @@ const serviceCatalogJsonLd = {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
   "@id": "https://wendico.ch/#services",
-  name: "Webdesign- und Digitalleistungen von Wendico",
-  itemListElement: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webdesign und Webentwicklung", url: "https://wendico.ch/dienstleistungen/websites", description: "Buchungsoptimierte, responsive Websites für Beauty- und Coiffeur-Salons mit klarer Präsentation von Leistungen und Buchungsweg.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Hosting und Wartung", description: "Hosting, SSL, Backups, Updates, Monitoring und Support für Websites.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digitale Umsatzsysteme", url: "https://wendico.ch/dienstleistungen/umsatzsystem", description: "Klare digitale Wege von Salonleistungen zur Online-Terminbuchung über das bestehende Buchungstool des Salons.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Management", url: "https://wendico.ch/dienstleistungen/social-media", description: "Content-Planung, Social-Media-Formate und konsistente Markenkommunikation.", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "KI-Lösungen (AI Solutions)", description: "KI-Workflows, KI-Automationen, KI-Kurse und KI-Workshops für Unternehmen und Privatpersonen.", url: "https://wendico.ch/dienstleistungen/ai-solutions", provider: { "@id": "https://wendico.ch/#organization" } } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software", description: "Individuelle Web-Apps, Schnittstellen und Dashboards.", url: "https://wendico.ch/dienstleistungen/software", provider: { "@id": "https://wendico.ch/#organization" } } },
-  ],
+  name: "Digitale Dienstleistungen von Wendico",
+  itemListElement: serviceOrder.map((slug) => ({
+    "@type": "Offer",
+    url: `https://wendico.ch/dienstleistungen/${slug}`,
+    itemOffered: {
+      "@type": "Service",
+      "@id": `https://wendico.ch/dienstleistungen/${slug}#service`,
+      name: services[slug].metaTitle,
+      description: services[slug].metaDescription,
+      url: `https://wendico.ch/dienstleistungen/${slug}`,
+      provider: { "@id": "https://wendico.ch/#organization" },
+      areaServed: serviceAreasJsonLd,
+    },
+  })),
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Wendico | Websites für Beauty & Coiffeur", template: "%s | Wendico" },
-  description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons: hochwertig gestaltet, mobil gedacht und direkt mit der Terminbuchung verbunden.",
+  title: { default: "Wendico | Digital- und Wachstumspartner", template: "%s | Wendico" },
+  description: "Wendico unterstützt Unternehmen in der Schweiz mit Websites, Softwareentwicklung, Social Media, KI-Integration und digitalen Umsatzsystemen.",
   applicationName: "Wendico",
   authors: [{ name: "Wendico KLG", url: "https://wendico.ch" }],
   creator: "Wendico KLG",
   publisher: "Wendico KLG",
-  category: "Webdesign",
+  category: "Digitale Dienstleistungen",
   formatDetection: { email: false, address: false, telephone: false },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   alternates: { canonical: "/" },
@@ -97,14 +103,14 @@ export const metadata: Metadata = {
     locale: "de_CH",
     url: "https://wendico.ch",
     siteName: "Wendico",
-    title: "Wendico | Salon-Websites mit Online-Buchung",
-    description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Zeige deine Arbeit und mache den Weg zum Termin einfach.",
+    title: "Wendico | Digital- und Wachstumspartner",
+    description: "Websites, Software, Social Media, KI-Lösungen und digitale Umsatzsysteme für Unternehmen in der Schweiz.",
     images: [openGraphImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wendico | Salon-Websites mit Online-Buchung",
-    description: "Buchungsoptimierte Websites für Beauty- und Coiffeur-Salons. Zeige deine Arbeit und mache den Weg zum Termin einfach.",
+    title: "Wendico | Digital- und Wachstumspartner",
+    description: "Websites, Software, Social Media, KI-Lösungen und digitale Umsatzsysteme für Unternehmen in der Schweiz.",
     images: [openGraphImage.url],
   },
   icons: {
