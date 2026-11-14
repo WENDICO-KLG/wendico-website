@@ -190,7 +190,7 @@ export const services: Record<string, ServiceContent> = {
     related: ["websites", "umsatzsystem", "ai-solutions"],
     ctaTitle: "Lass uns deinen Social-Media-Auftritt stärken.",
     ctaText: "Wir besprechen deine Kanäle, Ziele und den passenden Betreuungsumfang. Du erhältst eine klare Empfehlung für den Start.",
-    ctaButton: "Beratung vereinbaren",
+    ctaButton: "Social-Media-Beratung anfragen",
   },
   "ai-solutions": {
     slug: "ai-solutions",

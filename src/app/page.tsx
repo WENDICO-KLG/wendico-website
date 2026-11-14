@@ -40,12 +40,12 @@ const homeFaqJsonLd = {
     {
       "@type": "Question",
       name: "Für wen entwickelt Wendico Websites?",
-      acceptedAnswer: { "@type": "Answer", text: "Wir entwickeln buchungsoptimierte Websites für Beauty- und Coiffeur-Salons, die ihre Arbeit hochwertig zeigen und mehr Online-Termine gewinnen möchten." },
+      acceptedAnswer: { "@type": "Answer", text: "Wendico unterstützt Unternehmen in der Schweiz in allen fünf digitalen Leistungsbereichen. Ein besonderer Schwerpunkt liegt auf individuellen Websites für Beauty- und Coiffeur-Salons." },
     },
     {
       "@type": "Question",
       name: "Wie startet ein Projekt mit Wendico?",
-      acceptedAnswer: { "@type": "Answer", text: "Mit einem unverbindlichen Gespräch. Wir klären Salon-Angebot, Zielgruppe, Buchungsweg und Projektumfang und empfehlen passende nächste Schritte." },
+      acceptedAnswer: { "@type": "Answer", text: "Mit einer Projektanfrage oder einem kostenlosen 30-minütigen Erstgespräch. Wendico klärt Ziele, Ausgangslage und Umfang und empfiehlt passende nächste Schritte." },
     },
     {
       "@type": "Question",
@@ -91,8 +91,8 @@ export default function Home() {
               <h1>Digital stark aufgestellt.<br />Ein Partner, der <em>liefert.</em></h1>
               <p>Wendico baut Websites, Software und Umsatzsysteme, betreut Social Media und bringt AI-Lösungen, Kurse und Workshops zu Unternehmen und Privatpersonen. Mit besonderem Fokus auf Beauty- und Coiffeur-Salons.</p>
               <div className="actions">
-                <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
-                <Link className="hero-text-link" href="/dienstleistungen/websites">Leistungen entdecken <span aria-hidden="true">→︎</span></Link>
+                <Link className="button hero-button" href="/kontakt#termin-buchen">30-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
+                <Link className="hero-text-link" href="/dienstleistungen">Alle Leistungen ansehen <span aria-hidden="true">→︎</span></Link>
               </div>
               <ul className="hero-trust">
                 <li><strong>10+</strong> Websites</li>
@@ -183,7 +183,7 @@ export default function Home() {
                 <p>{plan.description}</p>
                 <div className="home-pricing-price"><small>CHF</small><strong>{plan.price}</strong></div>
                 <ul>{plan.items.map((item) => <li key={item}><b>✓︎</b>{item}</li>)}</ul>
-                <Link href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
+                <Link href={`/kontakt?service=websites&package=${encodeURIComponent(plan.name)}#anfrage`}>Paket anfragen <span>↗︎</span></Link>
               </article>
             ))}
           </div>
@@ -228,7 +228,7 @@ export default function Home() {
             <span className="eyebrow">Dein nächster Schritt</span>
             <h2>Ein gutes Projekt beginnt<br />mit einem guten Gespräch.</h2>
             <p>Website, Software, Social Media oder AI: Erzähl uns, was du vorhast. Wir sagen dir klar, was sinnvoll ist.</p>
-            <Link className="button primary" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
+            <Link className="button primary" href="/kontakt#termin-buchen">30-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
           </div>
         </div>
       </section>

@@ -51,7 +51,7 @@ export default function ServicesOverviewPage() {
             <h1>Alles, was dein Geschäft <em>digital</em> voranbringt.</h1>
             <p>Von der Website über individuelle Software und Social Media bis zu KI-Lösungen und dem Umsatzsystem: Wähle, was zu dir passt, oder lass dich im Gespräch beraten.</p>
             <div className="about-page-actions">
-              <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
+              <Link className="button primary" href="/kontakt#termin-buchen">30-Minuten-Erstgespräch buchen</Link>
               <Link className="about-page-text-link" href="/dienstleistungen/websites#service-preise">Website-Preise ansehen</Link>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function ServicesOverviewPage() {
             <span className="eyebrow"><i /> Dienstleistungen</span>
             <h2>Nicht sicher, was du brauchst?</h2>
             <p>In einem kostenlosen Gespräch klären wir deine Ziele und empfehlen dir passende nächste Schritte.</p>
-            <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
+            <Link className="button primary" href="/kontakt#termin-buchen">30-Minuten-Erstgespräch buchen</Link>
           </div>
         </div>
       </section>

@@ -36,7 +36,7 @@ export default function WebdesignZurichPage() {
             <h1>Webdesign für Beauty- und Coiffeur-Salons in <em>Zürich</em>, die mehr Termine gewinnen wollen.</h1>
             <p>Wir gestalten Salon-Websites, die deine Arbeit hochwertig zeigen, dein Angebot klar erklären und neue Kundschaft direkt zur Online-Terminbuchung führen.</p>
             <div className="about-page-actions">
-              <Link className="button primary" href="/kontakt#termin-buchen">Gespräch vereinbaren</Link>
+              <Link className="button primary" href="/kontakt?service=websites#anfrage">Website-Projekt anfragen</Link>
               <Link className="about-page-text-link" href="/projekte">Mehr Projekte</Link>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function WebdesignZurichPage() {
             <span className="eyebrow"><i /> Webdesign Zürich</span>
             <h2>Bereit für eine Salon-Website, die mehr Termine ermöglicht?</h2>
             <p>Wir verbinden einen hochwertigen Auftritt mit klaren Leistungen und direkter Online-Terminbuchung.</p>
-            <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
+            <Link className="button primary" href="/kontakt#termin-buchen">30-Minuten-Erstgespräch buchen</Link>
           </div>
         </div>
       </section>

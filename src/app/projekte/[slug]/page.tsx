@@ -88,7 +88,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <p>{project.description}</p>
             <div className="project-detail-actions">
               <a className="button primary" href={project.url} target="_blank" rel="noreferrer">Website besuchen <span>↗︎</span></a>
-              <Link className="project-detail-text-link" href="/kontakt#termin-buchen">Projekt starten</Link>
+              <Link className="project-detail-text-link" href={`/kontakt?service=websites&project=${encodeURIComponent(project.name)}#anfrage`}>Ähnliches Projekt anfragen</Link>
             </div>
           </div>
 

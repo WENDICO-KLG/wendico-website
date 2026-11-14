@@ -36,7 +36,7 @@ export default function WebdesignThalheimPage() {
             <h1>Webdesign für Beauty- und Coiffeur-Salons im <em>Zürcher Weinland</em>, die mehr Termine gewinnen wollen.</h1>
             <p>Wir gestalten Salon-Websites, die Leistungen und Arbeiten hochwertig zeigen und Interessierte einfach zur Online-Terminbuchung führen.</p>
             <div className="about-page-actions">
-              <Link className="button primary" href="/kontakt#termin-buchen">Projekt besprechen</Link>
+              <Link className="button primary" href="/kontakt?service=websites#anfrage">Website-Projekt anfragen</Link>
               <Link className="about-page-text-link" href="/ueber-uns">Mehr über uns</Link>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function WebdesignThalheimPage() {
             <span className="eyebrow"><i /> Webdesign Thalheim</span>
             <h2>Bereit für eine Salon-Website, die mehr Termine ermöglicht?</h2>
             <p>Wir planen und bauen deinen digitalen Auftritt mit klaren Leistungen, starken Einblicken und direkter Online-Buchung.</p>
-            <Link className="button primary" href="/kontakt#termin-buchen">Kostenloses Gespräch</Link>
+            <Link className="button primary" href="/kontakt#termin-buchen">30-Minuten-Erstgespräch buchen</Link>
           </div>
         </div>
       </section>

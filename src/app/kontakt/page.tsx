@@ -26,7 +26,18 @@ const people = [
   { name: "Tim Biedermann", role: "Finance · Strategie · Design", phone: "+41 79 502 76 98", phoneHref: "tel:+41795027698", image: "/wendico-live/tim.jpg", linkedin: "https://www.linkedin.com/in/tim-biedermann-ba5b35286/" },
 ];
 
-export default function ContactPage() {
+type ContactSearchParams = { service?: string | string[]; package?: string | string[]; project?: string | string[] };
+
+function firstSearchValue(value: string | string[] | undefined) {
+  return (Array.isArray(value) ? value[0] : value) ?? "";
+}
+
+export default async function ContactPage({ searchParams }: { searchParams: Promise<ContactSearchParams> }) {
+  const query = await searchParams;
+  const initialService = firstSearchValue(query.service);
+  const initialPackage = firstSearchValue(query.package).slice(0, 100);
+  const initialProject = firstSearchValue(query.project).slice(0, 100);
+
   return (
     <main className="contact-page">
       <section className="contact-page-hero">
@@ -43,7 +54,7 @@ export default function ContactPage() {
               <div><span>Studio</span><strong>Thalheim an der Thur, CH</strong></div>
             </div>
           </div>
-          <ContactForm />
+          <ContactForm initialService={initialService} initialPackage={initialPackage} initialProject={initialProject} />
         </div>
       </section>
 
@@ -51,7 +62,7 @@ export default function ContactPage() {
         <div className="shell contact-page-booking-card">
           <div>
             <span className="eyebrow contact-page-eyebrow"><i /> Direkter Termin</span>
-            <h2>15 Minuten.<br />Volle Klarheit.</h2>
+            <h2>30 Minuten.<br />Volle Klarheit.</h2>
             <p>Wähle einen passenden Termin für ein kostenloses Erstgespräch. Danach weisst du, welcher nächste Schritt sinnvoll ist.</p>
           </div>
           <div className="contact-calendly-panel">

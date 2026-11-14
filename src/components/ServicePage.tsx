@@ -124,7 +124,7 @@ export default function ServicePage({ slug }: { slug: string }) {
             <h1>{s.h1[0]}<em>{s.h1[1]}</em>{s.h1[2]}</h1>
             <p className="svc-lead">{s.lead}</p>
             <div className="svc-actions">
-              <Link className="button primary" href="/kontakt#termin-buchen">{s.ctaButton} <span aria-hidden="true">↗︎</span></Link>
+              <Link className="button primary" href={`/kontakt?service=${slug}#anfrage`}>{s.ctaButton} <span aria-hidden="true">↗︎</span></Link>
               <Link className="svc-text-link" href="#service-preise">Pakete und Preise ansehen</Link>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function ServicePage({ slug }: { slug: string }) {
                 <p className="svc-price-amount"><small>{plan.pricePrefix ? `${plan.pricePrefix} CHF` : "CHF"}</small><strong>{plan.price}</strong></p>
                 <span className="svc-price-unit">{plan.unit}</span>
                 <ul>{plan.items.map((item) => <li key={item}><b aria-hidden="true">✓︎</b>{item}</li>)}</ul>
-                <Link href="/kontakt#termin-buchen">Paket anfragen <span aria-hidden="true">↗︎</span></Link>
+                <Link href={`/kontakt?service=${slug}&package=${encodeURIComponent(plan.name)}#anfrage`}>Paket anfragen <span aria-hidden="true">↗︎</span></Link>
               </article>
             ))}
           </div>
@@ -209,7 +209,7 @@ export default function ServicePage({ slug }: { slug: string }) {
               <h2 id="svc-ai-training-title">{s.pricing.training.title}</h2>
               <p>{s.pricing.training.description}</p>
               <strong className="svc-ai-training-price">{s.pricing.training.priceText}</strong>
-              <Link className="button svc-ai-training-button" href="/kontakt#termin-buchen">Schulung anfragen <span aria-hidden="true">↗︎</span></Link>
+              <Link className="button svc-ai-training-button" href="/kontakt?service=ai-solutions&package=KI-Schulung#anfrage">Schulung anfragen <span aria-hidden="true">↗︎</span></Link>
             </header>
             <div className="svc-ai-training-details">
               <section>
@@ -272,7 +272,7 @@ export default function ServicePage({ slug }: { slug: string }) {
               <span className="eyebrow"><i /> Nächster Schritt</span>
               <h2>{s.ctaTitle}</h2>
               <p>{s.ctaText}</p>
-              <Link className="button svc-cta-button" href="/kontakt#termin-buchen">{s.ctaButton} <span aria-hidden="true">↗︎</span></Link>
+              <Link className="button svc-cta-button" href={`/kontakt?service=${slug}#anfrage`}>{s.ctaButton} <span aria-hidden="true">↗︎</span></Link>
             </div>
             <nav className="svc-related" aria-label="Weitere Dienstleistungen">
               <span>Weitere Dienstleistungen</span>

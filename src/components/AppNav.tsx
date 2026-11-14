@@ -119,7 +119,7 @@ export default function AppNav() {
           </div>
           {linksAfter.map(([label, href]) => navLink(label, href))}
         </div>
-        <Link className="nav-cta" href="/kontakt#termin-buchen">Projekt starten <span>↗︎</span></Link>
+        <Link className="nav-cta" href="/kontakt#anfrage">Projekt anfragen <span>↗︎</span></Link>
       </nav>
       <button className="menu-button" onClick={() => { if (!open) setMobileServicesOpen(servicesActive); setOpen(!open); }} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Menü schliessen" : "Menü öffnen"}><i /><i /></button>
       {/* kept outside .site-nav: its backdrop-filter would trap position:fixed children in Safari */}
@@ -137,7 +137,7 @@ export default function AppNav() {
           </div>
         </div>
         {linksAfter.map(([label, href], index) => <Link className={pathname === href ? "active" : ""} href={href} key={href} style={stagger(index + 3)} onClick={() => { scrollToPageTop(href); if (pathname === href) setOpen(false); }}>{label}</Link>)}
-        <Link className="mobile-menu-cta" href="/kontakt#termin-buchen" style={stagger(6)} onClick={() => setOpen(false)}>15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
+        <Link className="mobile-menu-cta" href="/kontakt#anfrage" style={stagger(6)} onClick={() => setOpen(false)}>Projekt anfragen <span>↗︎</span></Link>
       </div>
     </header>
   );

@@ -34,7 +34,7 @@ export default function AboutHero() {
           <h1>Jung. Direkt.<br /><em>Digital mit Haltung.</em></h1>
           <p>Wendico ist ein Digital- und Wachstumspartner aus Thalheim an der Thur. Wir unterstützen Unternehmen im Zürcher Weinland, Winterthur und Zürich mit Websites, Software, Social Media, KI-Integration und Umsatzsystemen. Ein besonderer Schwerpunkt: Beauty- und Coiffeur-Salons.</p>
           <div className="about-page-actions">
-            <Link className="button hero-button" href="/kontakt#termin-buchen">15-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
+            <Link className="button hero-button" href="/kontakt#termin-buchen">30-Minuten-Erstgespräch buchen <span>↗︎</span></Link>
             <Link className="about-page-text-link" href="/projekte">Arbeiten ansehen</Link>
           </div>
         </div>
