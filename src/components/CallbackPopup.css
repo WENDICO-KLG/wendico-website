@@ -1,8 +1,18 @@
 .callback-popup {
+  --callback-orbit: clamp(48px, 20vw, 110px);
   position: fixed;
   width: min(460px, calc(100% - 32px));
   max-height: calc(100dvh - 32px);
   margin: auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: #14231d;
+}
+.callback-panel {
+  position: relative;
+  max-height: calc(100dvh - 32px);
   padding: 38px;
   overflow: auto;
   border: 1px solid #d5e0d9;
@@ -12,30 +22,31 @@
   box-shadow: 0 24px 80px rgba(7, 24, 18, .24);
 }
 .callback-popup::backdrop { background: rgba(7, 24, 18, .58); }
-.callback-popup[open] { animation: callback-arrive 1400ms cubic-bezier(.22, 1, .36, 1) both; }
-.callback-popup[open]::backdrop { animation: callback-backdrop 1000ms ease-out both; }
-.callback-popup[open] > .callback-close,
-.callback-popup[open] > .callback-eyebrow,
-.callback-popup[open] > h2,
-.callback-popup[open] > p,
-.callback-popup[open] > form,
-.callback-popup[open] > [role="status"] { animation: callback-content 650ms cubic-bezier(.16, 1, .3, 1) both; }
-.callback-popup[open] > .callback-close { animation-delay: 750ms; }
-.callback-popup[open] > .callback-eyebrow { animation-delay: 700ms; }
-.callback-popup[open] > h2, .callback-popup[open] > [role="status"] { animation-delay: 780ms; }
-.callback-popup[open] > p { animation-delay: 860ms; }
-.callback-popup[open] > form { animation-delay: 940ms; }
-@keyframes callback-arrive {
-  0% { opacity: 0; transform: translate(-60vw, 35px) scale(.12); clip-path: circle(45% at 50% 50%); }
-  15% { opacity: 1; }
-  35% { transform: translate(-24vw, -35px) scale(.14); clip-path: circle(45% at 50% 50%); }
-  60% { transform: translate(0, 0) scale(.2); clip-path: circle(45% at 50% 50%); }
-  100% { opacity: 1; transform: translate(0, 0) scale(1); clip-path: circle(100% at 50% 50%); }
+.callback-popup[open]::backdrop { animation: callback-backdrop 1300ms ease-out both; }
+.callback-flight { position: fixed; z-index: 1; inset: 0; width: 100vw; height: 100dvh; pointer-events: none; opacity: 0; }
+.callback-popup[open] .callback-flight { animation: callback-flight 1600ms linear both; }
+.callback-popup[open] .callback-panel { animation: callback-panel-arrive 850ms 1320ms cubic-bezier(.22, 1, .36, 1) both; }
+.callback-popup[open] .callback-panel > :is(.callback-close, .callback-eyebrow, h2, p, form, [role="status"]) { animation: callback-content 650ms cubic-bezier(.16, 1, .3, 1) both; }
+.callback-popup[open] .callback-panel > .callback-close { animation-delay: 1570ms; }
+.callback-popup[open] .callback-panel > .callback-eyebrow { animation-delay: 1540ms; }
+.callback-popup[open] .callback-panel > h2, .callback-popup[open] .callback-panel > [role="status"] { animation-delay: 1600ms; }
+.callback-popup[open] .callback-panel > p { animation-delay: 1680ms; }
+.callback-popup[open] .callback-panel > form { animation-delay: 1760ms; }
+@keyframes callback-flight {
+  0% { opacity: 0; }
+  8%, 83% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes callback-panel-arrive {
+  0% { opacity: 0; transform: scale(.1); border-radius: 50%; background: #d8ff71; box-shadow: none; }
+  20% { opacity: 1; }
+  75% { background: #f7faf7; border-radius: 8px; }
+  100% { opacity: 1; transform: scale(1); border-radius: 8px; background: #f7faf7; box-shadow: 0 24px 80px rgba(7, 24, 18, .24); }
 }
 @keyframes callback-backdrop { from { background: rgba(7, 24, 18, 0); } to { background: rgba(7, 24, 18, .58); } }
 @keyframes callback-content { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
-  .callback-popup[open], .callback-popup[open]::backdrop, .callback-popup[open] > :is(.callback-close, .callback-eyebrow, h2, p, form, [role="status"]) { animation: none; }
+  .callback-popup[open]::backdrop, .callback-popup[open] .callback-panel, .callback-popup[open] .callback-panel > :is(.callback-close, .callback-eyebrow, h2, p, form, [role="status"]), .callback-popup[open] .callback-flight { animation: none; }
 }
 .callback-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border: 0; border-radius: 50%; color: #14231d; background: #e6eee8; font-size: 26px; line-height: 1; cursor: pointer; }
 .callback-eyebrow { display: block; padding-right: 35px; color: #176b4b; font-size: 12px; font-weight: 700; text-transform: uppercase; }
@@ -51,4 +62,4 @@
 .callback-privacy a, .callback-error a { color: #176b4b; text-decoration: underline; text-underline-offset: 2px; }
 .callback-popup .callback-error { color: #a32d22; font-size: 14px; }
 .callback-popup [role="status"] .callback-submit { margin-top: 24px; }
-@media (max-width: 480px) { .callback-popup { padding: 30px 24px; } .callback-popup h2 { font-size: 26px; } }
+@media (max-width: 480px) { .callback-panel { padding: 30px 24px; } .callback-popup h2 { font-size: 26px; } }
