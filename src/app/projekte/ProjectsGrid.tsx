@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { projects } from "./projects";
 
-const filters = ["Alle", "Beauty", "Brand", "Service", "Event", "Gastronomie", "Portfolio", "Information", "Verein"];
+const filters = ["Alle", "Beauty", "Brand", "Service", "Event", "Gastronomie", "Portfolio", "Information", "Verein", "Sport"];
 const categoryFilters = filters.filter((item) => item !== "Alle");
 
 export default function ProjectsGrid() {

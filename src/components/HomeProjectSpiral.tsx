@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 const DNAHelix = dynamic(() => import("@/components/DNAHelix"), { ssr: false });
 
 const projects = [
+  { name: "Mini Tank – Gustavo Pereira", type: "Sport & Sponsoring", date: "November 2026", image: "/customer-websites/miniTank-website.png", href: "https://mini-tank.ch/", description: "Gustavo Pereiras Auftritt als Muay-Thai- und K1-Kämpfer mit direktem Zugang zu Sponsoring, Kampf-Booking und Privattraining.", tags: ["Muay Thai & K1", "Sportler-Website"], tone: "graphite" },
   { name: "Panat Ruangsri", type: "Personal Branding", date: "Oktober 2026", image: "/customer-websites/panatruangsri-website.png", href: "https://www.ruangsri.ch/panat", description: "Persönlichkeit, Fähigkeiten und Erfahrungen als digitale Bewerbungsunterlage mit 3D-Formen und Scroll-Animationen.", tags: ["Personal Brand", "3D & Animation"], tone: "graphite" },
   { name: "TTC Neuhausen", type: "Verein", date: "September 2026", image: "/customer-websites/ttc-neuhausen-website.png", href: "https://www.ttc-neuhausen.ch/", description: "Eine neue Vereinswebsite mit 3D-Animationen und klarer Übersicht über Trainingszeiten, Termine und Vereinsleben.", tags: ["Vereinswebsite", "3D & Animation"], tone: "warm" },
   { name: "SC Beauty Luxe", type: "Beauty & Commerce", date: "März 2026", image: "/customer-websites/scbeautyluxe-website.png", href: "https://scbeautyluxe.com/", description: "Premium Beauty digital übersetzt: ruhig, hochwertig und direkt auf Buchungen ausgerichtet.", tags: ["Webdesign", "Conversion"], tone: "warm" },
@@ -121,7 +122,7 @@ export default function HomeProjectSpiral() {
       <div className="home-projects-bg" aria-hidden="true" />
       <div className="shell home-projects-inner">
         <div className="section-heading split">
-          <div><span className="eyebrow">Alle Projekte</span><h2>Eine Linie.<br /><em>Zwölf Geschichten.</em></h2><p className="home-projects-mobile-note">Unsere aktuellsten Arbeiten.</p></div>
+          <div><span className="eyebrow">Alle Projekte</span><h2>Eine Linie.<br /><em>Dreizehn Geschichten.</em></h2><p className="home-projects-mobile-note">Unsere aktuellsten Arbeiten.</p></div>
           <Link className="text-link" href="/projekte">Projektübersicht öffnen ↗︎</Link>
         </div>
         <div className="project-spiral-line">{showHelix ? <DNAHelix /> : null}</div>

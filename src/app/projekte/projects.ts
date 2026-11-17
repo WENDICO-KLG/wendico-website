@@ -17,6 +17,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "mini-tank",
+    name: "Mini Tank – Gustavo Pereira",
+    category: "Sport",
+    date: "November 2026",
+    dateCreated: "2026-11",
+    seoTitle: "Mini Tank: Website für Muay-Thai-Kämpfer Gustavo Pereira",
+    keywords: ["Sportler-Website", "Muay Thai", "Kickboxing K1", "Sponsoring", "Kampf-Booking", "Privattraining"],
+    url: "https://mini-tank.ch/",
+    image: "/customer-websites/miniTank-website.png",
+    description: "Ein markanter Auftritt für Gustavo Pereira, der Kampfprofil, Sponsoring und Privattraining auf einer Plattform vereint.",
+    challenge: "Gustavo brauchte eine Plattform, die seine Karriere als Muay-Thai- und K1-Kämpfer zeigt und zugleich unterschiedliche Anfragen von Sponsoren, Veranstaltern und Sportlerinnen und Sportlern einfach macht.",
+    solution: "Wir haben die Website gestaltet und programmiert und das Projekt als Hauptpartner unterstützt. Das markante Design verbindet Gustavos Profil, Kampfrekord, Titel, Videos und Thailand-Ziele mit direkten Kontaktwegen für Sponsoring, Kampf-Booking und Privattraining.",
+    value: ["Kampfprofil, Rekord und Titel übersichtlich präsentiert", "Direkte Anfragen für Sponsoring, Kämpfe und Training", "Wendico als Hauptpartner sichtbar eingebunden"],
+    result: "Die Website bündelt Gustavos sportliche Laufbahn und seine Angebote in einem eigenständigen Auftritt. Besucherinnen und Besucher können schnell den passenden Weg wählen – ob sie einen Kampf buchen, Sponsoring anfragen oder mit Gustavo trainieren möchten.",
+  },
+  {
     slug: "panat-ruangsri",
     name: "Panat Ruangsri",
     category: "Portfolio",
