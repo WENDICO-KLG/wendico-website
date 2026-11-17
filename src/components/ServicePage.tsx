@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
+import CallbackPopup from "@/components/CallbackPopup";
 import { breadcrumbJsonLd, openGraphImage, serializeJsonLd, serviceAreasJsonLd, siteUrl } from "@/lib/seo";
 import { services } from "@/lib/services";
 import aiImage from "@/assets/services/ai-solutions.webp";
@@ -108,6 +109,7 @@ export default function ServicePage({ slug }: { slug: string }) {
 
   return (
     <main className={`svc svc-${slug}`}>
+      <CallbackPopup service={slug} serviceLabel={s.navLabel} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(pageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
