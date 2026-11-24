@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
@@ -21,7 +21,7 @@ const HELIX_HEIGHT = 70;
 const HELIX_RADIUS = 1.5;
 const HELIX_TURNS = 18;
 const BEAD_COUNT = 361;
-const PARTICLE_COUNT = 3200;
+const PARTICLE_COUNT = 1600;
 
 function seededNoise(seed: number) {
   const value = Math.sin(seed * 12.9898) * 43758.5453;
@@ -108,12 +108,26 @@ function BasePairs({ pairs }: { pairs: BasePair[] }) {
   );
 }
 
-function DNAObject() {
+function DNAObject({ visible }: { visible: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
+  const invalidate = useThree((state) => state.invalidate);
   const reducedMotion = useMemo(
     () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     [],
   );
+
+  useEffect(() => {
+    if (!visible) return;
+    invalidate();
+    if (reducedMotion) return;
+    const requestFrame = () => invalidate();
+    window.addEventListener("scroll", requestFrame, { passive: true });
+    window.addEventListener("resize", requestFrame);
+    return () => {
+      window.removeEventListener("scroll", requestFrame);
+      window.removeEventListener("resize", requestFrame);
+    };
+  }, [invalidate, reducedMotion, visible]);
 
   const { curves, basePairs, strandEnds, backboneBeads, particles, rungEnds } = useMemo(() => {
     const pointsA = Array.from({ length: 361 }, (_, index) => helixPoint(index / 360, 0));
@@ -174,7 +188,7 @@ function DNAObject() {
       7,
       delta,
     );
-    groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.32) * 0.07;
+    if (Math.abs(groupRef.current.rotation.y - targetRotation) > 0.001) invalidate();
   });
 
   return (
@@ -234,7 +248,7 @@ export default function DNAHelix() {
   return (
     <div ref={containerRef} className="dna-helix-canvas" aria-hidden="true">
       <Canvas
-        frameloop={visible ? "always" : "never"}
+        frameloop="demand"
         dpr={1}
         camera={{ position: [0, 0, 105], fov: 38, near: 0.1, far: 2000 }}
         gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
@@ -245,7 +259,7 @@ export default function DNAHelix() {
         <directionalLight position={[-5, 1, 7]} intensity={3.5} color="#d8ffb0" />
         <pointLight position={[0, -4, 8]} intensity={55} distance={30} color="#d8ff71" />
         <pointLight position={[3, 5, -4]} intensity={32} distance={26} color="#38a875" />
-        <DNAObject />
+        <DNAObject visible={visible} />
       </Canvas>
     </div>
   );

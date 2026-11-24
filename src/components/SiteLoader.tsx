@@ -23,14 +23,14 @@ export default function SiteLoader() {
       finished = true;
       window.clearInterval(progressInterval);
       fillRef.current?.style.setProperty("width", "100%");
-      const remaining = Math.max(120, 350 - (performance.now() - loadStart));
+      const remaining = Math.max(50, 150 - (performance.now() - loadStart));
       hideTimer = window.setTimeout(() => setDone(true), remaining);
     };
 
     if (document.readyState === "complete") finish();
     else window.addEventListener("load", finish, { once: true });
     // safety net: never block the site if "load" is delayed by third-party embeds
-    const fallback = window.setTimeout(finish, 600);
+    const fallback = window.setTimeout(finish, 350);
 
     return () => {
       window.removeEventListener("load", finish);

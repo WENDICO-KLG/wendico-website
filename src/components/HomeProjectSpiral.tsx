@@ -28,18 +28,11 @@ export default function HomeProjectSpiral() {
   const [showHelix, setShowHelix] = useState(false);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const helixContainer = section?.querySelector(".project-spiral-line");
-    if (!helixContainer || window.innerWidth <= 900) return;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      setShowHelix(true);
-      observer.disconnect();
-    }, { rootMargin: "1000px 0px" });
-    observer.observe(helixContainer);
-
-    return () => observer.disconnect();
+    const desktop = window.matchMedia("(min-width: 901px)");
+    const update = () => setShowHelix(desktop.matches);
+    update();
+    desktop.addEventListener("change", update);
+    return () => desktop.removeEventListener("change", update);
   }, []);
 
   useEffect(() => {
@@ -131,7 +124,7 @@ export default function HomeProjectSpiral() {
             <article className="project-spiral-row" key={project.name}>
               <a className={`home-project-card ${project.tone}${index > 2 ? " is-mobile-hidden" : ""}`} href={project.href} target="_blank" rel="noreferrer">
                 <div className="home-project-preview"><Image src={project.image} alt={`Website ${project.name}`} fill sizes="(max-width: 680px) 82vw, 39vw" /></div>
-                <div className="home-project-blur" aria-hidden="true"><Image src={project.image} alt="" fill sizes="(max-width: 680px) 82vw, 39vw" /></div>
+                <div className="home-project-blur" aria-hidden="true"><Image src={project.image} alt="" fill sizes="128px" quality={50} /></div>
                 <span className="home-project-shade" />
                 <div className="home-project-content">
                   <span className="home-project-type">{project.type} · {project.date}</span>
