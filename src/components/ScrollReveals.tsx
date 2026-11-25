@@ -52,6 +52,8 @@ export default function ScrollReveals() {
     const elements = [...document.querySelectorAll<HTMLElement>(selectors.join(","))].filter(
       (element) =>
         !element.closest(".hero-landscape") &&
+        // project detail pages bring their own reveals
+        !element.closest(".pd") &&
         !element.closest(".home-projects-section") &&
         !element.closest(".text-parallax-section") &&
         // above-the-fold content stays visible: hiding it until hydration delays LCP
