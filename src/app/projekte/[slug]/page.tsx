@@ -3,7 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { breadcrumbJsonLd, serializeJsonLd, siteUrl } from "@/lib/seo";
-import { projectMap, projectSlugs } from "../projects";
+import { galleries } from "../gallery";
+import { projectMap, projects, projectSlugs } from "../projects";
+import ProjectReveal from "./ProjectReveal";
+import "./project-detail.css";
 
 export function generateStaticParams() {
   return projectSlugs.map((slug) => ({ slug }));
@@ -74,69 +77,136 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     { name: project.name, path: `/projekte/${slug}` },
   ]);
 
+  const shots = galleries[slug] ?? [];
+  const nextProject = projects[(projects.findIndex((item) => item.slug === slug) + 1) % projects.length];
+  const facts = [
+    { label: "Kunde", value: project.client ?? project.name },
+    { label: "Jahr", value: project.date },
+    { label: "Branche", value: project.category },
+    { label: "Rolle", value: project.role },
+    { label: "Technik", value: project.tech?.join(", ") },
+    { label: "Ergebnis", value: project.outcome },
+  ].filter((fact) => fact.value);
+
   return (
-    <main className="project-detail-page">
+    // keyed so the reveal state starts fresh when moving on to the next project
+    <main className="pd" key={slug}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(projectJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbs) }} />
-      <section className="project-detail-hero">
-        <div className="project-detail-hero-glow" />
-        <div className="shell project-detail-hero-shell">
-          <div className="project-detail-header">
-            <Link className="project-detail-back" href="/projekte">← Zurück zu Projekte</Link>
-            <span className="eyebrow project-detail-eyebrow"><i /> {project.category} · {project.date}</span>
-            <h1>{project.name}</h1>
-            <p>{project.description}</p>
-            <div className="project-detail-actions">
-              <a className="button primary" href={project.url} target="_blank" rel="noreferrer">Website besuchen <span>↗︎</span></a>
-              <Link className="project-detail-text-link" href={`/kontakt?service=websites&project=${encodeURIComponent(project.name)}#anfrage`}>Ähnliches Projekt anfragen</Link>
-            </div>
-          </div>
+      <ProjectReveal />
 
-          <div className="project-detail-visual">
-            <div className="project-detail-image-wrap">
-              <Image src={project.image} alt={`Website von ${project.name}`} fill priority sizes="(max-width: 900px) 100vw, 52vw" />
-            </div>
+      <header className="pd-hero">
+        <div className="shell pd-hero-top">
+          <nav className="pd-crumb" aria-label="Brotkrumen">
+            <ol>
+              <li><Link href="/projekte">Projekte</Link></li>
+              <li><span aria-hidden="true">/</span> <span aria-current="page">{project.name}</span></li>
+            </ol>
+          </nav>
+          <h1 className="pd-title">{project.name}</h1>
+        </div>
+        <div className="shell pd-hero-info">
+          <div className="pd-hero-lead">
+            <p className="pd-summary">{project.description}</p>
+            <a className="pd-visit" href={project.url} target="_blank" rel="noreferrer">
+              Website besuchen<span className="sr-only"> (öffnet in neuem Tab)</span> <span className="pd-arrow" aria-hidden="true">↗︎</span>
+            </a>
+          </div>
+          <dl className="pd-facts">
+            {facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <figure className="pd-hero-image">
+          <Image
+            src={project.image}
+            alt={`Website von ${project.name} auf Laptop und Smartphone`}
+            width={1536}
+            height={1024}
+            preload
+            quality={75}
+            sizes="(max-width: 900px) 100vw, 92vw"
+          />
+        </figure>
+      </header>
+
+      <section className="pd-story" aria-label="Über das Projekt">
+        <div className="shell">
+          <div className="pd-chapter pd-chapter--challenge" data-pd-reveal>
+            <h2 className="pd-label">Herausforderung</h2>
+            <p className="pd-lead">{project.challenge}</p>
+          </div>
+          <div className="pd-chapter pd-chapter--solution" data-pd-reveal>
+            <h2 className="pd-label">Lösung</h2>
+            <p className="pd-body">{project.solution}</p>
           </div>
         </div>
       </section>
 
-      <section className="project-detail-story">
-        <div className="shell project-detail-story-grid">
-          <div className="project-detail-story-intro">
-            <span className="eyebrow"><i /> Der Anspruch</span>
-            <h2>Ein Auftritt, der dem Angebot gerecht wird.</h2>
+      {shots.length > 0 && (
+        <section className="pd-gallery" aria-labelledby="pd-gallery-title">
+          <div className="shell">
+            <h2 className="pd-label" id="pd-gallery-title">Einblicke</h2>
+            {shots.map((shot) => (
+              <figure className={`pd-shot pd-shot--${shot.device}`} key={shot.src} data-pd-reveal>
+                <div className="pd-shot-frame">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    quality={75}
+                    sizes={shot.device === "desktop" ? "(max-width: 900px) 100vw, 1180px" : "(max-width: 900px) 70vw, 400px"}
+                  />
+                </div>
+                <figcaption>{shot.caption}</figcaption>
+              </figure>
+            ))}
           </div>
-          <div className="project-detail-story-cards">
-            <article className="project-detail-card glass">
-              <span>01</span>
-              <h2>Herausforderung</h2>
-              <p>{project.challenge}</p>
-            </article>
-            <article className="project-detail-card glass">
-              <span>02</span>
-              <h2>Unsere Lösung</h2>
-              <p>{project.solution}</p>
-            </article>
-          </div>
+        </section>
+      )}
+
+      <section className="pd-results" aria-labelledby="pd-results-title">
+        <div className="shell">
+          <h2 className="pd-label" id="pd-results-title">Ergebnis</h2>
+          <p className="pd-result" data-pd-reveal>{project.result}</p>
+          <ul className="pd-values" data-pd-reveal>
+            {project.value.map((item) => <li key={item}>{item}</li>)}
+          </ul>
         </div>
       </section>
 
-      <section className="project-detail-outcome">
-        <div className="shell project-detail-outcome-grid">
-          <div className="project-detail-value-panel">
-            <span className="eyebrow project-detail-eyebrow"><i /> Mehrwert</span>
-            <h2>Was sich für den Kunden verbessert hat.</h2>
-            <ul>
-              {project.value.map((item, index) => <li key={item}><b>0{index + 1}</b>{item}</li>)}
+      {project.tech && project.tech.length > 0 && (
+        <section className="pd-tech" aria-labelledby="pd-tech-title">
+          <div className="shell">
+            <h2 className="pd-label" id="pd-tech-title">Technik</h2>
+            <ul className="pd-tech-list" data-pd-reveal>
+              {project.tech.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </div>
-          <div className="project-detail-result-panel glass">
-            <span>Das Ergebnis</span>
-            <p>{project.result}</p>
-            <Link href="/projekte" className="project-detail-all-link">Alle Projekte ansehen <b>↗</b></Link>
-          </div>
+        </section>
+      )}
+
+      <section className="pd-cta" aria-labelledby="pd-cta-title">
+        <div className="shell" data-pd-reveal>
+          <h2 className="pd-cta-title" id="pd-cta-title">Ein ähnliches Projekt im Kopf?</h2>
+          <Link className="pd-cta-link" href={`/kontakt?service=websites&project=${encodeURIComponent(project.name)}#anfrage`}>
+            Ähnliches Projekt anfragen <span className="pd-arrow" aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
+
+      <Link className="pd-next" href={`/projekte/${nextProject.slug}`}>
+        <span className="pd-next-label">Nächstes Projekt</span>{" "}
+        <span className="pd-next-name">{nextProject.name} <span className="pd-arrow" aria-hidden="true">→</span></span>
+        <span className="pd-next-image">
+          <Image src={nextProject.image} alt="" width={1536} height={1024} quality={60} sizes="(max-width: 900px) 60vw, 420px" />
+        </span>
+      </Link>
     </main>
   );
 }

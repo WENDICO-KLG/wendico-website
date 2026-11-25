@@ -289,7 +289,6 @@
   html .about-page-values-bg::after,
   html .about-page-method-visual::before,
   html .projects-page-work-bg::after,
-  html .project-detail-hero::before,
   html .pricing-page-atmosphere::before { animation: none; }
 
   /* glass blur is expensive while scrolling; keep it for the nav only */
