@@ -80,13 +80,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const shots = galleries[slug] ?? [];
   const nextProject = projects[(projects.findIndex((item) => item.slug === slug) + 1) % projects.length];
   const facts = [
-    { label: "Kunde", value: project.client ?? project.name },
-    { label: "Jahr", value: project.date },
+    { label: "Kunde", value: project.client },
+    { label: "Jahr", value: project.dateCreated.slice(0, 4) },
     { label: "Branche", value: project.category },
     { label: "Rolle", value: project.role },
-    { label: "Technik", value: project.tech?.join(", ") },
-    { label: "Ergebnis", value: project.outcome },
-  ].filter((fact) => fact.value);
+    { label: "Technik", value: project.tech.join(", ") },
+    { label: "Ergebnis", value: project.value[0] },
+  ];
 
   return (
     // keyed so the reveal state starts fresh when moving on to the next project
@@ -148,7 +148,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {shots.length > 0 && (
-        <section className="pd-gallery" aria-labelledby="pd-gallery-title">
+        <section className={`pd-gallery pd-gallery--${shots.length}`} aria-labelledby="pd-gallery-title">
           <div className="shell">
             <h2 className="pd-label" id="pd-gallery-title">Einblicke</h2>
             {shots.map((shot) => (
@@ -160,7 +160,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     width={shot.width}
                     height={shot.height}
                     quality={75}
-                    sizes={shot.device === "desktop" ? "(max-width: 900px) 100vw, 1180px" : "(max-width: 900px) 70vw, 400px"}
+                    sizes={shot.device === "desktop" ? "100vw" : "(max-width: 600px) 70vw, 360px"}
                   />
                 </div>
                 <figcaption>{shot.caption}</figcaption>
@@ -180,16 +180,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
-      {project.tech && project.tech.length > 0 && (
-        <section className="pd-tech" aria-labelledby="pd-tech-title">
-          <div className="shell">
-            <h2 className="pd-label" id="pd-tech-title">Technik</h2>
-            <ul className="pd-tech-list" data-pd-reveal>
-              {project.tech.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-        </section>
-      )}
+      <section className="pd-tech" aria-labelledby="pd-tech-title">
+        <div className="shell">
+          <h2 className="pd-label" id="pd-tech-title">Technik</h2>
+          <ul className="pd-tech-list" data-pd-reveal>
+            {project.tech.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </div>
+      </section>
 
       <section className="pd-cta" aria-labelledby="pd-cta-title">
         <div className="shell" data-pd-reveal>

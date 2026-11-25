@@ -13,6 +13,9 @@ export type Project = {
   solution: string;
   value: string[];
   result: string;
+  client: string;
+  role: string;
+  tech: string[];
 };
 
 export const projects: Project[] = [
@@ -31,6 +34,9 @@ export const projects: Project[] = [
     solution: "Wir haben die Website gestaltet und programmiert und das Projekt als Hauptpartner unterstützt. Das markante Design verbindet Gustavos Profil, Kampfrekord, Titel, Videos und Thailand-Ziele mit direkten Kontaktwegen für Sponsoring, Kampf-Booking und Privattraining.",
     value: ["Kampfprofil, Rekord und Titel übersichtlich präsentiert", "Direkte Anfragen für Sponsoring, Kämpfe und Training", "Wendico als Hauptpartner sichtbar eingebunden"],
     result: "Die Website bündelt Gustavos sportliche Laufbahn und seine Angebote in einem eigenständigen Auftritt. Besucherinnen und Besucher können schnell den passenden Weg wählen – ob sie einen Kampf buchen, Sponsoring anfragen oder mit Gustavo trainieren möchten.",
+    client: "Gustavo Pereira",
+    role: "Gestaltung, Programmierung und Hauptpartner",
+    tech: ["Next.js", "React", "GSAP", "Lenis", "Supabase"],
   },
   {
     slug: "panat-ruangsri",
@@ -47,6 +53,9 @@ export const projects: Project[] = [
     solution: "Wir haben eine Personal-Branding-Website entwickelt, die relevante Informationen über Panat übersichtlich bündelt. 3D-Formen und vielseitige Scroll-Animationen führen durch sein Profil und geben dem Auftritt einen unverwechselbaren Charakter.",
     value: ["Klares persönliches Profil", "Digitale Ergänzung zur Bewerbung", "Eigenständiger Auftritt mit 3D und Bewegung"],
     result: "Panat kann seine Website als persönliche Bewerbungsunterlage einsetzen und Persönlichkeit, Fähigkeiten und Erfahrungen in einem zusammenhängenden digitalen Auftritt präsentieren.",
+    client: "Panat Ruangsri",
+    role: "Entwicklung der Personal-Branding-Website",
+    tech: ["Next.js", "React", "Three.js", "Lenis"],
   },
   {
     slug: "ttc-neuhausen",
@@ -63,6 +72,9 @@ export const projects: Project[] = [
     solution: "Wir haben die Vereinswebsite neu aufgebaut und Trainingszeiten, Termine und wichtige Vereinsinformationen klar strukturiert. 3D-Animationen bringen die Dynamik des Tischtennissports in den digitalen Auftritt, ohne die Orientierung aus dem Blick zu verlieren.",
     value: ["Wichtige Vereinsdaten auf einen Blick", "Klare Orientierung für Mitglieder und Interessierte", "Lebendiger Vereinsauftritt mit 3D-Animationen"],
     result: "Die neue Website verbindet einen eigenständigen, sportlichen Auftritt mit einer übersichtlichen Anlaufstelle für alle wichtigen Informationen rund um den TTC Neuhausen.",
+    client: "Tischtennisclub Neuhausen",
+    role: "Neuaufbau der Vereinswebsite",
+    tech: ["HTML", "CSS", "JavaScript"],
   },
   {
     slug: "scbeautyluxe",
@@ -77,6 +89,9 @@ export const projects: Project[] = [
     solution: "Wir haben die visuelle Sprache verfeinert, Premium-Momente im Aufbau stärker gesetzt und die Angebotsstruktur für höhere Klarheit optimiert.",
     value: ["Höherer Premium-Eindruck", "Bessere Anfragemöglichkeiten", "Klarere Markenpositionierung"],
     result: "Der Auftritt wirkt jetzt hochwertiger und liegt damit deutlich besser im Anspruch der Zielgruppe.",
+    client: "SC Beauty Luxe",
+    role: "Visuelle Sprache und Angebotsstruktur",
+    tech: ["Framer"],
   },
   {
     slug: "lostrios",
@@ -91,6 +106,9 @@ export const projects: Project[] = [
     solution: "Wir haben die Positionierung verdichtet, die Markenwelt visuell geschärft und den digitalen Auftritt auf Vertrauen, Wiedererkennbarkeit und klare Informationsführung ausgerichtet.",
     value: ["Stärkere Markenwahrnehmung", "Mehr Vertrauen bei neuen Interessenten", "Klarere Story für Produkt und Haltung"],
     result: "Die Website unterstützt die Marke jetzt professionell auf allen digitalen Touchpoints und spricht die Zielgruppe mit mehr Klarheit an.",
+    client: "Los Trios",
+    role: "Positionierung und visuelle Markenwelt",
+    tech: ["HTML", "CSS", "JavaScript"],
   },
   {
     slug: "asiafoodfestival",
@@ -105,6 +123,9 @@ export const projects: Project[] = [
     solution: "Wir haben die Inhalte strukturiert, die Besucherführung vereinfacht und die wichtigsten Informationen für Planung, Teilnahme und Orientierung klarer in den Fokus gestellt.",
     value: ["Bessere Informationsfindung", "Mehr Verständnis für das Programm", "Stärkere Besucherführung"],
     result: "Besucher finden relevante Informationen schneller und das Event wirkt insgesamt klarer, professioneller und zugänglicher.",
+    client: "Tresch Asia Events",
+    role: "Inhaltsstruktur und Besucherführung",
+    tech: ["Framer"],
   },
   {
     slug: "alija-gebaeudereinigung",
@@ -119,6 +140,9 @@ export const projects: Project[] = [
     solution: "Wir haben die Leistungen verständlich neu strukturiert, die Kernbotschaften vereinfacht und die Kontaktwege so gestaltet, dass Anfragen leichter entstehen.",
     value: ["Mehr Klarheit bei Dienstleistungen", "Einfacherer Kontakt", "Stärkerer Eindruck bei Neukunden"],
     result: "Die Website hilft jetzt dabei, das Leistungsangebot professionell zu präsentieren und die Nachfrage insgesamt klarer zu fokussieren.",
+    client: "Alija Gebäudereinigung",
+    role: "Leistungsstruktur, Kernbotschaften und Kontaktwege",
+    tech: ["Framer"],
   },
   {
     slug: "ryu-vogler",
@@ -133,6 +157,9 @@ export const projects: Project[] = [
     solution: "Wir haben das Portfolio visuell und inhaltlich klarer aufgebaut, die Arbeiten stärker in Szene gesetzt und die persönliche Marke verständlich in den Vordergrund gestellt.",
     value: ["Stärkere persönliche Präsenz", "Mehr Klarheit bei Projekten", "Professioneller Eindruck bei Interessenten"],
     result: "Die Website unterstützt jetzt die eigene Marke deutlich besser und macht die Arbeitsergebnisse wirkungsvoller sichtbar.",
+    client: "Ryu Vogler",
+    role: "Visueller und inhaltlicher Aufbau des Portfolios",
+    tech: ["Framer"],
   },
   {
     slug: "elegant-society",
@@ -147,6 +174,9 @@ export const projects: Project[] = [
     solution: "Wir haben die digitale Brand-Experience auf eine klarere, elegantere und konsistentere Form gebracht, mit stärkerem visuellen Fokus und besserer Informationslogik.",
     value: ["Konsistentere Markenwirkung", "Mehr visuelle Qualität", "Stärkere Online-Präsenz"],
     result: "Die Website trägt die Marke jetzt deutlich hochwertiger und macht den digitalen Eindruck wesentlich professioneller.",
+    client: "Elegant Society",
+    role: "Digitale Brand-Experience",
+    tech: ["Framer"],
   },
   {
     slug: "rebthai",
@@ -158,9 +188,12 @@ export const projects: Project[] = [
     image: "/customer-websites/rebthai-website.png",
     description: "Angebot, Atmosphäre und Kontakt für schnelle Entscheidungen gebündelt.",
     challenge: "Die Gastronomie hatte ein starkes Angebot, aber die Website musste Gästen in wenigen Sekunden verständlich machen, worum es geht und warum sie kommen sollten.",
-    solution: "Wir haben Angebot, Atmosphäre und Kontaktwege in eine klare digitale Besucherführung übersetzt, damit sich die Entscheidung für Besuch oder Reservierung deutlich leichter fällt.",
+    solution: "Wir haben Angebot, Atmosphäre und Kontaktwege in eine klare digitale Besucherführung übersetzt, damit die Entscheidung für Besuch oder Reservierung deutlich leichter fällt.",
     value: ["Mehr Klarheit für Gäste", "Bessere Entscheidungsfindung", "Stärkere Einbindung der Gastronomie"],
     result: "Die Website hilft Gästen, die richtige Entscheidung schneller zu treffen und vermittelt die Marke deutlich zugänglicher.",
+    client: "Weinland Esskultur",
+    role: "Digitale Besucherführung",
+    tech: ["HTML", "CSS", "JavaScript"],
   },
   {
     slug: "weinland-esskultur",
@@ -175,6 +208,9 @@ export const projects: Project[] = [
     solution: "Wir haben die regionale Story und die kulinarische Wertigkeit in einen klaren, atmosphärischen Auftritt übersetzt, mit mehr Fokus auf Erlebnisse und Erwartungen.",
     value: ["Mehr regionale Identität", "Stärkere Erlebniswahrnehmung", "Klarere Positionierung im Markt"],
     result: "Die Website vermittelt die Marke jetzt emotional und verständlich und macht die Region als Erlebnis besser spürbar.",
+    client: "Weinland Esskultur",
+    role: "Regionale Story und digitaler Auftritt",
+    tech: ["HTML", "CSS", "JavaScript"],
   },
   {
     slug: "thai-lodge",
@@ -189,6 +225,9 @@ export const projects: Project[] = [
     solution: "Wir haben die Gästereise von Angebot über Ambiente bis hin zur Reservierung als klaren digitalen Weg gestaltet und relevanten Inhalt in die passende Reihenfolge gesetzt.",
     value: ["Mehr Gästeinteresse", "Bessere Reservierungsführung", "Stärkere Vorstellung der Atmosphäre"],
     result: "Die Website hilft, Neugier in echte Erwartungen und letztlich in Besuchsentscheidungen zu verwandeln.",
+    client: "Weinland Esskultur",
+    role: "Gestaltung der digitalen Gästereise",
+    tech: ["HTML", "Bootstrap", "JavaScript"],
   },
   {
     slug: "thai-helping-point",
@@ -203,6 +242,9 @@ export const projects: Project[] = [
     solution: "Wir haben die Inhalte in eine einfache, benutzerfreundliche Struktur gebracht und wichtige Informationen mit klarer Hierarchie und besserem Zugang aufbereitet.",
     value: ["Schnellere Informationsfindung", "Mehr Zugänglichkeit", "Mehr Vertrauen durch klare Struktur"],
     result: "Die Website ist jetzt deutlich verständlicher und funktioniert damit besser für Menschen, die schnelle und verlässliche Informationen suchen.",
+    client: "Thai Helping Point",
+    role: "Inhaltsstruktur und Hierarchie",
+    tech: ["HTML", "Bootstrap", "jQuery"],
   },
 ];
 
