@@ -103,8 +103,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <li><span aria-hidden="true">/</span> <span aria-current="page">{project.name}</span></li>
             </ol>
           </nav>
-          <h1 className="pd-title">{project.name}</h1>
+          <h1 className="pd-title">{project.name.replace(" –", "\u00a0–")}</h1>
         </div>
+        <figure className="pd-hero-image">
+          <Image
+            src={project.image}
+            alt={`Website von ${project.name} auf Laptop und Smartphone`}
+            width={1536}
+            height={1024}
+            preload
+            quality={75}
+            sizes="(max-width: 900px) 100vw, 92vw"
+          />
+        </figure>
         <div className="shell pd-hero-info">
           <div className="pd-hero-lead">
             <p className="pd-summary">{project.description}</p>
@@ -121,17 +132,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             ))}
           </dl>
         </div>
-        <figure className="pd-hero-image">
-          <Image
-            src={project.image}
-            alt={`Website von ${project.name} auf Laptop und Smartphone`}
-            width={1536}
-            height={1024}
-            preload
-            quality={75}
-            sizes="(max-width: 900px) 100vw, 92vw"
-          />
-        </figure>
       </header>
 
       <section className="pd-story" aria-label="Über das Projekt">
@@ -200,7 +200,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <Link className="pd-next" href={`/projekte/${nextProject.slug}`}>
         <span className="pd-next-label">Nächstes Projekt</span>{" "}
-        <span className="pd-next-name">{nextProject.name} <span className="pd-arrow" aria-hidden="true">→</span></span>
+        <span className="pd-next-name">{nextProject.name.replace(" –", "\u00a0–")} <span className="pd-arrow" aria-hidden="true">→</span></span>
         <span className="pd-next-image">
           <Image src={nextProject.image} alt="" width={1536} height={1024} quality={60} sizes="(max-width: 900px) 60vw, 420px" />
         </span>
